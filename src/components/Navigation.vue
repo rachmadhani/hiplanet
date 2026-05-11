@@ -31,7 +31,7 @@ onUnmounted(() => {
 <template>
   <nav>
     <a href="#home" class="nav-logo">
-      <img src="/logo/ecosoft_logo_design_white.png" class="brand-logo" alt="ECOSOFT" />
+      <img src="/logo/ecosoft_logo_design_original.png" class="brand-logo" alt="ECOSOFT" />
     </a>
     <ul class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
       <li><a href="#home" :style="{ color: activeSection === 'home' ? 'var(--green)' : '' }">Home</a></li>
