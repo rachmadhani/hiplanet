@@ -39,7 +39,7 @@ onUnmounted(() => {
       <li><a href="#games" :style="{ color: activeSection === 'games' ? 'var(--green)' : '' }">Games</a></li>
       <li><a href="#community" :style="{ color: activeSection === 'community' ? 'var(--green)' : '' }">Community</a></li>
       <li><a href="#devlog" :style="{ color: activeSection === 'devlog' ? 'var(--green)' : '' }">Devlog</a></li>
-      <li><a href="#community" class="nav-cta">Join Discord</a></li>
+      <li><a href="#community" class="nav-cta discord-btn">Join Discord</a></li>
       <li>
         <a href="https://store.steampowered.com" target="_blank" class="nav-cta steam-btn">
           <img src="/icon/steam-white.png" class="steam-icon" alt="Steam" />
@@ -65,7 +65,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 80px;
 }
 
 .nav-logo {
@@ -89,6 +89,8 @@ nav {
   display: flex;
   gap: 0.25rem;
   list-style: none;
+  align-items: center;
+  height: 100%;
 }
 
 .nav-links a {
@@ -103,6 +105,8 @@ nav {
   border-radius: 6px;
   transition: all 0.2s;
   border: 1px solid transparent;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a:hover {
@@ -118,6 +122,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 8px;
+  height: fit-content;
 }
 
 .steam-btn {
@@ -134,6 +139,17 @@ nav {
 .nav-cta:hover {
   background: #00cc55 !important;
   border-color: transparent !important;
+}
+
+.discord-btn {
+  background: #2323FF !important;
+  color: #fff !important;
+  border-color: rgba(35, 35, 255, 0.3) !important;
+}
+
+.discord-btn:hover {
+  background: #0000FF !important;
+  box-shadow: 0 0 15px rgba(35, 35, 255, 0.5);
 }
 
 .steam-btn:hover {
@@ -158,13 +174,14 @@ nav {
   .nav-links {
     display: none;
     position: absolute;
-    top: 64px;
+    top: 80px;
     left: 0;
     right: 0;
     flex-direction: column;
     background: var(--bg2);
     padding: 2rem;
     border-bottom: 1px solid var(--border);
+    height: auto;
   }
   
   .nav-links.mobile-open {

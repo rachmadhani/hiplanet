@@ -355,7 +355,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.landing { padding-top: 64px; }
+.landing {
+  padding-top: 80px;
+}
 section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem; max-width: 1200px; margin: 0 auto; }
 
 /* HERO */
