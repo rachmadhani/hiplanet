@@ -75,7 +75,7 @@ nav {
 }
 
 .brand-logo {
-  height: 32px;
+  height: 55px;
   width: auto;
   object-fit: contain;
 }
