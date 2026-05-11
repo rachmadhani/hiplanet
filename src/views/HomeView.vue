@@ -10,6 +10,16 @@ onMounted(() => {
     });
   }, { threshold: 0.1 });
 
+  const handleParallax = () => {
+    const scroll = window.scrollY;
+    const ceiling = document.querySelector('.hero-ceiling') as HTMLElement;
+    const foreground = document.querySelector('.hero-foreground') as HTMLElement;
+    
+    if (ceiling) ceiling.style.transform = `translateY(${scroll * 0.5}px)`;
+    if (foreground) foreground.style.transform = `translateY(${scroll * 0.2}px)`;
+  };
+
+  window.addEventListener('scroll', handleParallax);
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 })
 </script>
@@ -18,7 +28,9 @@ onMounted(() => {
   <div class="landing">
     <!-- HERO -->
     <section id="home" class="hero-wrap">
-      <div class="hero-content">
+      <!-- <div class="hero-ceiling"></div> -->
+      <div class="hero-foreground"></div>
+      <!-- <div class="hero-content">
         <div class="hero-eyebrow">A 2D MORPG — Now in Development</div>
         <h1 class="hero-title">
           Hi Planet:
@@ -47,7 +59,7 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <div class="hero-planet"></div>
+      <div class="hero-planet"></div> -->
     </section>
 
     <!-- SOCIAL BAR -->
@@ -361,15 +373,52 @@ onMounted(() => {
 section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem; max-width: 1200px; margin: 0 auto; }
 
 /* HERO */
-.hero-wrap { display: flex;
+.hero-wrap { 
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 80px;
+  align-items: center;
   max-width: 100%;
-  padding-left: 0;
-  padding-right: 0; }
-.hero-content { position: relative; z-index: 2; max-width: 680px; padding: 0 2rem; }
+  position: relative;
+  overflow: hidden;
+  min-height: 133vh;
+  background: url('/hero-image/hiplanet_website_hero_background.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.hero-ceiling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: url('/hero-image/hiplanet_website_ceiling.png') no-repeat top center;
+  background-size: cover;
+  z-index: 5;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-foreground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 40%;
+  width: 100%;
+  height: 100%;
+  background: url('/hero-image/hiplanet_website_hero_foreground.png') no-repeat bottom center;
+  background-size: cover;
+  z-index: 3;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding: 0 2rem;
+}
 .hero-eyebrow { font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 10px; }
 .hero-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--green); }
 .hero-title { font-family: 'Bangers', cursive; font-size: clamp(3.5rem, 8vw, 6rem); line-height: 0.95; letter-spacing: 3px; color: #fff; margin-bottom: 1.5rem; }
