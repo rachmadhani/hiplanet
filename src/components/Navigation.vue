@@ -34,11 +34,11 @@ onUnmounted(() => {
       <img src="/logo/ecosoft_logo_design_original.png" class="brand-logo" alt="ECOSOFT" />
     </a>
     <ul class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
-      <li><a href="#home" :style="{ color: activeSection === 'home' ? 'var(--green)' : '' }">Home</a></li>
-      <li><a href="#universe" :style="{ color: activeSection === 'universe' ? 'var(--green)' : '' }">Universe</a></li>
-      <li><a href="#games" :style="{ color: activeSection === 'games' ? 'var(--green)' : '' }">Games</a></li>
-      <li><a href="#community" :style="{ color: activeSection === 'community' ? 'var(--green)' : '' }">Community</a></li>
-      <li><a href="#devlog" :style="{ color: activeSection === 'devlog' ? 'var(--green)' : '' }">Devlog</a></li>
+      <li><a href="#home" :style="{ color: activeSection === 'home' ? 'var(--neon-blue)' : '' }">Home</a></li>
+      <li><a href="#universe" :style="{ color: activeSection === 'universe' ? 'var(--neon-blue)' : '' }">Universe</a></li>
+      <li><a href="#games" :style="{ color: activeSection === 'games' ? 'var(--neon-blue)' : '' }">Games</a></li>
+      <li><a href="#community" :style="{ color: activeSection === 'community' ? 'var(--neon-blue)' : '' }">Community</a></li>
+      <li><a href="#devlog" :style="{ color: activeSection === 'devlog' ? 'var(--neon-blue)' : '' }">Devlog</a></li>
       <li><a href="#community" class="nav-cta discord-btn">Join Discord</a></li>
       <li>
         <a href="https://store.steampowered.com" target="_blank" class="nav-cta steam-btn">
@@ -110,9 +110,9 @@ nav {
 }
 
 .nav-links a:hover {
-  color: var(--green);
-  border-color: var(--border);
-  background: rgba(15,255,108,0.05);
+  color: var(--neon-blue);
+  border-color: rgba(0, 102, 243, 0.2);
+  background: rgba(0, 102, 243, 0.05);
 }
 
 .nav-cta {
@@ -142,14 +142,14 @@ nav {
 }
 
 .discord-btn {
-  background: #0066f3 !important;
+  background: var(--neon-blue) !important;
   color: #fff !important;
   border-color: rgba(0, 102, 243, 0.3) !important;
 }
 
 .discord-btn:hover {
   background: #0052cc !important;
-  box-shadow: 0 0 15px rgba(0, 102, 243, 0.4);
+  box-shadow: 0 0 15px var(--blue-glow);
 }
 
 .steam-btn:hover {

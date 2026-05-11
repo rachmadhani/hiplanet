@@ -15,6 +15,8 @@
   
   --primary: var(--green);
   --primary-glow: rgba(15, 255, 108, 0.5);
+  --neon-blue: #0066f3;
+  --blue-glow: rgba(0, 102, 243, 0.5);
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
