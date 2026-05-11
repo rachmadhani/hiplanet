@@ -34,11 +34,11 @@ onUnmounted(() => {
       <img src="/logo/ecosoft_logo_design_original.png" class="brand-logo" alt="ECOSOFT" />
     </a>
     <ul class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
-      <li><a href="#home" :style="{ color: activeSection === 'home' ? 'var(--neon-blue)' : '' }">Home</a></li>
-      <li><a href="#universe" :style="{ color: activeSection === 'universe' ? 'var(--neon-blue)' : '' }">Universe</a></li>
-      <li><a href="#games" :style="{ color: activeSection === 'games' ? 'var(--neon-blue)' : '' }">Games</a></li>
-      <li><a href="#community" :style="{ color: activeSection === 'community' ? 'var(--neon-blue)' : '' }">Community</a></li>
-      <li><a href="#devlog" :style="{ color: activeSection === 'devlog' ? 'var(--neon-blue)' : '' }">Devlog</a></li>
+      <li><a href="#home" :class="{ active: activeSection === 'home' }">Home</a></li>
+      <li><a href="#universe" :class="{ active: activeSection === 'universe' }">Universe</a></li>
+      <li><a href="#games" :class="{ active: activeSection === 'games' }">Games</a></li>
+      <li><a href="#community" :class="{ active: activeSection === 'community' }">Community</a></li>
+      <li><a href="#devlog" :class="{ active: activeSection === 'devlog' }">Devlog</a></li>
       <li><a href="#community" class="nav-cta discord-btn">Join Discord</a></li>
       <li>
         <a href="https://store.steampowered.com" target="_blank" class="nav-cta steam-btn">
@@ -109,15 +109,22 @@ nav {
   align-items: center;
 }
 
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff !important;
+  background: var(--neon-blue);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 10px var(--blue-glow);
+}
+
 .nav-links a:hover {
-  color: var(--neon-blue);
-  border-color: rgba(0, 102, 243, 0.2);
-  background: rgba(0, 102, 243, 0.05);
+  background: #0052cc;
+  border-color: #0052cc;
 }
 
 .nav-cta {
-  background: var(--green) !important;
-  color: var(--bg) !important;
+  background: var(--neon-blue) !important;
+  color: #fff !important;
   font-weight: 700;
   display: flex;
   align-items: center;
