@@ -31,7 +31,8 @@ onUnmounted(() => {
 <template>
   <nav>
     <a href="#home" class="nav-logo">
-      <img src="/logo/ecosoft_logo_design_original.png" class="brand-logo" alt="ECOSOFT" />
+      <img src="/logo/ecosoft_logo_design_original.png" class="brand-logo desktop-logo" alt="ECOSOFT" />
+      <img src="/logo/ecosoft_logo_mobile.png" class="brand-logo mobile-logo" alt="ECOSOFT" />
     </a>
     <ul class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
       <li><a href="#home" :class="{ active: activeSection === 'home' }">Home</a></li>
@@ -78,6 +79,10 @@ nav {
   height: 55px;
   width: auto;
   object-fit: contain;
+}
+
+.mobile-logo {
+  display: none;
 }
 
 @keyframes pulse {
@@ -197,6 +202,15 @@ nav {
   
   .nav-mobile-toggle {
     display: block;
+  }
+
+  .desktop-logo {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+    height: 40px;
   }
 }
 </style>
