@@ -60,7 +60,7 @@ nav {
   z-index: 1000;
   background: rgba(6,10,16,0.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--blue);
   padding: 0 2rem;
   display: flex;
   align-items: center;
@@ -187,7 +187,7 @@ nav {
     flex-direction: column;
     background: var(--bg2);
     padding: 2rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--blue);
     height: auto;
   }
   
