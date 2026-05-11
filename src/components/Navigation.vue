@@ -31,8 +31,7 @@ onUnmounted(() => {
 <template>
   <nav>
     <a href="#home" class="nav-logo">
-      <span class="logo-dot"></span>
-      ECOSOFT
+      <img src="/logo/ecosoft_logo_design_white.png" class="brand-logo" alt="ECOSOFT" />
     </a>
     <ul class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
       <li><a href="#home" :style="{ color: activeSection === 'home' ? 'var(--green)' : '' }">Home</a></li>
@@ -41,6 +40,12 @@ onUnmounted(() => {
       <li><a href="#community" :style="{ color: activeSection === 'community' ? 'var(--green)' : '' }">Community</a></li>
       <li><a href="#devlog" :style="{ color: activeSection === 'devlog' ? 'var(--green)' : '' }">Devlog</a></li>
       <li><a href="#community" class="nav-cta">Join Discord</a></li>
+      <li>
+        <a href="https://store.steampowered.com" target="_blank" class="nav-cta steam-btn">
+          <img src="/icon/steam-white.png" class="steam-icon" alt="Steam" />
+          Wishlist On Steam
+        </a>
+      </li>
     </ul>
     <button class="nav-mobile-toggle" @click="isMobileMenuOpen = !isMobileMenuOpen">
       {{ isMobileMenuOpen ? '✕' : '☰' }} Menu
@@ -64,22 +69,15 @@ nav {
 }
 
 .nav-logo {
-  font-family: 'Bangers', cursive;
-  font-size: 1.6rem;
-  letter-spacing: 2px;
-  color: var(--green);
-  text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 10px;
+  height: 100%;
 }
 
-.nav-logo .logo-dot {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 8px var(--green);
-  animation: pulse 2s ease-in-out infinite;
+.brand-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 
 @keyframes pulse {
@@ -117,11 +115,31 @@ nav {
   background: var(--green) !important;
   color: var(--bg) !important;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.steam-btn {
+  background: #171a21 !important;
+  color: #fff !important;
+  border: 1px solid #66c0f4 !important;
+}
+
+.steam-icon {
+  width: 18px;
+  height: 18px;
 }
 
 .nav-cta:hover {
   background: #00cc55 !important;
   border-color: transparent !important;
+}
+
+.steam-btn:hover {
+  background: #2a475e !important;
+  border-color: #66c0f4 !important;
+  box-shadow: 0 0 15px rgba(102, 192, 244, 0.4);
 }
 
 .nav-mobile-toggle {
