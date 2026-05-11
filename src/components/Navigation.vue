@@ -142,14 +142,14 @@ nav {
 }
 
 .discord-btn {
-  background: #2323FF !important;
+  background: #0066f3 !important;
   color: #fff !important;
-  border-color: rgba(35, 35, 255, 0.3) !important;
+  border-color: rgba(0, 102, 243, 0.3) !important;
 }
 
 .discord-btn:hover {
-  background: #0000FF !important;
-  box-shadow: 0 0 15px rgba(35, 35, 255, 0.5);
+  background: #0052cc !important;
+  box-shadow: 0 0 15px rgba(0, 102, 243, 0.4);
 }
 
 .steam-btn:hover {
