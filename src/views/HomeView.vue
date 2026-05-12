@@ -76,6 +76,18 @@ onMounted(() => {
       <a href="#" class="social-pill pill-ig">◈ Instagram — @EcosoftGame</a>
     </div>
 
+    <!-- SNEAK PEEK -->
+    <section class="intro-visual fade-up">
+      <img src="/comic-image/hiplanet_website_sneak_peek.jpg" alt="Sneak Peek" class="full-width-image" />
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- COMIC INTRO -->
+    <section class="intro-visual fade-up">
+      <img src="/comic-image/HiPlanet_intro.jpg" alt="Hi Planet Intro" class="full-width-image" />
+    </section>
+
     <div class="section-divider"></div>
 
     <!-- UNIVERSE -->
@@ -547,6 +559,21 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
 .pill-ig { color: #E1306C; border-color: rgba(225,48,108,0.4); }
 
 .section-divider { width: 100%; height: 1px; background: linear-gradient(90deg, var(--blue), transparent); opacity: 0.3; }
+
+/* COMIC INTRO */
+.intro-visual {
+  width: 100%;
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+.full-width-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(0, 102, 243, 0.2);
+}
 
 /* UNIVERSE */
 .section-tag { display: inline-flex; align-items: center; gap: 8px; font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 1rem; padding: 0.35rem 0.9rem; border: 1px solid rgba(15,255,108,0.3); border-radius: 100px; }
