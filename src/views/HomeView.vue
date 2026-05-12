@@ -436,7 +436,7 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 4rem;
+  margin-top: 20rem;
   position: relative;
   z-index: 20; /* Ensure it stays in front of foreground */
   padding-left: 150px;
