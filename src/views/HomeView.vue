@@ -33,12 +33,6 @@ onMounted(() => {
       
       <div class="hero-inner relative z-10">
         <div class="hero-text-box reveal d-1">
-          <!-- Breadcrumb -->
-          <div class="mb-4 hero-breadcrumb">
-            <a href="#">Home</a>
-            <span class="sep">/</span>
-            <span class="current">The Game</span>
-          </div>
 
           <!-- Episode tag -->
           <div class="mb-4 episode-tag">
@@ -423,17 +417,19 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding-top: 10vh;
+  justify-content: flex-start;
+  padding-top: 0;
   padding-bottom: 5vh;
 }
 
 .hero-text-box {
-  background: rgba(10, 24, 52, 0.9);
+  margin-top: -6vh;
+  /* background: rgba(10, 24, 52, 0.9); */
   padding: 3rem;
+  padding-top: 1rem;
   max-width: 720px;
-  border-left: 4px solid var(--earth);
-  backdrop-filter: blur(10px);
+  /* border-left: 4px solid var(--earth);
+  backdrop-filter: blur(10px); */
 }
 
 .hero-bottom-bar {
@@ -452,26 +448,15 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: rgba(10, 24, 52, 0.95);
+  /* background: rgba(10, 24, 52, 0.95); */
   padding: 0.8rem 1.5rem;
-  border: 2px solid var(--royal);
-  backdrop-filter: blur(12px);
-  border-radius: 4px;
+  /* border: 2px solid var(--royal); */
+  /* backdrop-filter: blur(12px); */
+  /* border-radius: 4px; */
 }
 
 .font-display { font-family: 'Anton', sans-serif; letter-spacing: 0.02em; }
 .font-serif { font-family: 'Fraunces', serif; }
-
-.hero-breadcrumb {
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 10px;
-  color: rgba(255,245,229,0.55);
-  margin-bottom: 20px;
-}
-.hero-breadcrumb a { color: inherit; text-decoration: none; transition: color 0.2s; }
-.hero-breadcrumb a:hover { color: var(--coral); }
-.hero-breadcrumb .sep { margin: 0 0.75rem; opacity: 0.4; }
 
 .episode-tag {
   display: inline-flex;
