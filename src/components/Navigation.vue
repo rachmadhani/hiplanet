@@ -36,7 +36,17 @@ onUnmounted(() => {
     </a>
     <ul class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
       <li><a href="#home" :class="{ active: activeSection === 'home' }">Home</a></li>
-      <li><a href="#universe" :class="{ active: activeSection === 'universe' }">Universe</a></li>
+      <li class="dropdown">
+        <a href="#universe" :class="{ active: activeSection === 'universe' }">
+          Universe <span class="dropdown-arrow"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#comic">Comic Book</a></li>
+          <li><a href="#concept">Concept Art</a></li>
+          <li><a href="#wiki">World Lore</a></li>
+          <li><a href="#characters">Characters</a></li>
+        </ul>
+      </li>
       <li><a href="#games" :class="{ active: activeSection === 'games' }">Games</a></li>
       <li><a href="#community" :class="{ active: activeSection === 'community' }">Community</a></li>
       <li><a href="#devlog" :class="{ active: activeSection === 'devlog' }">Devlog</a></li>
@@ -114,17 +124,82 @@ nav {
   align-items: center;
 }
 
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--neon-blue);
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 6px;
+  vertical-align: middle;
+  border-top: 4px solid currentColor;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(10, 24, 52, 0.98);
+  border: 1px solid var(--neon-blue);
+  backdrop-filter: blur(20px);
+  min-width: 180px;
+  list-style: none;
+  padding: 0.75rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.6rem 1.5rem !important;
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff !important;
+  transition: all 0.2s ease !important;
+  border-bottom: none !important;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(0, 102, 243, 0.15);
+  color: var(--neon-blue) !important;
+  padding-left: 1.8rem !important;
+}
+
 .nav-links a:hover,
 .nav-links a.active {
   color: #fff !important;
   background: var(--neon-blue);
   border-color: var(--neon-blue);
-  box-shadow: 0 0 10px var(--blue-glow);
-}
-
-.nav-links a:hover {
-  background: #0052cc;
-  border-color: #0052cc;
+  box-shadow: 0 0 15px var(--blue-glow);
 }
 
 .nav-cta {

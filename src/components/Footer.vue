@@ -28,7 +28,7 @@
         <ul class="footer-links">
           <li><a href="#">Comic Book</a></li>
           <li><a href="#">Concept Art</a></li>
-          <li><a href="#">World Wiki</a></li>
+          <li><a href="#">World Lore</a></li>
           <li><a href="#">Characters</a></li>
         </ul>
       </div>
