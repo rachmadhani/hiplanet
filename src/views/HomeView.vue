@@ -471,16 +471,16 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
   margin-bottom: 1.5rem;
   color: #fff;
 }
-.accent-earth { color: var(--earth); }
+.accent-earth { color: var(--neon-blue); }
 
 .lede {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  line-height: 1.5;
-  color: rgba(255,245,229,0.85);
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(255,245,229,0.8);
   margin: 0;
+  max-width: 600px;
 }
 
 .btn-new {
