@@ -429,8 +429,8 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
 
 .hero-bottom-bar {
   position: absolute;
-  bottom: 10%; /* Sits just below the HI PLANET logo area */
-  left: 33%;
+  bottom: 5%; /* Sits just below the HI PLANET logo area */
+  left: 37%;
   transform: translateX(-50%);
   z-index: 20;
   display: flex;
