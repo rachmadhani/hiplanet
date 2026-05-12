@@ -76,9 +76,40 @@ onMounted(() => {
       <a href="#" class="social-pill pill-ig">◈ Instagram — @EcosoftGame</a>
     </div>
 
-    <!-- SNEAK PEEK -->
-    <section class="intro-visual fade-up">
-      <img src="/comic-image/hiplanet_website_sneak_peek.jpg" alt="Sneak Peek" class="full-width-image" />
+    <!-- SNEAK PEEK POSTER -->
+    <section class="sneak-poster-section">
+      <!-- Full cover artwork -->
+      <img src="/comic-image/hiplanet_website_sneak_peek.jpg" alt="Sneak Peek Artwork" class="poster-bg-img" />
+      <!-- Dark overlay -->
+      <div class="poster-overlay"></div>
+      <!-- Text content on top -->
+      <div class="poster-content" style="justify-content: flex-start; padding-top: 25rem;">
+        <!-- Character Assets -->
+        <img src="/comic-image/macebot.png" alt="Macebot" class="reveal d-1 macebot-floating" />
+        <div class="reveal d-1 techgoblin-floating">
+          <img src="/comic-image/techgoblin.png" alt="TechGoblin" style="transform: scaleX(-1); width: 100%; height: auto;" />
+        </div>
+        <img src="/comic-image/mechatroll.png" alt="MechaTroll" class="reveal d-1 mechatroll-floating" />
+
+        <!-- Main poster headline -->
+        <h1 class="reveal d-2 poster-main-title font-display">
+          EVERY CHAPTER<br />
+          IS A <span class="accent-coral">BATTLE.</span>
+        </h1>
+
+        <!-- Tagline -->
+        <p class="reveal d-3 lede-poster">
+          A horde-roguelite told in six comic-book chapters.<br />
+          Smash through swarms. Save Earth's energies.<br />
+          Stop the <span class="accent-magenta font-semibold font-display tracking-[0.1em]">COSMIC WORMHOLE.</span>
+        </p>
+
+        <!-- CTAs -->
+        <div class="reveal d-4 poster-cta-row">
+          <a href="#" class="btn-poster btn-primary-poster">▶ Wishlist on Steam</a>
+          <a href="#trailer" class="btn-poster btn-outline-poster">Watch trailer</a>
+        </div>
+      </div>
     </section>
 
     <div class="section-divider"></div>
@@ -558,7 +589,224 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
 .pill-dc { color: #5865F2; border-color: rgba(88,101,242,0.4); }
 .pill-ig { color: #E1306C; border-color: rgba(225,48,108,0.4); }
 
-.section-divider { width: 100%; height: 1px; background: linear-gradient(90deg, var(--blue), transparent); opacity: 0.3; }
+/* SNEAK PEEK POSTER SECTION */
+section.sneak-poster-section {
+  position: relative;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  /* Removed min-height to let image dictate height */
+}
+
+/* Background image - relative to define section height */
+.sneak-poster-section .poster-bg-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+/* Subtle dark overlay */
+.poster-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: rgba(10, 24, 52, 0.5); /* Slightly darker for better contrast */
+}
+
+/* Text content on top */
+.poster-content {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Moved to top */
+  align-items: center;
+  text-align: center;
+  padding: 8rem 2rem; /* Added top padding to control height */
+}
+
+.poster-credits {
+  margin-bottom: 2.5rem;
+}
+
+.poster-credit-line {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: rgba(255, 245, 229, 0.8);
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.poster-credit-sub {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgba(255, 245, 229, 0.55);
+  margin-top: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.poster-main-title {
+  font-size: clamp(3.5rem, 13vw, 12rem);
+  line-height: 0.85;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 6px 30px rgba(0,0,0,0.7);
+}
+
+.lede-poster {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: rgba(255, 245, 229, 0.9);
+  max-width: 700px;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.poster-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+.macebot-floating {
+  position: absolute;
+  right: 10%;
+  top: 55%;
+  width: clamp(150px, 20vw, 400px);
+  height: auto;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.9));
+  pointer-events: none;
+  z-index: 100;
+  animation: 
+    fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+    floatBot 6s ease-in-out infinite;
+  opacity: 0;
+}
+
+.techgoblin-floating {
+  position: absolute;
+  left: 10%;
+  top: 81%;
+  width: clamp(150px, 9vw, 450px);
+  height: auto;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.9));
+  pointer-events: none;
+  z-index: 100;
+  animation: 
+    fadeUp 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+    floatBot 8s ease-in-out infinite;
+  opacity: 0;
+}
+
+.mechatroll-floating {
+  position: absolute;
+  left: 30%;
+  top: 77%;
+  width: clamp(180px, 24vw, 350px);
+  height: auto;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.9));
+  pointer-events: none;
+  z-index: 100;
+  animation: 
+    fadeUp 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+    floatBot 7s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes floatBot {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.accent-coral { color: var(--coral); }
+.accent-magenta { color: var(--magenta); }
+
+.btn-poster {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.9rem 2.2rem;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.btn-primary-poster {
+  background: var(--cream);
+  color: var(--midnight);
+  border: 2px solid var(--cream);
+}
+
+.btn-primary-poster:hover {
+  background: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.btn-outline-poster {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(5px);
+}
+
+.btn-outline-poster:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+  transform: translateY(-3px);
+}
+
+.btn-poster {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.btn-primary-poster {
+  background: var(--cream);
+  color: var(--midnight);
+  border: 2px solid var(--cream);
+}
+
+.btn-primary-poster:hover {
+  background: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.btn-outline-poster {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(5px);
+}
+
+.btn-outline-poster:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+  transform: translateY(-3px);
+}
 
 /* COMIC INTRO */
 .intro-visual {
