@@ -31,7 +31,7 @@ onMounted(() => {
       <div class="stars-overlay"></div>
       <div class="hero-foreground"></div>
       
-      <div class="hero-inner relative z-10">
+      <div class="hero-inner">
         <div class="hero-text-box reveal d-1">
 
           <!-- Episode tag -->
@@ -52,16 +52,17 @@ onMounted(() => {
             forging the Infinite Power Cosmic Cube.
           </p>
         </div>
+      </div>
 
-        <div class="hero-bottom-bar reveal d-4">
-          <div class="hero-actions">
-            <a href="#" class="btn-new btn-primary-new">
-              ▶ Wishlist on Steam
-            </a>
-            <a href="#loop" class="btn-new btn-outline-new">
-              See how it plays
-            </a>
-          </div>
+      <!-- Buttons: independent from hero-inner -->
+      <div class="hero-bottom-bar reveal d-4">
+        <div class="hero-actions">
+          <a href="#" class="btn-new btn-primary-new">
+            ▶ Wishlist on Steam
+          </a>
+          <a href="#loop" class="btn-new btn-outline-new">
+            See how it plays
+          </a>
         </div>
       </div>
     </section>
@@ -411,37 +412,29 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 10;
   max-width: 1200px;
   width: 100%;
   padding: 0 2rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 0;
-  padding-bottom: 5vh;
+  padding-top: 2vh;
 }
 
 .hero-text-box {
-  margin-top: -6vh;
-  /* background: rgba(10, 24, 52, 0.9); */
+  margin-top: -67vh;
   padding: 3rem;
   padding-top: 1rem;
   max-width: 720px;
-  /* border-left: 4px solid var(--earth);
-  backdrop-filter: blur(10px); */
 }
 
 .hero-bottom-bar {
-  width: 100%;
+  position: absolute;
+  bottom: 10%; /* Sits just below the HI PLANET logo area */
+  left: 33%;
+  transform: translateX(-50%);
+  z-index: 20;
   display: flex;
   justify-content: center;
-  margin-top: 20rem;
-  position: relative;
-  z-index: 20; /* Ensure it stays in front of foreground */
-  padding-left: 150px;
-  padding-top: 150px;
-
 }
 
 .hero-actions {
