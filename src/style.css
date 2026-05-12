@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;900&family=Space+Mono:wght@400;700&family=Anton&family=Manrope:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght,ital@9..144,300..900,0..1&display=swap');
 
 :root {
   --bg: #060a10;
@@ -17,6 +17,18 @@
   --primary-glow: rgba(15, 255, 108, 0.5);
   --neon-blue: #0066f3;
   --blue-glow: rgba(0, 102, 243, 0.5);
+
+  /* New Episode 1 Palette */
+  --midnight: #0A1834;
+  --cobalt: #1B3A8C;
+  --royal: #2E5BCC;
+  --earth: #4A90E2;
+  --cyan: #22D3EE;
+  --coral: #FF6B35;
+  --amber: #FFB627;
+  --cream: #FFF5E5;
+  --magenta: #C8345A;
+  --deep-purple: #2A0E2E;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }

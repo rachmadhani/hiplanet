@@ -12,10 +12,10 @@ onMounted(() => {
 
   const handleParallax = () => {
     const scroll = window.scrollY;
-    const ceiling = document.querySelector('.hero-ceiling') as HTMLElement;
+    const stars = document.querySelector('.stars-overlay') as HTMLElement;
     const foreground = document.querySelector('.hero-foreground') as HTMLElement;
     
-    if (ceiling) ceiling.style.transform = `translateY(${scroll * 0.5}px)`;
+    if (stars) stars.style.transform = `translateY(${scroll * 0.3}px)`;
     if (foreground) foreground.style.transform = `translateY(${scroll * 0.2}px)`;
   };
 
@@ -27,39 +27,49 @@ onMounted(() => {
 <template>
   <div class="landing">
     <!-- HERO -->
-    <section id="home" class="hero-wrap">
-      <!-- <div class="hero-ceiling"></div> -->
+    <section id="home" class="hero-wrap grain">
+      <div class="stars-overlay"></div>
       <div class="hero-foreground"></div>
-      <!-- <div class="hero-content">
-        <div class="hero-eyebrow">A 2D MORPG — Now in Development</div>
-        <h1 class="hero-title">
-          Hi Planet:
-          <span>Save the</span>
-          <em>Earth!</em>
-        </h1>
-        <p class="hero-sub">
-          A team of planetary heroes battles a cosmic threat. Explore vibrant worlds, forge alliances, and write your own chapter in the story that began in the comics.
-        </p>
-        <div class="hero-btns">
-          <a href="#games" class="btn btn-primary">▶ Explore the Game</a>
-          <a href="#universe" class="btn btn-outline">📖 Read the Comic</a>
+      
+      <div class="hero-inner relative z-10">
+        <div class="hero-text-box reveal d-1">
+          <!-- Breadcrumb -->
+          <div class="mb-4 hero-breadcrumb">
+            <a href="#">Home</a>
+            <span class="sep">/</span>
+            <span class="current">The Game</span>
+          </div>
+
+          <!-- Episode tag -->
+          <div class="mb-4 episode-tag">
+            <span class="tag-line"></span>
+            Episode 01
+          </div>
+
+          <!-- Title -->
+          <h1 class="font-display main-title">
+            SAVE THE<br />
+            <span class="accent-earth">EARTH.</span>
+          </h1>
+
+          <p class="lede">
+            A horde-roguelite told in six comic-book chapters. Smash through robot swarms,
+            battle a boss at every chapter's end, and stop the Cosmic Wormhole from
+            forging the Infinite Power Cosmic Cube.
+          </p>
         </div>
-        <div class="hero-stats">
-          <div>
-            <div class="hero-stat-num">2D</div>
-            <div class="hero-stat-label">MORPG</div>
-          </div>
-          <div>
-            <div class="hero-stat-num">∞</div>
-            <div class="hero-stat-label">Characters</div>
-          </div>
-          <div>
-            <div class="hero-stat-num">2025</div>
-            <div class="hero-stat-label">Beta Target</div>
+
+        <div class="hero-bottom-bar reveal d-4">
+          <div class="hero-actions">
+            <a href="#" class="btn-new btn-primary-new">
+              ▶ Wishlist on Steam
+            </a>
+            <a href="#loop" class="btn-new btn-outline-new">
+              See how it plays
+            </a>
           </div>
         </div>
       </div>
-      <div class="hero-planet"></div> -->
     </section>
 
     <!-- SOCIAL BAR -->
@@ -377,27 +387,164 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   max-width: 100%;
   position: relative;
   overflow: hidden;
-  min-height: 133vh;
-  background: url('/hero-image/hiplanet_website_hero_background.jpg') no-repeat center center;
+  min-height: 140vh;
+  background: linear-gradient(rgba(10, 24, 52, 0.6), rgba(10, 24, 52, 0.6)), url('/hero-image/hiplanet_website_hero_background.jpg') no-repeat center center;
   background-size: cover;
 }
 
-.hero-ceiling {
+.stars-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  background: url('/hero-image/hiplanet_website_ceiling.png') no-repeat top center;
-  background-size: cover;
-  z-index: 5;
-  pointer-events: none;
-  will-change: transform;
+  inset: 0;
+  opacity: 0.7;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 24%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 58% 71%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 82% 18%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(1px 1px at 38% 82%, rgba(255,255,255,0.55), transparent),
+    radial-gradient(1.5px 1.5px at 91% 44%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 28% 58%, rgba(255,255,255,0.5), transparent);
 }
+
+.grain::after {
+  content: "";
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  opacity: 0.1; mix-blend-mode: overlay; z-index: 1;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+}
+
+.hero-text-box {
+  background: rgba(10, 24, 52, 0.9);
+  padding: 3rem;
+  max-width: 720px;
+  border-left: 4px solid var(--earth);
+  backdrop-filter: blur(10px);
+}
+
+.hero-bottom-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  position: relative;
+  z-index: 20; /* Ensure it stays in front of foreground */
+  padding-left: 150px;
+  padding-top: 150px;
+
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(10, 24, 52, 0.95);
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--royal);
+  backdrop-filter: blur(12px);
+  border-radius: 4px;
+}
+
+.font-display { font-family: 'Anton', sans-serif; letter-spacing: 0.02em; }
+.font-serif { font-family: 'Fraunces', serif; }
+
+.hero-breadcrumb {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 10px;
+  color: rgba(255,245,229,0.55);
+  margin-bottom: 20px;
+}
+.hero-breadcrumb a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.hero-breadcrumb a:hover { color: var(--coral); }
+.hero-breadcrumb .sep { margin: 0 0.75rem; opacity: 0.4; }
+
+.episode-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--coral);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.tag-line { width: 48px; height: 1px; background: var(--coral); }
+
+.main-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3rem, 11vw, 7rem);
+  line-height: 0.85;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+.accent-earth { color: var(--earth); }
+
+.lede {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.5;
+  color: rgba(255,245,229,0.85);
+  margin: 0;
+}
+
+.btn-new {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary-new {
+  background: var(--cream);
+  color: var(--midnight);
+  border-color: var(--cream);
+}
+.btn-primary-new:hover {
+  background: var(--amber);
+  border-color: var(--amber);
+}
+
+.btn-outline-new {
+  background: transparent;
+  color: var(--cream);
+  border-color: var(--cream);
+}
+.btn-outline-new:hover {
+  background: var(--cream);
+  color: var(--midnight);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal { animation: fadeUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; }
+.d-1 { animation-delay: 0.1s; } 
+.d-2 { animation-delay: 0.25s; } 
+.d-3 { animation-delay: 0.4s; } 
+.d-4 { animation-delay: 0.55s; }
 
 .hero-foreground {
   position: absolute;
@@ -412,31 +559,6 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
   pointer-events: none;
   will-change: transform;
 }
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 680px;
-  padding: 0 2rem;
-}
-.hero-eyebrow { font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 10px; }
-.hero-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--green); }
-.hero-title { font-family: 'Bangers', cursive; font-size: clamp(3.5rem, 8vw, 6rem); line-height: 0.95; letter-spacing: 3px; color: #fff; margin-bottom: 1.5rem; }
-.hero-title span { color: var(--green); display: block; }
-.hero-title em { font-style: normal; color: var(--yellow); }
-.hero-sub { font-size: 1.1rem; color: var(--muted); line-height: 1.7; margin-bottom: 2.5rem; }
-.hero-btns { display: flex; gap: 1rem; }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 0.85rem 2rem; border-radius: 8px; font-family: 'Space Mono', monospace; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; }
-.btn-primary { background: var(--green); color: var(--bg); }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 20px var(--primary-glow); }
-.btn-outline { background: transparent; color: var(--blue); border-color: var(--blue); }
-.btn-outline:hover { background: rgba(0,200,255,0.1); transform: translateY(-2px); }
-.hero-stats { display: flex; gap: 2.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
-.hero-stat-num { font-family: 'Bangers', cursive; font-size: 2rem; color: var(--green); }
-.hero-stat-label { font-size: 0.72rem; font-family: 'Space Mono', monospace; color: var(--muted); }
-.hero-planet { position: absolute; right: -80px; top: 50%; transform: translateY(-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #1a4a2e, #0a2018, #000); border: 2px solid rgba(15,255,108,0.3); box-shadow: 0 0 80px rgba(15,255,108,0.15); animation: float 8s ease-in-out infinite; }
-@keyframes float { 0%,100% { transform: translateY(-50%) translateX(0); } 50% { transform: translateY(-52%) translateX(-10px); } }
-
 /* SOCIAL BAR */
 .social-bar { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; overflow-x: auto; }
 .social-bar-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; white-space: nowrap; }
