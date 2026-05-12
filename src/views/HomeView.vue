@@ -83,13 +83,19 @@ onMounted(() => {
       <!-- Dark overlay -->
       <div class="poster-overlay"></div>
       <!-- Text content on top -->
-      <div class="poster-content" style="justify-content: flex-start; padding-top: 25rem;">
+      <div class="poster-content" style="justify-content: flex-start;">
         <!-- Character Assets -->
         <img src="/comic-image/macebot.png" alt="Macebot" class="reveal d-1 macebot-floating" />
         <div class="reveal d-1 techgoblin-floating">
           <img src="/comic-image/techgoblin.png" alt="TechGoblin" style="transform: scaleX(-1); width: 100%; height: auto;" />
         </div>
         <img src="/comic-image/mechatroll.png" alt="MechaTroll" class="reveal d-1 mechatroll-floating" />
+
+        <!-- Episode Tag -->
+        <div class="reveal d-1 mb-6 poster-episode-tag">
+          <span class="poster-tag-line"></span>
+          The Loop
+        </div>
 
         <!-- Main poster headline -->
         <h1 class="reveal d-2 poster-main-title font-display">
@@ -108,6 +114,49 @@ onMounted(() => {
         <div class="reveal d-4 poster-cta-row">
           <a href="#" class="btn-poster btn-primary-poster">▶ Wishlist on Steam</a>
           <a href="#trailer" class="btn-poster btn-outline-poster">Watch trailer</a>
+        </div>
+
+        <!-- Why Different -->
+        <div class="reveal d-5 why-different-section mb-20">
+          <div class="different-label-row">
+            <div class="different-line"></div>
+            <span class="different-label">What makes Hi Planet different</span>
+          </div>
+          <h2 class="different-title font-display">
+            NOT JUST ANOTHER<br />
+            <span class="accent-coral-alt">HORDE GAME.</span>
+          </h2>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="reveal d-6 poster-features-grid">
+          <!-- 01 -->
+          <div class="feature-item">
+            <div class="font-display feature-num accent-earth">01</div>
+            <h3 class="feature-heading">COMIC-BOOK STORY</h3>
+            <p class="feature-text">
+              Every chapter opens, breaks, and closes with original comic panels —
+              drawn from 200+ pages of finished IP. The game <em>is</em> the comic, in motion.
+            </p>
+          </div>
+          <!-- 02 -->
+          <div class="feature-item">
+            <div class="font-display feature-num accent-coral-alt">02</div>
+            <h3 class="feature-heading">BREAK · ADVANCE · BOSS</h3>
+            <p class="feature-text">
+              Break enemy gates. Advance through waves. Face a boss at every chapter's end.
+              No endless drift — every run is a structured battle with a finish line.
+            </p>
+          </div>
+          <!-- 03 -->
+          <div class="feature-item">
+            <div class="font-display feature-num accent-amber">03</div>
+            <h3 class="feature-heading">TEN PLAYABLE HEROES</h3>
+            <p class="feature-text">
+              Choose your fighter from the Hi Planet Team — each with their own skills,
+              traits, and combat style. Find the one that matches how you play.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -430,7 +479,7 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
   position: relative;
   overflow: hidden;
   min-height: 140vh;
-  background: linear-gradient(rgba(10, 24, 52, 0.6), rgba(10, 24, 52, 0.6)), url('/hero-image/hiplanet_website_hero_background.jpg') no-repeat center center;
+  background: linear-gradient(rgba(10, 24, 52, 0.6), rgba(10, 24, 52, 0.6)), url('/hero-image/hiplanet_website_hero_background.jpeg') no-repeat center center;
   background-size: cover;
 }
 
@@ -662,8 +711,8 @@ section.sneak-poster-section {
 }
 
 .lede-poster {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  /* font-style: italic; */
   font-weight: 300;
   font-size: clamp(1rem, 2.2vw, 1.4rem);
   line-height: 1.5;
@@ -681,13 +730,14 @@ section.sneak-poster-section {
   justify-content: center;
   gap: 1rem;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 .macebot-floating {
   position: absolute;
   right: 10%;
   top: 55%;
-  width: clamp(150px, 20vw, 400px);
+  width: clamp(150px, 30vw, 400px);
   height: auto;
   filter: drop-shadow(0 20px 50px rgba(0,0,0,0.9));
   pointer-events: none;
@@ -700,9 +750,9 @@ section.sneak-poster-section {
 
 .techgoblin-floating {
   position: absolute;
-  left: 10%;
-  top: 81%;
-  width: clamp(150px, 9vw, 450px);
+  left: 5%;
+  top: 77%;
+  width: clamp(150px, 17vw, 450px);
   height: auto;
   filter: drop-shadow(0 20px 50px rgba(0,0,0,0.9));
   pointer-events: none;
@@ -716,10 +766,10 @@ section.sneak-poster-section {
 .mechatroll-floating {
   position: absolute;
   left: 30%;
-  top: 77%;
-  width: clamp(180px, 24vw, 350px);
+  top: 72%;
+  width: clamp(250px, 45vw, 500px);
   height: auto;
-  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.9));
+  filter: drop-shadow(0 30px 80px rgba(0,0,0,0.9));
   pointer-events: none;
   z-index: 100;
   animation: 
@@ -733,8 +783,115 @@ section.sneak-poster-section {
   50% { transform: translateY(-20px) rotate(5deg); }
 }
 
-.accent-coral { color: var(--coral); }
+.poster-episode-tag {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-left: 7rem; /* Pushed to the right as requested */
+  margin-bottom: 20px;
+  gap: 1rem;
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--blue);
+  font-size: 0.9rem;
+}
+
+.poster-tag-line {
+  width: 40px;
+  height: 1px;
+  background: var(--blue);
+  opacity: 0.6;
+}
+
+.accent-coral { color: var(--neon-blue); }
+.accent-coral-alt { color: var(--neon-blue); }
 .accent-magenta { color: var(--magenta); }
+
+.why-different-section {
+  width: 100%;
+  text-align: left;
+  padding-left: 2rem; /* Aligned with your other elements if needed, or adjust */
+}
+
+.different-label-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.different-line {
+  width: 80px;
+  height: 2px;
+  background: var(--blue);
+}
+
+.different-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.different-title {
+  font-size: clamp(3rem, 10vw, 8rem);
+  line-height: 0.95;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.poster-features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto auto -6rem auto; /* Pushed to bottom with auto top margin */
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .poster-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.feature-item {
+  position: relative;
+}
+
+.feature-num {
+  font-size: clamp(5rem, 8vw, 7rem);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.feature-heading {
+  /* font-family: 'Anton', sans-serif; */
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  color: rgba(255, 245, 229, 0.7);
+}
+
+.accent-earth { color: var(--earth); }
+.accent-amber { color: #f59e0b; }
+
 
 .btn-poster {
   font-family: 'Anton', sans-serif;
