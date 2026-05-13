@@ -889,7 +889,7 @@ section.sneak-poster-section {
   color: rgba(255, 245, 229, 0.7);
 }
 
-.accent-earth { color: var(--earth); }
+.accent-earth { color: var(--neon-blue); }
 .accent-amber { color: #f59e0b; }
 
 
