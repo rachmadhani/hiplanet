@@ -219,7 +219,7 @@ onMounted(() => {
             </p>
           </div>
           <div class="chapter-visual">
-            <div class="screenshot-placeholder">Screenshot · Ch.01</div>
+            <img src="/stage/stage_1.jpg" alt="Mother Gaia Oak Gameplay" class="screenshot-img" />
           </div>
         </article>
 
@@ -239,7 +239,7 @@ onMounted(() => {
             </p>
           </div>
           <div class="chapter-visual">
-            <div class="screenshot-placeholder">Screenshot · Ch.02</div>
+            <img src="/stage/stage_2.jpg" alt="Drowning Tide Gameplay" class="screenshot-img" />
           </div>
         </article>
 
@@ -259,7 +259,7 @@ onMounted(() => {
             </p>
           </div>
           <div class="chapter-visual">
-            <div class="screenshot-placeholder">Screenshot · Ch.03</div>
+            <img src="/stage/stage_3.jpg" alt="Scorched Earth Gameplay" class="screenshot-img" />
           </div>
         </article>
 
@@ -279,7 +279,7 @@ onMounted(() => {
             </p>
           </div>
           <div class="chapter-visual">
-            <div class="screenshot-placeholder">Screenshot · Ch.04</div>
+            <img src="/stage/stage_4.jpg" alt="Frozen Marrow Gameplay" class="screenshot-img" />
           </div>
         </article>
 
@@ -300,7 +300,7 @@ onMounted(() => {
             </p>
           </div>
           <div class="chapter-visual">
-            <div class="screenshot-placeholder">Screenshot · Ch.05</div>
+            <img src="/stage/stage_5.jpg" alt="The Wasteland Gameplay" class="screenshot-img" />
           </div>
         </article>
 
@@ -321,7 +321,7 @@ onMounted(() => {
             </p>
           </div>
           <div class="chapter-visual">
-            <div class="screenshot-placeholder finale-placeholder">Finale · Ch.06</div>
+            <img src="/stage/stage_6.jpg" alt="Pollutopia Gameplay" class="screenshot-img" />
           </div>
         </article>
       </div>
@@ -626,7 +626,7 @@ onMounted(() => {
 .landing {
   padding-top: 80px;
 }
-section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem; max-width: 1200px; margin: 0 auto; }
+section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem; max-width: 1600px; margin: 0 auto; }
 
 /* HERO */
 .hero-wrap { 
@@ -1232,27 +1232,37 @@ section.sneak-poster-section {
   grid-template-columns: 1fr;
   gap: 2rem;
   padding: 3rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--blue);
   align-items: center;
 }
 
 @media (min-width: 768px) {
   .chapter-row {
-    grid-template-columns: 1fr 3fr 5fr 3fr;
-    gap: 1.5rem;
+    grid-template-areas: 
+      "num info visual"
+      "desc desc visual";
+    grid-template-columns: 0.7fr 2.3fr 7fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem 3rem;
+    align-items: start;
   }
 }
 
 .chapter-num {
+  grid-area: num;
   font-family: 'Anton', sans-serif;
-  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-size: clamp(3rem, 6vw, 7.5rem);
   line-height: 1;
   opacity: 0.9;
 }
 
+.chapter-info {
+  grid-area: info;
+}
+
 .chapter-meta {
   font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   color: rgba(255, 245, 229, 0.5);
@@ -1268,31 +1278,48 @@ section.sneak-poster-section {
 
 .chapter-boss {
   font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 1.7rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   margin-top: 0.75rem;
 }
 
+.chapter-desc {
+  grid-area: desc;
+}
+
 .chapter-desc p {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.7;
   color: rgba(255, 245, 229, 0.75);
 }
 
-.screenshot-placeholder {
-  aspect-ratio: 16 / 9;
-  background: rgba(255, 245, 229, 0.05);
-  border: 1px solid rgba(255, 245, 229, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: rgba(255, 245, 229, 0.3);
+.chapter-visual {
+  grid-area: visual;
+  align-self: stretch;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.chapter-visual:hover {
+  transform: scale(1.02);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.screenshot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 350px; /* Increased to match your larger text sizes */
+  transition: filter 0.4s ease;
+}
+
+.chapter-visual:hover .screenshot-img {
+  filter: brightness(1.1);
 }
 
 .finale-row {
