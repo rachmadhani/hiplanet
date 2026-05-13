@@ -1679,5 +1679,62 @@ section.sneak-poster-section {
     width: 100%;
     margin-bottom: 1rem;
   }
+
+  /* Extreme Mobile Fix (360x760) */
+  @media (max-width: 360px) {
+    .hero-text-box{
+      margin-top: -200px;
+      padding: 1.5rem;
+      max-width: 100%;
+    }
+    
+    .lede {
+      font-size: 1rem;
+    }
+
+    .hero-main-title {
+      font-size: 3.5rem !important;
+    }
+    .intro-story-title {
+      font-size: 1.8rem !important;
+    }
+    .intro-story-text {
+      font-size: 0.5rem !important;
+      bottom: 56% !important;
+    }
+
+    .lede-poster {
+      font-size: 0.65rem;
+    }
+  
+    .poster-main-title {
+      font-size: 1.6rem !important;
+    }
+    .different-title {
+      font-size: 1.3rem !important;
+    }
+    .feature-num {
+      font-size: 1.5rem !important;
+    }
+    .feature-heading {
+      font-size: 0.4rem !important;
+    }
+    .feature-text {
+      font-size: 0.35rem !important;
+    }
+    .sneak-poster-section {
+      padding: 1.5rem 1rem !important;
+    }
+    .btn-poster {
+      padding: 0.5rem 1rem !important;
+      font-size: 0.75rem !important;
+    }
+    .macebot-floating {
+      width: 70px !important;
+    }
+    .mechatroll-floating {
+      width: 100px !important;
+    }
+  }
 }
 </style>
