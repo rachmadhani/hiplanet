@@ -176,6 +176,24 @@ onMounted(() => {
     <!-- COMIC INTRO -->
     <section class="intro-visual fade-up">
       <img src="/comic-image/HiPlanet_intro.jpg" alt="Hi Planet Intro" class="full-width-image" />
+      
+      <!-- Overlay Story Content -->
+      <div class="intro-overlay-content">
+        <div class="reveal d-1 intro-label-row">
+          <div class="intro-label-line"></div>
+          <span class="intro-label">Six chapters · Five energies</span>
+        </div>
+        <h2 class="reveal d-2 intro-story-title font-display">
+          ONE PLANET.<br />
+          <span class="accent-amber-alt">FIVE ENERGIES TO SAVE.</span>
+        </h2>
+      </div>
+
+      <p class="reveal d-3 intro-story-text">
+        The Cosmic Wormhole plans to steal all five elemental energies of Earth —
+        wood, water, fire, stone, and metal — to forge the Infinite Power Cosmic Cube.
+        Each chapter, you face one of his lieutenants to recover what was taken.
+      </p>
     </section>
 
     <div class="section-divider"></div>
@@ -561,11 +579,11 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  color: var(--coral);
+  color: var(--blue);
   font-weight: 600;
   margin-bottom: 20px;
 }
-.tag-line { width: 48px; height: 1px; background: var(--coral); }
+.tag-line { width: 48px; height: 1px; background: var(--blue); }
 
 .main-title {
   font-family: 'Anton', sans-serif;
@@ -998,7 +1016,70 @@ section.sneak-poster-section {
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden;
+  position: relative;
 }
+.intro-overlay-content {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  z-index: 10;
+  /* background: rgba(6, 10, 16, 0.85); */
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  max-width: clamp(300px, 45vw, 1200px);
+  /* backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 245, 229, 0.1); */
+  text-align: left;
+}
+
+.intro-label-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.intro-label-line {
+  width: 40px;
+  height: 2px;
+  background: var(--blue);
+}
+
+.intro-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.intro-story-title {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 0.9;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.intro-story-text {
+  position: absolute;
+  bottom: 14%;
+  left: 27%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(0.9rem, 1.3vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(255, 245, 229, 0.85);
+  max-width: 900px;
+  text-align: center;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.9);
+}
+
+.accent-amber-alt {
+  color: var(--neon-blue);
+}
+
 .full-width-image {
   width: 100%;
   height: auto;
