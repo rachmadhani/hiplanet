@@ -113,7 +113,6 @@ onMounted(() => {
         <!-- CTAs -->
         <div class="reveal d-4 poster-cta-row">
           <a href="#" class="btn-poster btn-primary-poster">▶ Wishlist on Steam</a>
-          <a href="#trailer" class="btn-poster btn-outline-poster">Watch trailer</a>
         </div>
 
         <!-- YouTube Embed -->
