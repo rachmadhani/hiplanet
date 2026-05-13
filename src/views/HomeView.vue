@@ -1025,7 +1025,7 @@ section.sneak-poster-section {
   z-index: 10;
   /* background: rgba(6, 10, 16, 0.85); */
   padding: clamp(1.5rem, 4vw, 3.5rem);
-  max-width: clamp(300px, 45vw, 1200px);
+  max-width: 1400px;
   /* backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 245, 229, 0.1); */
   text-align: left;
@@ -1054,7 +1054,7 @@ section.sneak-poster-section {
 }
 
 .intro-story-title {
-  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, 10vw, 8rem);
   line-height: 0.9;
   color: #fff;
   text-transform: uppercase;
@@ -1068,7 +1068,7 @@ section.sneak-poster-section {
   transform: translateX(-50%);
   z-index: 10;
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(0.9rem, 1.3vw, 1.25rem);
+  font-size: clamp(0.9rem, 1.3vw, 2rem);
   line-height: 1.6;
   color: rgba(255, 245, 229, 0.85);
   max-width: 900px;
