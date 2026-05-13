@@ -812,7 +812,7 @@ section.sneak-poster-section {
 .why-different-section {
   width: 100%;
   text-align: left;
-  padding-left: 2rem;
+  padding-left: 4.4rem;
   margin-top: 50rem; /* Pushed further down as requested */
 }
 
