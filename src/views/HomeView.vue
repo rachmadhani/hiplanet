@@ -196,6 +196,137 @@ onMounted(() => {
       </p>
     </section>
 
+    <!-- CHAPTERS BREAKDOWN -->
+    <section class="chapters-section section-wrap fade-up">
+      <!-- <span class="section-tag">🎮 Campaign</span>
+      <h2 class="section-title">Six Chapters. One Goal.</h2>
+      <p class="section-sub">Journey through the elemental realms of Earth and reclaim the stolen energies before the Cosmic Cube is forged.</p> -->
+
+      <div class="chapters-container">
+        <!-- Ch1 -->
+        <article class="chapter-row reveal">
+          <div class="chapter-num accent-earth">01</div>
+          <div class="chapter-info">
+            <div class="chapter-meta">Energy · Wood</div>
+            <h3 class="chapter-name">MOTHER GAIA OAK</h3>
+            <div class="chapter-boss accent-coral">Boss · MAC</div>
+          </div>
+          <div class="chapter-desc">
+            <p>
+              The first sacred tree falls. A swarm of MAC's robots feed on its roots,
+              draining the wood energy into the Cosmic Cube. The hunt for Earth's
+              energies begins — and the heroes meet their first lieutenant.
+            </p>
+          </div>
+          <div class="chapter-visual">
+            <div class="screenshot-placeholder">Screenshot · Ch.01</div>
+          </div>
+        </article>
+
+        <!-- Ch2 -->
+        <article class="chapter-row reveal">
+          <div class="chapter-num accent-cyan">02</div>
+          <div class="chapter-info">
+            <div class="chapter-meta">Energy · Water</div>
+            <h3 class="chapter-name">DROWNING TIDE</h3>
+            <div class="chapter-boss accent-coral">Boss · SKU</div>
+          </div>
+          <div class="chapter-desc">
+            <p>
+              Oceans churn. SKU's underwater siphon machines drain the world's seas,
+              leaving fishing villages dry and coral reefs ash. Heroes dive into
+              the storm to stop the second extraction.
+            </p>
+          </div>
+          <div class="chapter-visual">
+            <div class="screenshot-placeholder">Screenshot · Ch.02</div>
+          </div>
+        </article>
+
+        <!-- Ch3 -->
+        <article class="chapter-row reveal">
+          <div class="chapter-num accent-coral">03</div>
+          <div class="chapter-info">
+            <div class="chapter-meta">Energy · Fire</div>
+            <h3 class="chapter-name">SCORCHED EARTH</h3>
+            <div class="chapter-boss accent-coral">Boss · ROC</div>
+          </div>
+          <div class="chapter-desc">
+            <p>
+              Wildfires sweep an entire continent. ROC, lieutenant of the Wormhole,
+              descends in a column of flame. Push through the smoke and bring
+              the third energy home.
+            </p>
+          </div>
+          <div class="chapter-visual">
+            <div class="screenshot-placeholder">Screenshot · Ch.03</div>
+          </div>
+        </article>
+
+        <!-- Ch4 -->
+        <article class="chapter-row reveal">
+          <div class="chapter-num text-white">04</div>
+          <div class="chapter-info">
+            <div class="chapter-meta">Energy · Stone</div>
+            <h3 class="chapter-name">FROZEN MARROW</h3>
+            <div class="chapter-boss accent-coral">Boss · ZOM</div>
+          </div>
+          <div class="chapter-desc">
+            <p>
+              The Arctic crumbles. ZOM and his Frost Cerberus prowl the breaking ice,
+              guarding a stone-energy core buried beneath. Fight through the cold
+              and reclaim what was taken.
+            </p>
+          </div>
+          <div class="chapter-visual">
+            <div class="screenshot-placeholder">Screenshot · Ch.04</div>
+          </div>
+        </article>
+
+        <!-- Ch5 -->
+        <article class="chapter-row reveal">
+          <div class="chapter-num accent-magenta">05</div>
+          <div class="chapter-info">
+            <div class="chapter-meta">Energy · Metal</div>
+            <h3 class="chapter-name">THE WASTELAND</h3>
+            <div class="chapter-boss accent-coral">Boss · KRA</div>
+          </div>
+          <div class="chapter-desc">
+            <p>
+              A creature made of our pollution rises from the toxic seafloor.
+              KRA was once an octopus — mutated by nuclear waste, eight tentacles
+              now serve no master but its own rage. Not allied with the Wormhole.
+              Not your enemy by choice.
+            </p>
+          </div>
+          <div class="chapter-visual">
+            <div class="screenshot-placeholder">Screenshot · Ch.05</div>
+          </div>
+        </article>
+
+        <!-- Ch6 -->
+        <article class="chapter-row reveal finale-row">
+          <div class="chapter-num accent-amber">06</div>
+          <div class="chapter-info">
+            <div class="chapter-meta accent-amber">FINALE · ALL ENERGIES</div>
+            <h3 class="chapter-name">POLLUTOPIA</h3>
+            <div class="chapter-boss accent-magenta">Boss · COSMIC WORMHOLE</div>
+          </div>
+          <div class="chapter-desc">
+            <p>
+              Six floors. Six fights. The Cosmic Wormhole waits at the top of his
+              own polluted citadel, the imperfect Cosmic Cube humming with all five
+              stolen energies. Stop him here, or watch him forge a permanent rift
+              to another galaxy.
+            </p>
+          </div>
+          <div class="chapter-visual">
+            <div class="screenshot-placeholder finale-placeholder">Finale · Ch.06</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <div class="section-divider"></div>
 
     <!-- UNIVERSE -->
@@ -1084,6 +1215,97 @@ section.sneak-poster-section {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* CHAPTERS SECTION */
+.chapters-section {
+  /* padding-top: 8rem; */
+  padding-bottom: 8rem;
+}
+
+.chapters-container {
+  margin-top: 0;
+}
+
+.chapter-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .chapter-row {
+    grid-template-columns: 1fr 3fr 5fr 3fr;
+    gap: 1.5rem;
+  }
+}
+
+.chapter-num {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.chapter-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgba(255, 245, 229, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.chapter-name {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.chapter-boss {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  margin-top: 0.75rem;
+}
+
+.chapter-desc p {
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 245, 229, 0.75);
+}
+
+.screenshot-placeholder {
+  aspect-ratio: 16 / 9;
+  background: rgba(255, 245, 229, 0.05);
+  border: 1px solid rgba(255, 245, 229, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(255, 245, 229, 0.3);
+}
+
+.finale-row {
+  background: linear-gradient(90deg, rgba(200, 52, 90, 0.06), transparent);
+  border-bottom: none;
+  padding: 4rem 1rem;
+  border-radius: 12px;
+}
+
+.finale-placeholder {
+  background: rgba(200, 52, 90, 0.1);
+  border-color: rgba(200, 52, 90, 0.3);
+  color: var(--magenta);
 }
 
 /* UNIVERSE */
