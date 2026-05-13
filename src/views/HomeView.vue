@@ -1495,7 +1495,7 @@ section.sneak-poster-section {
 
 @media (max-width: 480px) {
   section {
-    min-height: 72vh;
+    min-height: 29vh;
   }
   .hero-wrap {
     min-height: 100vh;
@@ -1536,12 +1536,6 @@ section.sneak-poster-section {
     margin: 0 auto;
     text-align: center;
   }
-  .intro-story-text {
-    left: 50%;
-    width: 90%;
-    bottom: 5%;
-    font-size: 1.1rem;
-  }
   .intro-story-title {
     font-size: 2.2rem;
     margin-bottom: 1rem;
@@ -1564,7 +1558,7 @@ section.sneak-poster-section {
   }
   .intro-story-text {
     left: 0;
-    bottom: 57%;
+    bottom: 5%;
     width: 100%;
     transform: none;
     text-align: center;
@@ -1678,6 +1672,32 @@ section.sneak-poster-section {
     justify-content: center;
     width: 100%;
     margin-bottom: 1rem;
+  }
+
+  /* Chapters Mobile */
+  .chapter-row {
+    grid-template-areas: 
+      "num info"
+      "desc desc"
+      "visual visual";
+    grid-template-columns: 60px 1fr !important;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+  .chapter-num {
+    font-size: 2.5rem;
+  }
+  .chapter-name {
+    font-size: 1.4rem;
+  }
+  .chapter-boss {
+    font-size: 0.8rem;
+  }
+  .chapter-desc p {
+    font-size: 0.9rem;
+  }
+  .screenshot-img {
+    min-height: 200px;;
   }
 
   /* Extreme Mobile Fix (360x760) */
