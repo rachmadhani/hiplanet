@@ -993,17 +993,16 @@ section.sneak-poster-section {
 
 /* COMIC INTRO */
 .intro-visual {
-  width: 100%;
-  max-width: 1400px;
-  margin: 4rem auto;
-  padding: 0 2rem;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
 }
 .full-width-image {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  border: 1px solid rgba(0, 102, 243, 0.2);
+  display: block;
 }
 
 /* UNIVERSE */
