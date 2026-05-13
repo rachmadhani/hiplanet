@@ -1720,7 +1720,7 @@ section.sneak-poster-section {
     }
     .intro-story-text {
       font-size: 0.5rem !important;
-      bottom: 56% !important;
+      bottom: 5% !important;
     }
 
     .lede-poster {
