@@ -741,7 +741,6 @@ section.sneak-poster-section {
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  margin-bottom: 100px;
 }
 
 .macebot-floating {
@@ -823,7 +822,6 @@ section.sneak-poster-section {
   width: 100%;
   text-align: left;
   padding-left: 4.4rem;
-  margin-top: 10rem; /* Adjusted now that video is above it */
 }
 
 .youtube-embed-container {
@@ -877,7 +875,7 @@ section.sneak-poster-section {
   grid-template-columns: 1fr;
   gap: 3rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: auto auto -6rem auto; /* Pushed to bottom with auto top margin */
   text-align: left;
 }
@@ -885,7 +883,7 @@ section.sneak-poster-section {
 @media (min-width: 768px) {
   .poster-features-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 8.5rem;
   }
 }
 
@@ -894,7 +892,7 @@ section.sneak-poster-section {
 }
 
 .feature-num {
-  font-size: clamp(5rem, 8vw, 7rem);
+  font-size: clamp(5rem, 8vw, 11rem);
   line-height: 1;
   margin-bottom: 0.5rem;
   opacity: 0.9;
@@ -903,7 +901,7 @@ section.sneak-poster-section {
 .feature-heading {
   /* font-family: 'Anton', sans-serif; */
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   letter-spacing: 0.05em;
   color: #fff;
@@ -911,7 +909,7 @@ section.sneak-poster-section {
 }
 
 .feature-text {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   color: rgba(255, 245, 229, 0.7);
