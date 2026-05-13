@@ -829,7 +829,7 @@ section.sneak-poster-section {
 
 .youtube-embed-container {
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 6rem auto;
   aspect-ratio: 16 / 9;
   border: 1px solid rgba(255, 255, 255, 0.1);
