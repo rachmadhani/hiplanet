@@ -480,6 +480,7 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
   overflow: hidden;
   min-height: 140vh;
   background: linear-gradient(rgba(10, 24, 52, 0.6), rgba(10, 24, 52, 0.6)), url('/hero-image/hiplanet_website_hero_background.jpeg') no-repeat center center;
+  /* background: url('/hero-image/hiplanet_website_hero_background.jpeg') no-repeat center center; */
   background-size: cover;
 }
 
@@ -558,7 +559,7 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
 
 .main-title {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(3rem, 11vw, 7rem);
+  font-size: clamp(3rem, 10vw, 8rem);
   line-height: 0.85;
   margin-bottom: 1.5rem;
   color: #fff;
@@ -702,7 +703,7 @@ section.sneak-poster-section {
 }
 
 .poster-main-title {
-  font-size: clamp(3.5rem, 13vw, 12rem);
+  font-size: clamp(3rem, 10vw, 8rem);
   line-height: 0.85;
   color: #fff;
   text-align: center;
@@ -787,7 +788,7 @@ section.sneak-poster-section {
   display: inline-flex;
   align-items: center;
   align-self: flex-start;
-  margin-left: 7rem; /* Pushed to the right as requested */
+  margin-left: 18rem; /* Pushed to the right as requested */
   margin-bottom: 20px;
   gap: 1rem;
   font-family: 'Anton', sans-serif;
