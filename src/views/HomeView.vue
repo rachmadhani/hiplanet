@@ -190,9 +190,9 @@ onMounted(() => {
       </div>
 
       <p class="reveal d-3 intro-story-text">
-        The Cosmic Wormhole plans to steal all five elemental energies of Earth —
-        wood, water, fire, stone, and metal — to forge the Infinite Power Cosmic Cube.
-        Each chapter, you face one of his lieutenants to recover what was taken.
+        Wood, Water, Fire, Stone, and Metal — to forge the infinite power cosmic cube. <br />
+        Each chapter, you face one of his lieutenants to recover what was taken.<br />
+        The cosmic wormhole plans to steal all five elemental energies of Earth.
       </p>
     </section>
 
@@ -1064,14 +1064,14 @@ section.sneak-poster-section {
 .intro-story-text {
   position: absolute;
   bottom: 14%;
-  left: 27%;
+  left: 22%;
   transform: translateX(-50%);
   z-index: 10;
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(0.9rem, 1.3vw, 2rem);
+  font-size: clamp(0.9rem, 1.5vw, 2rem);
   line-height: 1.6;
   color: rgba(255, 245, 229, 0.85);
-  max-width: 900px;
+  max-width: 1200px;
   text-align: center;
   text-shadow: 0 4px 12px rgba(0,0,0,0.9);
 }
