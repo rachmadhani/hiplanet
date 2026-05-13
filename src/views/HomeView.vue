@@ -813,7 +813,7 @@ section.sneak-poster-section {
   width: 100%;
   text-align: left;
   padding-left: 2rem;
-  margin-top: 20rem; /* Pushed further down as requested */
+  margin-top: 50rem; /* Pushed further down as requested */
 }
 
 .different-label-row {
