@@ -714,7 +714,7 @@ section.sneak-poster-section {
 }
 
 .poster-main-title {
-  font-size: clamp(3rem, 10vw, 8rem);
+  font-size: clamp(3.5rem, 13vw, 12rem);
   line-height: 0.85;
   color: #fff;
   text-align: center;
@@ -799,7 +799,7 @@ section.sneak-poster-section {
   display: inline-flex;
   align-items: center;
   align-self: flex-start;
-  margin-left: 18rem; /* Pushed to the right as requested */
+  margin-left: 21rem; /* Pushed to the right as requested */
   margin-bottom: 20px;
   gap: 1rem;
   font-family: 'Anton', sans-serif;
