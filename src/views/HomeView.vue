@@ -790,7 +790,7 @@ section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem;
   will-change: transform;
 }
 /* SOCIAL BAR */
-.social-bar { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--blue); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; overflow-x: auto; }
+.social-bar { background: var(--bg2); border-top: 1px solid var(--blue); border-bottom: 1px solid var(--blue); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; overflow-x: auto; }
 .social-bar-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; white-space: nowrap; }
 .social-pill { display: flex; align-items: center; gap: 8px; padding: 0.5rem 1.2rem; border-radius: 100px; border: 1px solid; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; white-space: nowrap; transition: all 0.2s; }
 .pill-yt { color: #FF0000; border-color: rgba(255,0,0,0.4); }
