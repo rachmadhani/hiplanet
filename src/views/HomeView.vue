@@ -1029,12 +1029,7 @@ section.sneak-poster-section {
   text-align: left;
 }
 
-@media (min-width: 768px) {
-  .poster-features-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8.5rem;
-  }
-}
+
 
 .feature-item {
   position: relative;
@@ -1236,17 +1231,7 @@ section.sneak-poster-section {
   align-items: center;
 }
 
-@media (min-width: 768px) {
-  .chapter-row {
-    grid-template-areas: 
-      "num info visual"
-      "desc desc visual";
-    grid-template-columns: 0.7fr 2.3fr 7fr;
-    grid-template-rows: auto auto;
-    gap: 1.5rem 3rem;
-    align-items: start;
-  }
-}
+
 
 .chapter-num {
   grid-area: num;
@@ -1474,6 +1459,22 @@ section.sneak-poster-section {
 .newsletter-form { display: flex; gap: 0.8rem; }
 .newsletter-input { background: rgba(255,255,255,0.05); border: 1px solid rgba(15,255,108,0.3); border-radius: 8px; padding: 0.75rem 1.2rem; font-family: 'Space Mono', monospace; font-size: 0.8rem; color: var(--text); outline: none; width: 240px; }
 
+@media (min-width: 768px) {
+  .poster-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8.5rem;
+  }
+  .chapter-row {
+    grid-template-areas: 
+      "num info visual"
+      "desc desc visual";
+    grid-template-columns: 0.7fr 2.3fr 7fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem 3rem;
+    align-items: start;
+  }
+}
+
 @media (max-width: 900px) {
   .hero-planet { display: none; }
   .universe-grid { grid-template-columns: 1fr; }
@@ -1490,5 +1491,193 @@ section.sneak-poster-section {
   .newsletter-bar { flex-direction: column; text-align: center; }
   .newsletter-form { flex-direction: column; width: 100%; }
   .newsletter-input { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  section {
+    min-height: 72vh;
+  }
+  .hero-wrap {
+    min-height: 100vh;
+    padding-top: 15vh;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-text-box {
+    margin-top: -300px;
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  .main-title {
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .lede {
+    font-size: 1.1rem;
+    margin: 0 auto;
+  }
+  .hero-bottom-bar {
+    left: 0;
+    bottom: 8%;
+    width: 100%;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    padding: 0 1.5rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .btn-new {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .intro-story-text {
+    left: 50%;
+    width: 90%;
+    bottom: 5%;
+    font-size: 1.1rem;
+  }
+  .intro-story-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  .intro-overlay-content {
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: left;
+    padding: 1.5rem;
+  }
+  .intro-label-row {
+    margin-bottom: 0.5rem;
+  }
+  .intro-label {
+    font-size: 0.6rem;
+  }
+  .intro-label-line {
+    width: 20px;
+  }
+  .intro-story-text {
+    left: 0;
+    bottom: 57%;
+    width: 100%;
+    transform: none;
+    text-align: center;
+    font-size: 0.5rem;
+    padding: 0 1.5rem;
+    max-width: 100%;
+  }
+
+  .poster-content{
+    padding: 3rem 2rem;
+  }
+
+  /* Poster Section Mobile */
+  .sneak-poster-section {
+    padding: 2rem 1.5rem !important;
+  }
+  .poster-main-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .lede-poster {
+    font-size: 0.85rem;
+    max-width: 100%;
+    margin: 0 auto 1.5rem auto;
+  }
+  .poster-cta-row {
+    justify-content: center;
+    position: relative;
+    z-index: 200;
+  }
+  .btn-poster {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+  .why-different-section {
+    padding-left: 0;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .different-line {
+    width: 20px;
+  }
+
+  .different-label {
+    font-size: 0.5rem;
+  }
+  
+  .different-title {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 200;
+    text-align: left;
+  }
+  .youtube-embed-container {
+    display: none;
+    margin: 1.5rem 0;
+    width: 100%;
+    min-height: 200px;
+    aspect-ratio: 16 / 9;
+  }
+  .poster-features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    margin: 5rem 0 0 0 !important;
+    text-align: center !important;
+    position: relative !important;
+    z-index: 200 !important;
+  }
+  .feature-num {
+    font-size: 1.8rem !important;
+  }
+  .feature-heading {
+    font-size: 0.5rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+  .feature-text {
+    font-size: 0.4rem !important;
+    line-height: 1.3 !important;
+  }
+  .macebot-floating, 
+  .techgoblin-floating, 
+  .mechatroll-floating {
+    display: block !important;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .macebot-floating {
+    top: 56% !important;
+    right: 18% !important;
+    width: 95px !important;
+  }
+  .techgoblin-floating {
+   top: 80% !important;
+    left: 7% !important;
+    width: 50px !important;
+  }
+  .mechatroll-floating {
+    top: 74% !important;
+    left: 27% !important;
+    width: 120px !important;
+    z-index: 1 !important;
+  }
+  .poster-episode-tag {
+    margin-left: -60px;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 </style>
