@@ -181,7 +181,7 @@ onMounted(() => {
       <div class="intro-overlay-content">
         <div class="reveal d-1 intro-label-row">
           <div class="intro-label-line"></div>
-          <span class="intro-label">Six chapters · Five energies</span>
+          <span class="intro-label">Six chapters · <span style="color: var(--amber)">Five energies</span></span>
         </div>
         <h2 class="reveal d-2 intro-story-title font-display">
           ONE PLANET.<br />
@@ -1020,7 +1020,7 @@ section.sneak-poster-section {
 }
 .intro-overlay-content {
   position: absolute;
-  top: 10%;
+  top: 0;
   left: 5%;
   z-index: 10;
   /* background: rgba(6, 10, 16, 0.85); */
