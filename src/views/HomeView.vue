@@ -116,6 +116,17 @@ onMounted(() => {
           <a href="#trailer" class="btn-poster btn-outline-poster">Watch trailer</a>
         </div>
 
+        <!-- YouTube Embed -->
+        <div class="reveal d-4 youtube-embed-container">
+          <iframe 
+            src="https://www.youtube.com/embed/hU1MV3ZnRSE" 
+            title="Hi Planet - Official Trailer" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+          ></iframe>
+        </div>
+
         <!-- Why Different -->
         <div class="reveal d-5 why-different-section mb-20">
           <div class="different-label-row">
@@ -752,7 +763,7 @@ section.sneak-poster-section {
 .techgoblin-floating {
   position: absolute;
   left: 5%;
-  top: 77%;
+  top: 78%;
   width: clamp(150px, 17vw, 450px);
   height: auto;
   filter: drop-shadow(0 20px 50px rgba(0,0,0,0.9));
@@ -768,7 +779,7 @@ section.sneak-poster-section {
   position: absolute;
   left: 30%;
   top: 72%;
-  width: clamp(250px, 45vw, 500px);
+  width: clamp(300px, 45vw, 650px);
   height: auto;
   filter: drop-shadow(0 30px 80px rgba(0,0,0,0.9));
   pointer-events: none;
@@ -813,7 +824,23 @@ section.sneak-poster-section {
   width: 100%;
   text-align: left;
   padding-left: 4.4rem;
-  margin-top: 50rem; /* Pushed further down as requested */
+  margin-top: 10rem; /* Adjusted now that video is above it */
+}
+
+.youtube-embed-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 6rem auto;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.youtube-embed-container iframe {
+  width: 100%;
+  height: 100%;
 }
 
 .different-label-row {
