@@ -328,6 +328,125 @@ onMounted(() => {
     </section>
 
     <div class="section-divider"></div>
+    
+    <!-- HEROES SECTION -->
+    <section class="heroes-section fade-up">
+      <div class="heroes-stars-overlay"></div>
+      <div class="heroes-container">
+        <div class="heroes-header">
+          <div class="heroes-title-box">
+            <div class="section-line accent-earth">The Hi Planet Team</div>
+            <h2 class="font-display heroes-main-title">
+              TEN HEROES.<br />
+              <span class="accent-amber">ONE MISSION.</span>
+            </h2>
+          </div>
+          <a href="#" class="heroes-view-all">
+            Meet all 10 →
+          </a>
+        </div>
+
+        <!-- Hero cards (grid) -->
+        <div class="heroes-grid">
+          <!-- Row 1 -->
+          <div class="hero-card card-ra" style="background: linear-gradient(135deg, rgba(255,182,39,0.25), rgba(255,182,39,0.05));">
+            <span class="hero-tag tag-amber">SUN</span>
+            <img src="/character/ra.png" alt="RA" class="hero-img" />
+            <div class="hero-card-bottom">
+              <div class="hero-name font-display">RA</div>
+              <div class="hero-role">The Sun</div>
+            </div>
+          </div>
+
+          <div class="hero-card card-merc" style="background: linear-gradient(135deg, rgba(34,211,238,0.25), rgba(34,211,238,0.05));">
+            <span class="hero-tag tag-cyan">MERCURY</span>
+            <img src="/character/merc.png" alt="MERCURY" class="hero-img" />
+            <div class="hero-card-bottom">
+              <div class="hero-name font-display">MERC</div>
+              <div class="hero-role">The Water</div>
+            </div>
+          </div>
+
+          <div class="hero-card card-v" style="background: linear-gradient(135deg, rgba(232,197,71,0.3), rgba(139,120,32,0.05));">
+            <span class="hero-tag tag-venus">VENUS</span>
+            <img src="/character/v.png" alt="VENUS" class="hero-img" />
+            <div class="hero-card-bottom">
+              <div class="hero-name font-display">V</div>
+              <div class="hero-role">The Metal</div>
+            </div>
+          </div>
+
+          <div class="hero-card card-hi" style="background: linear-gradient(135deg, rgba(255,107,53,0.25), rgba(255,107,53,0.05));">
+            <span class="hero-tag tag-coral">LEAD</span>
+            <img src="/character/hi.png" alt="HI" class="hero-img" />
+            <div class="hero-card-bottom">
+              <div class="hero-name font-display">HI</div>
+              <div class="hero-role">The Leader</div>
+            </div>
+          </div>
+
+          <div class="hero-card card-ma" style="background: linear-gradient(135deg, rgba(239,68,68,0.25), rgba(239,68,68,0.05));">
+            <span class="hero-tag tag-mars">MARS</span>
+            <img src="/character/ma.png" alt="MARS" class="hero-img" />
+            <div class="hero-card-bottom">
+              <div class="hero-name font-display">MA</div>
+              <div class="hero-role">The Fire</div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="hero-card card-jupi" style="background: linear-gradient(135deg, rgba(217,119,6,0.3), rgba(124,45,18,0.05));">
+            <span class="hero-tag tag-jupiter">JUPITER</span>
+            <img src="/character/jupi.png" alt="JUPITER" class="hero-img" />
+            <div class="hero-card-bottom">
+              <div class="hero-name font-display">JUPI</div>
+              <div class="hero-role">The Wood</div>
+            </div>
+          </div>
+
+          <div class="hero-card card-satu" style="background: linear-gradient(135deg, rgba(139,111,71,0.3), rgba(74,56,32,0.05));">
+            <span class="hero-tag tag-saturn">SATURN</span>
+            <img src="/character/satu.png" alt="SATURN" class="hero-img" />
+            <div class="hero-card-bottom">
+              <div class="hero-name font-display">SATU</div>
+              <div class="hero-role">The Stone</div>
+            </div>
+          </div>
+
+          <div class="hero-card card-ura" style="background: linear-gradient(135deg, rgba(74,144,226,0.3), rgba(74,144,226,0.05));">
+            <span class="hero-tag tag-earth">URANUS</span>
+            <img src="/character/ura.png" alt="URANUS" class="hero-img" />
+            <div class="hero-card-bottom">
+              <div class="hero-name font-display">URA</div>
+              <div class="hero-role">The Tilt</div>
+            </div>
+          </div>
+
+          <div class="hero-card card-nep" style="background: linear-gradient(135deg, rgba(30,64,175,0.4), rgba(12,30,92,0.05));">
+            <span class="hero-tag tag-earth">NEPTUNE</span>
+            <img src="/character/nep.png" alt="NEPTUNE" class="hero-img" />
+            <div class="hero-card-bottom">
+              <div class="hero-name font-display">NEP</div>
+              <div class="hero-role">The Lance</div>
+            </div>
+          </div>
+
+          <div class="hero-card card-plu" style="background: linear-gradient(135deg, rgba(155,143,184,0.3), rgba(58,47,92,0.05));">
+            <span class="hero-tag tag-pluto">PLUTO</span>
+            <img src="/character/plu.png" alt="PLUTO" class="hero-img" />
+            <div class="hero-card-bottom">
+              <div class="hero-name font-display">PLU</div>
+              <div class="hero-role">The Outsider</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="hero-placeholder-note italic">→ Placeholder cards — replace with actual character sprites</p>
+
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
 
     <!-- UNIVERSE -->
     <section id="universe" class="section-wrap fade-up">
@@ -626,7 +745,7 @@ onMounted(() => {
 .landing {
   padding-top: 80px;
 }
-section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem; max-width: 1600px; margin: 0 auto; }
+section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem; max-width: 1800px; margin: 0 auto; }
 
 /* HERO */
 .hero-wrap { 
@@ -1059,8 +1178,8 @@ section.sneak-poster-section {
   color: rgba(255, 245, 229, 0.7);
 }
 
-.accent-earth { color: var(--neon-blue); }
-.accent-amber { color: #f59e0b; }
+.accent-earth { color: var(--blue); }
+.accent-amber { color: var(--neon-blue); }
 
 
 .btn-poster {
@@ -1756,5 +1875,198 @@ section.sneak-poster-section {
       width: 100px !important;
     }
   }
+}
+
+/* HEROES SECTION CUSTOM STYLES */
+.heroes-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+  /* background: var(--midnight); */
+}
+
+.heroes-stars-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  background-image: 
+    radial-gradient(1.5px 1.5px at 15% 15%, #fff, transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 70% 30%, #fff, transparent),
+    radial-gradient(1px 1px at 85% 85%, rgba(255,255,255,0.6), transparent);
+}
+
+.heroes-container {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  z-index: 2;
+}
+
+.heroes-header {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.heroes-title-box {
+  max-width: 42rem;
+}
+
+.section-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+}
+
+.section-line::before {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: currentColor;
+}
+
+.heroes-main-title {
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.9;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heroes-view-all {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--cyan);
+  text-decoration: none;
+  border-bottom: 2px solid var(--cyan);
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.heroes-view-all:hover {
+  color: var(--amber);
+  border-color: var(--amber);
+}
+
+.heroes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.hero-card {
+  aspect-ratio: 3/4;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.hero-tag {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border: 1px solid;
+  border-radius: 4px;
+  align-self: flex-start;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  width: 140%;
+  height: 140%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.6));
+}
+
+.hero-card:hover .hero-img {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.hero-card-bottom {
+  margin-top: auto;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-name {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.hero-role {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 245, 229, 0.6);
+}
+
+.hero-placeholder-note {
+  margin-top: 3rem;
+  font-size: 12px;
+  color: rgba(255, 245, 229, 0.4);
+  text-align: center;
+}
+
+/* Hero Tag Color Variants */
+.tag-coral { color: var(--coral); border-color: rgba(255, 107, 53, 0.4); }
+.tag-amber { color: var(--amber); border-color: rgba(255, 182, 39, 0.4); }
+.tag-cream { color: var(--cream); border-color: rgba(255, 245, 229, 0.3); }
+.tag-saturn { color: #D4A574; border-color: rgba(212, 165, 116, 0.4); }
+.tag-cyan { color: var(--cyan); border-color: rgba(34, 211, 238, 0.4); }
+.tag-pluto { color: #9B8FB8; border-color: rgba(155, 143, 184, 0.4); }
+.tag-venus { color: #E8C547; border-color: rgba(232, 197, 71, 0.4); }
+.tag-earth { color: var(--earth); border-color: rgba(74, 144, 226, 0.4); }
+.tag-jupiter { color: #D97706; border-color: rgba(217, 119, 6, 0.4); }
+.tag-mars { color: #EF4444; border-color: rgba(239, 68, 68, 0.4); }
+
+@media (min-width: 640px) {
+  .heroes-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 768px) {
+  .heroes-section { padding: 9rem 0; }
+  .heroes-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .heroes-header { text-align: center; justify-content: center; flex-direction: column; }
+  .heroes-title-box { margin-bottom: 1rem; }
+  .section-line { justify-content: center; }
+  .hero-name { font-size: 1.5rem; }
 }
 </style>
