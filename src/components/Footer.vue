@@ -2,7 +2,9 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-brand-name">ECOSOFT</div>
+        <div class="footer-brand-name">
+          <img src="/logo/ecosoft_logo_design_original.png" alt="Ecosoft Logo" class="footer-logo" />
+        </div>
         <p class="footer-brand-desc">
           A creative studio at the crossroads of technology, storytelling, and environmental impact. Building worlds worth saving.
         </p>
@@ -54,7 +56,7 @@ footer {
   position: relative;
   z-index: 1;
   background: var(--bg2);
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--blue);
   padding: 3rem 2rem 2rem;
   margin-top: 4rem;
 }
@@ -69,14 +71,18 @@ footer {
 }
 
 .footer-brand-name {
-  font-family: 'Bangers', cursive;
-  font-size: 1.8rem;
-  letter-spacing: 3px;
-  color: var(--green);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer-logo {
+  height: 56px;
+  width: auto;
+  display: block;
+  margin-left: -19px; /* Offset for internal whitespace in the logo image */
 }
 
 .footer-brand-desc {
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: 0.85rem;
   color: var(--muted);
   line-height: 1.7;
