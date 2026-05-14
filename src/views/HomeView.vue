@@ -632,7 +632,7 @@ onMounted(() => {
     <div class="section-divider"></div>
 
     <!-- UNIVERSE -->
-    <section id="universe" class="section-wrap fade-up">
+    <!-- <section id="universe" class="section-wrap fade-up">
       <span class="section-tag">📚 Universe</span>
       <h2 class="section-title">The World of Hi Planet</h2>
       <p class="section-sub">The game begins in the pages of our comic. Dive into the lore, meet the heroes, and discover the world before you play in it.</p>
@@ -709,12 +709,12 @@ onMounted(() => {
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <div class="section-divider"></div>
 
     <!-- GAMES -->
-    <section id="games" class="section-wrap fade-up">
+    <!-- <section id="games" class="section-wrap fade-up">
       <span class="section-tag">🎮 Games</span>
       <h2 class="section-title">Hi Planet: Save the Earth!</h2>
       <p class="section-sub">A 2D multiplayer online RPG where strategy and eco-awareness shape every battle.</p>
@@ -763,12 +763,12 @@ onMounted(() => {
           <span class="roadmap-status status-soon">◌ Coming Soon</span>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <div class="section-divider"></div>
 
     <!-- COMMUNITY -->
-    <section id="community" class="section-wrap fade-up">
+    <!-- <section id="community" class="section-wrap fade-up">
       <span class="section-tag">👥 Community</span>
       <h2 class="section-title">Join the Crew</h2>
       <p class="section-sub">This game is built with its players. Be part of the story — from fan art to beta testing.</p>
@@ -861,12 +861,12 @@ onMounted(() => {
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <div class="section-divider"></div>
 
     <!-- DEVLOG -->
-    <section id="devlog" class="section-wrap fade-up">
+    <!-- <section id="devlog" class="section-wrap fade-up">
       <span class="section-tag">📝 Devlog</span>
       <h2 class="section-title">From the Studio</h2>
       <p class="section-sub">Watch the game come to life. Weekly updates and behind-the-scenes stories.</p>
@@ -909,7 +909,6 @@ onMounted(() => {
         </a>
       </div>
 
-      <!-- NEWSLETTER -->
       <div class="newsletter-bar fade-up">
         <div class="newsletter-text">
           <h3>Never Miss a Devlog</h3>
@@ -920,7 +919,7 @@ onMounted(() => {
           <button class="btn btn-primary">Subscribe</button>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
