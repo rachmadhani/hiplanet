@@ -453,7 +453,7 @@ onMounted(() => {
     <div class="section-divider"></div>
 
     <!-- COMIC IP SECTION -->
-    <section id="comic" class="comic-section grain">
+    <section id="comic" class="comic-section">
       <!-- Sunset gradient overlay -->
       <div class="comic-gradient-overlay"></div>
       
@@ -477,7 +477,7 @@ onMounted(() => {
                 📖 Buy Vol.1 on Amazon
               </a>
               <a href="#" class="btn-comic btn-outline-comic">
-                ⬇ Free Chapter 1 PDF
+                ⬇ Comic Book
               </a>
             </div>
 
@@ -502,8 +502,8 @@ onMounted(() => {
               
               <div class="cover-header">
                 <div class="volume-tag accent-amber-comic">Volume 01 · 2023</div>
-                <div class="cover-title font-display">HI<br />PLANET</div>
-                <div class="cover-subtitle font-display accent-coral">SAVE THE EARTH</div>
+                <!-- <div class="cover-title font-display">HI<br />PLANET</div>
+                <div class="cover-subtitle font-display accent-coral">SAVE THE EARTH</div> -->
               </div>
               
               <div class="cover-footer">
@@ -2168,8 +2168,8 @@ section.sneak-poster-section {
 .comic-section {
   position: relative;
   padding: 6rem 0;
-  background: var(--cream);
-  color: var(--midnight);
+  /* background: var(--cream); */
+  /* color: var(--midnight); */
   overflow: hidden;
 }
 
@@ -2177,7 +2177,7 @@ section.sneak-poster-section {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse 60% 80% at 80% 20%, rgba(255,107,53,0.25) 0%, transparent 60%);
+  /* background: radial-gradient(ellipse 60% 80% at 80% 20%, rgba(255,107,53,0.25) 0%, transparent 60%); */
 }
 
 .comic-container {
@@ -2196,10 +2196,10 @@ section.sneak-poster-section {
 }
 
 .comic-title {
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(3rem, 8vw, 6.5rem);
   line-height: 0.88;
   margin-bottom: 2rem;
-  color: var(--midnight);
+  color: #fff;
 }
 
 .comic-lede {
@@ -2208,7 +2208,7 @@ section.sneak-poster-section {
   font-weight: 300;
   font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   line-height: 1.5;
-  color: rgba(10, 24, 52, 0.75);
+  color: rgba(255, 245, 229, 0.7);
   margin-bottom: 2.5rem;
   max-width: 600px;
 }
@@ -2228,15 +2228,15 @@ section.sneak-poster-section {
   font-size: 0.875rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid var(--midnight);
+  border: 2px solid #fff;
   display: inline-flex;
   align-items: center;
 }
 
 .btn-primary-comic {
-  background: var(--coral);
+  background: var(--cream);
   color: var(--midnight);
-  border-color: var(--coral);
+  border-color: var(--cream);
 }
 
 .btn-primary-comic:hover {
@@ -2246,7 +2246,7 @@ section.sneak-poster-section {
 
 .btn-outline-comic {
   background: transparent;
-  color: var(--midnight);
+  color: #fff;
 }
 
 .btn-outline-comic:hover {
@@ -2263,7 +2263,7 @@ section.sneak-poster-section {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-bottom: 0.75rem;
-  color: var(--midnight);
+  color: #fff;
 }
 
 .comic-form {
@@ -2274,11 +2274,11 @@ section.sneak-poster-section {
 .comic-input {
   flex: 1;
   padding: 0.75rem 1rem;
-  border: 2px solid var(--midnight);
+  border: 2px solid #fff;
   background: transparent;
   font-family: 'Manrope', sans-serif;
   font-size: 0.9rem;
-  color: var(--midnight);
+  color: #fff;
   outline: none;
   transition: background 0.3s ease;
 }
@@ -2289,9 +2289,9 @@ section.sneak-poster-section {
 
 .comic-submit-btn {
   padding: 0 1.25rem;
-  background: var(--midnight);
-  color: var(--cream);
-  border: 2px solid var(--midnight);
+  background: var(--cream);
+  color: var(--midnight);
+  border: 2px solid var(--cream);
   font-size: 0.875rem;
   letter-spacing: 0.15em;
   cursor: pointer;
@@ -2319,7 +2319,7 @@ section.sneak-poster-section {
   justify-content: space-between;
   color: var(--cream);
   overflow: hidden;
-  box-shadow: 16px 16px 0 var(--coral);
+  box-shadow: 16px 16px 0 var(--neon-blue);
   z-index: 2;
 }
 
@@ -2409,7 +2409,7 @@ section.sneak-poster-section {
   justify-content: space-between;
   color: var(--cream);
   transform: rotate(-6deg);
-  box-shadow: 8px 8px 0 var(--midnight);
+  box-shadow: 8px 8px 0 var(--blue);
   z-index: 3;
   overflow: hidden;
 }
