@@ -2196,7 +2196,7 @@ section.sneak-poster-section {
 }
 
 .comic-title {
-  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-size: clamp(3rem, 7vw, 8rem);
   line-height: 0.88;
   margin-bottom: 2rem;
   color: #fff;
