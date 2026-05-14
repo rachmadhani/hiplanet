@@ -531,6 +531,106 @@ onMounted(() => {
 
     <div class="section-divider"></div>
 
+    <!-- STUDIO SECTION -->
+    <section id="studio" class="studio-section">
+      <div class="studio-gradient-overlay"></div>
+      <div class="studio-container">
+        <div class="studio-grid">
+          <!-- Studio Info -->
+          <div class="studio-info">
+            <div class="section-line" style="color: var(--blue);">The studio</div>
+            <h2 class="font-display studio-title">
+              ECOSOFT<br />
+              <span class="accent-coral">INTERACTIVE.</span>
+            </h2>
+            <p class="studio-lede">
+              A creative studio at the intersection of technology,
+              storytelling, and environmental impact.
+            </p>
+            
+          </div>
+
+          <!-- Timeline -->
+          <div class="studio-timeline">
+            <div class="timeline-stack">
+              <div class="timeline-item">
+                <div class="timeline-year font-display">2020</div>
+                <div class="timeline-content">
+                  <div class="timeline-title font-display">The Beginning</div>
+                  <div class="timeline-desc">Lockdown reflection becomes the seed of Hi Planet.</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year font-display">2023</div>
+                <div class="timeline-content">
+                  <div class="timeline-title font-display">Comic Vol.1 Published</div>
+                  <div class="timeline-desc">Hi Planet: Save the Earth Vol.1 launches on Amazon.</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year font-display">2025</div>
+                <div class="timeline-content">
+                  <div class="timeline-title font-display">Studio Incorporated</div>
+                  <div class="timeline-desc">Ecosoft Interactive, Inc. founded in California. Selected for Busan Indie Game Festival.</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year font-display">2026</div>
+                <div class="timeline-content no-border">
+                  <div class="timeline-title font-display">Episode 1 Launches</div>
+                  <div class="timeline-desc">Vol.2 manuscript completed. Hi Planet launches on Steam — November 10.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- WISHLIST SECTION -->
+    <section id="wishlist" class="wishlist-section">
+      <div class="stars-overlay opacity-60"></div>
+      <div class="wishlist-glow"></div>
+
+      <div class="wishlist-container">
+        <div class="wishlist-launch-tag">
+          <div class="section-line" style="color: var(--blue); justify-content: center; margin-bottom: 0;">
+            184 days to launch
+          </div>
+        </div>
+
+        <h2 class="font-display wishlist-title">
+          WISHLIST<br />
+          <span class="accent-amber">HI PLANET.</span>
+        </h2>
+        
+        <p class="wishlist-desc">
+          Every wishlist makes Steam show Hi Planet to more players.
+          It's the single most useful thing you can do for a small indie studio.
+        </p>
+
+        <a href="#" class="wishlist-btn font-display">
+          ▶ Wishlist on Steam — Free
+        </a>
+
+        <div class="wishlist-socials">
+          <a href="#" class="social-link">Join Discord</a>
+          <span class="social-sep">·</span>
+          <a href="#" class="social-link">YouTube</a>
+          <span class="social-sep">·</span>
+          <a href="#" class="social-link">Instagram</a>
+          <span class="social-sep">·</span>
+          <a href="#" class="social-link">TikTok</a>
+          <span class="social-sep">·</span>
+          <a href="#" class="social-link">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
     <!-- UNIVERSE -->
     <section id="universe" class="section-wrap fade-up">
       <span class="section-tag">📚 Universe</span>
@@ -828,7 +928,9 @@ onMounted(() => {
 .landing {
   padding-top: 80px;
 }
-section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem; max-width: 2000px; margin: 0 auto; }
+section { position: relative; z-index: 1; 
+  /* min-height: 100vh;  */
+  padding: 80px 2rem; max-width: 2000px; margin: 0 auto; }
 
 /* HERO */
 .hero-wrap { 
@@ -2019,6 +2121,7 @@ section.sneak-poster-section {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-bottom: 1.5rem;
+  /* margin-left: 50px; */
 }
 
 .section-line::before {
@@ -2250,8 +2353,8 @@ section.sneak-poster-section {
 }
 
 .btn-outline-comic:hover {
-  background: var(--midnight);
-  color: var(--cream);
+  background: var(--cream);
+  color: var(--midnight);
 }
 
 .comic-newsletter {
@@ -2441,6 +2544,245 @@ section.sneak-poster-section {
   }
   .comic-visual-wrap {
     margin: 0;
+  }
+}
+/* STUDIO SECTION */
+.studio-section {
+  position: relative;
+  padding: 6rem 0;
+  /* background: var(--cream); */
+  color: var(--midnight);
+  overflow: hidden;
+}
+
+.studio-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* background: radial-gradient(ellipse 50% 60% at 20% 80%, rgba(46,91,204,0.15) 0%, transparent 60%); */
+}
+
+.studio-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.studio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9rem;
+}
+
+.studio-title {
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.88;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.studio-lede {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1.5;
+  color: rgba(255, 245, 229, 0.7);
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.studio-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(10, 24, 52, 0.65);
+  margin-bottom: 2.5rem;
+  max-width: 450px;
+}
+
+.studio-letter-link {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--midnight);
+  text-decoration: none;
+  border-bottom: 2px solid var(--coral);
+  padding-bottom: 0.25rem;
+  transition: opacity 0.3s ease;
+}
+
+.studio-letter-link:hover {
+  opacity: 0.7;
+}
+
+.timeline-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.timeline-year {
+  font-size: 2.5rem;
+  width: 6rem;
+  flex-shrink: 0;
+  color: var(--coral);
+  line-height: 1;
+}
+
+.timeline-content {
+  flex: 1;
+  border-left: 2px solid rgba(10, 24, 52, 0.15);
+  padding-left: 2rem;
+  padding-bottom: 3rem;
+}
+
+.timeline-content.no-border {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.timeline-title {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.timeline-desc {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .studio-section {
+    padding: 9rem 0;
+  }
+  .studio-grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .studio-info {
+    grid-column: span 5;
+  }
+  .studio-timeline {
+    grid-column: span 7;
+  }
+}
+/* WISHLIST SECTION */
+.wishlist-section {
+  position: relative;
+  padding: 8rem 0;
+  background: linear-gradient(135deg, #1B3A8C 0%, #0A1834 50%, #2A0E2E 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.wishlist-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(255, 182, 39, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.wishlist-container {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.wishlist-launch-tag {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+.wishlist-title {
+  font-size: clamp(3.5rem, 10vw, 11rem);
+  line-height: 0.85;
+  margin-bottom: 2.5rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.wishlist-desc {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  line-height: 1.6;
+  color: rgba(255, 245, 229, 0.85);
+  margin-bottom: 3.5rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wishlist-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--coral);
+  color: var(--midnight);
+  padding: 1.5rem 3rem;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 12px 12px 0 var(--cream);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.wishlist-btn:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 18px 18px 0 var(--cream);
+}
+
+.wishlist-socials {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.social-link {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 245, 229, 0.6);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--amber);
+}
+
+.social-sep {
+  color: rgba(255, 245, 229, 0.2);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .wishlist-section {
+    padding: 6rem 0;
+  }
+  .wishlist-btn {
+    padding: 1.25rem 2rem;
+    box-shadow: 8px 8px 0 var(--cream);
   }
 }
 </style>
