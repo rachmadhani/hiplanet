@@ -2627,7 +2627,7 @@ section.sneak-poster-section {
 }
 
 .timeline-year {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   width: 6rem;
   flex-shrink: 0;
   color: var(--coral);
@@ -2647,7 +2647,7 @@ section.sneak-poster-section {
 }
 
 .timeline-title {
-  font-size: 0.875rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 0.5rem;
@@ -2656,7 +2656,7 @@ section.sneak-poster-section {
 
 .timeline-desc {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: #fff;
 }
