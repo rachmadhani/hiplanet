@@ -452,6 +452,85 @@ onMounted(() => {
 
     <div class="section-divider"></div>
 
+    <!-- COMIC IP SECTION -->
+    <section id="comic" class="comic-section grain">
+      <!-- Sunset gradient overlay -->
+      <div class="comic-gradient-overlay"></div>
+      
+      <div class="comic-container">
+        <div class="comic-content-grid">
+          <!-- Text Content -->
+          <div class="comic-text-box">
+            <div class="section-line accent-coral" style="color: var(--coral);">The unfair advantage</div>
+            <h2 class="font-display comic-title">
+              READ THE COMIC.<br />
+              <span class="accent-coral">PLAY THE GAME.</span>
+            </h2>
+            <p class="comic-lede">
+              Hi Planet started as a 200+ page comic — published in 2023,
+              written and built over six years.<br />The game is the comic, in motion.
+              Vol.2 lands in 2026.
+            </p>
+            
+            <div class="comic-actions">
+              <a href="#" class="btn-comic btn-primary-comic">
+                📖 Buy Vol.1 on Amazon
+              </a>
+              <a href="#" class="btn-comic btn-outline-comic">
+                ⬇ Free Chapter 1 PDF
+              </a>
+            </div>
+
+            <div class="comic-newsletter">
+              <p class="newsletter-label font-display">
+                Get Vol.2 news first.
+              </p>
+              <form class="comic-form" @submit.prevent="() => {}">
+                <input type="email" placeholder="your@email.com" class="comic-input" required />
+                <button type="submit" class="comic-submit-btn font-display">JOIN</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Comic cover mockup (cinema poster style) -->
+          <div class="comic-visual-wrap">
+            <div class="comic-cover-main">
+              <img src="/comic-book/hiplanet_comic_1.jpg" alt="Hi Planet Comic Vol 1" class="cover-img" />
+              <div class="cover-dark-overlay"></div>
+              <div class="stars-overlay cover-stars"></div>
+              <div class="cover-glow"></div>
+              
+              <div class="cover-header">
+                <div class="volume-tag accent-amber-comic">Volume 01 · 2023</div>
+                <div class="cover-title font-display">HI<br />PLANET</div>
+                <div class="cover-subtitle font-display accent-coral">SAVE THE EARTH</div>
+              </div>
+              
+              <div class="cover-footer">
+                <div class="cover-quote italic">
+                  "To create a better world<br />for every child to inherit."
+                </div>
+                <div class="cover-author">By Sean Beck · Ecosoft Interactive</div>
+              </div>
+            </div>
+            
+            <!-- Vol 2 teaser behind -->
+            <div class="comic-cover-teaser">
+              <img src="/comic-book/hiplanet_comic_2.png" alt="Hi Planet Comic Vol 2" class="cover-img" />
+              <div class="cover-dark-overlay"></div>
+              <div class="volume-tag accent-amber-comic">Volume 02 · 2026</div>
+              <div class="teaser-bottom">
+                <div class="font-display teaser-text">COMING</div>
+                <div class="font-display teaser-sub accent-amber-comic">SOON</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
     <!-- UNIVERSE -->
     <section id="universe" class="section-wrap fade-up">
       <span class="section-tag">📚 Universe</span>
@@ -1184,6 +1263,7 @@ section.sneak-poster-section {
 
 .accent-earth { color: var(--blue); }
 .accent-amber { color: var(--neon-blue); }
+.accent-amber-comic { color: var(--blue); }
 
 
 .btn-poster {
@@ -2082,5 +2162,285 @@ section.sneak-poster-section {
   .heroes-title-box { margin-bottom: 1rem; }
   .section-line { justify-content: center; }
   .hero-name { font-size: 1.5rem; }
+}
+
+/* COMIC SECTION CUSTOM STYLES */
+.comic-section {
+  position: relative;
+  padding: 6rem 0;
+  background: var(--cream);
+  color: var(--midnight);
+  overflow: hidden;
+}
+
+.comic-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 60% 80% at 80% 20%, rgba(255,107,53,0.25) 0%, transparent 60%);
+}
+
+.comic-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.comic-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.comic-title {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 0.88;
+  margin-bottom: 2rem;
+  color: var(--midnight);
+}
+
+.comic-lede {
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  /* font-style: italic; */
+  font-weight: 300;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  line-height: 1.5;
+  color: rgba(10, 24, 52, 0.75);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+.comic-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn-comic {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.9rem 1.5rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid var(--midnight);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-primary-comic {
+  background: var(--coral);
+  color: var(--midnight);
+  border-color: var(--coral);
+}
+
+.btn-primary-comic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.btn-outline-comic {
+  background: transparent;
+  color: var(--midnight);
+}
+
+.btn-outline-comic:hover {
+  background: var(--midnight);
+  color: var(--cream);
+}
+
+.comic-newsletter {
+  max-width: 450px;
+}
+
+.newsletter-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.75rem;
+  color: var(--midnight);
+}
+
+.comic-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.comic-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--midnight);
+  background: transparent;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9rem;
+  color: var(--midnight);
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.comic-input:focus {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.comic-submit-btn {
+  padding: 0 1.25rem;
+  background: var(--midnight);
+  color: var(--cream);
+  border: 2px solid var(--midnight);
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.comic-submit-btn:hover {
+  opacity: 0.9;
+}
+
+/* COMIC VISUAL */
+.comic-visual-wrap {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.comic-cover-main {
+  position: relative;
+  background: var(--midnight);
+  aspect-ratio: 2 / 3;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--cream);
+  overflow: hidden;
+  box-shadow: 16px 16px 0 var(--coral);
+  z-index: 2;
+}
+
+.cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.cover-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10, 24, 52, 0.4) 0%, rgba(10, 24, 52, 0.7) 100%);
+  z-index: 1;
+}
+
+.cover-stars {
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.cover-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(74,144,226,0.25) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.volume-tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.cover-title {
+  font-size: 3.5rem;
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 2;
+}
+
+.cover-subtitle {
+  font-size: 1.25rem;
+  margin-top: 0.75rem;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 2;
+}
+
+.cover-quote {
+  font-size: 0.875rem;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  /* color: rgba(255, 245, 229, 0.7); */
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.cover-author {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  /* color: rgba(255, 245, 229, 0.4); */
+  position: relative;
+  z-index: 2;
+}
+
+.comic-cover-teaser {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: var(--magenta);
+  aspect-ratio: 2 / 3;
+  width: 170px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--cream);
+  transform: rotate(-6deg);
+  box-shadow: 8px 8px 0 var(--midnight);
+  z-index: 3;
+  overflow: hidden;
+}
+
+.teaser-bottom {
+  position: relative;
+  z-index: 4;
+}
+
+.teaser-text {
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: 0.03em;
+}
+
+.teaser-sub {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  letter-spacing: 0.15em;
+}
+
+@media (min-width: 768px) {
+  .comic-section {
+    padding: 9rem 0;
+  }
+  .comic-content-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 5rem;
+  }
+  .comic-visual-wrap {
+    margin: 0;
+  }
 }
 </style>
