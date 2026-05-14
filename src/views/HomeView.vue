@@ -340,6 +340,10 @@ onMounted(() => {
               TEN HEROES.<br />
               <span class="accent-amber">ONE MISSION.</span>
             </h2>
+            <p class="heroes-description">
+              Ten heroes drawn from the planets of the solar system, each with a distinct combat style.<br />
+              Find the one that matches how you play.
+            </p>
           </div>
           <a href="#" class="heroes-view-all">
             Meet all 10 →
@@ -1898,7 +1902,7 @@ section.sneak-poster-section {
 
 .heroes-container {
   position: relative;
-  max-width: 1280px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 1.5rem;
   z-index: 2;
@@ -1913,8 +1917,17 @@ section.sneak-poster-section {
   gap: 1.5rem;
 }
 
+.heroes-description {
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  line-height: 1.6;
+  color: rgba(255, 245, 229, 0.7);
+  max-width: 1200px;
+  margin-top: 2rem;
+}
+
 .heroes-title-box {
-  max-width: 42rem;
+  max-width: 1200px;
 }
 
 .section-line {
@@ -1940,6 +1953,7 @@ section.sneak-poster-section {
   line-height: 0.9;
   color: #fff;
   text-transform: uppercase;
+  max-width: 800px;
 }
 
 .heroes-view-all {
