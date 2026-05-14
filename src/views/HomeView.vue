@@ -828,7 +828,7 @@ onMounted(() => {
 .landing {
   padding-top: 80px;
 }
-section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem; max-width: 1800px; margin: 0 auto; }
+section { position: relative; z-index: 1; min-height: 100vh; padding: 80px 2rem; max-width: 2000px; margin: 0 auto; }
 
 /* HERO */
 .hero-wrap { 
