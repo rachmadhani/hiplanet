@@ -46,11 +46,9 @@ onMounted(() => {
             <span class="accent-earth-hero">EARTH.</span>
           </h1>
 
-          <p class="lede">
-            A horde-roguelite told in six comic-book chapters. Smash through robot swarms,
-            battle a boss at every chapter's end, and stop the Cosmic Wormhole from
-            forging the Infinite Power Cosmic Cube.
-          </p>
+          <!-- <p class="lede">
+            
+          </p> -->
         </div>
       </div>
 
@@ -105,9 +103,12 @@ onMounted(() => {
 
         <!-- Tagline -->
         <p class="reveal d-3 lede-poster">
-          A horde-roguelite told in six comic-book chapters.<br />
+          <!-- A horde-roguelite told in six comic-book chapters.<br />
           Smash through swarms. Save Earth's energies.<br />
-          Stop the <span class="accent-magenta font-semibold font-display tracking-[0.1em]">COSMIC WORMHOLE.</span>
+          Stop the <span class="accent-magenta font-semibold font-display tracking-[0.1em]">COSMIC WORMHOLE.</span> -->
+          A horde-roguelite told in six comic-book chapters. Smash through robot swarms,
+          battle a boss at every chapter's end, and stop the Cosmic Wormhole from
+          forging the Infinite Power Cosmic Cube.
         </p>
 
         <!-- CTAs -->
@@ -976,7 +977,7 @@ section { position: relative; z-index: 1;
 }
 
 .hero-text-box {
-  margin-top: -67vh;
+  margin-top: -660px;
   padding: 3.75rem;
   padding-top: 1rem;
   max-width: 720px;
