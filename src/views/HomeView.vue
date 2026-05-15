@@ -364,7 +364,7 @@ onMounted(() => {
             <img src="/character/merc.png" alt="MERCURY" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">MERC</div>
-              <div class="hero-role">THE WATER</div>
+              <!-- <div class="hero-role">THE WATER</div> -->
             </div>
           </div>
 
@@ -373,7 +373,7 @@ onMounted(() => {
             <img src="/character/v.png" alt="VENUS" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">V</div>
-              <div class="hero-role">THE METAL</div>
+              <!-- <div class="hero-role">THE METAL</div> -->
             </div>
           </div>
 
@@ -391,7 +391,7 @@ onMounted(() => {
             <img src="/character/ma.png" alt="MARS" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">MA</div>
-              <div class="hero-role">THE FIRE</div>
+              <!-- <div class="hero-role">THE FIRE</div> -->
             </div>
           </div>
 
@@ -401,7 +401,7 @@ onMounted(() => {
             <img src="/character/jupi.png" alt="JUPITER" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">JUPI</div>
-              <div class="hero-role">THE WOOD</div>
+              <!-- <div class="hero-role">THE WOOD</div> -->
             </div>
           </div>
 
@@ -410,7 +410,7 @@ onMounted(() => {
             <img src="/character/satu.png" alt="SATURN" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">SATU</div>
-              <div class="hero-role">THE STONE</div>
+              <!-- <div class="hero-role">THE STONE</div> -->
             </div>
           </div>
 
@@ -419,7 +419,7 @@ onMounted(() => {
             <img src="/character/ura.png" alt="URANUS" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">URA</div>
-              <div class="hero-role">THE TILT</div>
+              <!-- <div class="hero-role">THE TILT</div> -->
             </div>
           </div>
 
@@ -428,7 +428,7 @@ onMounted(() => {
             <img src="/character/nep.png" alt="NEPTUNE" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">NEP</div>
-              <div class="hero-role">THE LANCE</div>
+              <!-- <div class="hero-role">THE LANCE</div> -->
             </div>
           </div>
 
@@ -437,7 +437,7 @@ onMounted(() => {
             <img src="/character/plu.png" alt="PLUTO" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">PLU</div>
-              <div class="hero-role">THE OUTSIDER</div>
+              <!-- <div class="hero-role">THE OUTSIDER</div> -->
             </div>
           </div>
         </div>
