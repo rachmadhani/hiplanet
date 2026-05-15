@@ -930,7 +930,7 @@ onMounted(() => {
 }
 section { position: relative; z-index: 1; 
   /* min-height: 100vh;  */
-  padding: 80px 2rem; max-width: 2000px; margin: 0 auto; }
+  padding: 80px 2rem; max-width: 2000px; margin: 0 4rem auto auto; }
 
 /* HERO */
 .hero-wrap { 
@@ -1022,10 +1022,12 @@ section { position: relative; z-index: 1;
 
 .main-title {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(3rem, 10vw, 8rem);
-  line-height: 0.85;
-  margin-bottom: 1.5rem;
+  font-size: clamp(3.5rem, 11vw, 9rem);
+  line-height: 0.82;
+  margin-bottom: 2rem;
   color: #fff;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  letter-spacing: -0.02em;
 }
 .accent-earth-hero { color: var(--neon-blue); }
 
@@ -1319,10 +1321,12 @@ section.sneak-poster-section {
 
 .different-title {
   font-size: clamp(3rem, 10vw, 8rem);
-  line-height: 0.95;
+  line-height: 0.82;
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 4rem;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  letter-spacing: -0.02em;
 }
 
 .poster-features-grid {
@@ -1488,10 +1492,12 @@ section.sneak-poster-section {
 
 .intro-story-title {
   font-size: clamp(3rem, 10vw, 8rem);
-  line-height: 0.9;
+  line-height: 0.82;
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 2rem;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  letter-spacing: -0.02em;
 }
 
 .intro-story-text {
@@ -2135,10 +2141,12 @@ section.sneak-poster-section {
 
 .heroes-main-title {
   font-size: clamp(3rem, 7vw, 8rem);
-  line-height: 0.9;
+  line-height: 0.82;
   color: #fff;
   text-transform: uppercase;
   max-width: 800px;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  letter-spacing: -0.02em;
 }
 
 .heroes-view-all {
@@ -2288,7 +2296,7 @@ section.sneak-poster-section {
 .comic-container {
   position: relative;
   z-index: 10;
-  max-width: 1280px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -2302,9 +2310,11 @@ section.sneak-poster-section {
 
 .comic-title {
   font-size: clamp(3rem, 7vw, 8rem);
-  line-height: 0.88;
+  line-height: 0.82;
   margin-bottom: 2rem;
   color: #fff;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  letter-spacing: -0.02em;
 }
 
 .comic-lede {
@@ -2580,9 +2590,11 @@ section.sneak-poster-section {
 
 .studio-title {
   font-size: clamp(3rem, 7vw, 8rem);
-  line-height: 0.88;
+  line-height: 0.82;
   margin-bottom: 1.5rem;
   color: #fff;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  letter-spacing: -0.02em;
 }
 
 .studio-lede {
@@ -2713,10 +2725,12 @@ section.sneak-poster-section {
 
 .wishlist-title {
   font-size: clamp(3.5rem, 10vw, 11rem);
-  line-height: 0.85;
+  line-height: 0.82;
   margin-bottom: 2.5rem;
   color: #fff;
   text-transform: uppercase;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  letter-spacing: -0.02em;
 }
 
 .wishlist-desc {
