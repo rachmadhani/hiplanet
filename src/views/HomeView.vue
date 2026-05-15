@@ -229,7 +229,7 @@ onMounted(() => {
           <div class="chapter-num accent-tide">02</div>
           <div class="chapter-info">
             <div class="chapter-meta">Energy · Water</div>
-            <h3 class="chapter-name">DROWNING TIDE</h3>
+            <h3 class="chapter-name">CRYSTAL AQUA SPRING</h3>
             <div class="chapter-boss accent-coral">Boss · SKU</div>
           </div>
           <div class="chapter-desc">
@@ -355,7 +355,7 @@ onMounted(() => {
             <img src="/character/ra.png" alt="RA" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">RA</div>
-              <div class="hero-role">The Sun</div>
+              <div class="hero-role">THE SUN - erase</div>
             </div>
           </div>
 
@@ -364,7 +364,7 @@ onMounted(() => {
             <img src="/character/merc.png" alt="MERCURY" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">MERC</div>
-              <div class="hero-role">The Water</div>
+              <div class="hero-role">THE WATER</div>
             </div>
           </div>
 
@@ -373,16 +373,16 @@ onMounted(() => {
             <img src="/character/v.png" alt="VENUS" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">V</div>
-              <div class="hero-role">The Metal</div>
+              <div class="hero-role">THE METAL</div>
             </div>
           </div>
 
           <div class="hero-card card-hi" style="background: linear-gradient(135deg, rgba(255,107,53,0.25), rgba(255,107,53,0.05));">
-            <span class="hero-tag tag-coral">LEAD</span>
+            <span class="hero-tag tag-coral">LEAD - EARTH</span>
             <img src="/character/hi.png" alt="HI" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">HI</div>
-              <div class="hero-role">The Leader</div>
+              <div class="hero-role">THE LEADER - erase all</div>
             </div>
           </div>
 
@@ -391,7 +391,7 @@ onMounted(() => {
             <img src="/character/ma.png" alt="MARS" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">MA</div>
-              <div class="hero-role">The Fire</div>
+              <div class="hero-role">THE FIRE</div>
             </div>
           </div>
 
@@ -401,7 +401,7 @@ onMounted(() => {
             <img src="/character/jupi.png" alt="JUPITER" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">JUPI</div>
-              <div class="hero-role">The Wood</div>
+              <div class="hero-role">THE WOOD</div>
             </div>
           </div>
 
@@ -410,7 +410,7 @@ onMounted(() => {
             <img src="/character/satu.png" alt="SATURN" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">SATU</div>
-              <div class="hero-role">The Stone</div>
+              <div class="hero-role">THE STONE</div>
             </div>
           </div>
 
@@ -419,7 +419,7 @@ onMounted(() => {
             <img src="/character/ura.png" alt="URANUS" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">URA</div>
-              <div class="hero-role">The Tilt</div>
+              <div class="hero-role">THE TILT</div>
             </div>
           </div>
 
@@ -428,7 +428,7 @@ onMounted(() => {
             <img src="/character/nep.png" alt="NEPTUNE" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">NEP</div>
-              <div class="hero-role">The Lance</div>
+              <div class="hero-role">THE LANCE</div>
             </div>
           </div>
 
@@ -437,7 +437,7 @@ onMounted(() => {
             <img src="/character/plu.png" alt="PLUTO" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">PLU</div>
-              <div class="hero-role">The Outsider</div>
+              <div class="hero-role">THE OUTSIDER</div>
             </div>
           </div>
         </div>
@@ -613,15 +613,21 @@ onMounted(() => {
         </a>
 
         <div class="wishlist-socials">
-          <a href="#" class="social-link">Join Discord</a>
-          <span class="social-sep">·</span>
-          <a href="#" class="social-link">YouTube</a>
-          <span class="social-sep">·</span>
-          <a href="#" class="social-link">Instagram</a>
-          <span class="social-sep">·</span>
-          <a href="#" class="social-link">TikTok</a>
-          <span class="social-sep">·</span>
-          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-icon-link" title="Join Discord">
+            <img src="/social-icon/discord.png" alt="Discord" />
+          </a>
+          <a href="#" class="social-icon-link" title="YouTube">
+            <img src="/social-icon/youtube.png" alt="YouTube" />
+          </a>
+          <a href="#" class="social-icon-link" title="Instagram">
+            <img src="/social-icon/instagram.png" alt="Instagram" />
+          </a>
+          <a href="#" class="social-icon-link" title="TikTok">
+            <img src="/social-icon/tiktok.png" alt="TikTok" />
+          </a>
+          <a href="#" class="social-icon-link" title="LinkedIn">
+            <img src="/social-icon/linkedin.png" alt="LinkedIn" />
+          </a>
         </div>
       </div>
     </section>
@@ -947,13 +953,13 @@ section { position: relative; z-index: 1;
   position: absolute;
   inset: 0;
   opacity: 0.7;
-  background-image:
+  /* background-image:
     radial-gradient(1.5px 1.5px at 12% 24%, rgba(255,255,255,0.9), transparent),
     radial-gradient(1px 1px at 58% 71%, rgba(255,255,255,0.6), transparent),
     radial-gradient(2px 2px at 82% 18%, rgba(255,255,255,0.85), transparent),
     radial-gradient(1px 1px at 38% 82%, rgba(255,255,255,0.55), transparent),
     radial-gradient(1.5px 1.5px at 91% 44%, rgba(255,255,255,0.8), transparent),
-    radial-gradient(1px 1px at 28% 58%, rgba(255,255,255,0.5), transparent);
+    radial-gradient(1px 1px at 28% 58%, rgba(255,255,255,0.5), transparent); */
 }
 
 .grain::after {
@@ -1524,7 +1530,7 @@ section.sneak-poster-section {
 /* CHAPTERS SECTION */
 .chapters-section {
   /* padding-top: 8rem; */
-  padding-bottom: 8rem;
+  padding-bottom: 5rem;
 }
 
 .chapters-container {
@@ -2094,7 +2100,7 @@ section.sneak-poster-section {
 /* HEROES SECTION CUSTOM STYLES */
 .heroes-section {
   position: relative;
-  padding: 6rem 0;
+  padding: 2rem 0;
   overflow: hidden;
   /* background: var(--midnight); */
 }
@@ -2257,7 +2263,6 @@ section.sneak-poster-section {
 
 .hero-role {
   font-size: 10px;
-  text-transform: uppercase;
   letter-spacing: 0.2em;
   color: rgba(255, 245, 229, 0.6);
 }
@@ -2286,7 +2291,7 @@ section.sneak-poster-section {
 }
 
 @media (min-width: 768px) {
-  .heroes-section { padding: 9rem 0; }
+  .heroes-section { padding: 2rem 0; }
   .heroes-grid { grid-template-columns: repeat(5, 1fr); }
 }
 
@@ -2300,7 +2305,7 @@ section.sneak-poster-section {
 /* COMIC SECTION CUSTOM STYLES */
 .comic-section {
   position: relative;
-  padding: 6rem 0;
+  padding: 3rem 0;
   /* background: var(--cream); */
   /* color: var(--midnight); */
   overflow: hidden;
@@ -2568,7 +2573,7 @@ section.sneak-poster-section {
 
 @media (min-width: 768px) {
   .comic-section {
-    padding: 9rem 0;
+    padding: 3rem 0;
   }
   .comic-content-grid {
     grid-template-columns: 1.2fr 0.8fr;
@@ -2597,7 +2602,7 @@ section.sneak-poster-section {
 .studio-container {
   position: relative;
   z-index: 10;
-  max-width: 1280px;
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -2713,7 +2718,7 @@ section.sneak-poster-section {
 .wishlist-section {
   position: relative;
   padding: 8rem 0;
-  background: linear-gradient(135deg, #1B3A8C 0%, #0A1834 50%, #2A0E2E 100%);
+  /* background: linear-gradient(135deg, #1B3A8C 0%, #0A1834 50%, #2A0E2E 100%); */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -2724,7 +2729,7 @@ section.sneak-poster-section {
 .wishlist-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(255, 182, 39, 0.15) 0%, transparent 60%);
+  /* background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(255, 182, 39, 0.15) 0%, transparent 60%); */
   pointer-events: none;
 }
 
@@ -2789,27 +2794,28 @@ section.sneak-poster-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
-.social-link {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: rgba(255, 245, 229, 0.6);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
+.social-icon-link {
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.social-link:hover {
-  color: var(--amber);
+.social-icon-link img {
+  height: 50px;
+  width: auto;
+  /* opacity: 0.5; */
+  transition: all 0.3s ease;
 }
 
-.social-sep {
-  color: rgba(255, 245, 229, 0.2);
-  font-size: 1.2rem;
+.social-icon-link:hover {
+  transform: translateY(-5px);
+}
+
+.social-icon-link:hover img {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
