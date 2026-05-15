@@ -604,8 +604,9 @@ onMounted(() => {
         </h2>
         
         <p class="wishlist-desc">
-          Every wishlist makes Steam show Hi Planet to more players.
-          It's the single most useful thing you can do for a small indie studio.
+          Every wishlist makes Steam show Hi Planet to more players. <br />
+          It's the single most useful thing you can do for a small indie studio. <br />
+          Thank you for all game players!
         </p>
 
         <a href="#" class="wishlist-btn font-display">
@@ -2764,7 +2765,7 @@ section.sneak-poster-section {
   line-height: 1.6;
   color: rgba(255, 245, 229, 0.85);
   margin-bottom: 3.5rem;
-  max-width: 650px;
+  max-width: 950px;
   margin-left: auto;
   margin-right: auto;
 }
