@@ -66,13 +66,13 @@ onMounted(() => {
     </section>
 
     <!-- SOCIAL BAR -->
-    <div class="social-bar">
+    <!-- <div class="social-bar">
       <span class="social-bar-label">Follow the Journey:</span>
       <a href="#" class="social-pill pill-yt">▶ YouTube — Dev Diaries</a>
       <a href="#" class="social-pill pill-tt">♪ TikTok — @EcosoftGame</a>
       <a href="#" class="social-pill pill-dc">⬡ Discord — Join the Crew</a>
       <a href="#" class="social-pill pill-ig">◈ Instagram — @EcosoftGame</a>
-    </div>
+    </div> -->
 
     <!-- SNEAK PEEK POSTER -->
     <section class="sneak-poster-section">
@@ -1110,6 +1110,7 @@ section.sneak-poster-section {
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden;
+  border-top: 1px solid var(--blue);
   /* Removed min-height to let image dictate height */
 }
 
@@ -1885,7 +1886,7 @@ section.sneak-poster-section {
     margin-bottom: 1rem;
   }
   .lede-poster {
-    font-size: 0.85rem;
+    font-size: 0.55rem;
     max-width: 100%;
     margin: 0 auto 1.5rem auto;
   }
@@ -2029,7 +2030,7 @@ section.sneak-poster-section {
     }
 
     .lede-poster {
-      font-size: 0.65rem;
+      font-size: 0.55rem;
     }
   
     .poster-main-title {
