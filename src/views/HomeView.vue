@@ -1569,7 +1569,7 @@ section.sneak-poster-section {
 
 .chapter-name {
   font-family: 'Anton', sans-serif;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   letter-spacing: 0.03em;
   color: #fff;
 }
