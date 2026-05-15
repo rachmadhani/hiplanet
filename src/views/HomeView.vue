@@ -355,7 +355,7 @@ onMounted(() => {
             <img src="/character/ra.png" alt="RA" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">RA</div>
-              <div class="hero-role">THE SUN - erase</div>
+              <div class="hero-role"></div>
             </div>
           </div>
 
@@ -378,11 +378,11 @@ onMounted(() => {
           </div>
 
           <div class="hero-card card-hi" style="background: linear-gradient(135deg, rgba(255,107,53,0.25), rgba(255,107,53,0.05));">
-            <span class="hero-tag tag-coral">LEAD - EARTH</span>
+            <span class="hero-tag tag-coral">EARTH</span>
             <img src="/character/hi.png" alt="HI" class="hero-img" />
             <div class="hero-card-bottom">
               <div class="hero-name font-display">HI</div>
-              <div class="hero-role">THE LEADER - erase all</div>
+              <div class="hero-role"></div>
             </div>
           </div>
 
@@ -442,7 +442,7 @@ onMounted(() => {
           </div>
         </div>
 
-        <p class="hero-placeholder-note italic">→ Placeholder cards — replace with actual character sprites</p>
+        <!-- <p class="hero-placeholder-note italic">→ Placeholder cards — replace with actual character sprites</p> -->
 
       </div>
     </section>
@@ -2717,7 +2717,7 @@ section.sneak-poster-section {
 /* WISHLIST SECTION */
 .wishlist-section {
   position: relative;
-  padding: 8rem 0;
+  padding: 2rem 0;
   /* background: linear-gradient(135deg, #1B3A8C 0%, #0A1834 50%, #2A0E2E 100%); */
   overflow: hidden;
   display: flex;
@@ -2749,7 +2749,7 @@ section.sneak-poster-section {
 }
 
 .wishlist-title {
-  font-size: clamp(3.5rem, 10vw, 11rem);
+  font-size: clamp(3.5rem, 13vw, 12rem);
   line-height: 0.82;
   margin-bottom: 2.5rem;
   color: #fff;
