@@ -206,7 +206,7 @@ onMounted(() => {
       <div class="chapters-container">
         <!-- Ch1 -->
         <article class="chapter-row reveal">
-          <div class="chapter-num accent-earth">01</div>
+          <div class="chapter-num accent-gaia">01</div>
           <div class="chapter-info">
             <div class="chapter-meta">Energy · Wood</div>
             <h3 class="chapter-name">MOTHER GAIA OAK</h3>
@@ -1552,6 +1552,10 @@ section.sneak-poster-section {
   font-size: clamp(3rem, 6vw, 7.5rem);
   line-height: 1;
   opacity: 0.9;
+}
+
+.accent-gaia {
+  color: #b2b71d;
 }
 
 .chapter-info {
