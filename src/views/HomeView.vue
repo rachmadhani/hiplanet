@@ -941,8 +941,8 @@ section { position: relative; z-index: 1;
   position: relative;
   overflow: hidden;
   min-height: 140vh;
-  background: linear-gradient(rgba(10, 24, 52, 0.6), rgba(10, 24, 52, 0.6)), url('/hero-image/hiplanet_website_hero_background.jpeg') no-repeat center center;
-  /* background: url('/hero-image/hiplanet_website_hero_background.jpeg') no-repeat center center; */
+  /* background: linear-gradient(rgba(10, 24, 52, 0.6), rgba(10, 24, 52, 0.6)), url('/hero-image/hiplanet_website_hero_background.jpg') no-repeat center center; */
+  background: url('/hero-image/hiplanet_website_hero_background.jpg') no-repeat center center;
   background-size: cover;
 }
 
