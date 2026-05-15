@@ -226,7 +226,7 @@ onMounted(() => {
 
         <!-- Ch2 -->
         <article class="chapter-row reveal">
-          <div class="chapter-num accent-cyan">02</div>
+          <div class="chapter-num accent-tide">02</div>
           <div class="chapter-info">
             <div class="chapter-meta">Energy · Water</div>
             <h3 class="chapter-name">DROWNING TIDE</h3>
@@ -234,9 +234,7 @@ onMounted(() => {
           </div>
           <div class="chapter-desc">
             <p>
-              Oceans churn. SKU's underwater siphon machines drain the world's seas,
-              leaving fishing villages dry and coral reefs ash. Heroes dive into
-              the storm to stop the second extraction.
+              At the heart of the desert lies Crystal Aqua Spring, the last sacred oasis holding the planet’s Water Energy. But SKU and his underwater siphon machines have arrived, draining its power and turning the oasis into dust.
             </p>
           </div>
           <div class="chapter-visual">
@@ -246,17 +244,15 @@ onMounted(() => {
 
         <!-- Ch3 -->
         <article class="chapter-row reveal">
-          <div class="chapter-num accent-coral">03</div>
+          <div class="chapter-num accent-fire">03</div>
           <div class="chapter-info">
             <div class="chapter-meta">Energy · Fire</div>
-            <h3 class="chapter-name">SCORCHED EARTH</h3>
+            <h3 class="chapter-name">WILDFIRE MOUNTAIN</h3>
             <div class="chapter-boss accent-coral">Boss · ROC</div>
           </div>
           <div class="chapter-desc">
             <p>
-              Wildfires sweep an entire continent. ROC, lieutenant of the Wormhole,
-              descends in a column of flame. Push through the smoke and bring
-              the third energy home.
+              Wildfires sweep an entire mountain. ROC, lieutenant of the Wormhole, descends in a column of flame. Push through the smoke and bring the third energy home.
             </p>
           </div>
           <div class="chapter-visual">
@@ -266,10 +262,10 @@ onMounted(() => {
 
         <!-- Ch4 -->
         <article class="chapter-row reveal">
-          <div class="chapter-num text-white">04</div>
+          <div class="chapter-num accent-frozen">04</div>
           <div class="chapter-info">
             <div class="chapter-meta">Energy · Stone</div>
-            <h3 class="chapter-name">FROZEN MARROW</h3>
+            <h3 class="chapter-name">FROZEN ARCTIC</h3>
             <div class="chapter-boss accent-coral">Boss · ZOM</div>
           </div>
           <div class="chapter-desc">
@@ -286,7 +282,7 @@ onMounted(() => {
 
         <!-- Ch5 -->
         <article class="chapter-row reveal">
-          <div class="chapter-num accent-magenta">05</div>
+          <div class="chapter-num accent-wasteland">05</div>
           <div class="chapter-info">
             <div class="chapter-meta">Energy · Metal</div>
             <h3 class="chapter-name">THE WASTELAND</h3>
@@ -307,7 +303,7 @@ onMounted(() => {
 
         <!-- Ch6 -->
         <article class="chapter-row reveal finale-row">
-          <div class="chapter-num accent-amber">06</div>
+          <div class="chapter-num accent-crimson">06</div>
           <div class="chapter-info">
             <div class="chapter-meta accent-amber">FINALE · ALL ENERGIES</div>
             <h3 class="chapter-name">POLLUTOPIA</h3>
@@ -1556,6 +1552,26 @@ section.sneak-poster-section {
 
 .accent-gaia {
   color: #339c5e;
+}
+
+.accent-tide {
+  color: #37e7d3;
+}
+
+.accent-fire {
+  color: #d82e16;
+}
+
+.accent-frozen {
+  color: #fffd01;
+}
+
+.accent-wasteland{
+  color: #949494;
+}
+
+.accent-crimson{
+  color: #ff7034;
 }
 
 .chapter-info {
