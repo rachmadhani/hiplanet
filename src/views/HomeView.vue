@@ -977,7 +977,7 @@ section { position: relative; z-index: 1;
 
 .hero-text-box {
   margin-top: -67vh;
-  padding: 3rem;
+  padding: 3.75rem;
   padding-top: 1rem;
   max-width: 720px;
 }
