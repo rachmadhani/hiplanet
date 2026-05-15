@@ -106,9 +106,9 @@ onMounted(() => {
           <!-- A horde-roguelite told in six comic-book chapters.<br />
           Smash through swarms. Save Earth's energies.<br />
           Stop the <span class="accent-magenta font-semibold font-display tracking-[0.1em]">COSMIC WORMHOLE.</span> -->
-          A horde-roguelite told in six comic-book chapters. Smash through robot swarms,
-          battle a boss at every chapter's end, and stop the Cosmic Wormhole from
-          forging the Infinite Power Cosmic Cube.
+          A horde-roguelite told in six comic-book chapters. <br /> 
+          Smash through robot swarms,battle a boss at every chapter's end, <br />
+          and stop the Cosmic Wormhole from forging the Infinite Power Cosmic Cube.
         </p>
 
         <!-- CTAs -->
@@ -1182,7 +1182,7 @@ section.sneak-poster-section {
   line-height: 1.5;
   letter-spacing: 0.01em;
   color: rgba(255, 245, 229, 0.9);
-  max-width: 700px;
+  max-width: 900px;
   text-align: center;
   margin-bottom: 2.5rem;
   text-shadow: 0 2px 10px rgba(0,0,0,0.6);
