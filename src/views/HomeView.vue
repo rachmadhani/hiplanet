@@ -930,7 +930,7 @@ onMounted(() => {
 }
 section { position: relative; z-index: 1; 
   /* min-height: 100vh;  */
-  padding: 80px 2rem; max-width: 2000px; margin: 0 4rem auto auto; }
+  padding: 80px 2rem; max-width: 2000px; margin: 0 auto; }
 
 /* HERO */
 .hero-wrap { 
@@ -2092,7 +2092,7 @@ section.sneak-poster-section {
 
 .heroes-container {
   position: relative;
-  max-width: 1600px;
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 1.5rem;
   z-index: 2;
@@ -2296,7 +2296,7 @@ section.sneak-poster-section {
 .comic-container {
   position: relative;
   z-index: 10;
-  max-width: 1600px;
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
