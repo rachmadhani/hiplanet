@@ -1275,13 +1275,14 @@ section.sneak-poster-section {
 .why-different-section {
   width: 100%;
   text-align: left;
-  padding-left: 4.4rem;
+  padding-left: 6rem;
+  padding-top: 6rem;
 }
 
 .youtube-embed-container {
   width: 100%;
   max-width: 1200px;
-  margin: 6rem auto;
+  margin: 5rem auto;
   aspect-ratio: 16 / 9;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 30px 60px rgba(0,0,0,0.8);
@@ -1358,7 +1359,7 @@ section.sneak-poster-section {
 }
 
 .feature-text {
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
   line-height: 1.6;
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   color: rgba(255, 245, 229, 0.7);
