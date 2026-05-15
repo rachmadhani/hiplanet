@@ -1837,6 +1837,9 @@ section.sneak-poster-section {
   section {
     min-height: 29vh;
   }
+  .section-line {
+      justify-content: flex-start !important;
+  }
   .hero-wrap {
     min-height: 100vh;
     padding-top: 15vh;
@@ -1937,7 +1940,7 @@ section.sneak-poster-section {
   .why-different-section {
     padding-left: 0;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: -2rem;
   }
 
   .different-line {
@@ -1950,7 +1953,7 @@ section.sneak-poster-section {
   
   .different-title {
     font-size: 1.5rem;
-    line-height: 1.1;
+    line-height: 1.2rem;
     margin-bottom: 1.5rem;
     position: relative;
     z-index: 200;
@@ -2047,6 +2050,10 @@ section.sneak-poster-section {
       padding: 1.5rem;
       max-width: 100%;
     }
+
+    .section-line {
+      justify-content: flex-start !important;
+    }
     
     .lede {
       font-size: 1rem;
@@ -2070,6 +2077,11 @@ section.sneak-poster-section {
     .poster-main-title {
       font-size: 1.6rem !important;
     }
+
+    .why-different-section {
+      margin-top: -4rem;
+    }
+
     .different-title {
       font-size: 1.3rem !important;
     }
