@@ -1555,7 +1555,7 @@ section.sneak-poster-section {
 }
 
 .accent-gaia {
-  color: #b2b71d;
+  color: #339c5e;
 }
 
 .chapter-info {
