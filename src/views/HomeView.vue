@@ -43,7 +43,7 @@ onMounted(() => {
           <!-- Title -->
           <h1 class="font-display main-title">
             SAVE THE<br />
-            <span class="accent-earth">EARTH.</span>
+            <span class="accent-earth-hero">EARTH.</span>
           </h1>
 
           <p class="lede">
@@ -142,7 +142,7 @@ onMounted(() => {
         <div class="reveal d-6 poster-features-grid">
           <!-- 01 -->
           <div class="feature-item">
-            <div class="font-display feature-num accent-earth">01</div>
+            <div class="font-display feature-num accent-earth-hero">01</div>
             <h3 class="feature-heading">COMIC-BOOK STORY</h3>
             <p class="feature-text">
               Every chapter opens, breaks, and closes with original comic panels —
@@ -1026,7 +1026,7 @@ section { position: relative; z-index: 1;
   margin-bottom: 1.5rem;
   color: #fff;
 }
-.accent-earth { color: var(--neon-blue); }
+.accent-earth-hero { color: var(--neon-blue); }
 
 .lede {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
