@@ -1933,7 +1933,7 @@ section {
 }
 
 .reels-header-text {
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 .reels-title {
