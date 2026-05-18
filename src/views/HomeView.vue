@@ -929,11 +929,13 @@ onMounted(() => {
 
 <style scoped>
 .landing {
-  padding-top: 80px;
+  padding-top: clamp(60px, 5vw, 80px); /* Match nav height */
+  max-width: 100%;
+  overflow-x: hidden;
 }
 section { position: relative; z-index: 1; 
   /* min-height: 100vh;  */
-  padding: 80px 2rem; max-width: 2000px; margin: 0 auto; }
+  padding: clamp(40px, 5vw, 80px) clamp(1rem, 3vw, 2rem); max-width: 2000px; margin: 0 auto; }
 
 /* HERO */
 .hero-wrap { 
@@ -944,7 +946,8 @@ section { position: relative; z-index: 1;
   max-width: 100%;
   position: relative;
   overflow: hidden;
-  min-height: 140vh;
+  /* Use aspect-ratio based approach for consistent proportions across resolutions */
+  min-height: max(100vh, 56.25vw); /* 16:9 ratio as minimum, ensures consistent proportions */
   /* background: linear-gradient(rgba(10, 24, 52, 0.6), rgba(10, 24, 52, 0.6)), url('/hero-image/hiplanet_website_hero_background.jpg') no-repeat center center; */
   background: url('/hero-image/hiplanet_website_hero_background.jpg') no-repeat center center;
   background-size: cover;
@@ -971,19 +974,20 @@ section { position: relative; z-index: 1;
 }
 
 .hero-inner {
-  position: relative;
+  position: absolute;
   z-index: 10;
-  max-width: 1200px;
+  /* Percentage-based position scales identically across all viewports */
+  top: 18%;
+  left: clamp(1rem, 3vw, 2rem);
+  max-width: clamp(900px, 62.5vw, 1200px);
   width: 100%;
-  padding: 0 2rem;
-  padding-top: 2vh;
+  padding: 0 clamp(1rem, 3vw, 2rem);
 }
 
 .hero-text-box {
-  margin-top: -660px;
-  padding: 3.75rem;
+  padding: clamp(1.5rem, 3vw, 3.75rem);
   padding-top: 1rem;
-  max-width: 720px;
+  max-width: clamp(480px, 37.5vw, 720px);
 }
 
 .hero-bottom-bar {
@@ -999,9 +1003,9 @@ section { position: relative; z-index: 1;
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: clamp(0.5rem, 1vw, 1rem);
   /* background: rgba(10, 24, 52, 0.95); */
-  padding: 0.8rem 1.5rem;
+  padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.75rem, 1.5vw, 1.5rem);
   /* border: 2px solid var(--royal); */
   /* backdrop-filter: blur(12px); */
   /* border-radius: 4px; */
@@ -1025,9 +1029,9 @@ section { position: relative; z-index: 1;
 
 .main-title {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(3.5rem, 11vw, 9rem);
+  font-size: clamp(3.5rem, 6vw, 9rem);
   line-height: 0.82;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1rem, 2vw, 2rem);
   color: #fff;
   text-shadow: 0 10px 40px rgba(0,0,0,0.8);
   letter-spacing: -0.02em;
@@ -1048,8 +1052,8 @@ section { position: relative; z-index: 1;
   font-family: 'Anton', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.95rem;
+  padding: clamp(0.5rem, 0.8vw, 0.75rem) clamp(1rem, 1.5vw, 1.5rem);
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
   text-decoration: none;
   transition: all 0.2s ease;
   border: 2px solid transparent;
@@ -1089,9 +1093,10 @@ section { position: relative; z-index: 1;
   position: absolute;
   bottom: 0;
   left: 0;
-  top: 40%;
+  /* Use consistent percentage-based positioning */
+  top: 57%;
   width: 100%;
-  height: 100%;
+  height: 78%; /* Explicit height instead of 100% to prevent overflow */
   background: url('/hero-image/hiplanet_website_hero_foreground.png') no-repeat bottom center;
   background-size: cover;
   z-index: 3;
@@ -1146,7 +1151,7 @@ section.sneak-poster-section {
   justify-content: flex-start; /* Moved to top */
   align-items: center;
   text-align: center;
-  padding: 8rem 2rem; /* Added top padding to control height */
+  padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 3vw, 2rem); /* Responsive padding */
 }
 
 .poster-credits {
@@ -1256,14 +1261,14 @@ section.sneak-poster-section {
   display: inline-flex;
   align-items: center;
   align-self: flex-start;
-  margin-left: 21rem; /* Pushed to the right as requested */
-  margin-bottom: 20px;
-  gap: 1rem;
+  margin-left: clamp(5rem, 16vw, 21rem); /* Responsive left push */
+  margin-bottom: clamp(12px, 1.5vw, 20px);
+  gap: clamp(0.5rem, 1vw, 1rem);
   font-family: 'Anton', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   color: var(--blue);
-  font-size: 0.9rem;
+  font-size: clamp(0.7rem, 0.9vw, 0.9rem);
 }
 
 .poster-tag-line {
@@ -1280,14 +1285,14 @@ section.sneak-poster-section {
 .why-different-section {
   width: 100%;
   text-align: left;
-  padding-left: 6rem;
-  padding-top: 6rem;
+  padding-left: clamp(2rem, 5vw, 6rem);
+  padding-top: clamp(3rem, 5vw, 6rem);
 }
 
 .youtube-embed-container {
   width: 100%;
-  max-width: 1200px;
-  margin: 5rem auto;
+  max-width: clamp(800px, 62.5vw, 1200px);
+  margin: clamp(2.5rem, 4vw, 5rem) auto;
   aspect-ratio: 16 / 9;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 30px 60px rgba(0,0,0,0.8);
@@ -1335,10 +1340,10 @@ section.sneak-poster-section {
 .poster-features-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: clamp(1.5rem, 3vw, 3rem);
   width: 100%;
-  max-width: 1600px;
-  margin: auto auto -6rem auto; /* Pushed to bottom with auto top margin */
+  max-width: clamp(1200px, 83vw, 1600px);
+  margin: auto auto clamp(-4rem, -3vw, -6rem) auto; /* Responsive bottom push */
   text-align: left;
 }
 
@@ -1349,7 +1354,7 @@ section.sneak-poster-section {
 }
 
 .feature-num {
-  font-size: clamp(5rem, 8vw, 11rem);
+  font-size: clamp(3rem, 5.7vw, 11rem);
   line-height: 1;
   margin-bottom: 0.5rem;
   opacity: 0.9;
@@ -1358,8 +1363,8 @@ section.sneak-poster-section {
 .feature-heading {
   /* font-family: 'Anton', sans-serif; */
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.5rem);
+  margin-bottom: clamp(0.5rem, 0.8vw, 1rem);
   letter-spacing: 0.05em;
   color: #fff;
   text-transform: uppercase;
@@ -1510,10 +1515,10 @@ section.sneak-poster-section {
   transform: translateX(-50%);
   z-index: 10;
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(0.9rem, 1.5vw, 2rem);
+  font-size: clamp(0.9rem, 1.2vw, 2rem);
   line-height: 1.6;
   color: rgba(255, 245, 229, 0.85);
-  max-width: 1200px;
+  max-width: clamp(800px, 62.5vw, 1200px);
   text-align: center;
   text-shadow: 0 4px 12px rgba(0,0,0,0.9);
 }
@@ -1596,14 +1601,14 @@ section.sneak-poster-section {
 
 .chapter-name {
   font-family: 'Anton', sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
   letter-spacing: 0.03em;
   color: #fff;
 }
 
 .chapter-boss {
   font-family: 'Space Mono', monospace;
-  font-size: 1.7rem;
+  font-size: clamp(1rem, 1.3vw, 1.7rem);
   text-transform: uppercase;
   letter-spacing: 0.25em;
   margin-top: 0.75rem;
@@ -1615,7 +1620,7 @@ section.sneak-poster-section {
 
 .chapter-desc p {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
   line-height: 1.7;
   color: rgba(255, 245, 229, 0.75);
 }
@@ -1846,8 +1851,12 @@ section.sneak-poster-section {
     align-items: center;
     text-align: center;
   }
+  .hero-inner {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
   .hero-text-box {
-    margin-top: -300px;
     padding: 1.5rem;
     max-width: 100%;
   }
@@ -2046,7 +2055,6 @@ section.sneak-poster-section {
   /* Extreme Mobile Fix (360x760) */
   @media (max-width: 360px) {
     .hero-text-box{
-      margin-top: -200px;
       padding: 1.5rem;
       max-width: 100%;
     }
@@ -2131,9 +2139,9 @@ section.sneak-poster-section {
 
 .heroes-container {
   position: relative;
-  max-width: 1660px;
+  max-width: clamp(1200px, 86vw, 1660px);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1rem, 2vw, 1.5rem);
   z-index: 2;
 }
 
@@ -2334,9 +2342,9 @@ section.sneak-poster-section {
 .comic-container {
   position: relative;
   z-index: 10;
-  max-width: 1660px;
+  max-width: clamp(1200px, 86vw, 1660px);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1rem, 2vw, 1.5rem);
 }
 
 .comic-content-grid {
@@ -2615,9 +2623,9 @@ section.sneak-poster-section {
 .studio-container {
   position: relative;
   z-index: 10;
-  max-width: 1660px;
+  max-width: clamp(1200px, 86vw, 1660px);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1rem, 2vw, 1.5rem);
 }
 
 .studio-grid {
@@ -2679,8 +2687,8 @@ section.sneak-poster-section {
 }
 
 .timeline-year {
-  font-size: 3.5rem;
-  width: 6rem;
+  font-size: clamp(2rem, 2.7vw, 3.5rem);
+  width: clamp(4rem, 5vw, 6rem);
   flex-shrink: 0;
   color: var(--coral);
   line-height: 1;
@@ -2749,9 +2757,9 @@ section.sneak-poster-section {
 .wishlist-container {
   position: relative;
   z-index: 10;
-  max-width: 900px;
+  max-width: clamp(700px, 47vw, 900px);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1rem, 2vw, 1.5rem);
   text-align: center;
 }
 
@@ -2762,9 +2770,9 @@ section.sneak-poster-section {
 }
 
 .wishlist-title {
-  font-size: clamp(3.5rem, 13vw, 12rem);
+  font-size: clamp(3.5rem, 6.3vw, 12rem);
   line-height: 0.82;
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(1.5rem, 2vw, 2.5rem);
   color: #fff;
   text-transform: uppercase;
   text-shadow: 0 10px 40px rgba(0,0,0,0.8);
@@ -2788,8 +2796,8 @@ section.sneak-poster-section {
   gap: 0.75rem;
   background: var(--coral);
   color: var(--midnight);
-  padding: 1.5rem 3rem;
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  padding: clamp(1rem, 1.3vw, 1.5rem) clamp(2rem, 2.5vw, 3rem);
+  font-size: clamp(1rem, 1.3vw, 1.8rem);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -2817,7 +2825,7 @@ section.sneak-poster-section {
 }
 
 .social-icon-link img {
-  height: 50px;
+  height: clamp(35px, 3.5vw, 50px);
   width: auto;
   /* opacity: 0.5; */
   transition: all 0.3s ease;

@@ -52,17 +52,11 @@ onUnmounted(() => {
     </div> -->
 
     <!-- ============ 1. COMIC HERO ============ -->
-    <section id="hero" class="comic-hero grain">
+    <section id="hero" class="comic-hero">
       <div class="stars-overlay"></div>
       <div class="halftone-overlay"></div>
 
       <div class="hero-container">
-        <!-- Breadcrumb -->
-        <div class="comic-breadcrumb fade-up-comic d-1">
-          <RouterLink to="/" class="breadcrumb-link">Home</RouterLink>
-          <span class="divider">/</span>
-          <span class="active-crumb">The Comic</span>
-        </div>
 
         <div class="hero-grid">
           <!-- LEFT: Title -->
@@ -73,7 +67,7 @@ onUnmounted(() => {
             </div>
             <h1 class="hero-title fade-up-comic d-2 font-display">
               READ THE<br />
-              <span class="accent-coral">WORLD.</span>
+              <span class="accent-neon-blue">WORLD.</span>
             </h1>
             <p class="hero-subtitle fade-up-comic d-3 font-serif">
               Hi Planet started as a comic in 2020.<br />
@@ -800,7 +794,7 @@ onUnmounted(() => {
 
 .comic-page {
   padding-top: calc(clamp(60px, 5vw, 80px) + 32px); /* nav height + ticker height */
-  background: var(--midnight);
+  background: var(--bg);
   color: var(--cream);
   min-height: 100vh;
   position: relative;
@@ -860,13 +854,13 @@ section {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image:
+  /* background-image:
     radial-gradient(1.5px 1.5px at 12% 24%, rgba(255,255,255,0.9), transparent),
     radial-gradient(1px 1px at 58% 71%, rgba(255,255,255,0.6), transparent),
     radial-gradient(2px 2px at 82% 18%, rgba(255,255,255,0.85), transparent),
     radial-gradient(1px 1px at 38% 82%, rgba(255,255,255,0.55), transparent),
     radial-gradient(1.5px 1.5px at 91% 44%, rgba(255,255,255,0.8), transparent),
-    radial-gradient(1px 1px at 28% 58%, rgba(255,255,255,0.5), transparent);
+    radial-gradient(1px 1px at 28% 58%, rgba(255,255,255,0.5), transparent); */
 }
 
 .grain::after {
@@ -881,7 +875,7 @@ section {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(circle, rgba(255,245,229,0.12) 1px, transparent 1px);
+  /* background-image: radial-gradient(circle, rgba(255,245,229,0.12) 1px, transparent 1px); */
   background-size: 8px 8px;
 }
 
@@ -905,14 +899,14 @@ section {
 .comic-hero {
   padding: clamp(60px, 8vw, 100px) clamp(1rem, 3vw, 2rem) clamp(80px, 10vw, 120px);
   overflow: hidden;
-  background:
+  /* background:
     radial-gradient(ellipse 50% 50% at 30% 40%, rgba(255,107,53,0.22) 0%, transparent 60%),
     radial-gradient(ellipse 60% 60% at 80% 70%, rgba(74,144,226,0.2) 0%, transparent 60%),
-    linear-gradient(180deg, #0A1834 0%, #060D24 100%);
+    linear-gradient(180deg, #0A1834 0%, #060D24 100%); */
 }
 
 .hero-container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   position: relative;
   z-index: 10;
@@ -987,19 +981,22 @@ section {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 5.5rem);
-  line-height: 0.85;
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.82;
   margin-bottom: 1.5rem;
-  color: var(--cream);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
 
-.accent-coral {
-  color: var(--coral);
+.accent-neon-blue {
+  color: var(--neon-blue);
 }
 
 .hero-subtitle {
   font-size: clamp(1.1rem, 1.4vw, 1.35rem);
-  font-style: italic;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   color: rgba(255, 245, 229, 0.85);
   line-height: 1.6;
   margin-bottom: 2rem;
