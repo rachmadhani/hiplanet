@@ -18,20 +18,20 @@
       <div>
         <div class="footer-col-title">Navigate</div>
         <ul class="footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#universe">Universe</a></li>
-          <li><a href="#games">Games</a></li>
-          <li><a href="#community">Community</a></li>
-          <li><a href="#devlog">Devlog</a></li>
+          <li><a href="/#home">Home</a></li>
+          <li><a href="/#universe">Universe</a></li>
+          <li><a href="/#games">Games</a></li>
+          <li><a href="/#community">Community</a></li>
+          <li><a href="/#devlog">Devlog</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Universe</div>
         <ul class="footer-links">
-          <li><a href="#">Comic Book</a></li>
-          <li><a href="#">Concept Art</a></li>
-          <li><a href="#">World Lore</a></li>
-          <li><a href="#">Characters</a></li>
+          <li><RouterLink to="/comic">Comic Book</RouterLink></li>
+          <li><a href="/#concept">Concept Art</a></li>
+          <li><a href="/#wiki">World Lore</a></li>
+          <li><a href="/#characters">Characters</a></li>
         </ul>
       </div>
       <div>

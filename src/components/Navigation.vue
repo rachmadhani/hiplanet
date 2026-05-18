@@ -30,27 +30,27 @@ onUnmounted(() => {
 
 <template>
   <nav>
-    <a href="#home" class="nav-logo">
+    <RouterLink to="/" class="nav-logo">
       <img src="/logo/ecosoft_logo_design_original.png" class="brand-logo desktop-logo" alt="ECOSOFT" />
       <img src="/logo/ecosoft_logo_mobile.png" class="brand-logo mobile-logo" alt="ECOSOFT" />
-    </a>
+    </RouterLink>
     <ul class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
-      <li><a href="#home" :class="{ active: activeSection === 'home' }">Home</a></li>
+      <li><a href="/#home" :class="{ active: activeSection === 'home' }">Home</a></li>
       <li class="dropdown">
-        <a href="#universe" :class="{ active: activeSection === 'universe' }">
+        <a href="/#universe" :class="{ active: activeSection === 'universe' }">
           Universe <span class="dropdown-arrow"></span>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="#comic">Comic Book</a></li>
-          <li><a href="#concept">Concept Art</a></li>
-          <li><a href="#wiki">World Lore</a></li>
-          <li><a href="#characters">Characters</a></li>
+          <li><RouterLink to="/comic">Comic Book</RouterLink></li>
+          <li><a href="/#concept">Concept Art</a></li>
+          <li><a href="/#wiki">World Lore</a></li>
+          <li><a href="/#characters">Characters</a></li>
         </ul>
       </li>
-      <li><a href="#games" :class="{ active: activeSection === 'games' }">Games</a></li>
-      <li><a href="#community" :class="{ active: activeSection === 'community' }">Community</a></li>
-      <li><a href="#devlog" :class="{ active: activeSection === 'devlog' }">Devlog</a></li>
-      <li><a href="#community" class="nav-cta discord-btn">Join Discord</a></li>
+      <li><a href="/#games" :class="{ active: activeSection === 'games' }">Games</a></li>
+      <li><a href="/#community" :class="{ active: activeSection === 'community' }">Community</a></li>
+      <li><a href="/#devlog" :class="{ active: activeSection === 'devlog' }">Devlog</a></li>
+      <li><a href="/#community" class="nav-cta discord-btn">Join Discord</a></li>
       <li>
         <a href="https://store.steampowered.com" target="_blank" class="nav-cta steam-btn">
           <img src="/icon/steam-white.png" class="steam-icon" alt="Steam" />
@@ -72,11 +72,11 @@ nav {
   background: rgba(6,10,16,0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--blue);
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 2vw, 2rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: clamp(60px, 5vw, 80px);
 }
 
 .nav-logo {
@@ -86,7 +86,7 @@ nav {
 }
 
 .brand-logo {
-  height: 55px;
+  height: clamp(40px, 3.5vw, 55px);
   width: auto;
   object-fit: contain;
 }
@@ -110,13 +110,13 @@ nav {
 
 .nav-links a {
   font-family: 'Space Mono', monospace;
-  font-size: 0.78rem;
+  font-size: clamp(0.65rem, 0.7vw, 0.78rem);
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--muted);
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem clamp(0.5rem, 0.8vw, 1rem);
   border-radius: 6px;
   transition: all 0.2s;
   border: 1px solid transparent;
