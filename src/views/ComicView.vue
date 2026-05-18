@@ -2,9 +2,22 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const activePlayingReelId = ref<string | null>(null)
+const carouselRef = ref<HTMLElement | null>(null)
 
 const playInline = (id: string) => {
   activePlayingReelId.value = id
+}
+
+const scrollLeft = () => {
+  if (carouselRef.value) {
+    carouselRef.value.scrollBy({ left: -360, behavior: 'smooth' })
+  }
+}
+
+const scrollRight = () => {
+  if (carouselRef.value) {
+    carouselRef.value.scrollBy({ left: 360, behavior: 'smooth' })
+  }
 }
 
 const handleParallax = () => {
@@ -430,8 +443,8 @@ onUnmounted(() => {
           <div class="reels-header-text">
             <div class="section-line accent-coral">Live · @hiplanetofficial</div>
             <h2 class="reels-title font-display">
-              WATCH THE<br />
-              <span class="accent-neon-blue">STORY MOVE.</span>
+              INSIDE THE<br />
+              <span class="accent-neon-blue">SKETCHBOOK.</span>
             </h2>
             <p class="reels-subtitle font-serif">
               Comic panels animated. Character spotlights. Behind-the-scenes from the studio.
@@ -443,102 +456,147 @@ onUnmounted(() => {
           </a>
         </div>
 
-        <div class="reels-grid">
-          <!-- Reel 1 -->
-          <div class="reel-link cursor-pointer">
-            <div class="reel-slot" :class="{ 'reel-player-active': activePlayingReelId === 'DYWmYgoSIub' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip1.jpg') center/cover no-repeat;">
-              <video 
-                v-if="activePlayingReelId === 'DYWmYgoSIub'"
-                src="/reels-comic/SaveClip1.mp4" 
-                autoplay 
-                controls 
-                playsinline 
-                class="reel-inline-video"
-              ></video>
-              <div v-else @click="playInline('DYWmYgoSIub')" class="reel-cover-trigger">
-                <div class="reel-play-btn">
-                  <div class="play-circle"><span class="play-icon">▶</span></div>
+        <div class="reels-carousel-container">
+          <!-- Carousel Prev Arrow Button -->
+          <button class="carousel-arrow prev" @click="scrollLeft" aria-label="Previous Slide">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+          </button>
+
+          <!-- Carousel Scrollable Area -->
+          <div class="reels-carousel-scroll" ref="carouselRef">
+            <div class="reels-grid">
+              <!-- Reel 1 -->
+              <div class="reel-link cursor-pointer">
+                <div class="reel-slot" :class="{ 'reel-player-active': activePlayingReelId === 'DYWmYgoSIub' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip1.jpg') center/cover no-repeat;">
+                  <video 
+                    v-if="activePlayingReelId === 'DYWmYgoSIub'"
+                    src="/reels-comic/SaveClip1.mp4" 
+                    autoplay 
+                    controls 
+                    playsinline 
+                    class="reel-inline-video"
+                  ></video>
+                  <div v-else @click="playInline('DYWmYgoSIub')" class="reel-cover-trigger">
+                    <div class="reel-play-btn">
+                      <div class="play-circle"><span class="play-icon">▶</span></div>
+                    </div>
+                    <span class="reel-source-tag">IG</span>
+                    <div class="reel-info">
+                      <div class="reel-meta font-display">Reel · 0:32</div>
+                      <div class="reel-heading font-display">Mother Gaia<br />Oak Falls</div>
+                    </div>
+                  </div>
                 </div>
-                <span class="reel-source-tag">IG</span>
-                <div class="reel-info">
-                  <div class="reel-meta font-display">Reel · 0:32</div>
-                  <div class="reel-heading font-display">Mother Gaia<br />Oak Falls</div>
+              </div>
+
+              <!-- Reel 2 -->
+              <div class="reel-link cursor-pointer">
+                <div class="reel-slot reel-slot-2" :class="{ 'reel-player-active': activePlayingReelId === 'DYEkZveyPmz' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip2.jpg') center/cover no-repeat;">
+                  <video 
+                    v-if="activePlayingReelId === 'DYEkZveyPmz'"
+                    src="/reels-comic/SaveClip2.mp4" 
+                    autoplay 
+                    controls 
+                    playsinline 
+                    class="reel-inline-video"
+                  ></video>
+                  <div v-else @click="playInline('DYEkZveyPmz')" class="reel-cover-trigger">
+                    <div class="reel-play-btn">
+                      <div class="play-circle"><span class="play-icon">▶</span></div>
+                    </div>
+                    <span class="reel-source-tag">IG</span>
+                    <div class="reel-info">
+                      <div class="reel-meta font-display">Reel · 0:45</div>
+                      <div class="reel-heading font-display">Meet the<br />Hi Planet Team</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reel 3 -->
+              <div class="reel-link cursor-pointer">
+                <div class="reel-slot reel-slot-3" :class="{ 'reel-player-active': activePlayingReelId === 'DXyez8oS6eX' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip3.jpg') center/cover no-repeat;">
+                  <video 
+                    v-if="activePlayingReelId === 'DXyez8oS6eX'"
+                    src="/reels-comic/SaveClip3.mp4" 
+                    autoplay 
+                    controls 
+                    playsinline 
+                    class="reel-inline-video"
+                  ></video>
+                  <div v-else @click="playInline('DXyez8oS6eX')" class="reel-cover-trigger">
+                    <div class="reel-play-btn">
+                      <div class="play-circle"><span class="play-icon">▶</span></div>
+                    </div>
+                    <span class="reel-source-tag">IG</span>
+                    <div class="reel-info">
+                      <div class="reel-meta font-display">Reel · 0:28</div>
+                      <div class="reel-heading font-display">Page to Pixel<br />Transformation</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reel 4 -->
+              <div class="reel-link cursor-pointer">
+                <div class="reel-slot reel-slot-4" :class="{ 'reel-player-active': activePlayingReelId === 'DXge0dWklgu' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip4.jpg') center/cover no-repeat;">
+                  <video 
+                    v-if="activePlayingReelId === 'DXge0dWklgu'"
+                    src="/reels-comic/SaveClip4.mp4" 
+                    autoplay 
+                    controls 
+                    playsinline 
+                    class="reel-inline-video"
+                  ></video>
+                  <div v-else @click="playInline('DXge0dWklgu')" class="reel-cover-trigger">
+                    <div class="reel-play-btn">
+                      <div class="play-circle"><span class="play-icon">▶</span></div>
+                    </div>
+                    <span class="reel-source-tag">IG</span>
+                    <div class="reel-info">
+                      <div class="reel-meta font-display">Reel · 0:38</div>
+                      <div class="reel-heading font-display">Cosmic Wormhole<br />Reveal</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reel 5 -->
+              <div class="reel-link cursor-pointer">
+                <div class="reel-slot reel-slot-5" :class="{ 'reel-player-active': activePlayingReelId === 'DXyez8oS6eX' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip5.jpg') center/cover no-repeat;">
+                  <video 
+                    v-if="activePlayingReelId === 'DXyez8oS6eX'"
+                    src="/reels-comic/SaveClip5.mp4" 
+                    autoplay 
+                    controls 
+                    playsinline 
+                    class="reel-inline-video"
+                  ></video>
+                  <div v-else @click="playInline('DXyez8oS6eX')" class="reel-cover-trigger">
+                    <div class="reel-play-btn">
+                      <div class="play-circle"><span class="play-icon">▶</span></div>
+                    </div>
+                    <span class="reel-source-tag">IG</span>
+                    <div class="reel-info">
+                      <div class="reel-meta font-display">Reel · 0:28</div>
+                      <div class="reel-heading font-display">Page to Pixel<br />Transformation</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Reel 2 -->
-          <div class="reel-link cursor-pointer">
-            <div class="reel-slot reel-slot-2" :class="{ 'reel-player-active': activePlayingReelId === 'DYEkZveyPmz' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip2.jpg') center/cover no-repeat;">
-              <video 
-                v-if="activePlayingReelId === 'DYEkZveyPmz'"
-                src="/reels-comic/SaveClip2.mp4" 
-                autoplay 
-                controls 
-                playsinline 
-                class="reel-inline-video"
-              ></video>
-              <div v-else @click="playInline('DYEkZveyPmz')" class="reel-cover-trigger">
-                <div class="reel-play-btn">
-                  <div class="play-circle"><span class="play-icon">▶</span></div>
-                </div>
-                <span class="reel-source-tag">IG</span>
-                <div class="reel-info">
-                  <div class="reel-meta font-display">Reel · 0:45</div>
-                  <div class="reel-heading font-display">Meet the<br />Hi Planet Team</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Reel 3 -->
-          <div class="reel-link cursor-pointer">
-            <div class="reel-slot reel-slot-3" :class="{ 'reel-player-active': activePlayingReelId === 'DXyez8oS6eX' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip3.jpg') center/cover no-repeat;">
-              <video 
-                v-if="activePlayingReelId === 'DXyez8oS6eX'"
-                src="/reels-comic/SaveClip3.mp4" 
-                autoplay 
-                controls 
-                playsinline 
-                class="reel-inline-video"
-              ></video>
-              <div v-else @click="playInline('DXyez8oS6eX')" class="reel-cover-trigger">
-                <div class="reel-play-btn">
-                  <div class="play-circle"><span class="play-icon">▶</span></div>
-                </div>
-                <span class="reel-source-tag">IG</span>
-                <div class="reel-info">
-                  <div class="reel-meta font-display">Reel · 0:28</div>
-                  <div class="reel-heading font-display">Page to Pixel<br />Transformation</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Reel 4 -->
-          <div class="reel-link cursor-pointer">
-            <div class="reel-slot reel-slot-4" :class="{ 'reel-player-active': activePlayingReelId === 'DXge0dWklgu' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip4.jpg') center/cover no-repeat;">
-              <video 
-                v-if="activePlayingReelId === 'DXge0dWklgu'"
-                src="/reels-comic/SaveClip4.mp4" 
-                autoplay 
-                controls 
-                playsinline 
-                class="reel-inline-video"
-              ></video>
-              <div v-else @click="playInline('DXge0dWklgu')" class="reel-cover-trigger">
-                <div class="reel-play-btn">
-                  <div class="play-circle"><span class="play-icon">▶</span></div>
-                </div>
-                <span class="reel-source-tag">IG</span>
-                <div class="reel-info">
-                  <div class="reel-meta font-display">Reel · 0:38</div>
-                  <div class="reel-heading font-display">Cosmic Wormhole<br />Reveal</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- Carousel Next Arrow Button -->
+          <button class="carousel-arrow next" @click="scrollRight" aria-label="Next Slide">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
         </div>
 
         <div class="reels-footer">
@@ -1913,21 +1971,35 @@ section {
   color: var(--midnight);
 }
 
-.reels-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+.reels-carousel-scroll {
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+  width: 100%;
 }
 
-@media (max-width: 991px) {
-  .reels-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.reels-carousel-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.reels-grid {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+  width: max-content;
 }
 
 .reel-link {
   text-decoration: none;
   display: block;
+  flex: 0 0 280px;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .reel-link {
+    flex: 0 0 350px;
+  }
 }
 
 .reel-slot {
@@ -1997,6 +2069,7 @@ section {
 .reel-link:hover .reel-slot-2 .play-circle { background: var(--cyan); border-color: var(--cyan); }
 .reel-link:hover .reel-slot-3 .play-circle { background: var(--amber); border-color: var(--amber); }
 .reel-link:hover .reel-slot-4 .play-circle { background: var(--magenta); border-color: var(--magenta); }
+.reel-link:hover .reel-slot-5 .play-circle { background: var(--yellow); border-color: var(--yellow); }
 
 .reel-source-tag {
   position: absolute;
@@ -2617,5 +2690,97 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+/* ============ CAROUSEL STRUCTURE & GLOWING ARROWS ============ */
+.reels-carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(6, 10, 16, 0.75);
+  border: 1.5px solid rgba(255, 245, 229, 0.2);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-arrow svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-arrow:hover {
+  border-color: var(--neon-blue);
+  color: var(--neon-blue);
+  box-shadow: 
+    0 0 25px rgba(0, 102, 243, 0.55),
+    inset 0 0 12px rgba(0, 102, 243, 0.2);
+  background: rgba(0, 102, 243, 0.08);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow.prev:hover svg {
+  transform: translateX(-4px);
+}
+
+.carousel-arrow.next:hover svg {
+  transform: translateX(4px);
+}
+
+.carousel-arrow.prev {
+  left: -28px;
+}
+
+.carousel-arrow.next {
+  right: -28px;
+}
+
+/* Responsive Adaptive Styles */
+@media (max-width: 1200px) {
+  .carousel-arrow.prev {
+    left: -15px;
+  }
+  .carousel-arrow.next {
+    right: -15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-arrow {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .carousel-arrow.prev {
+    left: -10px;
+  }
+  
+  .carousel-arrow.next {
+    right: -10px;
+  }
+}
+
+@media (max-width: 500px) {
+  /* Under 500px, native touch swipe takes priority. Hide arrows to save screen space */
+  .carousel-arrow {
+    display: none;
+  }
 }
 </style>
