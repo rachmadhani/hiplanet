@@ -420,7 +420,7 @@ onUnmounted(() => {
     </section> -->
 
     <!-- ============ 5. WATCH THE STORY · INSTAGRAM REELS ============ -->
-    <!-- <section id="reels" class="reels-section fade-up-comic">
+    <section id="reels" class="reels-section fade-up-comic">
       <div class="stars-overlay opacity-25"></div>
       
       <div class="reels-container">
@@ -429,7 +429,7 @@ onUnmounted(() => {
             <div class="section-line accent-coral">Live · @hiplanetofficial</div>
             <h2 class="reels-title font-display">
               WATCH THE<br />
-              <span class="accent-coral">STORY MOVE.</span>
+              <span class="accent-neon-blue">STORY MOVE.</span>
             </h2>
             <p class="reels-subtitle font-serif">
               Comic panels animated. Character spotlights. Behind-the-scenes from the studio.
@@ -442,7 +442,7 @@ onUnmounted(() => {
         </div>
 
         <div class="reels-grid">
-          <a href="https://www.instagram.com/hiplanetofficial/" target="_blank" rel="noopener" class="reel-link">
+          <a href="https://www.instagram.com/reel/DYWmYgoSIub/?hl=en" target="_blank" rel="noopener" class="reel-link">
             <div class="reel-slot">
               <div class="reel-play-btn">
                 <div class="play-circle"><span class="play-icon">▶</span></div>
@@ -455,7 +455,7 @@ onUnmounted(() => {
             </div>
           </a>
 
-          <a href="https://www.instagram.com/hiplanetofficial/" target="_blank" rel="noopener" class="reel-link">
+          <a href="https://www.instagram.com/reel/DYEkZveyPmz/?hl=en" target="_blank" rel="noopener" class="reel-link">
             <div class="reel-slot reel-slot-2" style="background: repeating-linear-gradient(45deg, rgba(255,245,229,0.04) 0 12px, rgba(255,245,229,0.07) 12px 24px), linear-gradient(135deg, rgba(34,211,238,0.14), rgba(46,91,204,0.12));">
               <div class="reel-play-btn">
                 <div class="play-circle"><span class="play-icon">▶</span></div>
@@ -468,7 +468,7 @@ onUnmounted(() => {
             </div>
           </a>
 
-          <a href="https://www.instagram.com/hiplanetofficial/" target="_blank" rel="noopener" class="reel-link">
+          <a href="https://www.instagram.com/reel/DXyez8oS6eX/?hl=en" target="_blank" rel="noopener" class="reel-link">
             <div class="reel-slot reel-slot-3" style="background: repeating-linear-gradient(45deg, rgba(255,245,229,0.04) 0 12px, rgba(255,245,229,0.07) 12px 24px), linear-gradient(135deg, rgba(255,182,39,0.14), rgba(255,107,53,0.10));">
               <div class="reel-play-btn">
                 <div class="play-circle"><span class="play-icon">▶</span></div>
@@ -481,7 +481,7 @@ onUnmounted(() => {
             </div>
           </a>
 
-          <a href="https://www.instagram.com/hiplanetofficial/" target="_blank" rel="noopener" class="reel-link">
+          <a href="https://www.instagram.com/reel/DXge0dWklgu/?hl=en" target="_blank" rel="noopener" class="reel-link">
             <div class="reel-slot reel-slot-4" style="background: repeating-linear-gradient(45deg, rgba(255,245,229,0.04) 0 12px, rgba(255,245,229,0.07) 12px 24px), linear-gradient(135deg, rgba(200,52,90,0.16), rgba(42,14,46,0.20));">
               <div class="reel-play-btn">
                 <div class="play-circle"><span class="play-icon">▶</span></div>
@@ -504,7 +504,7 @@ onUnmounted(() => {
           </a>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- ============ 6. VOL.2 + VOL.3 — THE SERIES CONTINUES ============ -->
     <!-- <section id="vol2" class="series-section vol2-bg grain fade-up-comic">
@@ -1815,7 +1815,7 @@ section {
 }
 
 .reels-container {
-  max-width: 1200px;
+  max-width: 1640px;
   margin: 0 auto;
 }
 
@@ -1829,17 +1829,21 @@ section {
 }
 
 .reels-header-text {
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 .reels-title {
-  font-size: clamp(2rem, 4vw, 4rem);
-  line-height: 0.9;
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.82;
   margin-bottom: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
 
 .reels-subtitle {
-  font-style: italic;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: clamp(1rem, 1.2vw, 1.25rem);
   color: rgba(255, 245, 229, 0.7);
   line-height: 1.6;
