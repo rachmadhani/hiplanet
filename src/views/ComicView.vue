@@ -20,6 +20,10 @@ const scrollRight = () => {
   }
 }
 
+const handleSignup = () => {
+  alert('Vol.2/Vol.3 newsletter signup placeholder')
+}
+
 const handleParallax = () => {
   const scroll = window.scrollY;
   const stars = document.querySelector('.stars-overlay') as HTMLElement;
@@ -602,17 +606,17 @@ onUnmounted(() => {
                 </div>
                 <div class="maker-item" style="--border-color: var(--cyan);">
                   <div class="maker-name">ANDY CHRISTIAN</div>
-                  <div class="maker-role">Illustrator</div>
+                  <div class="maker-role">Artist</div>
                 </div>
               </div>
             </div>
 
             <div class="speech-bubble speech-bubble-bottom">
               <p>
-                "I wanted to create a better world<br />for every child to inherit.<br />
-                <span class="italic" style="font-style: italic; color: var(--cyan);">Hi Planet is that wish, drawn out.</span>"
+                "Saving the planet shouldn’t feel heavy.<br />
+                <span class="italic" style="font-style: italic; color: var(--cyan);">Hi Planet is my way of drawing hope, humor, and colorful adventure into the story.</span>"
               </p>
-              <div class="quote-author">— Andy Christian, Illustrator</div>
+              <div class="quote-author">— Andy Christian, Artist</div>
             </div>
           </div>
         </div>
@@ -620,15 +624,15 @@ onUnmounted(() => {
     </section>
 
     <!-- ============ 6. VOL.2 + VOL.3 — THE SERIES CONTINUES ============ -->
-    <!-- <section id="vol2" class="series-section vol2-bg grain fade-up-comic">
+    <section id="vol2" class="series-section fade-up-comic">
       <div class="stars-overlay opacity-30"></div>
       
       <div class="series-container">
         <div class="series-header">
-          <div class="section-line accent-magenta">The Series Continues · Acts 2 + 3</div>
+          <div class="section-line accent-blue">The Series Continues · Acts 2 + 3</div>
           <h2 class="series-title font-display">
             TWO MORE<br />
-            <span class="accent-magenta">VOLUMES.</span>
+            <span class="accent-neon-blue">VOLUMES.</span>
           </h2>
           <p class="series-subtitle font-serif">
             Episode 1 unfolds across three books. Vol.2 brings fire and ice.
@@ -732,7 +736,7 @@ onUnmounted(() => {
             Pre-order links, exclusive sneak peeks, signed-copy giveaways.
             Subscribers get everything first.
           </p>
-          <form class="signup-form" @submit.prevent="alert('Vol.2/Vol.3 newsletter signup placeholder')">
+          <form class="signup-form" @submit.prevent="handleSignup">
             <input type="email" placeholder="your@email.com" required class="signup-input" />
             <button type="submit" class="btn-coral font-display">
               Notify Me
@@ -740,7 +744,7 @@ onUnmounted(() => {
           </form>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- ============ 7. FROM PAGE TO PIXEL ============ -->
     <!-- <section id="bridge" class="bridge-section bridge-bg fade-up-comic">
@@ -906,6 +910,7 @@ onUnmounted(() => {
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&display=swap');
 
 .comic-page {
+  --ink: #000;
   padding-top: calc(clamp(60px, 5vw, 80px) + 32px); /* nav height + ticker height */
   background: var(--bg);
   color: var(--cream);
@@ -2175,14 +2180,14 @@ section {
 }
 
 .vol2-bg {
-  background:
+  /* background:
     radial-gradient(ellipse 60% 60% at 70% 40%, rgba(200,52,90,0.22) 0%, transparent 65%),
     radial-gradient(ellipse 50% 50% at 30% 70%, rgba(46,91,204,0.18) 0%, transparent 60%),
-    linear-gradient(180deg, #0F1F44 0%, #1A0824 100%);
+    linear-gradient(180deg, #0F1F44 0%, #1A0824 100%); */
 }
 
 .series-container {
-  max-width: 1200px;
+  max-width: 1620px;
   margin: 0 auto;
   position: relative;
   z-index: 10;
@@ -2190,7 +2195,7 @@ section {
 
 .series-header {
   margin-bottom: 4rem;
-  max-width: 720px;
+  max-width: 1200px;
 }
 
 .accent-magenta {
@@ -2198,13 +2203,17 @@ section {
 }
 
 .series-title {
-  font-size: clamp(2rem, 4vw, 4rem);
-  line-height: 0.9;
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.82;
   margin-bottom: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
 
 .series-subtitle {
-  font-style: italic;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: clamp(1rem, 1.2vw, 1.25rem);
   color: rgba(255, 245, 229, 0.75);
   line-height: 1.6;
@@ -2304,14 +2313,15 @@ section {
 
 .promo-title {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 5rem);
   letter-spacing: 0.02em;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .promo-desc {
-  font-size: 0.88rem;
+  font-size: 1rem;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   color: rgba(255, 245, 229, 0.7);
   line-height: 1.6;
 }
@@ -2350,14 +2360,14 @@ section {
   font-size: 0.75rem;
   margin-left: auto;
   align-self: center;
-  color: rgba(255, 245, 229, 0.5);
+  color: #fff;
 }
 
 .volume-stats {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  color: rgba(255, 245, 229, 0.5);
+  color: #fff;
   font-weight: 700;
 }
 
