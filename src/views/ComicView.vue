@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
 
-const alert = (msg: string) => {
-  window.alert(msg);
-}
+// const alert = (msg: string) => {
+//   window.alert(msg);
+// }
 
 const handleParallax = () => {
   const scroll = window.scrollY;
