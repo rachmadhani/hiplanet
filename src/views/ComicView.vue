@@ -551,7 +551,7 @@ onUnmounted(() => {
               </div>
             </div>
             <div class="timeline-node accent-magenta">
-              <div class="marker">2025</div>
+              <div class="marker">24-25</div>
               <div class="node-content">
                 <h3>FROM PAGE TO PIXEL</h3>
                 <p>
