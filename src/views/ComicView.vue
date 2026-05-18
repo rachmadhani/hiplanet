@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
-// const alert = (msg: string) => {
-//   window.alert(msg);
-// }
+const activePlayingReelId = ref<string | null>(null)
+
+const playInline = (id: string) => {
+  activePlayingReelId.value = id
+}
 
 const handleParallax = () => {
   const scroll = window.scrollY;
@@ -442,57 +444,101 @@ onUnmounted(() => {
         </div>
 
         <div class="reels-grid">
-          <a href="https://www.instagram.com/reel/DYWmYgoSIub/?hl=en" target="_blank" rel="noopener" class="reel-link">
-            <div class="reel-slot">
-              <div class="reel-play-btn">
-                <div class="play-circle"><span class="play-icon">▶</span></div>
-              </div>
-              <span class="reel-source-tag">IG</span>
-              <div class="reel-info">
-                <div class="reel-meta font-display">Reel · 0:32</div>
-                <div class="reel-heading font-display">Mother Gaia<br />Oak Falls</div>
+          <!-- Reel 1 -->
+          <div class="reel-link cursor-pointer">
+            <div class="reel-slot" :class="{ 'reel-player-active': activePlayingReelId === 'DYWmYgoSIub' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip1.jpg') center/cover no-repeat;">
+              <video 
+                v-if="activePlayingReelId === 'DYWmYgoSIub'"
+                src="/reels-comic/SaveClip1.mp4" 
+                autoplay 
+                controls 
+                playsinline 
+                class="reel-inline-video"
+              ></video>
+              <div v-else @click="playInline('DYWmYgoSIub')" class="reel-cover-trigger">
+                <div class="reel-play-btn">
+                  <div class="play-circle"><span class="play-icon">▶</span></div>
+                </div>
+                <span class="reel-source-tag">IG</span>
+                <div class="reel-info">
+                  <div class="reel-meta font-display">Reel · 0:32</div>
+                  <div class="reel-heading font-display">Mother Gaia<br />Oak Falls</div>
+                </div>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a href="https://www.instagram.com/reel/DYEkZveyPmz/?hl=en" target="_blank" rel="noopener" class="reel-link">
-            <div class="reel-slot reel-slot-2" style="background: repeating-linear-gradient(45deg, rgba(255,245,229,0.04) 0 12px, rgba(255,245,229,0.07) 12px 24px), linear-gradient(135deg, rgba(34,211,238,0.14), rgba(46,91,204,0.12));">
-              <div class="reel-play-btn">
-                <div class="play-circle"><span class="play-icon">▶</span></div>
-              </div>
-              <span class="reel-source-tag">IG</span>
-              <div class="reel-info">
-                <div class="reel-meta font-display">Reel · 0:45</div>
-                <div class="reel-heading font-display">Meet the<br />Hi Planet Team</div>
+          <!-- Reel 2 -->
+          <div class="reel-link cursor-pointer">
+            <div class="reel-slot reel-slot-2" :class="{ 'reel-player-active': activePlayingReelId === 'DYEkZveyPmz' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip2.jpg') center/cover no-repeat;">
+              <video 
+                v-if="activePlayingReelId === 'DYEkZveyPmz'"
+                src="/reels-comic/SaveClip2.mp4" 
+                autoplay 
+                controls 
+                playsinline 
+                class="reel-inline-video"
+              ></video>
+              <div v-else @click="playInline('DYEkZveyPmz')" class="reel-cover-trigger">
+                <div class="reel-play-btn">
+                  <div class="play-circle"><span class="play-icon">▶</span></div>
+                </div>
+                <span class="reel-source-tag">IG</span>
+                <div class="reel-info">
+                  <div class="reel-meta font-display">Reel · 0:45</div>
+                  <div class="reel-heading font-display">Meet the<br />Hi Planet Team</div>
+                </div>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a href="https://www.instagram.com/reel/DXyez8oS6eX/?hl=en" target="_blank" rel="noopener" class="reel-link">
-            <div class="reel-slot reel-slot-3" style="background: repeating-linear-gradient(45deg, rgba(255,245,229,0.04) 0 12px, rgba(255,245,229,0.07) 12px 24px), linear-gradient(135deg, rgba(255,182,39,0.14), rgba(255,107,53,0.10));">
-              <div class="reel-play-btn">
-                <div class="play-circle"><span class="play-icon">▶</span></div>
-              </div>
-              <span class="reel-source-tag">IG</span>
-              <div class="reel-info">
-                <div class="reel-meta font-display">Reel · 0:28</div>
-                <div class="reel-heading font-display">Page to Pixel<br />Transformation</div>
+          <!-- Reel 3 -->
+          <div class="reel-link cursor-pointer">
+            <div class="reel-slot reel-slot-3" :class="{ 'reel-player-active': activePlayingReelId === 'DXyez8oS6eX' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip3.jpg') center/cover no-repeat;">
+              <video 
+                v-if="activePlayingReelId === 'DXyez8oS6eX'"
+                src="/reels-comic/SaveClip3.mp4" 
+                autoplay 
+                controls 
+                playsinline 
+                class="reel-inline-video"
+              ></video>
+              <div v-else @click="playInline('DXyez8oS6eX')" class="reel-cover-trigger">
+                <div class="reel-play-btn">
+                  <div class="play-circle"><span class="play-icon">▶</span></div>
+                </div>
+                <span class="reel-source-tag">IG</span>
+                <div class="reel-info">
+                  <div class="reel-meta font-display">Reel · 0:28</div>
+                  <div class="reel-heading font-display">Page to Pixel<br />Transformation</div>
+                </div>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a href="https://www.instagram.com/reel/DXge0dWklgu/?hl=en" target="_blank" rel="noopener" class="reel-link">
-            <div class="reel-slot reel-slot-4" style="background: repeating-linear-gradient(45deg, rgba(255,245,229,0.04) 0 12px, rgba(255,245,229,0.07) 12px 24px), linear-gradient(135deg, rgba(200,52,90,0.16), rgba(42,14,46,0.20));">
-              <div class="reel-play-btn">
-                <div class="play-circle"><span class="play-icon">▶</span></div>
-              </div>
-              <span class="reel-source-tag">IG</span>
-              <div class="reel-info">
-                <div class="reel-meta font-display">Reel · 0:38</div>
-                <div class="reel-heading font-display">Cosmic Wormhole<br />Reveal</div>
+          <!-- Reel 4 -->
+          <div class="reel-link cursor-pointer">
+            <div class="reel-slot reel-slot-4" :class="{ 'reel-player-active': activePlayingReelId === 'DXge0dWklgu' }" style="background: linear-gradient(to top, rgba(6,10,16,0.95) 0%, rgba(6,10,16,0.2) 50%, rgba(6,10,16,0.5) 100%), url('/reels-comic/SaveClip4.jpg') center/cover no-repeat;">
+              <video 
+                v-if="activePlayingReelId === 'DXge0dWklgu'"
+                src="/reels-comic/SaveClip4.mp4" 
+                autoplay 
+                controls 
+                playsinline 
+                class="reel-inline-video"
+              ></video>
+              <div v-else @click="playInline('DXge0dWklgu')" class="reel-cover-trigger">
+                <div class="reel-play-btn">
+                  <div class="play-circle"><span class="play-icon">▶</span></div>
+                </div>
+                <span class="reel-source-tag">IG</span>
+                <div class="reel-info">
+                  <div class="reel-meta font-display">Reel · 0:38</div>
+                  <div class="reel-heading font-display">Cosmic Wormhole<br />Reveal</div>
+                </div>
               </div>
             </div>
-          </a>
+          </div>
         </div>
 
         <div class="reels-footer">
@@ -2539,4 +2585,37 @@ section {
 .d-2 { transition-delay: 0.25s; }
 .d-3 { transition-delay: 0.4s; }
 .d-4 { transition-delay: 0.55s; }
+
+/* Interactive Cursor */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Inline Reels Video Player CSS */
+.reel-slot.reel-player-active {
+  padding: 0 !important;
+  border-color: var(--neon-blue);
+  box-shadow: 0 10px 30px rgba(0, 102, 243, 0.35);
+  background: #000 !important;
+}
+
+.reel-inline-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #000;
+  display: block;
+  object-fit: cover;
+  z-index: 5;
+}
+
+.reel-cover-trigger {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 </style>
