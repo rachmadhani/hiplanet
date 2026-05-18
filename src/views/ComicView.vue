@@ -606,6 +606,14 @@ onUnmounted(() => {
                 </div>
               </div>
             </div>
+
+            <div class="speech-bubble speech-bubble-bottom">
+              <p>
+                "I wanted to create a better world<br />for every child to inherit.<br />
+                <span class="italic" style="font-style: italic; color: var(--cyan);">Hi Planet is that wish, drawn out.</span>"
+              </p>
+              <div class="quote-author">— Andy Christian, Illustrator</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1448,6 +1456,18 @@ section {
   border-top: 14px solid var(--cream);
   border-bottom: 0;
   filter: drop-shadow(0 3px 0 var(--ink));
+}
+
+.speech-bubble-bottom {
+  margin-top: 2.5rem;
+}
+
+.speech-bubble-bottom::after {
+  bottom: auto;
+  top: -14px;
+  border-top: 0;
+  border-bottom: 14px solid var(--cream);
+  filter: drop-shadow(0 -3px 0 #000);
 }
 
 .makers-block {
