@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const activePlayingReelId = ref<string | null>(null)
 const carouselRef = ref<HTMLElement | null>(null)
@@ -18,6 +18,23 @@ const scrollRight = () => {
   if (carouselRef.value) {
     carouselRef.value.scrollBy({ left: 360, behavior: 'smooth' })
   }
+}
+
+/* ── Reviews Bootstrap-style carousel ── */
+const REVIEW_TOTAL = 4
+const reviewSlide = ref(0)
+
+const reviewTrackStyle = computed(() => ({
+  transform: `translateX(calc(-${reviewSlide.value} * (min(420px, 80vw) + 2rem)))`,
+  transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+}))
+
+const scrollReviewsLeft = () => {
+  reviewSlide.value = reviewSlide.value <= 0 ? REVIEW_TOTAL - 1 : reviewSlide.value - 1
+}
+
+const scrollReviewsRight = () => {
+  reviewSlide.value = reviewSlide.value >= REVIEW_TOTAL - 1 ? 0 : reviewSlide.value + 1
 }
 
 const handleSignup = () => {
@@ -131,6 +148,104 @@ onUnmounted(() => {
       </div>
     </section>
 
+    <!-- ============ REVIEWS SECTION ============ -->
+    <section id="reviews" class="reviews-section fade-up-comic">
+      <div class="stars-overlay opacity-25"></div>
+      <div class="reviews-container">
+        
+        <div class="reviews-header-row">
+          <div class="reviews-header-left">
+            <div class="section-line accent-blue">Reader Reviews · Rated 5/5 Stars</div>
+            <h2 class="reviews-title font-display">
+              WHAT READERS<br />
+              <span class="accent-neon-blue">ARE SAYING.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="reviews-carousel-wrapper">
+          <!-- Left Arrow -->
+          <button @click="scrollReviewsLeft" class="reviews-arrow-btn arrow-left" aria-label="Previous reviews">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <!-- Carousel Viewport (overflow hidden) -->
+          <div class="reviews-carousel-viewport">
+            <div class="reviews-track" :style="reviewTrackStyle">
+              <!-- Card 1 -->
+              <div class="review-card">
+                <div class="review-user-row">
+                  <div class="review-avatar" style="background: var(--coral);">O</div>
+                  <div>
+                    <h4 class="review-username">OrangeCounty_Lady</h4>
+                    <div class="review-stars font-display">★★★★★</div>
+                  </div>
+                </div>
+                <h5 class="review-card-title">Simple clean story for kids</h5>
+                <p class="review-body">
+                  A nice simple graphic novel with clean story for kids! No need to worry about violence or bloody pictures! Climate change lesson behind the story for little kids to understand. Great for kinder-2nd grader!
+                </p>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="review-card">
+                <div class="review-user-row">
+                  <div class="review-avatar" style="background: var(--cyan);">B</div>
+                  <div>
+                    <h4 class="review-username">Brian S</h4>
+                    <div class="review-stars font-display">★★★★★</div>
+                  </div>
+                </div>
+                <h5 class="review-card-title">Great book!</h5>
+                <p class="review-body">
+                  I got this book for my 6.5 year old for Earth Day. He has a lot of interest in Earth, space, and etc. He didn't put the book down from the moment he started reading! He told me this is the most fun graphic novel since the Dog Man series. So I skimmed the book myself and it was educational, informative, but also action-packed for little boys to love. The illustrations are colorful, vibrant, and fun to look at. Because of his age, he probably didn't understand or know all the words in the book but nonetheless, he thoroughly enjoyed it. I'm getting another copy to give as a gift for his best friend!
+                </p>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="review-card">
+                <div class="review-avatar-banner" style="background: var(--magenta);">★ Top Reviewer</div>
+                <div class="review-user-row">
+                  <div class="review-avatar" style="background: var(--magenta);">A</div>
+                  <div>
+                    <h4 class="review-username">Amazon Customer</h4>
+                    <div class="review-stars font-display">★★★★★</div>
+                  </div>
+                </div>
+                <h5 class="review-card-title">Fun and educational</h5>
+                <p class="review-body">
+                  I wanted to teach my daughter about environmental consciousness, and this one hit the mark! She was thrilled by the art, and I was thrilled by the lessons she learned. A really fun, visual, and great blocky comic book. Highly recommend!
+                </p>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="review-card">
+                <div class="review-user-row">
+                  <div class="review-avatar" style="background: var(--amber);">S</div>
+                  <div>
+                    <h4 class="review-username">Sarah M.</h4>
+                    <div class="review-stars font-display">★★★★★</div>
+                  </div>
+                </div>
+                <h5 class="review-card-title">Captures attention instantly</h5>
+                <p class="review-body">
+                  My 8-year-old son loves reading comics so when I saw this book, I thought I'd give it a try. He is very picky, but he finished this one in one sitting! He said it was super fun and left him wanting to read more. Seeing him choose a book over video games is a huge win. A capturing kid's interest book! Would buy for gifts!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Arrow -->
+          <button @click="scrollReviewsRight" class="reviews-arrow-btn arrow-right" aria-label="Next reviews">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
 
     <!-- ============ 3. VOL.1 SHOWCASE ============ -->
     <!-- <section id="vol1" class="vol-showcase vol-light fade-up-comic">
@@ -2824,6 +2939,226 @@ section {
 @media (max-width: 500px) {
   /* Under 500px, native touch swipe takes priority. Hide arrows to save screen space */
   .carousel-arrow {
+    display: none;
+  }
+}
+
+/* ============ REVIEWS SECTION & CAROUSEL ============ */
+.reviews-section {
+  padding: clamp(60px, 6vw, 100px) clamp(1rem, 3vw, 2rem);
+  position: relative;
+}
+
+.reviews-container {
+  max-width: 1620px;
+  margin: 0 auto;
+}
+
+.reviews-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.reviews-title {
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.82;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.reviews-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.reviews-carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 2rem;
+  padding: 1.25rem 0.75rem;
+}
+
+.reviews-track .review-card {
+  flex: 0 0 min(420px, 80vw);
+}
+
+.review-card {
+  position: relative;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 20px;
+  box-shadow: 6px 6px 0 #000;
+  color: #000;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.review-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 #000;
+}
+
+.review-avatar-banner {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  font-family: 'Anton', sans-serif;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #fff;
+  padding: 4px 10px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.review-user-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.review-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  color: #fff;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.review-username {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.15rem;
+}
+
+.review-stars {
+  color: #FF8E25;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.review-card-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.review-body {
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+/* Reviews Carousel Glowing Arrow Buttons */
+.reviews-arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(6, 10, 16, 0.75);
+  border: 1.5px solid rgba(255, 245, 229, 0.2);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.reviews-arrow-btn svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reviews-arrow-btn:hover {
+  border-color: var(--neon-blue);
+  color: var(--neon-blue);
+  box-shadow: 
+    0 0 25px rgba(0, 102, 243, 0.55),
+    inset 0 0 12px rgba(0, 102, 243, 0.2);
+  background: rgba(0, 102, 243, 0.08);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.reviews-arrow-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.reviews-arrow-btn.arrow-left:hover svg {
+  transform: translateX(-4px);
+}
+
+.reviews-arrow-btn.arrow-right:hover svg {
+  transform: translateX(4px);
+}
+
+.reviews-arrow-btn.arrow-left {
+  left: -28px;
+}
+
+.reviews-arrow-btn.arrow-right {
+  right: -28px;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+  .reviews-arrow-btn.arrow-left {
+    left: -15px;
+  }
+  .reviews-arrow-btn.arrow-right {
+    right: -15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-arrow-btn {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .reviews-arrow-btn.arrow-left {
+    left: -10px;
+  }
+  
+  .reviews-arrow-btn.arrow-right {
+    right: -10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .reviews-arrow-btn {
     display: none;
   }
 }
