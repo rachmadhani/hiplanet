@@ -127,116 +127,6 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <!-- ============ 2. THE ORIGIN STORY ============ -->
-    <!-- <section id="origin" class="origin-section origin-bg fade-up-comic">
-      <div class="stars-overlay opacity-25"></div>
-      
-      <div class="origin-container">
-        <div class="origin-header">
-          <div class="section-line accent-earth">The Origin · Six-year journey</div>
-          <h2 class="origin-title font-display">
-            BEFORE THE GAME,<br />
-            <span class="accent-earth">A COMIC.</span>
-          </h2>
-          <p class="origin-subtitle font-serif">
-            Hi Planet didn't start as a pitch deck. It started as a quiet
-            lockdown thought — and grew into 200+ pages of art.
-          </p>
-        </div>
-
-        <div class="origin-grid">
-        
-          <div class="origin-left-col">
-            <div class="timeline-node accent-coral">
-              <div class="marker">2020</div>
-              <div class="node-content">
-                <h3>A QUIET BEGINNING</h3>
-                <p>
-                  Lockdown stillness. Sean Beck sketches a single character — HI — a small Earth holding a tiny sword.
-                  "What if Earth had to fight for itself?" The first page is drawn that month.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-node accent-cyan">
-              <div class="marker">2021–22</div>
-              <div class="node-content">
-                <h3>THE TEAM ASSEMBLES</h3>
-                <p>
-                  Page by page, the Hi Planet Team emerges: RA, MOOLU, MERC, SATU, V, JUPI, URA, NEP, PLU.
-                  The villain takes shape — the Cosmic Wormhole. Five Earth energies become the stakes.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-node accent-amber">
-              <div class="marker">2023</div>
-              <div class="node-content">
-                <h3>VOL.1 PUBLISHED</h3>
-                <p>
-                  <span class="accent-amber" style="font-weight: 700;">Hi Planet: Save the Earth, Vol.1</span> publishes on Amazon.
-                  Six chapters. The first journey across Earth's five energies. A finished book.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-node accent-magenta">
-              <div class="marker">2025</div>
-              <div class="node-content">
-                <h3>FROM PAGE TO PIXEL</h3>
-                <p>
-                  Ecosoft Interactive incorporates. The comic begins its second life as a horde-roguelite.
-                  Selected for Busan Indie Game Festival 2025.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-node accent-coral">
-              <div class="marker">2026</div>
-              <div class="node-content">
-                <h3>VOL.2 + GAME LAUNCH</h3>
-                <p>
-                  <span class="accent-coral" style="font-weight: 700;">Vol.2 (Chapters 3-4)</span> publishes in summer.
-                  The game launches on Steam, November 10. Two media. One story.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-node accent-amber">
-              <div class="marker">2027</div>
-              <div class="node-content">
-                <h3>VOL.3 · SERIES COMPLETE</h3>
-                <p>
-                  <span class="accent-amber" style="font-weight: 700;">Vol.3 (Chapters 5-6)</span> drops in spring,
-                  concluding Episode 1: Save the Earth. The 600-page, 3-volume series is whole.
-                </p>
-              </div>
-            </div>
-          </div>
-
-  
-          <div class="origin-right-col">
-            <div class="speech-bubble">
-              <p>
-                "I wanted to create a better world<br />for every child to inherit.<br />
-                <span class="italic accent-coral" style="font-style: italic;">Hi Planet is that wish, drawn out.</span>"
-              </p>
-              <div class="quote-author">— Sean Beck, Writer</div>
-            </div>
-
-       
-            <div class="makers-block">
-              <div class="makers-label">// The Makers</div>
-              <div class="makers-list">
-                <div class="maker-item" style="--border-color: var(--coral);">
-                  <div class="maker-name">SEAN BECK</div>
-                  <div class="maker-role">Writer</div>
-                </div>
-                <div class="maker-item" style="--border-color: var(--cyan);">
-                  <div class="maker-name">ANDY CHRISTIAN</div>
-                  <div class="maker-role">Illustrator</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
     <!-- ============ 3. VOL.1 SHOWCASE ============ -->
     <!-- <section id="vol1" class="vol-showcase vol-light fade-up-comic">
@@ -606,6 +496,117 @@ onUnmounted(() => {
           <a href="https://www.instagram.com/hiplanetofficial/" target="_blank" rel="noopener" class="follow-link-bottom font-display">
             Follow @hiplanetofficial →
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. THE ORIGIN STORY ============ -->
+    <section id="origin" class="origin-section origin-bg fade-up-comic">
+      <div class="stars-overlay opacity-25"></div>
+      
+      <div class="origin-container">
+        <div class="origin-header">
+          <div class="section-line accent-blue">The Origin · Six-year journey</div>
+          <h2 class="origin-title font-display">
+            BEFORE THE GAME,<br />
+            <span class="accent-neon-blue">A COMIC.</span>
+          </h2>
+          <p class="origin-subtitle font-serif">
+            Hi Planet didn't start as a pitch deck. It started as a quiet
+            lockdown thought — and grew into 200+ pages of art.
+          </p>
+        </div>
+
+        <div class="origin-grid">
+        
+          <div class="origin-left-col">
+            <div class="timeline-node accent-coral">
+              <div class="marker">2020</div>
+              <div class="node-content">
+                <h3>A QUIET BEGINNING</h3>
+                <p>
+                  Lockdown stillness. Sean Beck sketches a single character — HI — a small Earth holding a tiny sword.
+                  "What if Earth had to fight for itself?" The first page is drawn that month.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-node accent-cyan">
+              <div class="marker">21–22</div>
+              <div class="node-content">
+                <h3>THE TEAM ASSEMBLES</h3>
+                <p>
+                  Page by page, the Hi Planet Team emerges: RA, MOOLU, MERC, SATU, V, JUPI, URA, NEP, PLU.
+                  The villain takes shape — the Cosmic Wormhole. Five Earth energies become the stakes.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-node accent-amber">
+              <div class="marker">2023</div>
+              <div class="node-content">
+                <h3>VOL.1 PUBLISHED</h3>
+                <p>
+                  <span class="accent-amber" style="font-weight: 700;">Hi Planet: Save the Earth, Vol.1</span> publishes on Amazon.
+                  Six chapters. The first journey across Earth's five energies. A finished book.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-node accent-magenta">
+              <div class="marker">2025</div>
+              <div class="node-content">
+                <h3>FROM PAGE TO PIXEL</h3>
+                <p>
+                  Ecosoft Interactive incorporates. The comic begins its second life as a horde-roguelite.
+                  Selected for Busan Indie Game Festival 2025.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-node accent-coral">
+              <div class="marker">2026</div>
+              <div class="node-content">
+                <h3>VOL.2 + GAME LAUNCH</h3>
+                <p>
+                  <span class="accent-coral" style="font-weight: 700;">Vol.2 (Chapters 3-4)</span> publishes in summer.
+                  The game launches on Steam, November 10. Two media. One story.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-node accent-amber">
+              <div class="marker">2027</div>
+              <div class="node-content">
+                <h3>VOL.3 · SERIES COMPLETE</h3>
+                <p>
+                  <span class="accent-amber" style="font-weight: 700;">Vol.3 (Chapters 5-6)</span> drops in spring,
+                  concluding Episode 1: Save the Earth. The 600-page, 3-volume series is whole.
+                </p>
+              </div>
+            </div>
+          </div>
+
+  
+          <div class="origin-right-col">
+            <div class="speech-bubble">
+              <p>
+                "I wanted to create a better world<br />for every child to inherit.<br />
+                <span class="italic accent-coral" style="font-style: italic;">Hi Planet is that wish, drawn out.</span>"
+              </p>
+              <div class="quote-author">— Sean Beck, Writer</div>
+            </div>
+
+       
+            <div class="makers-block">
+              <div class="makers-label">// The Makers</div>
+              <div class="makers-list">
+                <div class="maker-item" style="--border-color: var(--coral);">
+                  <div class="maker-name">SEAN BECK</div>
+                  <div class="maker-role">Writer</div>
+                </div>
+                <div class="maker-item" style="--border-color: var(--cyan);">
+                  <div class="maker-name">ANDY CHRISTIAN</div>
+                  <div class="maker-role">Illustrator</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1098,6 +1099,14 @@ section {
   color: var(--neon-blue);
 }
 
+.accent-coral {
+  color: #FF6B35;
+}
+
+.accent-blue {
+  color: var(--blue);
+}
+
 .hero-subtitle {
   font-size: clamp(1.1rem, 1.4vw, 1.35rem);
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
@@ -1263,19 +1272,19 @@ section {
 /* ============ 2. THE ORIGIN STORY ============ */
 .origin-section {
   padding: clamp(60px, 6vw, 100px) clamp(1rem, 3vw, 2rem);
-  background:
+  /* background:
     radial-gradient(ellipse 50% 60% at 20% 50%, rgba(74,144,226,0.18) 0%, transparent 60%),
-    linear-gradient(180deg, #060D24 0%, #0A1834 100%);
+    linear-gradient(180deg, #060D24 0%, #0A1834 100%); */
 }
 
 .origin-container {
-  max-width: 1200px;
+  max-width: 1620px;
   margin: 0 auto;
 }
 
 .origin-header {
   margin-bottom: 3.5rem;
-  max-width: 720px;
+  max-width: 1200px;
 }
 
 .section-line {
@@ -1304,9 +1313,13 @@ section {
 .section-line.accent-magenta { color: var(--magenta); }
 
 .origin-title {
-  font-size: clamp(2rem, 4vw, 4rem);
-  line-height: 0.9;
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.82;
   margin-bottom: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
 
 .accent-earth {
@@ -1314,7 +1327,7 @@ section {
 }
 
 .origin-subtitle {
-  font-style: italic;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: clamp(1rem, 1.2vw, 1.25rem);
   color: rgba(255, 245, 229, 0.75);
   line-height: 1.6;
@@ -1380,13 +1393,14 @@ section {
 
 .node-content h3 {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   letter-spacing: 0.03em;
   margin-bottom: 0.5rem;
 }
 
 .node-content p {
-  font-size: 0.88rem;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  font-size: 1rem;
   color: rgba(255, 245, 229, 0.7);
   line-height: 1.6;
   max-width: 500px;
@@ -1400,17 +1414,17 @@ section {
 .speech-bubble {
   position: relative;
   background: var(--cream);
-  color: var(--ink);
+  color: #000;
   padding: 24px 30px;
-  border: 2px solid var(--ink);
+  border: 2px solid #000;
   border-radius: 22px;
-  box-shadow: 6px 6px 0 var(--ink);
+  box-shadow: 6px 6px 0 #000;
   max-width: 420px;
 }
 
 .speech-bubble p {
   font-family: 'Fraunces', serif;
-  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
   line-height: 1.6;
 }
 
