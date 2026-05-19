@@ -122,25 +122,9 @@ onUnmounted(() => {
 
           <!-- RIGHT: Hero comic panel collage -->
           <div class="hero-right-col fade-up-comic d-3">
-            <!-- Panel 1 (back) -->
-            <div class="panel-slot-item panel-1 flex-center" style="z-index: 1;">
-              <div class="panel-content">
-                <div class="font-comic panel-title">PANEL</div>
-                <div class="font-pixel panel-sub">// COMIC ART</div>
-              </div>
-            </div>
-            <!-- Panel 2 (mid) -->
-            <div class="panel-slot-item panel-2 flex-center" style="z-index: 2; background-color: rgba(34, 211, 238, 0.05);">
-              <div class="panel-content">
-                <div class="font-comic panel-title">PANEL</div>
-                <div class="font-pixel panel-sub">// COMIC ART</div>
-              </div>
-            </div>
-            <!-- Panel 3 (front) — small accent -->
-            <div class="panel-slot-item panel-3 flex-center" style="z-index: 3; background-color: rgba(255, 107, 53, 0.08);">
-              <div class="panel-content">
-                <div class="font-comic panel-title-sm">PANEL</div>
-                <div class="font-pixel panel-sub-sm">// ART</div>
+            <div class="comic-grid-collage">
+              <div v-for="i in 15" :key="i" :class="['collage-item', 'item-' + i]">
+                <img :src="`/comic-collages/comic_${i}.png`" :alt="`Hi Planet Comic Scene ${i}`" loading="lazy" />
               </div>
             </div>
           </div>
@@ -1361,100 +1345,94 @@ section {
 /* HERO RIGHT PANEL COLLAGE */
 .hero-right-col {
   position: relative;
-  height: clamp(380px, 40vw, 480px);
   width: 100%;
+}
+
+.comic-grid-collage {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 120px);
+  gap: 0.5rem;
+  width: 100%;
+  background: #000;
+  padding: 0.5rem;
+  border: 4px solid #000;
+  border-radius: 16px;
+  box-shadow: 8px 8px 0 #000;
+}
+
+.collage-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2px solid #000;
+  background: #111;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.collage-item:hover {
+  transform: scale(1.03) translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--cyan);
+  z-index: 10;
+}
+
+/* Mathematically perfect 4x8 grid cells - 100% gapless and compact (Rapat Tanpa Lubang) */
+.item-1 { grid-column: 1 / 3; grid-row: 1 / 3; }
+.item-2 { grid-column: 3 / 4; grid-row: 1 / 3; }
+.item-3 { grid-column: 4 / 5; grid-row: 1 / 2; }
+.item-4 { grid-column: 4 / 5; grid-row: 2 / 3; }
+
+.item-5 { grid-column: 1 / 2; grid-row: 3 / 5; }
+.item-6 { grid-column: 2 / 4; grid-row: 3 / 5; }
+.item-7 { grid-column: 4 / 5; grid-row: 3 / 4; }
+.item-8 { grid-column: 4 / 5; grid-row: 4 / 5; }
+
+.item-9 { grid-column: 1 / 3; grid-row: 5 / 6; }
+.item-10 { grid-column: 3 / 5; grid-row: 5 / 7; }
+.item-11 { grid-column: 1 / 3; grid-row: 6 / 7; }
+
+.item-12 { grid-column: 1 / 2; grid-row: 7 / 9; }
+.item-13 { grid-column: 2 / 4; grid-row: 7 / 9; }
+.item-14 { grid-column: 4 / 5; grid-row: 7 / 8; }
+.item-15 { grid-column: 4 / 5; grid-row: 8 / 9; }
+
+@media (max-width: 1200px) {
+  .comic-grid-collage {
+    grid-template-rows: repeat(8, 100px);
+  }
 }
 
 @media (max-width: 991px) {
   .hero-right-col {
-    height: 380px;
-    max-width: 480px;
+    max-width: 550px;
     margin: 0 auto;
+  }
+  .comic-grid-collage {
+    grid-template-rows: repeat(8, 120px);
   }
 }
 
-.panel-slot-item {
-  position: absolute;
-  border: 3px solid var(--cream);
-  box-shadow: 8px 8px 0 var(--bg);
-  transition: all 0.3s ease;
-  background: repeating-linear-gradient(135deg, rgba(255,245,229,0.025) 0 14px, rgba(255,245,229,0.05) 14px 28px);
+@media (max-width: 768px) {
+  .comic-grid-collage {
+    grid-template-rows: repeat(8, 90px);
+  }
 }
 
-.panel-slot-item:hover {
-  transform: translate(-4px, -4px) scale(1.02);
-  box-shadow: 12px 12px 0 var(--bg);
-}
-
-.panel-1 {
-  top: 0;
-  right: 12%;
-  width: 55%;
-  aspect-ratio: 3/4;
-  transform: rotate(1.5deg);
-}
-
-.panel-1:hover {
-  transform: rotate(1.5deg) translate(-4px, -4px) scale(1.02);
-}
-
-.panel-2 {
-  bottom: 8%;
-  left: 0;
-  width: 60%;
-  aspect-ratio: 4/3;
-  transform: rotate(-1.5deg);
-}
-
-.panel-2:hover {
-  transform: rotate(-1.5deg) translate(-4px, -4px) scale(1.02);
-}
-
-.panel-3 {
-  bottom: 0;
-  right: 0;
-  width: 35%;
-  aspect-ratio: 1/1;
-  transform: rotate(3deg);
-}
-
-.panel-3:hover {
-  transform: rotate(3deg) translate(-4px, -4px) scale(1.02);
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.panel-content {
-  text-align: center;
-  color: rgba(255, 245, 229, 0.4);
-}
-
-.panel-title {
-  font-family: 'Bungee', cursive;
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-}
-
-.panel-sub {
-  font-family: 'Space Mono', monospace;
-  font-size: 9px;
-  font-weight: 700;
-}
-
-.panel-title-sm {
-  font-family: 'Bungee', cursive;
-  font-size: 0.75rem;
-  margin-bottom: 0.25rem;
-}
-
-.panel-sub-sm {
-  font-family: 'Space Mono', monospace;
-  font-size: 8px;
-  font-weight: 700;
+@media (max-width: 480px) {
+  .comic-grid-collage {
+    grid-template-rows: repeat(8, 65px);
+    gap: 0.35rem;
+    padding: 0.35rem;
+    border-radius: 12px;
+    border-width: 3px;
+  }
 }
 
 /* ============ 2. THE ORIGIN STORY ============ */
