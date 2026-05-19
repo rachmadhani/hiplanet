@@ -845,12 +845,12 @@ onUnmounted(() => {
             <div class="ch-teaser-list border-coral">
               <div class="ch-teaser-row">
                 <span class="ch-num font-display accent-coral">CH.03</span>
-                <span class="ch-title">Scorched Earth</span>
+                <span class="ch-title">Wrath of the Burning Mountain</span>
                 <span class="ch-meta">Fire · ROC</span>
               </div>
               <div class="ch-teaser-row">
                 <span class="ch-num font-display">CH.04</span>
-                <span class="ch-title">Frozen Marrow</span>
+                <span class="ch-title">Awakening of the Arcstone</span>
                 <span class="ch-meta">Stone · ZOM</span>
               </div>
             </div>
@@ -888,12 +888,12 @@ onUnmounted(() => {
             <div class="ch-teaser-list border-magenta">
               <div class="ch-teaser-row">
                 <span class="ch-num font-display accent-magenta">CH.05</span>
-                <span class="ch-title">The Wasteland</span>
+                <span class="ch-title">The Weight of Poison Tides</span>
                 <span class="ch-meta">Metal · KRA</span>
               </div>
               <div class="ch-teaser-row">
                 <span class="ch-num font-display accent-amber">CH.06</span>
-                <span class="ch-title">Pollutopia</span>
+                <span class="ch-title">The Power of Pollutopia</span>
                 <span class="ch-meta">Finale · Cosmic Wormhole</span>
               </div>
             </div>
