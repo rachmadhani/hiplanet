@@ -21,7 +21,7 @@ const scrollRight = () => {
 }
 
 /* ── Reviews Bootstrap-style carousel ── */
-const REVIEW_TOTAL = 4
+const REVIEW_TOTAL = 8
 const reviewSlide = ref(0)
 
 const reviewTrackStyle = computed(() => ({
@@ -232,6 +232,66 @@ onUnmounted(() => {
                 <h5 class="review-card-title">Captures attention instantly</h5>
                 <p class="review-body">
                   My 8-year-old son loves reading comics so when I saw this book, I thought I'd give it a try. He is very picky, but he finished this one in one sitting! He said it was super fun and left him wanting to read more. Seeing him choose a book over video games is a huge win. A capturing kid's interest book! Would buy for gifts!
+                </p>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="review-card">
+                <div class="review-user-row">
+                  <div class="review-avatar" style="background: var(--cyan);">A</div>
+                  <div>
+                    <h4 class="review-username">Amazon Customer</h4>
+                    <div class="review-stars font-display">★★★★★</div>
+                  </div>
+                </div>
+                <h5 class="review-card-title">Great for Kids of All Ages</h5>
+                <p class="review-body">
+                  This book was recommended by a friend and it was so fun and educational for my 7 and 9 year old kids. I think they learned a lot about the environment in an easy-to-understand manner and were also challenged to do their part for the earth. Other kids who’ve come by our house have also enjoyed the book. I find that it is suitable for kids from 5 years old to 12+ years old and it makes a great gift as well.
+                </p>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="review-card">
+                <div class="review-user-row">
+                  <div class="review-avatar" style="background: var(--coral);">A</div>
+                  <div>
+                    <h4 class="review-username">Andrew Suh</h4>
+                    <div class="review-stars font-display">★★★★★</div>
+                  </div>
+                </div>
+                <h5 class="review-card-title">Educational, interesting and kids approved book!</h5>
+                <p class="review-body">
+                  This is my second purchase after my 7 yrs old son loves reading this vibrant colored cartoon and decided to gift to his best friend. Not just good quality of book, but very educational and never boring stories after stories! Highly recommend to kids who wants to learn about how to conserve our natural resources! Each characters are named after planets and it is quite fun to how they all mingle and associate with another. Thumbs up!
+                </p>
+              </div>
+
+              <!-- Card 7 -->
+              <div class="review-card">
+                <div class="review-user-row">
+                  <div class="review-avatar" style="background: var(--magenta);">J</div>
+                  <div>
+                    <h4 class="review-username">J R Greener</h4>
+                    <div class="review-stars font-display">★★★★★</div>
+                  </div>
+                </div>
+                <h5 class="review-card-title">Educational anime-inspired battle to save the Earth through science & teamwork!</h5>
+                <p class="review-body">
+                  I just finished reading this myself after my 11-yo son, an avid anime afficianado and science enthusiast, finished reading it and had nothing but high praise for this colorful, action-packed, epic battle to save the world. As a father, I was most encouraged that not only was he entertained, but he also learned some science and environmental terms, as well as characteristics of different planets in the solar system-- he was learning and being challenged scientifically without even knowing it because he couldn't put down this page turner. My other highlight is that my creative son also got inspired to draw a verion of each of the characters of the book, and then to draw a more accurate depiction of each planet after he researched them more; he even looked up the myths that were the origin of each planet/character's name. Short to say, my son was inspired by this book, as I hope you & your children will be... as it says in the book, "We can overcome anything together!"
+                </p>
+              </div>
+
+              <!-- Card 8 -->
+              <div class="review-card">
+                <div class="review-user-row">
+                  <div class="review-avatar" style="background: var(--amber);">M</div>
+                  <div>
+                    <h4 class="review-username">Monia</h4>
+                    <div class="review-stars font-display">★★★★★</div>
+                  </div>
+                </div>
+                <h5 class="review-card-title">Awesome educational book</h5>
+                <p class="review-body">
+                  This book is everything I had hoped for and more. It's amazing for kiddos and adults alike. I love that it's teaching the young ones about sustainability, in such a fun and engaging way. It's one of those feel-good books that gives you hope for the future. I think every classroom should have this book. The kiddo I got this book for finished it and said: What can I do to help our planet? How amazing is that?! Highly recommended!
                 </p>
               </div>
             </div>
