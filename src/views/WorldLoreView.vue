@@ -1,7 +1,28 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 let observer: IntersectionObserver | null = null
+
+const activePopupImage = ref<string | null>(null)
+const activePopupTitle = ref<string>('')
+
+const openPopup = (imgUrl: string, title: string) => {
+  activePopupImage.value = imgUrl
+  activePopupTitle.value = title
+  document.body.style.overflow = 'hidden'
+}
+
+const closePopup = () => {
+  activePopupImage.value = null
+  activePopupTitle.value = ''
+  document.body.style.overflow = ''
+}
+
+const handleKeydown = (e: KeyboardEvent) => {
+  if (e.key === 'Escape' && activePopupImage.value) {
+    closePopup()
+  }
+}
 
 const handleParallax = () => {
   const scroll = window.scrollY
@@ -24,14 +45,17 @@ onMounted(() => {
   )
 
   window.addEventListener('scroll', handleParallax)
+  window.addEventListener('keydown', handleKeydown)
   document.querySelectorAll('.fade-up-lore').forEach((el) => observer?.observe(el))
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleParallax)
+  window.removeEventListener('keydown', handleKeydown)
   if (observer) {
     observer.disconnect()
   }
+  document.body.style.overflow = ''
 })
 </script>
 
@@ -79,25 +103,25 @@ onUnmounted(() => {
             </p>
 
             <div class="fade-up-lore d-4 actions-row">
-              <a href="#ecopolis" class="btn-outline btn-earth font-display">
+              <button @click="openPopup('/world-lore/world-lore-hero-1.png', 'ECOPOLIS')" class="btn-outline btn-earth font-display">
                 → Explore Ecopolis
-              </a>
-              <a href="#pollutopia" class="btn-outline btn-magenta font-display">
+              </button>
+              <button @click="openPopup('/world-lore/world-lore-hero-2.png', 'POLLUTOPIA')" class="btn-outline btn-magenta font-display">
                 → Enter Pollutopia
-              </a>
+              </button>
             </div>
           </div>
 
           <!-- Right Photo Grid -->
           <div class="hero-right-photos fade-up-lore d-3">
             <div class="photo-grid-wrapper">
-              <div class="photo-card card-1">
+              <div class="photo-card card-1" @click="openPopup('/world-lore/world-lore-hero-1.png', 'ECOPOLIS')">
                 <img src="/world-lore/world-lore-hero-1.png" alt="Ecopolis concept" class="hero-photo" />
                 <div class="photo-overlay">
                   <span class="photo-caption font-display">ECOPOLIS</span>
                 </div>
               </div>
-              <div class="photo-card card-2">
+              <div class="photo-card card-2" @click="openPopup('/world-lore/world-lore-hero-2.png', 'POLLUTOPIA')">
                 <img src="/world-lore/world-lore-hero-2.png" alt="Pollutopia concept" class="hero-photo" />
                 <div class="photo-overlay">
                   <span class="photo-caption font-display">POLLUTOPIA</span>
@@ -354,7 +378,16 @@ onUnmounted(() => {
       </div>
     </section> -->
 
-    
+    <!-- ============ POPUP MODAL LIGHTBOX ============ -->
+    <Transition name="fade">
+      <div v-if="activePopupImage" class="lightbox-overlay" @click.self="closePopup">
+        <button class="lightbox-close" @click="closePopup" aria-label="Close lightbox">✕</button>
+        <div class="lightbox-content">
+          <img :src="activePopupImage" :alt="activePopupTitle" class="lightbox-img" />
+          <div class="lightbox-caption font-display">{{ activePopupTitle }}</div>
+        </div>
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -577,6 +610,7 @@ onUnmounted(() => {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   aspect-ratio: 3 / 5;
+  cursor: pointer;
 }
 
 .photo-card.card-1 {
@@ -594,9 +628,14 @@ onUnmounted(() => {
   }
 }
 
-.photo-card:hover {
+.photo-card.card-1:hover {
   border-color: var(--cyan);
   box-shadow: 0 25px 60px rgba(0, 200, 255, 0.25);
+  transform: scale(1.03) translateY(0);
+}
+.photo-card.card-2:hover {
+  border-color: var(--magenta);
+  box-shadow: 0 25px 60px rgba(200, 52, 90, 0.25);
   transform: scale(1.03) translateY(0);
 }
 
@@ -631,6 +670,94 @@ onUnmounted(() => {
   letter-spacing: 0.05em;
   color: var(--cream);
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Lightbox Modal */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 24, 52, 0.96);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--cream);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1010;
+}
+
+.lightbox-close:hover {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: var(--midnight);
+  transform: rotate(90deg);
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: zoom-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-caption {
+  margin-top: 1.5rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  color: var(--cream);
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Vue Transition animations */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Breadcrumb */
