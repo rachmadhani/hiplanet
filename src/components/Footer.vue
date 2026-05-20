@@ -30,7 +30,7 @@
         <ul class="footer-links">
           <li><RouterLink to="/comic">Comic Book</RouterLink></li>
           <li><a href="/#concept">Concept Art</a></li>
-          <li><a href="/#wiki">World Lore</a></li>
+          <li><RouterLink to="/world-lore">World Lore</RouterLink></li>
           <li><a href="/#characters">Characters</a></li>
         </ul>
       </div>

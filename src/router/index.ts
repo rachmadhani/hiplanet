@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/comic',
       name: 'comic',
       component: () => import('../views/ComicView.vue')
+    },
+    {
+      path: '/world-lore',
+      name: 'world-lore',
+      component: () => import('../views/WorldLoreView.vue')
     }
   ]
 })
