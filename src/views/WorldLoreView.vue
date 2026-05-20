@@ -67,7 +67,7 @@ onUnmounted(() => {
             <!-- Main headline — two cities -->
             <h1 class="fade-up-lore d-2 main-title font-display">
               TWO PLANETS.<br />
-              <span class="accent-blue">ONE</span> <span class="accent-neon-blue">EARTH.</span>
+              <span class="accent-neon-blue">ONE</span> <span class="accent-neon-blue">EARTH.</span>
             </h1>
 
             <p class="fade-up-lore d-3 main-description font-serif">
@@ -532,9 +532,9 @@ onUnmounted(() => {
 .relative-container {
   position: relative;
   z-index: 2;
-  max-width: 1640px;
+  max-width: 1660px;
   margin: 0 auto;
-  padding: 0 0.5rem;
+  padding: 0 1.5rem;
 }
 
 /* Hero Grid Layout */
@@ -576,7 +576,7 @@ onUnmounted(() => {
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 5;
 }
 
 .photo-card.card-1 {
