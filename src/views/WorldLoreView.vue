@@ -134,14 +134,14 @@ onUnmounted(() => {
     </section>
 
     <!-- ============ 2. ECOPOLIS · HOME ============ -->
-    <!-- <section id="ecopolis" class="ecopolis-bg fade-up-lore">
+    <section id="ecopolis" class="ecopolis-bg fade-up-lore">
       <div class="stars-overlay opacity-25"></div>
       <div class="container">
         <div class="section-intro">
           <div class="section-line accent-earth">Ecopolis · Home of the Hi Planet Team</div>
           <h2 class="section-title font-display">
             WHERE THE<br />
-            <span class="accent-earth">HEROES LIVE.</span>
+            <span class="accent-neon-blue">HEROES LIVE.</span>
           </h2>
           <p class="section-desc font-serif">
             A city where many planets gather. Modern buildings, flowing rivers, forests.
@@ -149,12 +149,13 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <div class="map-slot">
+        <div class="map-slot" @click="openPopup('/world-lore/hiplanet_map_ecopolis.png', 'ECOPOLIS MAP')">
+          <img src="/world-lore/hiplanet_map_ecopolis.png" alt="Ecopolis Map" class="map-img" />
           <div class="map-content">
             <div class="map-title font-display">ECOPOLIS</div>
             <div class="map-subtitle font-pixel">// CIRCULAR PLANET · 16 NAMED LOCATIONS</div>
           </div>
-        </div> 
+        </div>
 
         <div class="destinations-grid">
         
@@ -169,7 +170,7 @@ onUnmounted(() => {
             </p>
           </div>
 
-          <div class="area-card">
+          <div class="area-card arena-card">
             <div class="card-header">
               <div class="card-num font-display accent-coral">02</div>
               <span class="card-badge font-pixel">ARENA</span>
@@ -218,7 +219,7 @@ onUnmounted(() => {
           → Asset: official Ecopolis planet map (5 key destinations + 11 character homes = 16 locations)
         </p>
       </div>
-    </section> -->
+    </section>
 
     <!-- ============ 3. ECO BALANCE VILLAGE — 10 ENERGY HOUSES ⭐ ============ -->
     <!-- <section id="village" class="village-section fade-up-lore">
@@ -402,7 +403,7 @@ onUnmounted(() => {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -418,7 +419,7 @@ onUnmounted(() => {
 }
 
 .font-pixel {
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Press Start 2P', system-ui;
 }
 
 .font-cream {
@@ -915,14 +916,18 @@ onUnmounted(() => {
 }
 
 .section-title {
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 0.9;
+  color: #fff;
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.82;
   margin-bottom: 1.5rem;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 .section-desc {
-  font-style: italic;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   color: rgba(255, 245, 229, 0.75);
   max-width: 600px;
   line-height: 1.6;
@@ -939,10 +944,10 @@ onUnmounted(() => {
 
 /* ============ 2. ECOPOLIS · HOME ============ */
 .ecopolis-bg {
-  background:
+  /* background:
     radial-gradient(ellipse 50% 60% at 30% 40%, rgba(74,144,226,0.14) 0%, transparent 60%),
     radial-gradient(ellipse 60% 50% at 80% 80%, rgba(34,211,238,0.1) 0%, transparent 60%),
-    linear-gradient(180deg, #060D24 0%, #0A1834 100%);
+    linear-gradient(180deg, #060D24 0%, #0A1834 100%); */
   padding: 6rem 0;
   position: relative;
   overflow: hidden;
@@ -951,14 +956,10 @@ onUnmounted(() => {
 /* Map Slot Placeholder */
 .map-slot {
   position: relative;
-  background:
-    repeating-linear-gradient(0deg, rgba(74,144,226,0.03) 0 24px, rgba(74,144,226,0.06) 24px 25px, transparent 25px 49px),
-    repeating-linear-gradient(90deg, rgba(74,144,226,0.03) 0 24px, rgba(74,144,226,0.06) 24px 25px, transparent 25px 49px),
-    radial-gradient(ellipse 50% 60% at 50% 50%, rgba(74,144,226,0.08), transparent 70%),
-    #0A1834;
+  background: #0A1834;
   border: 1px solid rgba(74,144,226,0.2);
   border-radius: 6px;
-  aspect-ratio: 16/9;
+  aspect-ratio: 13/9;
   width: 100%;
   margin-bottom: 2.5rem;
   display: flex;
@@ -966,10 +967,27 @@ onUnmounted(() => {
   justify-content: center;
   overflow: hidden;
   transition: border-color 0.3s ease;
+  cursor: pointer;
 }
 
 .map-slot:hover {
   border-color: var(--earth);
+}
+
+.map-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+  transition: opacity 0.4s ease, transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 0;
+}
+
+.map-slot:hover .map-img {
+  opacity: 0.75;
+  transform: scale(1.04);
 }
 
 .map-slot::after {
@@ -977,9 +995,13 @@ onUnmounted(() => {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image:
-    radial-gradient(ellipse 30% 25% at 30% 40%, rgba(74,144,226,0.12), transparent),
-    radial-gradient(ellipse 25% 25% at 70% 60%, rgba(34,211,238,0.1), transparent);
+  background: radial-gradient(circle at center, rgba(10, 24, 52, 0.35) 0%, rgba(10, 24, 52, 0.8) 100%);
+  z-index: 1;
+  transition: background 0.4s ease;
+}
+
+.map-slot:hover::after {
+  background: radial-gradient(circle at center, rgba(10, 24, 52, 0.15) 0%, rgba(10, 24, 52, 0.7) 100%);
 }
 
 .map-content {
@@ -1022,7 +1044,7 @@ onUnmounted(() => {
 
 .area-card {
   background: rgba(74, 144, 226, 0.03);
-  border: 1px solid rgba(255, 245, 229, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 4px;
   padding: 1.5rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1044,6 +1066,16 @@ onUnmounted(() => {
   border-color: rgba(255, 182, 39, 0.55);
 }
 
+.area-card.arena-card {
+  background: rgba(0, 102, 243, 0.02);
+  border-color: rgba(0, 102, 243, 0.25);
+}
+
+.area-card.arena-card:hover {
+  background: rgba(0, 102, 243, 0.06);
+  border-color: rgba(0, 102, 243, 0.55);
+}
+
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -1053,13 +1085,13 @@ onUnmounted(() => {
 
 .card-num {
   font-size: 1.5rem;
-  color: var(--muted);
+  /* color: var(--muted); */
 }
 
 .card-badge {
-  font-size: 0.55rem;
+  font-size: 0.9rem;
   letter-spacing: 0.25em;
-  color: rgba(255, 245, 229, 0.5);
+  /* color: rgba(255, 245, 229, 0.5); */
 }
 
 .card-title {
@@ -1071,6 +1103,7 @@ onUnmounted(() => {
 }
 
 .card-text {
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: 0.75rem;
   color: rgba(255, 245, 229, 0.65);
   line-height: 1.5;
