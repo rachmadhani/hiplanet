@@ -150,7 +150,7 @@ onUnmounted(() => {
         </div>
 
         <div class="map-slot" @click="openPopup('/world-lore/hiplanet_map_ecopolis.png', 'ECOPOLIS MAP')">
-          <img src="/world-lore/hiplanet_map_ecopolis.png" alt="Ecopolis Map" class="map-img" />
+          <img src="/world-lore/hiplanet_map_ecopolis_layout.jpg" alt="Ecopolis Map" class="map-img" />
           <!-- <div class="map-content">
             <div class="map-title font-display">ECOPOLIS</div>
             <div class="map-subtitle font-pixel">// CIRCULAR PLANET · 16 NAMED LOCATIONS</div>
@@ -959,7 +959,7 @@ onUnmounted(() => {
   background: #0A1834;
   border: 1px solid rgba(74,144,226,0.2);
   border-radius: 6px;
-  aspect-ratio: 13/9;
+  aspect-ratio: 14/9;
   width: 100%;
   margin-bottom: 2.5rem;
   display: flex;
