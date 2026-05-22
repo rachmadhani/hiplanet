@@ -151,10 +151,10 @@ onUnmounted(() => {
 
         <div class="map-slot" @click="openPopup('/world-lore/hiplanet_map_ecopolis.png', 'ECOPOLIS MAP')">
           <img src="/world-lore/hiplanet_map_ecopolis.png" alt="Ecopolis Map" class="map-img" />
-          <div class="map-content">
+          <!-- <div class="map-content">
             <div class="map-title font-display">ECOPOLIS</div>
             <div class="map-subtitle font-pixel">// CIRCULAR PLANET · 16 NAMED LOCATIONS</div>
-          </div>
+          </div> -->
         </div>
 
         <div class="destinations-grid">
