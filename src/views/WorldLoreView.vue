@@ -222,14 +222,14 @@ onUnmounted(() => {
     </section>
 
     <!-- ============ 3. ECO BALANCE VILLAGE — 10 ENERGY HOUSES ⭐ ============ -->
-    <!-- <section id="village" class="village-section fade-up-lore">
+    <section id="village" class="village-section fade-up-lore">
       <div class="stars-overlay opacity-25"></div>
       <div class="container">
         <div class="section-intro">
-          <div class="section-line accent-green">Area A · Eco Balance Village</div>
+          <div class="section-line accent-earth">Area A · Eco Balance Village</div>
           <h2 class="section-title font-display">
             TEN HEROES.<br />
-            <span class="accent-green">TEN CLEAN ENERGIES.</span>
+            <span class="accent-neon-blue">TEN CLEAN ENERGIES.</span>
           </h2>
           <p class="section-desc font-serif">
             Every hero in the Hi Planet Team embodies a real-world renewable energy.
@@ -241,7 +241,7 @@ onUnmounted(() => {
       
         <div class="energy-grid">
          
-          <div class="energy-card" style="--energy-color: var(--coral);">
+          <div class="energy-card fade-up-lore d-1" style="--energy-color: var(--coral);">
             <div class="energy-header">
               <span class="energy-name font-display">HI</span>
               <span class="energy-emoji">⚡</span>
@@ -250,10 +250,13 @@ onUnmounted(() => {
             <p class="energy-desc">
               Current and circuits. The team's electrical backbone — the leader's power.
             </p>
+            <div class="energy-house-img-wrapper">
+              <img src="/ecopolis-house/house_hi.jpg" alt="HI House" class="energy-house-img" />
+            </div>
           </div>
 
         
-          <div class="energy-card" style="--energy-color: var(--amber);">
+          <div class="energy-card fade-up-lore d-2" style="--energy-color: var(--amber);">
             <div class="energy-header">
               <span class="energy-name font-display">RA</span>
               <span class="energy-emoji">☀️</span>
@@ -262,10 +265,13 @@ onUnmounted(() => {
             <p class="energy-desc">
               Photovoltaic panels turn sunlight into power. RA channels the sun itself.
             </p>
+            <div class="energy-house-img-wrapper" >
+              <img src="/ecopolis-house/house_ra.jpg" alt="RA House" class="energy-house-img" />
+            </div>
           </div>
 
         
-          <div class="energy-card" style="--energy-color: var(--cream);">
+          <div class="energy-card fade-up-lore d-3" style="--energy-color: var(--cream);">
             <div class="energy-header">
               <span class="energy-name font-display">MOOLU</span>
               <span class="energy-emoji">🌿</span>
@@ -274,10 +280,13 @@ onUnmounted(() => {
             <p class="energy-desc">
               Item crafting and material reuse. The lab where waste becomes new tools.
             </p>
+            <div class="energy-house-img-wrapper">
+              <img src="/ecopolis-house/moolu_lab.jpg" alt="MOOLU Lab" class="energy-house-img" />
+            </div>
           </div>
 
         
-          <div class="energy-card" style="--energy-color: var(--cyan);">
+          <div class="energy-card fade-up-lore d-4" style="--energy-color: var(--cyan);">
             <div class="energy-header">
               <span class="energy-name font-display">MERC</span>
               <span class="energy-emoji">💨</span>
@@ -286,10 +295,13 @@ onUnmounted(() => {
             <p class="energy-desc">
               Wind turbines turn motion into power. Mercury's speed becomes electricity.
             </p>
+            <div class="energy-house-img-wrapper">
+              <img src="/ecopolis-house/house_merc.jpg" alt="MERC House" class="energy-house-img" />
+            </div>
           </div>
 
         
-          <div class="energy-card" style="--energy-color: var(--earth);">
+          <div class="energy-card fade-up-lore d-1" style="--energy-color: var(--earth);">
             <div class="energy-header">
               <span class="energy-name font-display">NEP</span>
               <span class="energy-emoji">💧</span>
@@ -298,10 +310,13 @@ onUnmounted(() => {
             <p class="energy-desc">
               Flowing water spins turbines. Neptune's seas, turned to current.
             </p>
+            <div class="energy-house-img-wrapper">
+              <img src="/ecopolis-house/house_nep.jpg" alt="NEP House" class="energy-house-img" />
+            </div>
           </div>
 
         
-          <div class="energy-card" style="--energy-color: #D97706;">
+          <div class="energy-card fade-up-lore d-2" style="--energy-color: #D97706;">
             <div class="energy-header">
               <span class="energy-name font-display">JUPI</span>
               <span class="energy-emoji">☢️</span>
@@ -310,10 +325,13 @@ onUnmounted(() => {
             <p class="energy-desc">
               Fusion at the heart of a star. Jupiter's gravity becomes raw power.
             </p>
+            <div class="energy-house-img-wrapper">
+              <img src="/ecopolis-house/house_jupi.jpg" alt="JUPI House" class="energy-house-img" />
+            </div>
           </div>
 
         
-          <div class="energy-card" style="--energy-color: #FF4D2E;">
+          <div class="energy-card fade-up-lore d-3" style="--energy-color: #FF4D2E;">
             <div class="energy-header">
               <span class="energy-name font-display">MA</span>
               <span class="energy-emoji">🌱</span>
@@ -322,10 +340,13 @@ onUnmounted(() => {
             <p class="energy-desc">
               Plants and waste become fuel. Mars' soil, transformed into life.
             </p>
+            <div class="energy-house-img-wrapper">
+              <img src="/ecopolis-house/house_ma.jpg" alt="MA House" class="energy-house-img" />
+            </div>
           </div>
 
          
-          <div class="energy-card" style="--energy-color: #D4A574;">
+          <div class="energy-card fade-up-lore d-4" style="--energy-color: #D4A574;">
             <div class="energy-header">
               <span class="energy-name font-display">SATU</span>
               <span class="energy-emoji">🔥</span>
@@ -334,10 +355,13 @@ onUnmounted(() => {
             <p class="energy-desc">
               Earth's deep heat surfaces as power. Saturn's stone holds furnace-warmth.
             </p>
+            <div class="energy-house-img-wrapper">
+              <img src="/ecopolis-house/house_satu.jpg" alt="SATU House" class="energy-house-img" />
+            </div>
           </div>
 
          
-          <div class="energy-card" style="--energy-color: var(--earth);">
+          <div class="energy-card fade-up-lore d-1" style="--energy-color: var(--earth);">
             <div class="energy-header">
               <span class="energy-name font-display">URA</span>
               <span class="energy-emoji">⚙️</span>
@@ -346,10 +370,13 @@ onUnmounted(() => {
             <p class="energy-desc">
               Motion is stored, then released. Uranus' tilt powers everything that moves.
             </p>
+            <div class="energy-house-img-wrapper">
+              <img src="/ecopolis-house/house_ura.jpg" alt="URA House" class="energy-house-img" />
+            </div>
           </div>
 
          
-          <div class="energy-card" style="--energy-color: #E8C547;">
+          <div class="energy-card fade-up-lore d-2" style="--energy-color: #E8C547;">
             <div class="energy-header">
               <span class="energy-name font-display">V</span>
               <span class="energy-emoji">✨</span>
@@ -358,10 +385,13 @@ onUnmounted(() => {
             <p class="energy-desc">
               Light focused, refracted, amplified. Venus' brilliance, channeled.
             </p>
+            <div class="energy-house-img-wrapper">
+              <img src="/ecopolis-house/house_v.jpg" alt="V House" class="energy-house-img" />
+            </div>
           </div>
 
          
-          <div class="energy-card" style="--energy-color: var(--violet);">
+          <div class="energy-card fade-up-lore d-3" style="--energy-color: var(--violet);">
             <div class="energy-header">
               <span class="energy-name font-display">PLU</span>
               <span class="energy-emoji">🏔️</span>
@@ -370,6 +400,9 @@ onUnmounted(() => {
             <p class="energy-desc">
               Perpetual snow holds heat captive for millennia. PLU's gift is preservation — saving the energy already made.
             </p>
+            <div class="energy-house-img-wrapper">
+              <img src="/ecopolis-house/house_plu.jpg" alt="PLU House" class="energy-house-img" />
+            </div>
           </div>
         </div>
 
@@ -377,7 +410,7 @@ onUnmounted(() => {
           → 11 buildings in Eco Balance Village · Energy-character assignments locked from GDD · V/PLU draft v0.1
         </p>
       </div>
-    </section> -->
+    </section>
 
     <!-- ============ POPUP MODAL LIGHTBOX ============ -->
     <Transition name="fade">
@@ -893,7 +926,7 @@ onUnmounted(() => {
 /* ============ SECTION HEADER DESIGN ============ */
 .section-intro {
   margin-bottom: 3.5rem;
-  max-width: 800px;
+  max-width: 1200px;
 }
 
 .section-line {
@@ -1111,7 +1144,7 @@ onUnmounted(() => {
 
 /* ============ 3. ECO BALANCE VILLAGE — 10 ENERGY HOUSES ============ */
 .village-section {
-  background: #0A1834;
+  /* background: #0A1834; */
   padding: 6rem 0;
   position: relative;
   overflow: hidden;
@@ -1156,6 +1189,8 @@ onUnmounted(() => {
   padding: 1.25rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .energy-card::before {
@@ -1192,15 +1227,42 @@ onUnmounted(() => {
 }
 
 .energy-type {
-  font-size: 0.65rem;
+  font-size: 1rem;
   letter-spacing: 0.15em;
   margin-bottom: 0.5rem;
 }
 
 .energy-desc {
-  font-size: 0.7rem;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  font-size: 0.9rem;
   color: rgba(255, 245, 229, 0.65);
   line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.energy-house-img-wrapper {
+  margin-top: auto;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 9 / 10;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.energy-house-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.energy-card:hover .energy-house-img-wrapper {
+  border-color: var(--energy-color);
+}
+
+.energy-house-img-wrapper:hover .energy-house-img {
+  transform: scale(1.08);
 }
 
 /* ============ 4. GALACTIC NEXUS CONTROL CENTER ============ */
