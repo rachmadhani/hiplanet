@@ -47,7 +47,7 @@ onUnmounted(() => {
           <li><a href="/#characters">Characters</a></li>
         </ul>
       </li>
-      <li><a href="/#games" :class="{ active: activeSection === 'games' }">Games</a></li>
+      <li><RouterLink to="/game">Games</RouterLink></li>
       <li><a href="/#community" :class="{ active: activeSection === 'community' }">Community</a></li>
       <li><a href="/#devlog" :class="{ active: activeSection === 'devlog' }">Devlog</a></li>
       <li><a href="/#community" class="nav-cta discord-btn">Join Discord</a></li>
@@ -125,7 +125,8 @@ nav {
 }
 
 .nav-links li a:hover,
-.nav-links li a.active {
+.nav-links li a.active,
+.nav-links li a.router-link-active {
   color: var(--neon-blue);
 }
 
@@ -194,8 +195,9 @@ nav {
   padding-left: 1.8rem !important;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links > li > a:hover,
+.nav-links > li > a.active,
+.nav-links > li > a.router-link-active {
   color: #fff !important;
   background: var(--neon-blue);
   border-color: var(--neon-blue);

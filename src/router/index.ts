@@ -23,6 +23,11 @@ const router = createRouter({
       path: '/world-lore',
       name: 'world-lore',
       component: () => import('../views/WorldLoreView.vue')
+    },
+    {
+      path: '/game',
+      name: 'game',
+      component: () => import('../views/GameView.vue')
     }
   ]
 })

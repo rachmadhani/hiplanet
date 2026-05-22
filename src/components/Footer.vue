@@ -20,7 +20,7 @@
         <ul class="footer-links">
           <li><a href="/#home">Home</a></li>
           <li><a href="/#universe">Universe</a></li>
-          <li><a href="/#games">Games</a></li>
+          <li><RouterLink to="/game">Games</RouterLink></li>
           <li><a href="/#community">Community</a></li>
           <li><a href="/#devlog">Devlog</a></li>
         </ul>
