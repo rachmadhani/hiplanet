@@ -269,22 +269,7 @@ onUnmounted(() => {
               <img src="/ecopolis-house/house_ra.jpg" alt="RA House" class="energy-house-img" />
             </div>
           </div>
-
-        
-          <div class="energy-card fade-up-lore d-3" style="--energy-color: var(--cream);">
-            <div class="energy-header">
-              <span class="energy-name font-display">MOOLU</span>
-              <span class="energy-emoji">🌿</span>
-            </div>
-            <div class="energy-type font-display font-cream">ECO ENERGY · LAB</div>
-            <p class="energy-desc">
-              Item crafting and material reuse. The lab where waste becomes new tools.
-            </p>
-            <div class="energy-house-img-wrapper">
-              <img src="/ecopolis-house/moolu_lab.jpg" alt="MOOLU Lab" class="energy-house-img" />
-            </div>
-          </div>
-
+          
         
           <div class="energy-card fade-up-lore d-4" style="--energy-color: var(--cyan);">
             <div class="energy-header">
