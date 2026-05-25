@@ -74,8 +74,7 @@ onMounted(() => {
       <a href="#" class="social-pill pill-ig">◈ Instagram — @EcosoftGame</a>
     </div> -->
 
-    <!-- SNEAK PEEK POSTER -->
-    <section class="sneak-poster-section">
+    <section id="concept" class="sneak-poster-section">
       <!-- Full cover artwork -->
       <img src="/comic-image/hiplanet_website_sneak_peek.jpg" alt="Sneak Peek Artwork" class="poster-bg-img" />
       <!-- Dark overlay -->
@@ -327,7 +326,7 @@ onMounted(() => {
     <div class="section-divider"></div>
     
     <!-- HEROES SECTION -->
-    <section class="heroes-section fade-up">
+    <section id="characters" class="heroes-section fade-up">
       <div class="heroes-stars-overlay"></div>
       <div class="heroes-container">
         <div class="heroes-header">
@@ -587,7 +586,7 @@ onMounted(() => {
     <div class="section-divider"></div>
 
     <!-- WISHLIST SECTION -->
-    <section id="wishlist" class="wishlist-section">
+    <section id="community" class="wishlist-section">
       <div class="stars-overlay opacity-60"></div>
       <div class="wishlist-glow"></div>
 

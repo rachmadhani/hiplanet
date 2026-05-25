@@ -35,11 +35,11 @@ onUnmounted(() => {
       <img src="/logo/ecosoft_logo_mobile.png" class="brand-logo mobile-logo" alt="ECOSOFT" />
     </RouterLink>
     <ul class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
-      <li><a href="/#home" :class="{ active: activeSection === 'home' }">Home</a></li>
+      <li><RouterLink to="/">Home</RouterLink></li>
       <li class="dropdown">
-        <a href="/#universe" :class="{ active: activeSection === 'universe' }">
+        <RouterLink to="/world-lore">
           Universe <span class="dropdown-arrow"></span>
-        </a>
+        </RouterLink>
         <ul class="dropdown-menu">
           <li><RouterLink to="/comic">Comic Book</RouterLink></li>
           <li><a href="/#concept">Concept Art</a></li>
@@ -48,8 +48,8 @@ onUnmounted(() => {
         </ul>
       </li>
       <li><RouterLink to="/game">Games</RouterLink></li>
-      <li><a href="/#community" :class="{ active: activeSection === 'community' }">Community</a></li>
-      <li><a href="/#devlog" :class="{ active: activeSection === 'devlog' }">Devlog</a></li>
+      <li><a href="/#community">Community</a></li>
+      <li><a href="/#studio">Devlog</a></li>
       <li><a href="/#community" class="nav-cta discord-btn">Join Discord</a></li>
       <li>
         <a href="https://store.steampowered.com" target="_blank" class="nav-cta steam-btn">

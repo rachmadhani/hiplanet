@@ -18,11 +18,11 @@
       <div>
         <div class="footer-col-title">Navigate</div>
         <ul class="footer-links">
-          <li><a href="/#home">Home</a></li>
-          <li><a href="/#universe">Universe</a></li>
+          <li><RouterLink to="/">Home</RouterLink></li>
+          <li><RouterLink to="/world-lore">Universe</RouterLink></li>
           <li><RouterLink to="/game">Games</RouterLink></li>
           <li><a href="/#community">Community</a></li>
-          <li><a href="/#devlog">Devlog</a></li>
+          <li><a href="/#studio">Devlog</a></li>
         </ul>
       </div>
       <div>
@@ -127,17 +127,27 @@ footer {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.3rem;
 }
 
 .footer-links a {
   font-size: 0.88rem;
   color: rgba(255,255,255,0.6);
   text-decoration: none;
-  transition: color 0.2s;
+  padding: 0.3rem 0.6rem;
+  margin-left: -0.6rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  display: inline-block;
+  transition: all 0.2s ease;
 }
 
-.footer-links a:hover { color: var(--green); }
+.footer-links a:hover {
+  color: #fff !important;
+  background: var(--neon-blue);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 15px var(--blue-glow);
+}
 
 .footer-bottom {
   max-width: 1200px;
