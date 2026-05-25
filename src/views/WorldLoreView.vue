@@ -998,28 +998,12 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.45;
-  transition: opacity 0.4s ease, transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
   z-index: 0;
 }
 
 .map-slot:hover .map-img {
-  opacity: 0.75;
   transform: scale(1.04);
-}
-
-.map-slot::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at center, rgba(10, 24, 52, 0.35) 0%, rgba(10, 24, 52, 0.8) 100%);
-  z-index: 1;
-  transition: background 0.4s ease;
-}
-
-.map-slot:hover::after {
-  background: radial-gradient(circle at center, rgba(10, 24, 52, 0.15) 0%, rgba(10, 24, 52, 0.7) 100%);
 }
 
 .map-content {
