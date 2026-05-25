@@ -193,7 +193,7 @@ void openPopup
           </div>
 
           <div class="meta-center">
-            <a href="https://store.steampowered.com" target="_blank" class="btn-hero-cta">
+            <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="btn-hero-cta">
               ▶ Wishlist on Steam
             </a>
           </div>
@@ -470,7 +470,7 @@ void openPopup
           Every wishlist makes Steam show Hi Planet to more players. The single most useful thing you can do for a small indie studio.
         </p>
         <div class="fade-up-game">
-          <a href="https://store.steampowered.com" target="_blank" class="btn-large-wishlist">
+          <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="btn-large-wishlist">
             ▶ Wishlist on Steam — Free
           </a>
         </div>

@@ -52,7 +52,7 @@ onUnmounted(() => {
       <li><a href="/#studio">Devlog</a></li>
       <li><a href="https://discord.gg/ZkpAZFrda" target="_blank" class="nav-cta discord-btn">Join Discord</a></li>
       <li>
-        <a href="https://store.steampowered.com" target="_blank" class="nav-cta steam-btn">
+        <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="nav-cta steam-btn">
           <img src="/icon/steam-white.png" class="steam-icon" alt="Steam" />
           Wishlist On Steam
         </a>

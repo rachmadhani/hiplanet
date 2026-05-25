@@ -55,7 +55,7 @@ onMounted(() => {
       <!-- Buttons: independent from hero-inner -->
       <div class="hero-bottom-bar reveal d-4">
         <div class="hero-actions">
-          <a href="#" class="btn-new btn-primary-new">
+          <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="btn-new btn-primary-new">
             ▶ Wishlist on Steam
           </a>
           <a href="#loop" class="btn-new btn-outline-new">
@@ -112,7 +112,7 @@ onMounted(() => {
 
         <!-- CTAs -->
         <div class="reveal d-4 poster-cta-row">
-          <a href="#" class="btn-poster btn-primary-poster">▶ Wishlist on Steam</a>
+          <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="btn-poster btn-primary-poster">▶ Wishlist on Steam</a>
         </div>
 
         <!-- YouTube Embed -->
@@ -608,7 +608,7 @@ onMounted(() => {
           Thank you for all game players!
         </p>
 
-        <a href="#" class="wishlist-btn font-display">
+        <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="wishlist-btn font-display">
           ▶ Wishlist on Steam — Free
         </a>
 
