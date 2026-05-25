@@ -61,7 +61,6 @@ const bosses = ref<Boss[]>([
 
 const activePopupImage = ref<string | null>(null)
 const activePopupTitle = ref<string>('')
-const isVideoOpen = ref(false)
 
 const openPopup = (imgUrl: string, title: string) => {
   activePopupImage.value = imgUrl
@@ -75,20 +74,9 @@ const closePopup = () => {
   document.body.style.overflow = ''
 }
 
-const openVideo = () => {
-  isVideoOpen.value = true
-  document.body.style.overflow = 'hidden'
-}
-
-const closeVideo = () => {
-  isVideoOpen.value = false
-  document.body.style.overflow = ''
-}
-
 const handleKeydown = (e: KeyboardEvent) => {
   if (e.key === 'Escape') {
     closePopup()
-    closeVideo()
   }
 }
 
@@ -169,17 +157,19 @@ void openPopup
         </div>
 
         <!-- CINEMA VIDEO slot -->
-        <div class="fade-up-game d-3 cinema-video-frame" @click="openVideo">
+        <div class="fade-up-game d-3 cinema-video-frame">
           <div class="letterbox-bar"></div>
           
-          <div class="cinema-video-content">
-            <div class="video-center-info">
-              <div class="play-button-outer">
-                <span>▶</span>
-              </div>
-              <div class="video-label-main">GAMEPLAY TRAILER</div>
-              <div class="video-label-sub">// VIDEO SLOT · 16:9 · INTERACTIVE MOCK TRAILER</div>
-            </div>
+          <div class="cinema-video-content" style="cursor: default;">
+            <iframe
+              src="https://www.youtube.com/embed/kLYnYextScU"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              style="border: none; display: block; position: relative; z-index: 10;"
+            ></iframe>
           </div>
           
           <div class="letterbox-bar bottom"></div>
@@ -486,17 +476,7 @@ void openPopup
       </div>
     </div>
 
-    <!-- ============ INTERACTIVE VIDEO MODAL ============ -->
-    <div v-if="isVideoOpen" class="lightbox-modal" @click.self="closeVideo">
-      <button class="lightbox-close-btn" @click="closeVideo" aria-label="Close video">✕</button>
-      <div class="video-modal-content">
-        <div class="video-modal-placeholder">
-          <div class="video-modal-icon">🎬</div>
-          <div class="video-modal-text">HI PLANET EPISODE 01</div>
-          <div class="video-modal-subtext">Official gameplay video demo would play here. Coming Nov 10, 2026.</div>
-        </div>
-      </div>
-    </div>
+
 
   </div>
 </template>
