@@ -613,7 +613,7 @@ onMounted(() => {
         </a>
 
         <div class="wishlist-socials">
-          <a href="#" class="social-icon-link" title="Join Discord">
+          <a href="https://discord.gg/ZkpAZFrda" target="_blank" class="social-icon-link" title="Join Discord">
             <img src="/social-icon/discord.png" alt="Discord" />
           </a>
           <a href="#" class="social-icon-link" title="YouTube">
