@@ -14,12 +14,12 @@ interface Hero {
 const heroes = ref<Hero[]>([
   { id: 'hi', name: 'HI', role: 'LEAD', desc: 'Balanced melee. Newcomer-friendly.', img: '/character/hi-animation.gif', color: 'var(--coral)', accentClass: 'accent-coral' },
   { id: 'ra', name: 'RA', role: 'AOE', desc: 'Solar fire. Burns whole swarms.', img: '/character/Ra-animation.gif', color: 'var(--amber)', accentClass: 'accent-amber' },
-  { id: 'moolu', name: 'MOOLU', role: 'CRIT', desc: 'Reveals enemy weak spots.', img: '', color: 'var(--cream)', accentClass: 'accent-cream' },
+  { id: 'ma', name: 'MA', role: 'CRIT', desc: 'Reveals enemy weak spots.', img: '/character/Ma-animation.gif', color: 'var(--red)', accentClass: 'accent-red' },
   { id: 'satu', name: 'SATU', role: 'TANK', desc: 'Stone-skinned. Stuns in melee.', img: '/character/Satu-animation.gif', color: '#D4A574', accentClass: 'accent-satu' },
   { id: 'merc', name: 'MERC', role: 'FAST', desc: 'Hit-and-run specialist.', img: '/character/Merc-animation.gif', color: 'var(--cyan)', accentClass: 'accent-cyan' },
   { id: 'plu', name: 'PLU', role: 'SNIPE', desc: 'Long-range frost. Glass cannon.', img: '/character/Plu-animation.gif', color: 'var(--violet)', accentClass: 'accent-violet' },
-  { id: 'v', name: 'V', role: 'CRIT', desc: 'Light blades. High crit chance.', img: '', color: '#E8C547', accentClass: 'accent-v' },
-  { id: 'ura', name: 'URA', role: 'WILD', desc: 'Gravity shifts. Off-axis attacks.', img: '', color: 'var(--earth)', accentClass: 'accent-earth' },
+  { id: 'v', name: 'V', role: 'CRIT', desc: 'Light blades. High crit chance.', img: '/character/V-animation.gif', color: '#E8C547', accentClass: 'accent-v' },
+  { id: 'ura', name: 'URA', role: 'WILD', desc: 'Gravity shifts. Off-axis attacks.', img: '/character/Ura-animation.gif', color: 'var(--earth)', accentClass: 'accent-earth' },
   { id: 'jupi', name: 'JUPI', role: 'CHAIN', desc: 'Chain lightning + vines.', img: '/character/Jupi-animation.gif', color: '#D97706', accentClass: 'accent-jupi' },
   { id: 'nep', name: 'NEP', role: 'REACH', desc: 'Trident reach + water bursts.', img: '/character/Nep-animation.gif', color: 'var(--earth)', accentClass: 'accent-earth' },
 ])
@@ -546,6 +546,10 @@ void openPopup
   color: var(--cyan);
 }
 
+.accent-red {
+  color: var(--red);
+}
+
 
 /* Animations */
 .fade-up-game {
@@ -1055,20 +1059,72 @@ void openPopup
 }
 
 .hero-card-slot img {
-  width: 90%;
-  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
 /* Adjust Ra image size because its source file has less transparent padding and appears much larger */
 .hero-card-ra .hero-card-slot img {
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 80%;
+  top: 38%;
+}
+
+.hero-card-ma .hero-card-slot img {
+  width: 110%;
+  height: 140%;
+  top: 38%;
+}
+
+.hero-card-satu .hero-card-slot img {
+  width: 160%;
+  height: 140%;
+  top: 44%;
+}
+
+.hero-card-merc .hero-card-slot img {
+  width: 140%;
+  height: 140%;
+  top: 44%;
+}
+
+.hero-card-plu .hero-card-slot img {
+  width: 160%;
+  height: 140%;
+}
+
+.hero-card-v .hero-card-slot img {
+  width: 120%;
+  height: 140%;
+  top: 38%;
+}
+
+.hero-card-ura .hero-card-slot img {
+  width: 149%;
+  height: 140%;
+  top: 42%;
+}
+
+.hero-card-jupi .hero-card-slot img {
+  width: 120%;
+  height: 140%;
+  top: 53%;
+}
+
+.hero-card-nep .hero-card-slot img {
+  width: 140%;
+  height: 140%;
+  top: 44%;
 }
 
 .hero-card-game:hover .hero-card-slot img {
-  transform: scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .hero-meta-row {
