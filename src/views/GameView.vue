@@ -12,16 +12,16 @@ interface Hero {
 }
 
 const heroes = ref<Hero[]>([
-  { id: 'hi', name: 'HI', role: 'LEAD', desc: 'Balanced melee. Newcomer-friendly.', img: '/character/hi.png', color: 'var(--coral)', accentClass: 'accent-coral' },
-  { id: 'ra', name: 'RA', role: 'AOE', desc: 'Solar fire. Burns whole swarms.', img: '/character/ra.png', color: 'var(--amber)', accentClass: 'accent-amber' },
+  { id: 'hi', name: 'HI', role: 'LEAD', desc: 'Balanced melee. Newcomer-friendly.', img: '/character/hi-animation.gif', color: 'var(--coral)', accentClass: 'accent-coral' },
+  { id: 'ra', name: 'RA', role: 'AOE', desc: 'Solar fire. Burns whole swarms.', img: '/character/Ra-animation.gif', color: 'var(--amber)', accentClass: 'accent-amber' },
   { id: 'moolu', name: 'MOOLU', role: 'CRIT', desc: 'Reveals enemy weak spots.', img: '', color: 'var(--cream)', accentClass: 'accent-cream' },
-  { id: 'satu', name: 'SATU', role: 'TANK', desc: 'Stone-skinned. Stuns in melee.', img: '/character/satu.png', color: '#D4A574', accentClass: 'accent-satu' },
-  { id: 'merc', name: 'MERC', role: 'FAST', desc: 'Hit-and-run specialist.', img: '/character/merc.png', color: 'var(--cyan)', accentClass: 'accent-cyan' },
-  { id: 'plu', name: 'PLU', role: 'SNIPE', desc: 'Long-range frost. Glass cannon.', img: '/character/plu.png', color: 'var(--violet)', accentClass: 'accent-violet' },
-  { id: 'v', name: 'V', role: 'CRIT', desc: 'Light blades. High crit chance.', img: '/character/v.png', color: '#E8C547', accentClass: 'accent-v' },
-  { id: 'ura', name: 'URA', role: 'WILD', desc: 'Gravity shifts. Off-axis attacks.', img: '/character/ura.png', color: 'var(--earth)', accentClass: 'accent-earth' },
-  { id: 'jupi', name: 'JUPI', role: 'CHAIN', desc: 'Chain lightning + vines.', img: '/character/jupi.png', color: '#D97706', accentClass: 'accent-jupi' },
-  { id: 'nep', name: 'NEP', role: 'REACH', desc: 'Trident reach + water bursts.', img: '/character/nep.png', color: 'var(--earth)', accentClass: 'accent-earth' },
+  { id: 'satu', name: 'SATU', role: 'TANK', desc: 'Stone-skinned. Stuns in melee.', img: '/character/Satu-animation.gif', color: '#D4A574', accentClass: 'accent-satu' },
+  { id: 'merc', name: 'MERC', role: 'FAST', desc: 'Hit-and-run specialist.', img: '/character/Merc-animation.gif', color: 'var(--cyan)', accentClass: 'accent-cyan' },
+  { id: 'plu', name: 'PLU', role: 'SNIPE', desc: 'Long-range frost. Glass cannon.', img: '/character/Plu-animation.gif', color: 'var(--violet)', accentClass: 'accent-violet' },
+  { id: 'v', name: 'V', role: 'CRIT', desc: 'Light blades. High crit chance.', img: '', color: '#E8C547', accentClass: 'accent-v' },
+  { id: 'ura', name: 'URA', role: 'WILD', desc: 'Gravity shifts. Off-axis attacks.', img: '', color: 'var(--earth)', accentClass: 'accent-earth' },
+  { id: 'jupi', name: 'JUPI', role: 'CHAIN', desc: 'Chain lightning + vines.', img: '/character/Jupi-animation.gif', color: '#D97706', accentClass: 'accent-jupi' },
+  { id: 'nep', name: 'NEP', role: 'REACH', desc: 'Trident reach + water bursts.', img: '/character/Nep-animation.gif', color: 'var(--earth)', accentClass: 'accent-earth' },
 ])
 
 interface Biome {
@@ -282,14 +282,14 @@ void openPopup
     </section> -->
 
     <!-- ============ 3. THE HI PLANET TEAM ============ -->
-    <!-- <section id="heroes" class="game-section heroes-section-game">
+    <section id="heroes" class="game-section heroes-section-game">
       <div class="stars-bg"></div>
       <div class="max-width-wrapper">
         <div class="fade-up-game">
-          <div class="section-line-header accent-earth">The Hi Planet Team · 10 Playable</div>
+          <div class="section-line-header accent-blue">The Hi Planet Team · 10 Playable</div>
           <h2 class="section-title">
             TEN HEROES.<br />
-            <span class="accent-amber">TEN PLAYSTYLES.</span>
+            <span class="accent-neon-blue">TEN PLAYSTYLES.</span>
           </h2>
           <p class="section-subtitle font-serif">
             Pick your fighter. Each hero is a different way to run the loop.
@@ -297,7 +297,7 @@ void openPopup
         </div>
 
         <div class="heroes-grid-game">
-          <div v-for="hero in heroes" :key="hero.id" class="hero-card-game fade-up-game d-1">
+          <div v-for="hero in heroes" :key="hero.id" class="hero-card-game fade-up-game d-1" :class="`hero-card-${hero.id}`">
             <div class="hero-card-slot" :style="{ backgroundColor: hero.img ? 'rgba(255,255,255,0.03)' : 'rgba(255,245,229,0.04)' }">
               <img v-if="hero.img" :src="hero.img" :alt="hero.name" />
               <div v-else class="slot-inner-placeholder font-pixel" style="font-size: 10px;" :style="{ color: hero.color }">
@@ -316,7 +316,7 @@ void openPopup
           → 10 playable in Ep1 · MA reserved for Ch.7 DLC (Mars chapter)
         </p>
       </div>
-    </section> -->
+    </section>
 
     <!-- ============ 4. EARTH · 5 BATTLEFIELDS ============ -->
     <!-- <section id="earth" class="game-section earth-section">
@@ -538,6 +538,10 @@ void openPopup
   color: var(--neon-blue);
 }
 
+.accent-blue {
+  color: var(--blue);
+}
+
 .accent-cyan {
   color: var(--cyan);
 }
@@ -601,9 +605,10 @@ void openPopup
 }
 
 .max-width-wrapper {
-  max-width: 1400px;
+  max-width: 1660px;
   margin: 0 auto;
   width: 100%;
+  padding: 0 1.5rem;
 }
 
 /* Section Line Header */
@@ -628,16 +633,20 @@ void openPopup
 
 .section-title {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 0.9;
+  font-size: clamp(3rem, 7vw, 8rem);
+  line-height: 0.82;
   margin-bottom: 1rem;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-transform: uppercase;
+  max-width: 800px;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
 
 .section-subtitle {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   /* font-style: italic; */
-  font-size: clamp(1.1rem, 2vw, 2.4rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   color: rgba(255, 245, 229, 0.8);
   max-width: 600px;
   margin-bottom: 3rem;
@@ -1008,7 +1017,7 @@ void openPopup
 
 /* Heroes Section */
 .heroes-section-game {
-  background-color: #0A1834;
+  /* background-color: #0A1834; */
 }
 
 .heroes-grid-game {
@@ -1052,6 +1061,12 @@ void openPopup
   transition: transform 0.3s ease;
 }
 
+/* Adjust Ra image size because its source file has less transparent padding and appears much larger */
+.hero-card-ra .hero-card-slot img {
+  width: 50%;
+  height: 50%;
+}
+
 .hero-card-game:hover .hero-card-slot img {
   transform: scale(1.1);
 }
@@ -1065,20 +1080,21 @@ void openPopup
 
 .hero-name-label {
   font-family: 'Anton', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.7rem;
   letter-spacing: 0.02em;
 }
 
 .hero-role-pill {
   font-family: 'Anton', sans-serif;
-  font-size: 0.55rem;
+  font-size: 1rem;
   letter-spacing: 0.15em;
   padding: 2px 6px;
   border: 1px solid currentColor;
 }
 
 .hero-desc-game {
-  font-size: 0.75rem;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  font-size: .8rem;
   color: rgba(255, 245, 229, 0.6);
   line-height: 1.4;
 }
