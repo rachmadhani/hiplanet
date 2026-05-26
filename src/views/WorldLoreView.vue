@@ -99,7 +99,7 @@ onUnmounted(() => {
               a circular eco-friendly planet powered by solar energy.<br />
               On the other, <span class="accent-magenta highlight-span">POLLUTOPIA</span> —
               a wasteland of factories, lava, and robotic industry.<br />
-              <span class="accent-amber block-subtitle">Between them, a war for Earth's five energies.</span>
+              <span class="accent-amber block-subtitle">BETWEEN THEM, A WAR FOR EARTH'S FIVE ENERGIES.</span>
             </p>
 
             <div class="fade-up-lore d-4 actions-row">
@@ -844,7 +844,7 @@ onUnmounted(() => {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   /* font-style: italic; */
   font-size: clamp(1.1rem, 2vw, 1.5rem);
-  color: rgba(255, 245, 229, 0.85);
+  color: rgb(255, 245, 229);
   line-height: 1.6;
   max-width: 750px;
   margin-bottom: 3rem;
@@ -946,7 +946,7 @@ onUnmounted(() => {
 .section-desc {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.5rem);
-  color: rgba(255, 245, 229, 0.75);
+  color: rgb(255, 245, 229);
   max-width: 600px;
   line-height: 1.6;
 }
@@ -957,7 +957,7 @@ onUnmounted(() => {
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  color: rgba(255, 245, 229, 0.4);
+  color: rgb(255, 245, 229);
 }
 
 /* ============ 2. ECOPOLIS · HOME ============ */
@@ -1107,7 +1107,7 @@ onUnmounted(() => {
 .card-text {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: 0.75rem;
-  color: rgba(255, 245, 229, 0.65);
+  color: rgb(255, 245, 229);
   line-height: 1.5;
 }
 
@@ -1204,7 +1204,7 @@ onUnmounted(() => {
 .energy-desc {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: 0.9rem;
-  color: rgba(255, 245, 229, 0.65);
+  color: rgb(255, 245, 229);
   line-height: 1.5;
   margin-bottom: 15px;
 }

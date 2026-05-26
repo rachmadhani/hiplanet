@@ -108,7 +108,7 @@ onUnmounted(() => {
             <p class="hero-subtitle fade-up-comic d-3 font-serif">
               Hi Planet started as a comic in 2020.<br />
               Six years. Three volumes. 600 pages.<br />
-              <span class="hero-accent-block font-display">The comic came first.</span>
+              <span class="hero-accent-block font-display">THE COMIC CAME FIRST.</span>
             </p>
             <div class="hero-actions-row fade-up-comic d-4">
               <a href="#vol1" class="btn-action btn-amazon font-display">
@@ -1282,7 +1282,7 @@ section {
 .hero-subtitle {
   font-size: clamp(1.1rem, 1.4vw, 1.35rem);
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
-  color: rgba(255, 245, 229, 0.85);
+  color: rgb(255, 245, 229);
   line-height: 1.6;
   margin-bottom: 2rem;
   max-width: 500px;
@@ -1495,7 +1495,7 @@ section {
 .origin-subtitle {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: clamp(1rem, 1.2vw, 1.25rem);
-  color: rgba(255, 245, 229, 0.75);
+  color: rgb(255, 245, 229);
   line-height: 1.6;
 }
 
@@ -1567,7 +1567,7 @@ section {
 .node-content p {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: 1rem;
-  color: rgba(255, 245, 229, 0.7);
+  color: rgb(255, 245, 229);
   line-height: 1.6;
   max-width: 500px;
 }
@@ -2141,7 +2141,7 @@ section {
 .reels-subtitle {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: clamp(1rem, 1.2vw, 1.25rem);
-  color: rgba(255, 245, 229, 0.7);
+  color: rgb(255, 245, 229);
   line-height: 1.6;
 }
 
@@ -2307,7 +2307,7 @@ section {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  color: rgba(255,245,229,0.4);
+  color: rgb(255, 245, 229);
 }
 
 .follow-link-bottom {
@@ -2368,7 +2368,7 @@ section {
 .series-subtitle {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: clamp(1rem, 1.2vw, 1.25rem);
-  color: rgba(255, 245, 229, 0.75);
+  color: rgb(255, 245, 229);
   line-height: 1.6;
 }
 
@@ -2475,7 +2475,7 @@ section {
 .promo-desc {
   font-size: 1rem;
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
-  color: rgba(255, 245, 229, 0.7);
+  color: rgb(255, 245, 229);
   line-height: 1.6;
 }
 
@@ -2559,7 +2559,7 @@ section {
 
 .release-subtitle {
   font-size: 0.88rem;
-  color: rgba(255, 245, 229, 0.65);
+  color: rgb(255, 245, 229);
   line-height: 1.6;
   max-width: 500px;
   margin: 0 auto 1.5rem;

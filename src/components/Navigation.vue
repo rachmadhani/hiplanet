@@ -48,7 +48,14 @@ onUnmounted(() => {
         </ul>
       </li>
       <li><RouterLink to="/game">Games</RouterLink></li>
-      <li><a href="/#community">Community</a></li>
+      <li class="dropdown">
+        <RouterLink to="/community">
+          Community <span class="dropdown-arrow"></span>
+        </RouterLink>
+         <ul class="dropdown-menu">
+          <li><RouterLink to="/become-a-tester">Become a tester</RouterLink></li>
+        </ul>
+      </li>
       <li><a href="/#studio">Devlog</a></li>
       <li><a href="https://discord.gg/ZkpAZFrda" target="_blank" class="nav-cta discord-btn">Join Discord</a></li>
       <li>

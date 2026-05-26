@@ -142,7 +142,7 @@ void openPopup
 
         <!-- Title Block -->
         <div class="title-block">
-          <div class="fade-up-game d-2 main-tagline accent-coral">
+          <div class="fade-up-game d-2 main-tagline accent-blue">
             A Horde-Roguelite by Ecosoft Interactive
           </div>
 
@@ -162,7 +162,7 @@ void openPopup
           
           <div class="cinema-video-content" style="cursor: default;">
             <iframe
-              src="https://www.youtube.com/embed/kLYnYextScU"
+              src="https://www.youtube.com/embed/u2q7YS4RuXs"
               width="100%"
               height="100%"
               frameborder="0"
@@ -631,7 +631,7 @@ void openPopup
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   /* font-style: italic; */
   font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-  color: rgba(255, 245, 229, 0.8);
+  color: rgb(255, 245, 229);
   max-width: 600px;
   margin-bottom: 3rem;
   line-height: 1.5;
@@ -721,7 +721,7 @@ void openPopup
   content: "";
   width: 32px;
   height: 1px;
-  background-color: var(--coral);
+  background-color: var(--blue);
   opacity: 0.7;
 }
 
@@ -748,6 +748,13 @@ void openPopup
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 245, 229, 0.15);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cinema-video-frame:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(34, 211, 238, 0.3);
 }
 
 .letterbox-bar {
@@ -761,8 +768,6 @@ void openPopup
 .cinema-video-content {
   aspect-ratio: 16 / 9;
   background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(74, 144, 226, 0.18) 0%, transparent 70%), #0A1834;
-  border-left: 1px solid rgba(255, 245, 229, 0.15);
-  border-right: 1px solid rgba(255, 245, 229, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -789,11 +794,6 @@ void openPopup
   inset: 0;
   background: linear-gradient(180deg, rgba(10,24,52,0.4) 0%, transparent 30%, transparent 70%, rgba(10,24,52,0.4) 100%);
   pointer-events: none;
-}
-
-.cinema-video-content:hover {
-  border-color: var(--coral);
-  box-shadow: 0 0 80px rgba(255, 107, 53, 0.3) inset, 0 0 40px rgba(255, 107, 53, 0.15);
 }
 
 .video-center-info {
@@ -908,7 +908,7 @@ void openPopup
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.4em;
-  color: rgba(255, 245, 229, 0.4);
+  color: rgb(255, 245, 229);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -1131,7 +1131,7 @@ void openPopup
 .hero-desc-game {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: .8rem;
-  color: rgba(255, 245, 229, 0.6);
+  color: rgb(255, 245, 229);
   line-height: 1.4;
 }
 
@@ -1140,7 +1140,7 @@ void openPopup
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  color: rgba(255, 245, 229, 0.4);
+  color: rgb(255, 245, 229);
 }
 
 /* Earth Section */

@@ -1191,7 +1191,7 @@ section.sneak-poster-section {
   font-size: clamp(1rem, 2.2vw, 1.4rem);
   line-height: 1.5;
   letter-spacing: 0.01em;
-  color: rgba(255, 245, 229, 0.9);
+  color: rgb(255, 245, 229);
   max-width: 900px;
   text-align: center;
   margin-bottom: 2.5rem;
@@ -1373,7 +1373,7 @@ section.sneak-poster-section {
   font-size: clamp(1rem, 1.8vw, 1.25rem);
   line-height: 1.6;
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
-  color: rgba(255, 245, 229, 0.7);
+  color: rgb(255, 245, 229);
 }
 
 .accent-earth { color: var(--blue); }
@@ -1516,7 +1516,7 @@ section.sneak-poster-section {
   font-family: "Space Grotesk", sans-serif;
   font-size: clamp(0.9rem, 1.2vw, 2rem);
   line-height: 1.6;
-  color: rgba(255, 245, 229, 0.85);
+  color: rgb(255, 245, 229);
   max-width: clamp(800px, 62.5vw, 1200px);
   text-align: center;
   text-shadow: 0 4px 12px rgba(0,0,0,0.9);
@@ -1594,7 +1594,7 @@ section.sneak-poster-section {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  color: rgba(255, 245, 229, 0.5);
+  color: rgb(255, 245, 229);
   margin-bottom: 0.5rem;
 }
 
@@ -1621,7 +1621,7 @@ section.sneak-poster-section {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: clamp(1rem, 1.2vw, 1.5rem);
   line-height: 1.7;
-  color: rgba(255, 245, 229, 0.75);
+  color: rgb(255, 245, 229);
 }
 
 .chapter-visual {
@@ -2157,7 +2157,7 @@ section.sneak-poster-section {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   line-height: 1.6;
-  color: rgba(255, 245, 229, 0.7);
+  color: rgb(255, 245, 229);
   max-width: 1200px;
   margin-top: 2rem;
 }
@@ -2368,7 +2368,7 @@ section.sneak-poster-section {
   font-weight: 300;
   font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   line-height: 1.5;
-  color: rgba(255, 245, 229, 0.7);
+  color: rgb(255, 245, 229);
   margin-bottom: 2.5rem;
   max-width: 600px;
 }
@@ -2646,7 +2646,7 @@ section.sneak-poster-section {
   font-family: "Space Grotesk", sans-serif;
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   line-height: 1.5;
-  color: rgba(255, 245, 229, 0.7);
+  color: rgb(255, 245, 229);
   margin-bottom: 2rem;
   max-width: 500px;
 }
@@ -2782,7 +2782,7 @@ section.sneak-poster-section {
   font-family: "Space Grotesk", sans-serif;
   font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   line-height: 1.6;
-  color: rgba(255, 245, 229, 0.85);
+  color: rgb(255, 245, 229);
   margin-bottom: 3.5rem;
   max-width: 950px;
   margin-left: auto;
