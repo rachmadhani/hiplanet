@@ -33,6 +33,11 @@ const router = createRouter({
       path: '/become-a-tester',
       name: 'become-a-tester',
       component: () => import('../views/TesterView.vue')
+    },
+    {
+      path: '/builds/:buildId',
+      name: 'build-download',
+      component: () => import('../views/BuildDownloadView.vue')
     }
   ]
 })
