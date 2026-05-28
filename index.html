@@ -12,6 +12,12 @@
 </head>
 
 <body>
+  <script>
+    // Prevent FOUC: add admin-body class before any CSS renders
+    if (window.location.pathname.startsWith('/admin')) {
+      document.body.classList.add('admin-body');
+    }
+  </script>
   <div id="app"></div>
   <script type="module" src="/src/main.ts"></script>
 </body>

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AdminWrapper from '../admin/AdminWrapper.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,6 +44,97 @@ const router = createRouter({
       path: '/builds/:buildId',
       name: 'build-download',
       component: () => import('../views/BuildDownloadView.vue')
+    },
+    {
+      path: '/admin',
+      component: AdminWrapper,
+      children: [
+        {
+          path: '',
+          name: 'admin-dashboard',
+          component: () => import('@admin/views/Ecommerce.vue')
+        },
+        {
+          path: 'calendar',
+          name: 'admin-calendar',
+          component: () => import('@admin/views/Others/Calendar.vue')
+        },
+        {
+          path: 'profile',
+          name: 'admin-profile',
+          component: () => import('@admin/views/Others/UserProfile.vue')
+        },
+        {
+          path: 'form-elements',
+          name: 'admin-form-elements',
+          component: () => import('@admin/views/Forms/FormElements.vue')
+        },
+        {
+          path: 'basic-tables',
+          name: 'admin-basic-tables',
+          component: () => import('@admin/views/Tables/BasicTables.vue')
+        },
+        {
+          path: 'line-chart',
+          name: 'admin-line-chart',
+          component: () => import('@admin/views/Chart/LineChart/LineChart.vue')
+        },
+        {
+          path: 'bar-chart',
+          name: 'admin-bar-chart',
+          component: () => import('@admin/views/Chart/BarChart/BarChart.vue')
+        },
+        {
+          path: 'alerts',
+          name: 'admin-alerts',
+          component: () => import('@admin/views/UiElements/Alerts.vue')
+        },
+        {
+          path: 'avatars',
+          name: 'admin-avatars',
+          component: () => import('@admin/views/UiElements/Avatars.vue')
+        },
+        {
+          path: 'badge',
+          name: 'admin-badge',
+          component: () => import('@admin/views/UiElements/Badges.vue')
+        },
+        {
+          path: 'buttons',
+          name: 'admin-buttons',
+          component: () => import('@admin/views/UiElements/Buttons.vue')
+        },
+        {
+          path: 'images',
+          name: 'admin-images',
+          component: () => import('@admin/views/UiElements/Images.vue')
+        },
+        {
+          path: 'videos',
+          name: 'admin-videos',
+          component: () => import('@admin/views/UiElements/Videos.vue')
+        },
+        {
+          path: 'blank',
+          name: 'admin-blank',
+          component: () => import('@admin/views/Pages/BlankPage.vue')
+        },
+        {
+          path: 'error-404',
+          name: 'admin-404',
+          component: () => import('@admin/views/Errors/FourZeroFour.vue')
+        },
+        {
+          path: 'signin',
+          name: 'admin-signin',
+          component: () => import('@admin/views/Auth/Signin.vue')
+        },
+        {
+          path: 'signup',
+          name: 'admin-signup',
+          component: () => import('@admin/views/Auth/Signup.vue')
+        }
+      ]
     }
   ]
 })

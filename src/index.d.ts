@@ -1,0 +1,10 @@
+declare module 'jsvectormap';
+declare module 'jsvectormap/dist/maps/world';
+declare module 'vuevectormap';
+declare module 'vue-kanban';
+declare module 'vuedraggable';
+declare module 'vue-flatpickr-component';
+declare module '*.css';
+declare module 'swiper/css';
+declare module 'swiper/css/navigation';
+declare module 'swiper/css/pagination';

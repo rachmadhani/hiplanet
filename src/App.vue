@@ -1,11 +1,27 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { computed, watch } from 'vue'
+import { RouterView, useRoute } from 'vue-router'
 import Navigation from './components/Navigation.vue'
 import Footer from './components/Footer.vue'
+
+const route = useRoute()
+const isAdmin = computed(() => route.path.startsWith('/admin'))
+
+watch(isAdmin, (val) => {
+  if (val) {
+    document.body.classList.add('admin-body')
+  } else {
+    document.body.classList.remove('admin-body')
+  }
+}, { immediate: true })
 </script>
 
 <template>
-  <div class="app-container">
+  <div v-if="isAdmin">
+    <RouterView />
+  </div>
+
+  <div v-else class="app-container">
     <Navigation />
     <main class="content">
       <RouterView v-slot="{ Component }">
