@@ -7,7 +7,7 @@ const platform = ref('')
 const why = ref('')
 const country = ref('')
 const nda = ref(false)
-const newsletter = ref(true)
+// const newsletter = ref(true)
 
 const submitted = ref(false)
 const error = ref('')
