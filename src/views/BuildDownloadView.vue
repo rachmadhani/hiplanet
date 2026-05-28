@@ -44,6 +44,7 @@ onMounted(() => {
 }
 
 .status-text {
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: 1.1rem;
   font-weight: 400;
 }

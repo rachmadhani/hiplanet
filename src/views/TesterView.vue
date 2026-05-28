@@ -73,9 +73,9 @@ onUnmounted(() => {
           <span class="date-highlight">NOVEMBER 10, 2026.</span>
         </p>
 
-        <a href="#apply" class="reveal d-4 btn-coral">
+        <RouterLink to="/become-a-tester/apply" class="reveal d-4 btn-coral">
           ↓ Request Access
-        </a>
+        </RouterLink>
       </div>
     </section>
 

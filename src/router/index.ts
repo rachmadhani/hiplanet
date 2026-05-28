@@ -35,6 +35,11 @@ const router = createRouter({
       component: () => import('../views/TesterView.vue')
     },
     {
+      path: '/become-a-tester/apply',
+      name: 'become-a-tester-apply',
+      component: () => import('../views/TesterApplyView.vue')
+    },
+    {
       path: '/builds/:buildId',
       name: 'build-download',
       component: () => import('../views/BuildDownloadView.vue')
