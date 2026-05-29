@@ -43,20 +43,20 @@
               </div>
                 <form @submit.prevent="handleSubmit">
                   <div class="space-y-5">
-                    <!-- Email -->
+                    <!-- Email / Username -->
                     <div>
                       <label
                         for="email"
                         class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
                       >
-                        Email<span class="text-error-500">*</span>
+                        Email or Username<span class="text-error-500">*</span>
                       </label>
                       <input
                         v-model="email"
-                        type="email"
+                        type="text"
                         id="email"
                         name="email"
-                        placeholder="info@gmail.com"
+                        placeholder="Enter email or username"
                         required
                         class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
                       />
@@ -139,7 +139,7 @@
             <common-grid-shape />
             <div class="flex flex-col items-center max-w-xs text-center">
               <router-link to="/" class="block mb-4">
-                <h1 class="text-4xl font-bold text-white mb-2">Snowy Village</h1>
+                <h1 class="text-4xl font-bold text-white mb-2">HI Planet - Save Earth</h1>
                 <span class="text-brand-400 text-lg">Admin Portal</span>
               </router-link>
               <p class="text-center text-gray-400 dark:text-white/60">
@@ -178,14 +178,14 @@ const togglePasswordVisibility = () => {
 const handleSubmit = async () => {
   isLoading.value = true
   try {
-    const data = await authService.login({
-      email: email.value,
+    const response = await authService.login({
+      identifier: email.value,
       password: password.value
     })
     
-    authStore.setAuth(data.access_token, data.user)
-    toast.success('Welcome back, ' + data.user.name)
-    router.push({ name: 'Products' })
+    authStore.setAuth(response.data.token, response.data.user)
+    toast.success('Welcome back, ' + response.data.user.username)
+    router.push({ name: 'admin-dashboard' })
   } catch (error: any) {
     const message = error.response?.data?.message || 'Login failed. Please check your credentials.'
     toast.error(message)

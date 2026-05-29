@@ -8,7 +8,7 @@
         <img src="/images/user/owner.jpg" alt="User" />
       </span>
 
-      <span class="block mr-1 font-medium text-theme-sm">{{ authStore.user?.name || 'Admin' }} </span>
+      <span class="block mr-1 font-medium text-theme-sm">{{ authStore.user?.username || 'Admin' }} </span>
 
       <ChevronDownIcon :class="{ 'rotate-180': dropdownOpen }" />
     </button>
@@ -20,7 +20,7 @@
     >
       <div>
         <span class="block font-medium text-gray-700 text-theme-sm dark:text-gray-400">
-          {{ authStore.user?.name || 'Admin User' }}
+          {{ authStore.user?.username || 'Admin User' }}
         </span>
         <span class="mt-0.5 block text-theme-xs text-gray-500 dark:text-gray-400">
           {{ authStore.user?.email || '' }}
@@ -85,10 +85,10 @@ const signOut = async () => {
     await authService.logout()
     authStore.clearAuth()
     toast.success('Logged out successfully')
-    router.push({ name: 'admin-login' })
+    router.push({ name: 'admin-signin' })
   } catch (error) {
     authStore.clearAuth()
-    router.push({ name: 'admin-login' })
+    router.push({ name: 'admin-signin' })
   } finally {
     closeDropdown()
   }

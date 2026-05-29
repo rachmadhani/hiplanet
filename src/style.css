@@ -130,3 +130,8 @@ body:not(.admin-body) ::-webkit-scrollbar-thumb:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Fix Toast Notification Z-Index to display above headers and panels */
+.Vue-Toastification__container {
+  z-index: 999999 !important;
+}

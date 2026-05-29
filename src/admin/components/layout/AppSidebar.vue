@@ -256,6 +256,11 @@ const menuGroups = [
         name: "Franchises",
         path: "/admin/franchises",
       },
+      {
+        icon: TableIcon,
+        name: "Tester Applications",
+        path: "/admin/tester-applications",
+      },
     ],
   },
 ];

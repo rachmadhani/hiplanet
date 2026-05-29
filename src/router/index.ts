@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AdminWrapper from '../admin/AdminWrapper.vue'
+import { useAuthStore } from '../stores/auth'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -133,10 +134,40 @@ const router = createRouter({
           path: 'signup',
           name: 'admin-signup',
           component: () => import('@admin/views/Auth/Signup.vue')
+        },
+        {
+          path: 'tester-applications',
+          name: 'admin-tester-applications',
+          component: () => import('@admin/views/TesterApplications.vue')
         }
       ]
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  const authStore = useAuthStore()
+  
+  // Normalize path by lowercasing and stripping trailing slashes for safety
+  const path = to.path.toLowerCase().replace(/\/$/, '')
+  const isAuthRoute = to.name === 'admin-signin' || 
+                      to.name === 'admin-signup' || 
+                      path === '/admin/signin' || 
+                      path === '/admin/signup'
+  
+  const isAdminPath = path === '/admin' || path.startsWith('/admin/')
+  
+  if (isAdminPath && !isAuthRoute) {
+    if (!authStore.isAuthenticated) {
+      next({ name: 'admin-signin' })
+    } else {
+      next()
+    }
+  } else if (isAdminPath && isAuthRoute && authStore.isAuthenticated) {
+    next({ name: 'admin-dashboard' })
+  } else {
+    next()
+  }
 })
 
 export default router

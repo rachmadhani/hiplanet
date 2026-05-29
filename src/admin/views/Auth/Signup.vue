@@ -103,41 +103,23 @@
               </div>
               <form @submit.prevent="handleSubmit">
                 <div class="space-y-5">
-                  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                    <!-- First Name -->
-                    <div class="sm:col-span-1">
-                      <label
-                        for="fname"
-                        class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
-                      >
-                        First Name<span class="text-error-500">*</span>
-                      </label>
-                      <input
-                        v-model="firstName"
-                        type="text"
-                        id="fname"
-                        name="fname"
-                        placeholder="Enter your first name"
-                        class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
-                      />
-                    </div>
-                    <!-- Last Name -->
-                    <div class="sm:col-span-1">
-                      <label
-                        for="lname"
-                        class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
-                      >
-                        Last Name<span class="text-error-500">*</span>
-                      </label>
-                      <input
-                        v-model="lastName"
-                        type="text"
-                        id="lname"
-                        name="lname"
-                        placeholder="Enter your last name"
-                        class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
-                      />
-                    </div>
+                  <!-- Username -->
+                  <div>
+                    <label
+                      for="username"
+                      class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
+                    >
+                      Username<span class="text-error-500">*</span>
+                    </label>
+                    <input
+                      v-model="username"
+                      type="text"
+                      id="username"
+                      name="username"
+                      placeholder="Enter your username"
+                      required
+                      class="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+                    />
                   </div>
                   <!-- Email -->
                   <div>
@@ -310,30 +292,51 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter, RouterLink } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
+import { authService } from '@/services/authService'
+import { useToast } from 'vue-toastification'
 import FullScreenLayout from '@admin/components/layout/FullScreenLayout.vue'
 import CommonGridShape from '@admin/components/common/CommonGridShape.vue'
-import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
 
-const firstName = ref('')
-const lastName = ref('')
+const username = ref('')
 const email = ref('')
 const password = ref('')
 const showPassword = ref(false)
 const agreeToTerms = ref(false)
+const isLoading = ref(false)
+
+const router = useRouter()
+const authStore = useAuthStore()
+const toast = useToast()
 
 const togglePasswordVisibility = () => {
   showPassword.value = !showPassword.value
 }
 
-const handleSubmit = () => {
-  // Implement form submission logic here
-  console.log('Form submitted', {
-    firstName: firstName.value,
-    lastName: lastName.value,
-    email: email.value,
-    password: password.value,
-    agreeToTerms: agreeToTerms.value,
-  })
+const handleSubmit = async () => {
+  if (!agreeToTerms.value) {
+    toast.error('You must agree to the Terms and Conditions')
+    return
+  }
+  
+  isLoading.value = true
+  try {
+    const response = await authService.register({
+      username: username.value,
+      email: email.value,
+      password: password.value
+    })
+    
+    authStore.setAuth(response.data.token, response.data.user)
+    toast.success('Registration successful! Welcome, ' + response.data.user.username)
+    router.push({ name: 'admin-dashboard' })
+  } catch (error: any) {
+    const message = error.response?.data?.message || 'Registration failed. Please try again.'
+    toast.error(message)
+  } finally {
+    isLoading.value = false
+  }
 }
 </script>
