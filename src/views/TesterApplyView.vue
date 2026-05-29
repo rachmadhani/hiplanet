@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { testerService } from '@/services/testerService'
 
 const email = ref('')
 const name = ref('')
@@ -11,6 +12,7 @@ const nda = ref(false)
 
 const submitted = ref(false)
 const error = ref('')
+const isSubmitting = ref(false)
 
 onMounted(() => {
   document.title = 'Become a Tester — Hi Planet · Closed Beta'
@@ -28,7 +30,7 @@ onUnmounted(() => {
   }
 })
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
   error.value = ''
   
   if (!email.value || !email.value.includes('@')) {
@@ -52,8 +54,22 @@ const handleSubmit = () => {
     return
   }
 
-  // Simulated successful submission
-  submitted.value = true
+  isSubmitting.value = true
+  try {
+    await testerService.submit({
+      email: email.value,
+      name: name.value,
+      platform: platform.value,
+      why: why.value,
+      country: country.value || undefined,
+      nda: nda.value
+    })
+    submitted.value = true
+  } catch (err: any) {
+    error.value = err.response?.data?.message || 'Failed to submit application. Please try again.'
+  } finally {
+    isSubmitting.value = false
+  }
 }
 </script>
 
@@ -189,8 +205,8 @@ const handleSubmit = () => {
           </label> -->
 
           <!-- Submit Button -->
-          <button type="submit" class="btn-submit">
-            ▶ Submit Application
+          <button type="submit" class="btn-submit" :disabled="isSubmitting">
+            {{ isSubmitting ? '▶ Submitting...' : '▶ Submit Application' }}
           </button>
           
           <p class="privacy-note">
@@ -200,8 +216,12 @@ const handleSubmit = () => {
       </div>
 
       <!-- ===== SUCCESS STATE ===== -->
-      <div v-else class="success-box">
-        <div class="success-icon">✓</div>
+      <div v-else class="success-box animate-fade-in">
+        <div class="success-icon">
+          <svg class="mx-auto" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 40L35 53L58 24" stroke="var(--neon-blue)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <h1 class="success-title">
           APPLICATION<br />
           <span class="accent-coral">RECEIVED.</span>
@@ -210,11 +230,11 @@ const handleSubmit = () => {
           Thanks for applying to the Hi Planet closed beta.
         </p>
         <p class="success-info">
-          We review applications weekly. If you're approved, you'll get a download
-          link by email within 7 days. Keep an eye on your inbox (and spam folder).
+          We review applications weekly. If you're approved, you'll get a download link
+          by email within 7 days. Keep an eye on your inbox (and spam folder).
         </p>
         <RouterLink to="/become-a-tester" class="btn-back">
-          ← Back to Hi Planet
+          ← BACK TO HI PLANET
         </RouterLink>
       </div>
     </div>
@@ -515,38 +535,40 @@ textarea.input-field {
 }
 
 .success-icon {
-  font-size: 4rem;
-  line-height: 1;
-  margin-bottom: 1.5rem;
-  color: var(--coral);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: var(--neon-blue);
 }
 
 .success-title {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  line-height: 0.95;
-  margin-bottom: 1.5rem;
+  font-size: clamp(3rem, 8vw, 6.2rem);
+  line-height: 0.85;
+  letter-spacing: 0.01em;
+  margin-bottom: 2rem;
+  color: #fff;
 }
 
 .success-title span {
-  color: var(--coral);
+  color: var(--neon-blue);
 }
 
 .success-desc {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 1.15rem;
-  color: rgba(255, 245, 229, 0.85);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--cream);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .success-info {
-  font-size: 0.9rem;
-  color: rgba(255, 245, 229, 0.65);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  color: rgba(255, 245, 229, 0.8);
   line-height: 1.6;
-  margin-bottom: 2.5rem;
-  max-width: 32rem;
+  margin-bottom: 3.5rem;
+  max-width: 38rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -556,8 +578,8 @@ textarea.input-field {
   align-items: center;
   gap: 0.5rem;
   font-family: 'Anton', sans-serif;
-  font-size: 0.85rem;
-  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  padding: 0.85rem 2rem;
   border: 2px solid var(--cream);
   background: transparent;
   color: var(--cream);

@@ -25,6 +25,18 @@ export interface PaginatedTesterApplications {
 }
 
 export const testerService = {
+  async submit(data: {
+    email: string
+    name: string
+    platform: string
+    why: string
+    country?: string
+    nda: boolean
+  }): Promise<{ success: boolean; data: TesterApplication }> {
+    const response = await api.post<{ success: boolean; data: TesterApplication }>('/tester-applications', data)
+    return response.data
+  },
+
   async getAll(page = 1, limit = 10): Promise<PaginatedTesterApplications> {
     const response = await api.get<PaginatedTesterApplications>('/tester-applications', {
       params: { page, limit }
