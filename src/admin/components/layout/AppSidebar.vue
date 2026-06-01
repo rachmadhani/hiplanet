@@ -242,21 +242,6 @@ const menuGroups = [
     title: "Menu",
     items: [
       {
-        icon: BoxCubeIcon,
-        name: "Products",
-        path: "/admin/products",
-      },
-      {
-        icon: TableIcon,
-        name: "Locations",
-        path: "/admin/locations",
-      },
-      {
-        icon: MailIcon,
-        name: "Franchises",
-        path: "/admin/franchises",
-      },
-      {
         icon: TableIcon,
         name: "Tester Applications",
         path: "/admin/tester-applications",
