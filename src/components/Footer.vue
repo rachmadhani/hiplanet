@@ -57,8 +57,8 @@ footer {
   z-index: 1;
   background: var(--bg2);
   border-top: 1px solid var(--blue);
-  padding: 3rem 2rem 2rem;
-  margin-top: 4rem;
+  padding: clamp(4rem, 6vw, 6rem) clamp(1.5rem, 3vw, 3rem) clamp(3rem, 5vw, 5rem);
+  margin-top: 6rem;
 }
 
 .footer-grid {
@@ -66,12 +66,12 @@ footer {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  gap: clamp(2rem, 4vw, 4rem);
+  margin-bottom: clamp(3rem, 5vw, 5rem);
 }
 
 .footer-brand-name {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-logo {
@@ -86,22 +86,22 @@ footer {
   font-size: 0.85rem;
   color: var(--muted);
   line-height: 1.7;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 
 .footer-socials {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.75rem;
 }
 
 .footer-social-icon {
-  width: 36px; height: 36px;
+  width: 40px; height: 40px;
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.2s;
   text-decoration: none;
@@ -116,26 +116,26 @@ footer {
 
 .footer-col-title {
   font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.65rem;
 }
 
 .footer-links a {
   font-size: 0.88rem;
   color: rgba(255,255,255,0.6);
   text-decoration: none;
-  padding: 0.3rem 0.6rem;
-  margin-left: -0.6rem;
+  padding: 0.4rem 0.8rem;
+  margin-left: -0.8rem;
   border-radius: 4px;
   border: 1px solid transparent;
   display: inline-block;
@@ -155,7 +155,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 2rem;
+  padding-top: clamp(2rem, 3.5vw, 3.5rem);
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 

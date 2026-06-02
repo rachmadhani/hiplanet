@@ -32,10 +32,10 @@
   --violet: #8B5CF6;
 }
 
-body:not(.admin-body) * {
+/* body:not(.admin-body) * {
   margin: 0;
   padding: 0;
-}
+} */
 
 * {
   box-sizing: border-box;

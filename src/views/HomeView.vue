@@ -608,9 +608,11 @@ onMounted(() => {
           Thank you for all game players!
         </p>
 
-        <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="wishlist-btn font-display">
-          ▶ Wishlist on Steam — Free
-        </a>
+        <div class="wishlist-btn-wrap">
+          <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="wishlist-btn font-display">
+            ▶ Wishlist on Steam — Free
+          </a>
+        </div>
 
         <div class="wishlist-socials">
           <a href="https://discord.gg/ZkpAZFrda" target="_blank" class="social-icon-link" title="Join Discord">
@@ -1546,7 +1548,7 @@ section.sneak-poster-section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  padding: 3rem 0;
+  padding: clamp(4rem, 6vw, 7rem) 0;
   border-bottom: 1px solid var(--blue);
   align-items: center;
 }
@@ -1814,7 +1816,7 @@ section.sneak-poster-section {
       "desc desc visual";
     grid-template-columns: 0.7fr 2.3fr 7fr;
     grid-template-rows: auto auto;
-    gap: 1.5rem 3rem;
+    gap: 2rem 4rem;
     align-items: start;
   }
 }
@@ -2032,8 +2034,8 @@ section.sneak-poster-section {
       "desc desc"
       "visual visual";
     grid-template-columns: 60px 1fr !important;
-    gap: 1rem;
-    padding: 2rem 0;
+    gap: 1.5rem;
+    padding: 3rem 0;
   }
   .chapter-num {
     font-size: 2.5rem;
@@ -2737,7 +2739,7 @@ section.sneak-poster-section {
 /* WISHLIST SECTION */
 .wishlist-section {
   position: relative;
-  padding: 2rem 0;
+  padding: clamp(6rem, 10vw, 12rem) 0;
   /* background: linear-gradient(135deg, #1B3A8C 0%, #0A1834 50%, #2A0E2E 100%); */
   overflow: hidden;
   display: flex;
@@ -2809,8 +2811,12 @@ section.sneak-poster-section {
   box-shadow: 18px 18px 0 var(--cream);
 }
 
+.wishlist-btn-wrap {
+  margin-bottom: clamp(3rem, 5vw, 6rem);
+}
+
 .wishlist-socials {
-  margin-top: 5rem;
+  margin-top: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -2841,6 +2847,9 @@ section.sneak-poster-section {
 @media (max-width: 768px) {
   .wishlist-section {
     padding: 6rem 0;
+  }
+  .wishlist-btn-wrap {
+    margin-bottom: clamp(2rem, 4vw, 3rem);
   }
   .wishlist-btn {
     padding: 1.25rem 2rem;

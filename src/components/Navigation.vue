@@ -44,7 +44,7 @@ onUnmounted(() => {
           <li><RouterLink to="/comic">Comic Book</RouterLink></li>
           <li><a href="/#concept">Concept Art</a></li>
           <li><RouterLink to="/world-lore">World Lore</RouterLink></li>
-          <li><a href="/#characters">Characters</a></li>
+          <li><RouterLink to="/characters">Characters</RouterLink></li>
         </ul>
       </li>
       <li><RouterLink to="/game">Games</RouterLink></li>
@@ -79,11 +79,11 @@ nav {
   background: rgba(6,10,16,0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--blue);
-  padding: 0 clamp(1rem, 2vw, 2rem);
+  padding: 0 clamp(1.5rem, 3vw, 3rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: clamp(60px, 5vw, 80px);
+  height: clamp(75px, 6vw, 90px);
 }
 
 .nav-logo {
@@ -93,7 +93,7 @@ nav {
 }
 
 .brand-logo {
-  height: clamp(40px, 3.5vw, 55px);
+  height: clamp(44px, 3.8vw, 60px);
   width: auto;
   object-fit: contain;
 }
@@ -109,7 +109,7 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 0.25rem;
+  gap: clamp(0.4rem, 0.8vw, 1.25rem);
   list-style: none;
   align-items: center;
   height: 100%;
@@ -117,13 +117,13 @@ nav {
 
 .nav-links a {
   font-family: 'Space Mono', monospace;
-  font-size: clamp(0.65rem, 0.7vw, 0.78rem);
+  font-size: clamp(0.68rem, 0.75vw, 0.8rem);
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--muted);
   text-decoration: none;
-  padding: 0.5rem clamp(0.5rem, 0.8vw, 1rem);
+  padding: 0.6rem clamp(0.6rem, 1vw, 1.25rem);
   border-radius: 6px;
   transition: all 0.2s;
   border: 1px solid transparent;
@@ -270,7 +270,7 @@ nav {
   .nav-links {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 100%;
     left: 0;
     right: 0;
     flex-direction: column;
