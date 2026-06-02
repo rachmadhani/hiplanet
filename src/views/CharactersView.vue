@@ -34,7 +34,7 @@ const charactersData: Character[] = [
     status: 'ATTUNED',
     statusTag: '★ Lead',
     quote: 'Light\'s not just energy. It\'s a promise.',
-    desc: 'The blue planet at the heart of the Hi Planet Team. Channels electrical energy through every swing. First one to charge a barrier, last one to leave a stage. Newcomer-friendly fighter. Protagonist of the comic.',
+    desc: 'Hi represents Earth among the 12 planets, beloved by the Big Bang Theory and admired for his close relationships with the other celestial beings. His strongest bond is with Moolu, his inseparable companion, akin to the relationship between Earth and its Moon. Together, they form a harmonious duo, with Moolu serving as the vital power source for Hi\'s high-voltage abilities. Hi wields the power to generate intense electrical currents, using them to stun or immobilize adversaries, prioritizing peace and fairness over violence. This ability is crucial in maintaining balance and harmony in the cosmos, and his partnership with Moolu makes them a formidable force during cosmic conflicts. Cheerful, intelligent, and cooperative, Hi thrives on collaboration with other planets. He values knowledge and seeks to promote harmony across the universe, often interacting with various civilizations and fostering peace. As Earth’s guardian, Hi embodies the spirit of unity, using his powers and wisdom to protect and guide his cosmic family.',
     elementEmoji: '⚡',
     energyPill: 'Electrical',
     cardAccent: '#22D3EE',
@@ -51,31 +51,13 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'AOE',
-    quote: '"The sun shines on all of us. But some of us can throw it."',
-    desc: 'A cheerful warrior who channels raw solar energy. Her energy-blasts can clear entire screens of enemy bots, making her the perfect crowd control fighter.',
+    quote: 'The sun shines on all of us. But some of us can throw it.',
+    desc: 'Ra is a celestial entity among the 12 planets, embodying the Sun\'s immense power. Harnessing the scorching flames and heat of the Sun, Ra wields the ability to unleash immense flames from his hands, combining his energy with the Sun\'s fiery essence. In battles, he takes a commanding role, guiding and inspiring his allies to become formidable warriors, though his impulsiveness sometimes leads to significant errors. Ra\'s fiery temperament reflects his passionate nature, amplifying his powers like the Sun\'s heat but occasionally clouding his judgment. Proud of his connection to the Sun, he views himself as its ultimate embodiment, using his strength to protect and lead the other planets. However, this elevated sense of self can sometimes create tension in his relationships. Radiating an aura of scorching flames, Ra symbolizes the Sun\'s glory and strength. While his intense energy can cause instability, his passion and leadership also inspire courage and determination in those around him.',
     elementEmoji: '☀️',
     energyPill: 'Solar',
     cardAccent: '#FFB627',
     cardBg: 'rgba(255,182,39,0.18)',
     image: '/character/ra.png'
-  },
-  {
-    id: 'moolu',
-    name: 'MOOLU',
-    title: 'The Eco Architect',
-    category: 'main',
-    element: 'ECO',
-    style: 'LAB',
-    faction: 'ECOPOLIS',
-    status: 'ATTUNED',
-    statusTag: 'LAB',
-    quote: '"Nature doesn\'t make garbage. We shouldn\'t either."',
-    desc: 'The brain of the team\'s scientific endeavors. Moolu designs clean-energy shields and organic structures to defend Ecopolis against corporate polluters.',
-    elementEmoji: '🌱',
-    energyPill: 'Eco',
-    cardAccent: '#4ADE80',
-    cardBg: 'rgba(74,222,128,0.15)',
-    image: '/character/moolu.png'
   },
   {
     id: 'satu',
@@ -87,8 +69,8 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'TANK',
-    quote: '"Let them hit me. Stone doesn\'t break."',
-    desc: 'A defensive giant representing Saturn. Satu channels deep geothermal heat to create rocky barriers and absorb heavy enemy hits for the team.',
+    quote: 'Let them hit me. Stone doesn\'t break.',
+    desc: 'Satu is a planet infused with the power of Saturn, embodying a sense of justice while being a reserved individual. Though not very talkative, his actions always reflect a strong sense of righteousness. The meteors that pour forth from his hands wield immense power, protecting others from formidable threats. Whenever V initiates conversation, Satu feels a bit shy but demonstrates unwavering loyalty, always watching out for him. Satu\'s primary weapon is the meteor shower from his hands, which possesses remarkable destructive force. The meteors strike enemies with devastating impact, thwarting their hostile actions. Satu consistently acts with an unwavering commitment to justice, always choosing the right path. His just and principled nature instills a sense of stability and trust in those around him, as he continuously strives to maintain peace and safety in the cosmos. Satu and V share a meaningful friendship, with him always standing by V\'s side, displaying unwavering trust and loyalty. Together, they support each other and collaborate, becoming a powerful force in adventures and battles.',
     elementEmoji: '🔥',
     energyPill: 'Geothermal',
     cardAccent: '#FF6B35',
@@ -105,8 +87,8 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'FAST',
-    quote: '"Catch me if you can."',
-    desc: 'An agile speedster who turns wind turbulence and atmospheric drafts into kinetic combat force. Can outrun and outmaneuver any robot unit.',
+    quote: 'Catch me if you can.',
+    desc: 'Merc is a celestial entity fueled by the energy of Mercury, known as the fastest among the 12 planets, capable of moving at the speed of light. His incredible velocity enables him to traverse vast distances instantly, making him virtually untouchable in battle. Merc\'s attacks are lightning-fast and relentless, designed to confuse and disorient his opponents with swift, precise movements. While his individual strikes lack overwhelming power, their speed and accuracy make him a formidable adversary. With a cheerful and lively personality, Merc is a beloved figure among the planets. His friendly demeanor and natural charm help him forge strong bonds with others. Despite his incredible power, he remains humble and approachable, valuing his relationships with fellow celestial beings. In combat, Merc\'s unmatched speed allows him to outmaneuver enemies effortlessly, creating openings for pinpoint lightning strikes. Though his attacks rely on agility rather than brute strength, his ability to disorient and overwhelm opponents with rapid precision makes him highly effective in any confrontation.',
     elementEmoji: '💨',
     energyPill: 'Wind',
     cardAccent: '#22D3EE',
@@ -123,8 +105,8 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'SNIPE',
-    quote: '"The cold preserves. Everything else fades."',
-    desc: 'A quiet sniper from the outer cold edge. Uses perpetual snow to slow down enemies and snipe them from afar with high precision, representing energy conservation.',
+    quote: 'The cold preserves. Everything else fades.',
+    desc: 'Plu may be slow and a bit reserved, but their intellect is remarkably sharp. Harnessing the power of Pluto, they wield control over ice, freezing their enemies and creating formidable ice barriers. Working closely with Moolu, Plu becomes an essential ally in the realm of inventions. Their keen mind often provides Moolu with ingenious ideas and contributes to enhancing the functionality of inventions. Plu uses the surrounding ice to upgrade completed inventions or craft ice-made components, making them even more powerful. Plu\'s collaboration with Moolu is hailed as one of the most potent and creative teams in the cosmos. Together, they give birth to extraordinary inventions that aid in their quests and battles. In the midst of combat, their combined abilities freeze foes into submission, securing victories for the greater good. Their unique bond as cosmic partners enables them to leverage each other\'s strengths, working in harmony to bring peace and prosperity to the universe. Plu\'s unwavering support for Moolu\'s creations and ideas fosters a dynamic relationship built on trust and mutual respect.',
     elementEmoji: '🏔️',
     energyPill: 'Energy Saving',
     cardAccent: '#BAE6FD',
@@ -141,8 +123,8 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'CRIT',
-    quote: '"Focus the light, and it cuts anything."',
-    desc: 'An elegant fencer representing Venus. Refracts and amplifies solar rays into a laser-sharp optical blade capable of critical, high-impact slashes.',
+    quote: 'Focus the light, and it cuts anything.',
+    desc: 'V is a radiant celestial being powered by the energy of Venus, embodying warmth, light, and positivity. Known for her ever-present, glowing smile, she symbolizes cheerfulness and optimism, uplifting everyone around her. Her strong sense of justice and empathetic nature make her a trusted ally and a beloved presence among the planets, with a particularly close bond with her friend, Satu. V\'s light is both her power and her essence, spreading joy while empowering her actions. She can create dazzling stars to blind and disorient enemies, or summon a celestial curtain of light to shield and protect her allies. Her ability to illuminate paths and reveal hidden truths makes her invaluable in guiding her companions through challenges. As a beacon of positivity, V\'s laughter resonates with cosmic harmony, brightening even the darkest corners of the universe. Her caring nature and unwavering commitment to justice solidify her role as a cherished guardian and friend among the 12 planets.',
     elementEmoji: '✨',
     energyPill: 'Optical',
     cardAccent: '#FFB627',
@@ -159,8 +141,8 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'WILD',
-    quote: '"What goes up must come down. Hard."',
-    desc: 'A reckless skirmisher who manipulates gravity vectors using kinetic energy reserves. Crushes robot ranks with heavy, tilting impacts.',
+    quote: 'What goes up must come down. Hard.',
+    desc: 'Ura is a planet empowered by the power of Uranus, known for her quiet yet expressive personality. While reserved, she always has profound insights and exudes a refined air of sophistication. Ura maintains friendly relationships with all planets, earning respect for her gentle nature. Her unique weapon, a celestial belt-shaped ring, can confuse enemies or act as a boomerang, delivering devastating strikes. This ring also serves as a powerful defense tool, protecting allies from formidable threats. Beneath her calm exterior lies a warm heart, unwavering determination, and exceptional abilities that create harmony. Her sophisticated demeanor and empathetic nature make her adept at building meaningful connections. Ura’s charm lies in her ability to blend strength with grace, leaving a lasting impression on those around her. Together with other planets, Ura strives to maintain cosmic balance and embraces thrilling adventures, forging stronger friendships along the way.',
     elementEmoji: '⚙️',
     energyPill: 'Kinetic',
     cardAccent: '#C8345A',
@@ -177,8 +159,8 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'CHAIN',
-    quote: '"One spark is all it takes to trigger a reaction."',
-    desc: 'A powerful mage who channels nuclear fusion. Attacks chain between multiple enemies, causing massive collateral damage to robot swarms.',
+    quote: 'One spark is all it takes to trigger a reaction.',
+    desc: 'Jupi is a formidable planet infused with the energy of Jupiter, equipped with powerful missiles that deal devastating damage to enemies. He is known for his stoic and reserved nature, preferring actions over words, and always stands at the forefront of battles. Fearless and determined, Jupi possesses an extraordinary external radar system, detecting enemies in an instant, and a precision-guided missile to target and strike every fragment with deadly accuracy. Despite his quiet demeanor, Jupi is always attentive to the stories of other planets, listening with genuine interest. He exudes a sense of calm and strength, earning the respect and trust of those around him. Jupi\'s unwavering dedication to safeguarding the cosmos makes him an invaluable ally in any cosmic conflict. Jupi\'s missions are undertaken with the utmost commitment, defending peace and justice in the vast universe. In the face of adversity, he remains resolute and courageous, never faltering in his resolve to protect the harmony of the cosmos. His powerful missiles and keen radar abilities have saved numerous planets from potential threats, making him a legendary defender of the galaxy.',
     elementEmoji: '☢️',
     energyPill: 'Nuclear',
     cardAccent: '#FF6B35',
@@ -195,8 +177,8 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'REACH',
-    quote: '"The tides obey only one master."',
-    desc: 'A formidable lancer representing Neptune. Spins hydro-turbines on his lance to attack from distance and push back encroaching enemies.',
+    quote: 'The tides obey only one master.',
+    desc: 'Nep, a celestial being infused with Neptune’s power, is a skilled warrior rivaling Ra, Jupi, and Satu. In battle, Nep unleashes a relentless barrage of comets and wields a gilded lance, combining devastating offense with robust defense. Their stoic demeanor, tactical precision, and controlled combat stance make them a formidable opponent. Nep’s extraordinary ability to overwhelm foes with cascading comets and their mastery of the gilded lance solidify their reputation as a powerful combatant. However, among their planetary peers, Nep transforms into a vivacious and uplifting presence, radiating positivity and fostering deep bonds. Their buoyant spirit and joyful demeanor create an atmosphere of optimism, enriching interactions and bringing joy to shared spaces. Nep’s dual nature—unyielding in battle yet effervescent in camaraderie—makes them a cherished and respected figure among celestial bodies. This balance of strength and warmth allows Nep to excel both as a warrior and a source of inspiration, embodying the harmony of power and positivity.',
     elementEmoji: '💧',
     energyPill: 'Hydro',
     cardAccent: '#4A90E2',
@@ -213,16 +195,14 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'UNKNOWN',
     statusTag: '🔒 Ch.7',
-    quote: '"A crimson shadow from the past."',
-    desc: 'A mysterious character whose records remain locked in the galactic archives. Requires Episode 1 Chapter 7 DLC to unlock and reveal.',
+    quote: 'A crimson shadow from the past.',
+    desc: 'Ma is a vibrant and talkative planet infused with the energy of Mars, exuding a lively and impulsive nature. His temperament is quick and choleric, constantly expressing passion and excitement. Ma has a deep love for music, finding solace and joy within its harmonies. Ma\'s most powerful weapon is his boxing prowess, characterized by lightning-fast punches. Using boxing gloves as his primary weapon, he delivers precise and powerful blows that radiate energy. Ma possesses an enthusiastic spirit, approaching every situation with vivacity. His lively personality infuses any setting with energy and makes everything enjoyable. Despite Ma\'s impulsive nature, he easily forms relationships with other planets, drawing people in with his magnetic charm. His love for music naturally leads to harmonious collaborations and shared experiences with other planets. In the cosmic realm, Ma, the Passionate Planet with Martian Energy, shines with his vibrant spirit and musical fervor. His quick wit and boxing prowess make him an unforgettable presence in any adventure.',
     elementEmoji: '🌱',
     energyPill: 'Biomass',
     cardAccent: '#9B8FB8',
     cardBg: 'rgba(155,143,184,0.1)',
     image: '/character/ma.png'
   },
-
-  // --- VILLAINS ---
   {
     id: 'cosmic-wormhole',
     name: 'COSMIC WORMHOLE',
@@ -234,12 +214,13 @@ const charactersData: Character[] = [
     faction: 'POLLUTOPIA',
     status: 'WANTED',
     statusTag: '⚠ Source',
-    quote: '"This galaxy is mine to clean... by erasing it."',
-    desc: 'A massive celestial anomaly and mastermind. Seeks to absorb Earth\'s five core energies to forge the Infinite Power Cosmic Cube.',
+    quote: 'This galaxy is mine to clean... by erasing it.',
+    desc: 'Cosmic Wormhole is a celestial guardian tasked with maintaining universal stability by cleaning hazardous remnants of exploded planets and preventing cosmic disasters. As one of the 12 planets created by the Big Bang Theory, they are both a loyal protector and a powerful entity. Known as the "cosmic cleaner," Cosmic Wormhole wields the ability to control remnants of matter and energy, creating new stars to illuminate the cosmos and delivering devastating blows to adversaries. However, their immense power brings internal conflict and weariness over time. Initially fulfilled by their role within the Big Bang Theory, Cosmic Wormhole\'s growing discontent leads to a dramatic betrayal. Seeking their own vision and purpose, they turn against the Big Bang Theory and the other 11 planets. Their mastery of vacuum energy and magnetic fields makes them a formidable force, setting the stage for intense confrontations filled with tension and complexity.',
     elementEmoji: '🌀',
     energyPill: 'Cosmic Rift',
     cardAccent: '#C8345A',
-    cardBg: 'radial-gradient(circle, rgba(200,52,90,0.25) 0%, rgba(42,14,46,0.6) 70%)'
+    cardBg: 'radial-gradient(circle, rgba(200,52,90,0.25) 0%, rgba(42,14,46,0.6) 70%)',
+    image: '/character/Villain/Cosmic.png'
   },
   {
     id: 'mac',
@@ -251,12 +232,13 @@ const charactersData: Character[] = [
     faction: 'POLLUTOPIA',
     status: 'WANTED',
     statusTag: '⚠ Wood',
-    quote: '"Cut down the trees, build more factories."',
-    desc: 'The lieutenant tasked with destroying Mother Gaia Oak in Chapter 1. Drains the sacred tree\'s wood energy to power his industrial machinery.',
+    quote: 'Cut down the trees, build more factories.',
+    desc: 'MAC, the Monstrous Behemoth, is a towering cosmic entity driven by a relentless hunger for power and destruction. Standing as one of Cosmic Wormhole\'s most fearsome allies, MAC wields a massive black metal mace imbued with dark energy, capable of shattering anything in its path. With unparalleled physical strength and an insatiable desire to consume Earth\'s natural resources, particularly wood energy, MAC poses a grave threat to the delicate balance of Earth\'s ecosystems.',
     elementEmoji: '🪵',
     energyPill: 'Industrial',
     cardAccent: '#4ADE80',
-    cardBg: 'rgba(74,222,128,0.12)'
+    cardBg: 'rgba(74,222,128,0.12)',
+    image: '/character/Villain/Mac.png'
   },
   {
     id: 'sku',
@@ -268,12 +250,13 @@ const charactersData: Character[] = [
     faction: 'POLLUTOPIA',
     status: 'WANTED',
     statusTag: '⚠ Water',
-    quote: '"Every drop will belong to our empire."',
-    desc: 'The commander in charge of Chapter 2\'s desert assault. Uses massive siphon pumps to steal Crystal Aqua Spring\'s water energy.',
+    quote: 'Every drop will belong to our empire.',
+    desc: 'SKU, the Sinister Skull Planet, is a menacing and malevolent cosmic entity whose very presence strikes fear into all who encounter him. With his grotesque skull-like appearance and ominous aura, SKU embodies chaos and destruction. Armed with a devastating cannon capable of launching powerful projectiles, SKU thrives on unleashing mayhem and wreaking havoc across the galaxy.',
     elementEmoji: '🌊',
     energyPill: 'Siphon Gfx',
     cardAccent: '#22D3EE',
-    cardBg: 'rgba(34,211,238,0.12)'
+    cardBg: 'rgba(34,211,238,0.12)',
+    image: '/character/Villain/Sku.png'
   },
   {
     id: 'roc',
@@ -285,12 +268,13 @@ const charactersData: Character[] = [
     faction: 'POLLUTOPIA',
     status: 'WANTED',
     statusTag: '⚠ Fire',
-    quote: '"Let the world burn so we can rebuild."',
-    desc: 'A ruthless fire lieutenant overseeing the lava mines of Chapter 3. Unleashes volcanic wild fires to scorch the lands and extract fire energy.',
+    quote: 'Let the world burn so we can rebuild.',
+    desc: 'ROC, the Nebula Madman, is a chaotic and unpredictable cosmic entity who thrives on destruction and disorder. As a lieutenant of Cosmic Wormhole, ROC is both feared and notorious for his erratic behavior and devastating power. He wields neon neon meteors as his primary weapon, summoning fiery whirlwinds and chaotic strikes that leave trails of devastation in their wake. His combat style reflects his personality—unpredictable, destructive, and untamed.',
     elementEmoji: '🔥',
     energyPill: 'Volcanic',
     cardAccent: '#FF6B35',
-    cardBg: 'rgba(255,107,53,0.12)'
+    cardBg: 'rgba(255,107,53,0.12)',
+    image: '/character/Villain/Roc.png'
   },
   {
     id: 'zom',
@@ -302,12 +286,13 @@ const charactersData: Character[] = [
     faction: 'POLLUTOPIA',
     status: 'WANTED',
     statusTag: '⚠ Stone',
-    quote: '"Frozen solid. Perfect for crushing."',
-    desc: 'The commander of Chapter 4\'s arctic base. Prowls the breaking ice sheets with his Frost Cerberus, guarding a stolen stone energy core.',
+    quote: 'Frozen solid. Perfect for crushing.',
+    desc: 'ZOM, the Cosmic Executioner, is a fearsome and relentless entity in service to Cosmic Wormhole. Known for his unyielding dedication to destruction, ZOM is one of the most dangerous and brutal characters in the cosmos. Armed with a devastating machine gun, he relentlessly unleashes a barrage of firepower on anything or anyone that stands in his way. His imposing figure and menacing demeanor are enough to strike fear into the hearts of even the bravest opponents.',
     elementEmoji: '🪨',
     energyPill: 'Permafrost',
     cardAccent: '#9B8FB8',
-    cardBg: 'rgba(155,143,184,0.12)'
+    cardBg: 'rgba(155,143,184,0.12)',
+    image: '/character/Villain/Zom.png'
   },
   {
     id: 'kra',
@@ -319,12 +304,13 @@ const charactersData: Character[] = [
     faction: 'SEABED',
     status: 'WANTED',
     statusTag: '⚠ Metal',
-    quote: '"Your trash made me. Now I will make your doom."',
+    quote: 'Your trash made me. Now I will make your doom.',
     desc: 'A massive mutated sea creature. Once an ordinary octopus, radioactive waste mutated him into a metal-plated titan of rage. Not allied with the Wormhole.',
     elementEmoji: '🔩',
     energyPill: 'Toxic Metal',
     cardAccent: '#FFB627',
-    cardBg: 'rgba(255,182,39,0.12)'
+    cardBg: 'rgba(255,182,39,0.12)',
+    image: '/character/Villain/Kra.png'
   },
 
   // --- NPCs ---
@@ -339,12 +325,13 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'CREATOR',
-    quote: '"The cosmos is a canvas, and I am the brush."',
-    desc: 'A primordial cosmic deity who helped build the universe, Ecopolis, and the stages. Watches over the planets with silent care.',
+    quote: 'The cosmos is a canvas, and I am the brush.',
+    desc: 'Big Bang Theory is a cosmic entity that created 12 unique planets, embodying the immense power and energy of the Big Bang. Its origins remain a mystery, adding to its enigmatic aura. Wise and contemplative, Big Bang Theory balances responsibility with playfulness, crafting each planet to nurture life and maintain cosmic equilibrium. Depicted as an ethereal being radiating vibrant cosmic energy, its form shifts between humanoid and abstract representations, symbolizing creation\'s vastness. Possessing god-like powers, it manipulates matter, energy, and universal forces to shape landscapes, climates, and ecosystems. Communication with inhabitants occurs through dreams, visions, or celestial manifestations, guiding development while maintaining an indirect presence. Though solitary, it remains deeply connected to its planets, fostering growth and harmony. Some revere Big Bang Theory as a deity, while others see it as the ultimate source of creation, symbolizing balance, diversity, and the boundless potential of the universe.',
     elementEmoji: '🌌',
     energyPill: 'Primordial',
     cardAccent: '#2E5BCC',
-    cardBg: 'rgba(46,91,204,0.18)'
+    cardBg: 'rgba(46,91,204,0.18)',
+    image: '/character/NPC/Bigbang.png'
   },
   {
     id: 'professor-oracle',
@@ -356,12 +343,13 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'MENTOR',
-    quote: '"Knowledge is the ultimate energy."',
-    desc: 'A wise scholar who operates the Stellar Burst Academy. Handles quest assignments, provides daily missions, and archives galaxy history.',
+    quote: 'Knowledge is the ultimate energy.',
+    desc: 'Professor Oracle is a revered cosmic sage, renowned across 12 planets for his vast wisdom, profound knowledge of science and cosmic energies, and deep understanding of the universe. As Ecopolis\'s guiding intellect, he mentors the Hi Planet team, offering strategic insights to address threats to universal harmony. Oracle’s unmatched analytical abilities enable him to predict outcomes, devise innovative solutions, and interpret universal energies during crises. A calm and contemplative figure, his words carry immense authority and respect, fostering trust and guidance. Collaborating with Moolu and Gig, Oracle plays a pivotal role in advancing technology, refining inventions like the Quantum Quicksilver to empower the team. Despite his intellect, he remains empathetic and approachable, emphasizing balance and harmony in the cosmos. Oracle’s mentorship helps the Hi Planet team unlock their full potential, solidifying his role as an essential pillar in their mission to protect the universe.',
     elementEmoji: '🎓',
     energyPill: 'Virtual VR',
     cardAccent: '#22D3EE',
-    cardBg: 'rgba(34,211,238,0.12)'
+    cardBg: 'rgba(34,211,238,0.12)',
+    image: '/character/NPC/Professor-Oracle.png'
   },
   {
     id: 'athen',
@@ -373,12 +361,13 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'TRAINER',
-    quote: '"Pain is the best teacher, but I am a close second."',
-    desc: 'Commander of the Galactic Combat Arena. Trains the Hi Planet Team in tactical melee combat, projectile defense, and team battle formations.',
+    quote: 'Pain is the best teacher, but I am a close second.',
+    desc: 'Athen, the Celestial Warrior, hails from a distant planet destroyed by Cosmic Wormhole’s destructive plans. After narrowly escaping the devastation, she was rescued by Ecopolis, where she found a new purpose. Grateful for her second chance, Athen was appointed as a trainer in the Galactic Combat Arena by Big Bang Theory, where she helps the Hi Planet Team hone their combat skills. Energetic, friendly, and determined, Athen easily bonds with her teammates, becoming a beloved figure in Ecopolis. Her competitive nature fuels her playful rivalry with Nep, pushing both to improve. Athen wields the Solar Lance, a radiant spear capable of powerful ranged and close combat strikes, and the Lunar Guard shield, which provides formidable defense and energy pulses. As a trainer and strategic advisor, Athen plays a pivotal role in preparing the Hi Planet Team for battles and devising tactical plans. Her combat expertise ensures they are always ready for the challenges ahead.',
     elementEmoji: '⚔️',
     energyPill: 'Martial',
     cardAccent: '#22D3EE',
-    cardBg: 'rgba(34,211,238,0.15)'
+    cardBg: 'rgba(34,211,238,0.15)',
+    image: '/character/NPC/Athen.png'
   },
   {
     id: 'gig',
@@ -390,12 +379,13 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'ENGINEER',
-    quote: '"If it\'s broken, I can fix it. If it works, I can make it better."',
-    desc: 'A genius systems engineer in charge of Ecopolis\' power grid and clean energy maintenance. Often seen tweaking solar panels and core gear.',
+    quote: 'If it\'s broken, I can fix it. If it works, I can make it better.',
+    desc: 'Gig is a talented engineer from Ecopolis, known for his ability to transform complex ideas into tangible realities. While not as much of a prodigy as Moolu, Gig possesses unmatched precision and an intuitive understanding of Moolu’s designs, making him indispensable to Ecopolis’s innovation team. He played a critical role in creating the Quantum Quicksilver (QQ), overseeing its construction and developing its interdimensional energy source alongside Moolu. Gig’s personality is defined by his diligence, humility, and problem-solving skills. He thrives in high-pressure situations, ensuring every project is executed with meticulous attention to detail. As the leader of Ecopolis’s construction teams, Gig collaborates closely with Moolu and Professor Oracle, blending theory, wisdom, and engineering expertise to bring groundbreaking inventions to life. Although he avoids direct combat, Gig’s technological contributions are essential to the Hi Planet team, earning their trust and admiration as they strive to protect the cosmos.',
     elementEmoji: '🔧',
     energyPill: 'Goggles/Tools',
     cardAccent: '#FFB627',
-    cardBg: 'rgba(255,182,39,0.18)'
+    cardBg: 'rgba(255,182,39,0.18)',
+    image: '/character/NPC/Gig.png'
   },
   {
     id: 'savi',
@@ -407,17 +397,18 @@ const charactersData: Character[] = [
     faction: 'ECOPOLIS',
     status: 'ATTUNED',
     statusTag: 'RECYCLER',
-    quote: '"One planet\'s trash is a galaxy\'s treasure."',
-    desc: 'Runs the Cosmic Recycling Center. Converts scrap metal, plastics, and industrial waste into useful items, skins, and upgrades for the heroes.',
+    quote: 'One planet\'s trash is a galaxy\'s treasure.',
+    desc: 'Savi, the Cosmic Recycler, is the head of Ecopolis\'s Cosmic Recycling Center, where he oversees the processing of recyclable waste and transforms it into valuable energy or resources. His dedication to sustainability and resource conservation makes him a key figure in Ecopolis, collaborating with Moolu on renewable energy projects to ensure the city\'s long-term survival. Passionate about teaching, Savi frequently educates others on the importance of recycling and its role in protecting the universe. Savi\'s abilities include breaking down materials into base components and repurposing them into energy or useful tools, which he provides to the Hi Planet Team for their missions. His eco-innovations enhance the team’s capabilities, and his energy-conversion technology supports their efforts. Savi is a compassionate, organized leader, highly respected within Ecopolis for his contributions to sustainability. His work not only supports the city but also aids in the fight against Cosmic Wormhole’s destructive plans.',
     elementEmoji: '♻️',
     energyPill: 'Eco Salvage',
     cardAccent: '#C7E83F',
-    cardBg: 'rgba(199,232,63,0.15)'
+    cardBg: 'rgba(199,232,63,0.15)',
+    image: '/character/NPC/Savi.png'
   },
   {
     id: 'qq',
-    name: 'QQ',
-    title: 'Quantum Quicksilver',
+    name: 'MOOLU',
+    title: 'MOOLU',
     category: 'npc',
     element: 'SPACE',
     style: 'GATEWAY',
@@ -429,25 +420,26 @@ const charactersData: Character[] = [
     elementEmoji: '🌌',
     energyPill: 'Teleport',
     cardAccent: '#9B8FB8',
-    cardBg: 'rgba(155,143,184,0.15)'
+    cardBg: 'rgba(155,143,184,0.15)',
+    image: '/character/NPC/Moolu.png'
   },
-  {
-    id: 'pua',
-    name: 'PUA',
-    title: 'The Cube Merchant',
-    category: 'npc',
-    element: 'TRADE',
-    style: 'MERCHANT',
-    faction: 'ECOPOLIS',
-    status: 'ATTUNED',
-    statusTag: 'MERCHANT',
-    quote: '"Cubes, shards, crystals... what are you buying?"',
-    desc: 'The mysterious merchant at the Cosmic Forum Hub. Trades rare Eco Cubes for upgrades, gear, cosmetic items, and secret blueprints.',
-    elementEmoji: '💎',
-    energyPill: 'Merchant',
-    cardAccent: '#4ADE80',
-    cardBg: 'rgba(74,222,128,0.12)'
-  },
+//   {
+//     id: 'pua',
+//     name: 'PUA',
+//     title: 'The Cube Merchant',
+//     category: 'npc',
+//     element: 'TRADE',
+//     style: 'MERCHANT',
+//     faction: 'ECOPOLIS',
+//     status: 'ATTUNED',
+//     statusTag: 'MERCHANT',
+//     quote: '"Cubes, shards, crystals... what are you buying?"',
+//     desc: 'The mysterious merchant at the Cosmic Forum Hub. Trades rare Eco Cubes for upgrades, gear, cosmetic items, and secret blueprints.',
+//     elementEmoji: '💎',
+//     energyPill: 'Merchant',
+//     cardAccent: '#4ADE80',
+//     cardBg: 'rgba(74,222,128,0.12)'
+//   },
   {
     id: 'satellizens',
     name: 'SATELLIZENS',
@@ -459,12 +451,13 @@ const charactersData: Character[] = [
     faction: 'ORBIT',
     status: 'ATTUNED',
     statusTag: 'GUARDIANS',
-    quote: '"We watch, we wait, we warn."',
-    desc: 'A group of floating robotic guardians that orbit the planets, detecting incoming wormholes and warning the heroes of danger.',
+    quote: 'We watch, we wait, we warn.',
+    desc: 'The Satellizens are a group of cosmic watchers and celestial guardians created by the Big Bang Theory to oversee the well-being and development of their respective planets. These sentient beings are deeply connected to the planets they are assigned to, acting as their protectors, advisors, and record keepers. Each Satellizen has unique abilities that are attuned to the environment and energy of their respective planets, making them indispensable allies in preserving harmony across the cosmos.',
     elementEmoji: '🛰️',
     energyPill: 'Guardians',
     cardAccent: '#BAE6FD',
-    cardBg: 'rgba(186,230,253,0.1)'
+    cardBg: 'rgba(186,230,253,0.1)',
+    image: '/character/NPC/Satelizen.png'
   }
 ]
 
@@ -491,7 +484,7 @@ const filteredVillains = computed(() => {
 
 const filteredNPCs = computed(() => {
   if (activeTab.value === 'all' || activeTab.value === 'npc') {
-    return charactersData.filter(c => c.category === 'npc' && !c.isCosmic)
+    return charactersData.filter(c => c.category === 'npc')
   }
   return []
 })
@@ -713,7 +706,7 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="card-grid">
+      <div class="main-card-grid">
         <div 
           v-for="char in filteredMainCharacters" 
           :key="char.id"
@@ -765,7 +758,7 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="card-grid">
+      <div class="villain-card-grid">
         <div 
           v-for="char in filteredVillains" 
           :key="char.id"
@@ -817,7 +810,7 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="card-grid">
+      <div class="npc-card-grid">
         <div 
           v-for="char in filteredNPCs" 
           :key="char.id"
@@ -869,7 +862,7 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="card-grid">
+      <div class="cosmic-card-grid">
         <div 
           v-for="char in filteredCosmic" 
           :key="char.id"
@@ -1208,7 +1201,7 @@ onMounted(() => {
 }
 
 .spotlight-name {
-  font-size: clamp(2.5rem, 11vw, 11.5rem);
+  font-size: clamp(2.5rem, 11vw, 6.5rem);
   line-height: 0.9;
   color: var(--card-accent, var(--cyan));
   margin-bottom: 1rem;
@@ -1361,23 +1354,27 @@ onMounted(() => {
   max-width: 40rem;
 }
 
-/* Card Grid layout */
-.card-grid {
+/* Card Grid layouts */
+.villain-card-grid,
+.npc-card-grid,
+.cosmic-card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.main-card-grid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 }
 
 @media (min-width: 768px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .main-card-grid,
+  .villain-card-grid,
+  .npc-card-grid,
+  .cosmic-card-grid {
     gap: 1.25rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
