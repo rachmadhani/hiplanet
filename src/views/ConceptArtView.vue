@@ -124,9 +124,12 @@ onUnmounted(() => {
             </div>
           </div>
           <div>
-            <div class="art-slot aspect-square mb-3">
-              <div class="art-label">[ HI · ENERGY FX ]</div>
-              <div class="art-meta">square · ~800×800</div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/comic-image/hi-lightning-fx.png" alt="HI Lightning FX" style="width: 100%; height: auto; display: block; z-index: 1;" />
+              <!-- <div class="slot-overlay">
+                <div class="art-label">[ HI · ENERGY FX ]</div>
+                <div class="art-meta">~800×800</div>
+              </div> -->
             </div>
             <div class="art-caption" style="--accent: var(--cyan);">
               <div class="art-caption-title">HI · Lightning FX</div>
