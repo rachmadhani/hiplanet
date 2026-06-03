@@ -112,8 +112,11 @@ onUnmounted(() => {
         <div class="col-span-6 col-md-2 space-y-5">
           <div>
             <div class="art-slot aspect-square mb-3">
-              <div class="art-label">[ HI · COLOR TEST ]</div>
-              <div class="art-meta">square · ~800×800</div>
+              <img src="/comic-image/hi-color-studies.png" alt="HI Color Studies" class="slot-image-cover" />
+              <!-- <div class="slot-overlay">
+                <div class="art-label">[ HI · COLOR TEST ]</div>
+                <div class="art-meta">square · ~800×800</div>
+              </div> -->
             </div>
             <div class="art-caption" style="--accent: var(--cyan);">
               <div class="art-caption-title">HI · Color Studies</div>
@@ -1524,5 +1527,34 @@ onUnmounted(() => {
   color: rgb(255, 245, 229);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+/* Image cover & overlay inside blueprint slots */
+.slot-image-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.slot-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.art-slot:hover .slot-overlay {
+  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.3);
 }
 </style>
