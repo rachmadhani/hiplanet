@@ -140,9 +140,10 @@ onUnmounted(() => {
 
         <!-- Row 2 — 3 portraits -->
         <div class="col-span-3 col-md-2">
-          <div class="art-slot aspect-3-4 mb-3">
-            <div class="art-label">[ RA · STUDY ]</div>
-            <div class="art-meta">3:4 · ~900×1200</div>
+          <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+            <img src="/comic-image/ra-pose-steady.png" alt="Ra Pose Steady" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            <!-- <div class="art-label">[ RA · STUDY ]</div>
+            <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
           <div class="art-caption" style="--accent: var(--amber);">
             <div class="art-caption-title">RA · Pose Study</div>
