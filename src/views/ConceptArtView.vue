@@ -97,10 +97,11 @@ onUnmounted(() => {
       <div class="char-grid">
         <!-- Big HI face sheet (4 cols) -->
         <div class="col-span-6 col-md-4">
-          <div class="art-slot aspect-4-3 mb-3">
-            <div class="art-label">[ HI · FACE SHEET ]</div>
+          <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+            <img src="/comic-image/hi_pencil.png" alt="HI Expression Sheet" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            <!-- <div class="art-label">[ HI · FACE SHEET ]</div>
             <div class="art-meta">4:3 · ~1600×1200</div>
-            <div class="art-meta">multiple angles + expressions</div>
+            <div class="art-meta">multiple angles + expressions</div> -->
           </div>
           <div class="art-caption" style="--accent: var(--cyan);">
             <div class="art-caption-title">HI · Expression Sheet</div>
@@ -152,9 +153,10 @@ onUnmounted(() => {
         </div>
 
         <div class="col-span-3 col-md-2">
-          <div class="art-slot aspect-3-4 mb-3">
-            <div class="art-label">[ MOOLU · STUDY ]</div>
-            <div class="art-meta">3:4 · ~900×1200</div>
+          <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+            <img src="/comic-image/moolu_pencil.png" alt="MOOLU Lab Coat Iterations" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            <!-- <div class="art-label">[ MOOLU · STUDY ]</div>
+            <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
           <div class="art-caption" style="--accent: var(--green);">
             <div class="art-caption-title">MOOLU · Lab Coat Iterations</div>
@@ -163,12 +165,13 @@ onUnmounted(() => {
         </div>
 
         <div class="col-span-6 col-md-2">
-          <div class="art-slot aspect-3-4 mb-3">
-            <div class="art-label">[ NEP · STUDY ]</div>
-            <div class="art-meta">3:4 · ~900×1200</div>
+          <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+            <img src="/comic-image/cosmic-wormhole.png" alt="Cosmic Wormhole" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            <!-- <div class="art-label">[ NEP · STUDY ]</div>
+            <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
           <div class="art-caption" style="--accent: var(--earth);">
-            <div class="art-caption-title">NEP · Trident Variations</div>
+            <div class="art-caption-title">Cosmic Wormhole · Cosmic Cleaner</div>
             <div class="art-caption-meta">Weapon design</div>
           </div>
         </div>
