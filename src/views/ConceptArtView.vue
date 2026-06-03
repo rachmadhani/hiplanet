@@ -111,11 +111,11 @@ onUnmounted(() => {
         <!-- Stacked column right (2 cols) -->
         <div class="col-span-6 col-md-2 space-y-5">
           <div>
-            <div class="art-slot aspect-square mb-3">
-              <img src="/comic-image/hi-color-studies.png" alt="HI Color Studies" class="slot-image-cover" />
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/comic-image/hi-color-studies.png" alt="HI Color Studies" style="width: 100%; height: auto; display: block; z-index: 1;" />
               <!-- <div class="slot-overlay">
                 <div class="art-label">[ HI · COLOR TEST ]</div>
-                <div class="art-meta">square · ~800×800</div>
+                <div class="art-meta">~800×800</div>
               </div> -->
             </div>
             <div class="art-caption" style="--accent: var(--cyan);">
