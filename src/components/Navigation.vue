@@ -42,7 +42,7 @@ onUnmounted(() => {
         </RouterLink>
         <ul class="dropdown-menu">
           <li><RouterLink to="/comic">Comic Book</RouterLink></li>
-          <li><a href="/#concept">Concept Art</a></li>
+          <li><RouterLink to="/concept-art">Concept Art</RouterLink></li>
           <li><RouterLink to="/world-lore">World Lore</RouterLink></li>
           <li><RouterLink to="/characters">Characters</RouterLink></li>
         </ul>
