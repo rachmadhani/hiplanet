@@ -79,26 +79,6 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <!-- ============ 2. FEATURED HERO PIECE ============ -->
-    <div class="container mb-24">
-      <div class="tag-featured">
-        ◆ Featured · Cover Painting
-      </div>
-
-      <!-- Large hero piece -->
-      <div class="art-slot aspect-21-9 mb-4">
-        <div class="art-label">[ FEATURED HERO PAINTING ]</div>
-        <div class="art-meta">21:9 · ~2400×1030</div>
-        <div class="art-meta">e.g. Volume 1 cover · group key art</div>
-      </div>
-
-      <!-- Caption -->
-      <div class="art-caption" style="--accent: var(--amber);">
-        <div class="art-caption-title">"Earth Needs Everyone" — Volume 1 Cover</div>
-        <div class="art-caption-meta">Ink + Digital Color · 2023</div>
-      </div>
-    </div>
-
     <!-- ============================================================
          3. CHARACTER DESIGN STUDIES
     ============================================================ -->
