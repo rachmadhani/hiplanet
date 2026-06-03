@@ -36,7 +36,7 @@ onUnmounted(() => {
 
         <h1 class="reveal d-1 font-display main-headline">
           <span class="text-white">CONCEPT</span><br />
-          <span class="color-royal">ART.</span>
+          <span class="accent-neon-blue">ART.</span>
         </h1>
 
         <p class="reveal d-2 font-space subtitle">
@@ -46,6 +46,36 @@ onUnmounted(() => {
         <p class="reveal d-3 credits-line">
           Original designs by <span class="accent-coral">Sean Beck</span> · Refined &amp; illustrated by <span class="accent-coral">Andy Christian</span>
         </p>
+      </div>
+
+      <!-- Intro Videos Grid -->
+      <div class="intro-videos-grid reveal d-4">
+        <div class="intro-video-wrapper">
+          <video 
+            controls 
+            playsinline 
+            preload="metadata"
+            poster="/reels-comic/SaveClip3.jpg" 
+            class="intro-video"
+          >
+            <source src="/reels-comic/SaveClip3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-caption font-space">From Draft To a Real Sketch</div>
+        </div>
+        <div class="intro-video-wrapper">
+          <video 
+            controls 
+            playsinline 
+            preload="metadata"
+            poster="/reels-comic/SaveClip6.jpg" 
+            class="intro-video"
+          >
+            <source src="/reels-comic/SaveClip6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-caption font-space">Meet Hi The Earth Guardian</div>
+        </div>
       </div>
     </div>
 
@@ -981,11 +1011,11 @@ onUnmounted(() => {
   position: relative;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 5rem 1.5rem 3rem;
+  padding: 10rem 1.5rem 3rem;
 }
 @media (min-width: 768px) {
   .intro-container {
-    padding-top: 7rem;
+    /* padding-top: 7rem; */
   }
 }
 
@@ -1469,4 +1499,50 @@ onUnmounted(() => {
 .d-1 { transition-delay: 0.1s; }
 .d-2 { transition-delay: 0.25s; }
 .d-3 { transition-delay: 0.4s; }
+
+/* Intro Videos Grid */
+.intro-videos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 700px;
+  margin: 3rem auto 0;
+  position: relative;
+  z-index: 20;
+}
+@media (min-width: 640px) {
+  .intro-videos-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.intro-video-wrapper {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 245, 229, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.intro-video-wrapper:hover {
+  border-color: var(--cyan);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 200, 255, 0.15);
+}
+
+.intro-video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-caption {
+  font-size: 0.9rem;
+  color: rgb(255, 245, 229);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 </style>
