@@ -64,8 +64,7 @@ onUnmounted(() => {
 
         <!-- Headline -->
         <h1 class="reveal d-2 main-title">
-          BECOME A<br />
-          <span class="accent-neon-blue">TESTER.</span>
+          BECOME A <span class="accent-neon-blue">TESTER.</span>
         </h1>
 
         <p class="reveal d-3 italic-desc">
@@ -383,7 +382,7 @@ onUnmounted(() => {
 .hero-inner {
   position: relative;
   z-index: 5;
-  max-width: 60rem;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
