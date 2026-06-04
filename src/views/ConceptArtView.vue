@@ -97,8 +97,8 @@ onUnmounted(() => {
       <div class="char-grid">
         <!-- Big HI face sheet (4 cols) -->
         <div class="col-span-6 col-md-4">
-          <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-            <img src="/comic-image/hi_pencil.png" alt="HI Expression Sheet" style="width: 100%; height: auto; display: block; z-index: 1;" />
+          <div class="art-slot aspect-4-3 mb-3">
+            <img src="/comic-image/hi_pencil.png" alt="HI Expression Sheet" class="slot-image-contain" />
             <!-- <div class="art-label">[ HI · FACE SHEET ]</div>
             <div class="art-meta">4:3 · ~1600×1200</div>
             <div class="art-meta">multiple angles + expressions</div> -->
@@ -112,8 +112,8 @@ onUnmounted(() => {
         <!-- Stacked column right (2 cols) -->
         <div class="col-span-6 col-md-2 space-y-5">
           <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/comic-image/hi-color-studies.png" alt="HI Color Studies" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            <div class="art-slot aspect-square mb-3">
+              <img src="/comic-image/hi-color-studies.png" alt="HI Color Studies" class="slot-image-contain" />
               <!-- <div class="slot-overlay">
                 <div class="art-label">[ HI · COLOR TEST ]</div>
                 <div class="art-meta">~800×800</div>
@@ -125,8 +125,8 @@ onUnmounted(() => {
             </div>
           </div>
           <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/comic-image/hi-lightning-fx.png" alt="HI Lightning FX" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            <div class="art-slot aspect-square mb-3">
+              <img src="/comic-image/hi-lightning-fx.png" alt="HI Lightning FX" class="slot-image-contain" />
               <!-- <div class="slot-overlay">
                 <div class="art-label">[ HI · ENERGY FX ]</div>
                 <div class="art-meta">~800×800</div>
@@ -141,8 +141,8 @@ onUnmounted(() => {
 
         <!-- Row 2 — 3 portraits -->
         <div class="col-span-3 col-md-2">
-          <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-            <img src="/comic-image/ra-pose-steady.png" alt="Ra Pose Steady" style="width: 100%; height: auto; display: block; z-index: 1;" />
+          <div class="art-slot aspect-3-4 mb-3">
+            <img src="/comic-image/ra-pose-steady.png" alt="Ra Pose Steady" class="slot-image-contain" />
             <!-- <div class="art-label">[ RA · STUDY ]</div>
             <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
@@ -153,8 +153,8 @@ onUnmounted(() => {
         </div>
 
         <div class="col-span-3 col-md-2">
-          <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-            <img src="/comic-image/moolu_pencil.png" alt="MOOLU Lab Coat Iterations" style="width: 100%; height: auto; display: block; z-index: 1;" />
+          <div class="art-slot aspect-3-4 mb-3">
+            <img src="/comic-image/moolu_pencil.png" alt="MOOLU Lab Coat Iterations" class="slot-image-contain" />
             <!-- <div class="art-label">[ MOOLU · STUDY ]</div>
             <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
@@ -165,8 +165,8 @@ onUnmounted(() => {
         </div>
 
         <div class="col-span-6 col-md-2">
-          <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-            <img src="/comic-image/cosmic-wormhole.png" alt="Cosmic Wormhole" style="width: 100%; height: auto; display: block; z-index: 1;" />
+          <div class="art-slot aspect-3-4 mb-3">
+            <img src="/comic-image/cosmic-wormhole.png" alt="Cosmic Wormhole" class="slot-image-contain" />
             <!-- <div class="art-label">[ NEP · STUDY ]</div>
             <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
@@ -197,32 +197,36 @@ onUnmounted(() => {
         <div class="relative">
           <div class="step-label">01 · SKETCH</div>
           <div class="art-slot aspect-3-4">
-            <div class="art-label">[ PENCIL SKETCH ]</div>
-            <div class="art-meta">rough layout</div>
+            <img src="/sketch/sketch_1.jpg" alt="Pencil Sketch" class="slot-image-contain" />
+            <!-- <div class="art-label">[ PENCIL SKETCH ]</div>
+            <div class="art-meta">rough layout</div> -->
           </div>
         </div>
 
         <div class="relative">
           <div class="step-label">02 · INK</div>
           <div class="art-slot aspect-3-4">
-            <div class="art-label">[ INK LAYER ]</div>
-            <div class="art-meta">clean linework</div>
+            <img src="/sketch/sketch_2.jpg" alt="Ink Layer" class="slot-image-contain" />
+            <!-- <div class="art-label">[ INK LAYER ]</div>
+            <div class="art-meta">clean linework</div> -->
           </div>
         </div>
 
         <div class="relative">
           <div class="step-label">03 · FLAT</div>
           <div class="art-slot aspect-3-4">
-            <div class="art-label">[ FLAT COLOR ]</div>
-            <div class="art-meta">base palette</div>
+            <img src="/sketch/sketch_3.jpg" alt="Flat Color" class="slot-image-contain" />
+            <!-- <div class="art-label">[ FLAT COLOR ]</div>
+            <div class="art-meta">base palette</div> -->
           </div>
         </div>
 
         <div class="relative">
           <div class="step-label">04 · FINAL</div>
           <div class="art-slot aspect-3-4" style="border-color: var(--coral);">
-            <div class="art-label accent-coral">[ FINAL ART ]</div>
-            <div class="art-meta">shading + FX</div>
+            <img src="/sketch/sketch_4.jpg" alt="Final Art" class="slot-image-contain" />
+            <!-- <div class="art-label accent-coral">[ FINAL ART ]</div>
+            <div class="art-meta">shading + FX</div> -->
           </div>
         </div>
       </div>
@@ -1441,6 +1445,16 @@ onUnmounted(() => {
   object-fit: cover;
   z-index: 1;
 }
+
+.slot-image-contain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
 
 .slot-overlay {
   position: absolute;
