@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 const activeSection = ref('home')
 const isMobileMenuOpen = ref(false)
@@ -58,6 +61,7 @@ onUnmounted(() => {
         </ul>
       </li>
       <li><RouterLink to="/devlog">Devlog</RouterLink></li>
+      <li><RouterLink to="/econews">Eco News</RouterLink></li>
       <li><a href="https://discord.gg/ZkpAZFrda" target="_blank" class="nav-cta discord-btn">Join Discord</a></li>
       <li>
         <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="nav-cta steam-btn">

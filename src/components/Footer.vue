@@ -23,6 +23,7 @@
           <li><RouterLink to="/game">Games</RouterLink></li>
           <li><RouterLink to="/become-a-tester">Community</RouterLink></li>
           <li><RouterLink to="/devlog">Devlog</RouterLink></li>
+          <li><RouterLink to="/econews">Eco News</RouterLink></li>
         </ul>
       </div>
       <div>
