@@ -54,6 +54,7 @@ onUnmounted(() => {
         </RouterLink>
          <ul class="dropdown-menu">
           <li><RouterLink to="/become-a-tester">Become a tester</RouterLink></li>
+          <li><a href="https://www.luvblu.com/" target="_blank">#Luvblu</a></li>
         </ul>
       </li>
       <li><RouterLink to="/devlog">Devlog</RouterLink></li>
