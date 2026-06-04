@@ -169,7 +169,7 @@ nav {
   background: rgba(10, 24, 52, 0.98);
   border: 1px solid var(--neon-blue);
   backdrop-filter: blur(20px);
-  min-width: 180px;
+  min-width: 200px;
   list-style: none;
   padding: 0.75rem 0;
   opacity: 0;

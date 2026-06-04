@@ -382,7 +382,7 @@ onUnmounted(() => {
 .hero-inner {
   position: relative;
   z-index: 5;
-  max-width: 120rem;
+  max-width: 60rem;
   margin: 0 auto;
 }
 
