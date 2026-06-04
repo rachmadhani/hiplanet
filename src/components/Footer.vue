@@ -21,17 +21,17 @@
           <li><RouterLink to="/">Home</RouterLink></li>
           <li><RouterLink to="/world-lore">Universe</RouterLink></li>
           <li><RouterLink to="/game">Games</RouterLink></li>
-          <li><a href="/#community">Community</a></li>
-          <li><a href="/#studio">Devlog</a></li>
+          <li><RouterLink to="/become-a-tester">Community</RouterLink></li>
+          <li><RouterLink to="/devlog">Devlog</RouterLink></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Universe</div>
         <ul class="footer-links">
           <li><RouterLink to="/comic">Comic Book</RouterLink></li>
-          <li><a href="/#concept">Concept Art</a></li>
+          <li><RouterLink to="/concept-art">Concept Art</RouterLink></li>
           <li><RouterLink to="/world-lore">World Lore</RouterLink></li>
-          <li><a href="/#characters">Characters</a></li>
+          <li><RouterLink to="/characters">Characters</RouterLink></li>
         </ul>
       </div>
       <div>

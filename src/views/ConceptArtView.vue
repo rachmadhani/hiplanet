@@ -901,7 +901,7 @@ onUnmounted(() => {
   position: relative;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 10rem 1.5rem 3rem;
+  padding: 13rem 1.5rem 3rem;
 }
 @media (min-width: 768px) {
   .intro-container {
