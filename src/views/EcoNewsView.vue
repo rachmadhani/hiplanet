@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { ecoNewsService, getImageUrl, type EcoNewsBlog } from '@/services/ecoNewsService'
 
 const posts = ref<EcoNewsBlog[]>([])
 const isLoading = ref(true)
 const selectedAuthor = ref('All')
 const selectedPost = ref<EcoNewsBlog | null>(null)
+
+const route = useRoute()
+const router = useRouter()
 
 const fetchPosts = async () => {
   isLoading.value = true
@@ -31,13 +35,11 @@ const filteredPosts = computed(() => {
 })
 
 const selectPost = (post: EcoNewsBlog) => {
-  selectedPost.value = post
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  router.push(`/econews/${post.slug || post.id}`)
 }
 
 const deselectPost = () => {
-  selectedPost.value = null
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  router.push('/econews')
 }
 
 const formatDate = (dateStr: string) => {
@@ -50,16 +52,49 @@ const formatDate = (dateStr: string) => {
   })
 }
 
+const fetchSinglePost = async (slug: string) => {
+  isLoading.value = true
+  try {
+    const response = await ecoNewsService.getBySlug(slug)
+    selectedPost.value = response.data
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  } catch (error) {
+    console.error('Failed to load EcoNews post:', error)
+    // fallback or redirect back to list
+    router.push('/econews')
+  } finally {
+    isLoading.value = false
+  }
+}
+
+watch(
+  () => route.params.slug,
+  (newSlug) => {
+    if (newSlug) {
+      fetchSinglePost(newSlug as string)
+    } else {
+      selectedPost.value = null
+      if (posts.value.length === 0) {
+        fetchPosts()
+      }
+    }
+  }
+)
+
 onMounted(() => {
   window.scrollTo(0, 0)
-  fetchPosts()
+  if (route.params.slug) {
+    fetchSinglePost(route.params.slug as string)
+  } else {
+    fetchPosts()
+  }
 })
 </script>
 
 <template>
   <div class="econews-page">
     <!-- Main Banner (Only shown in list view) -->
-    <div v-if="!selectedPost" class="blue-banner">
+    <div v-if="!selectedPost && !route.params.slug" class="blue-banner">
       <div class="banner-content">
         <h1>ECO NEWS CONTINUES TO PUBLISH ENVIRONMENTAL CAMPAIGN ARTICLES.</h1>
         <p>If you have your own writing or content you'd like to share, please feel free to send an inquiry to hello@ecosoftgame.com at any time.</p>
@@ -69,7 +104,7 @@ onMounted(() => {
     <!-- Main Content Container -->
     <div class="main-container">
       <!-- List View -->
-      <div v-if="!selectedPost" class="list-view">
+      <div v-if="!selectedPost && !route.params.slug" class="list-view">
         <h2 class="section-title">Latest Updates From Us</h2>
 
         <!-- Author Filter -->
@@ -144,7 +179,7 @@ onMounted(() => {
       </div>
 
       <!-- Detail View -->
-      <div v-else class="detail-view">
+      <div v-else-if="selectedPost" class="detail-view">
         <button class="return-btn" @click="deselectPost">
           <span class="arrow">&lt;</span> Return
         </button>
@@ -177,6 +212,15 @@ onMounted(() => {
           <div class="article-content prose prose-invert max-w-none" v-html="selectedPost.description">
           </div>
         </article>
+      </div>
+
+      <!-- Detail Loading State -->
+      <div v-else class="flex flex-col items-center justify-center py-20">
+        <svg class="animate-spin h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span class="mt-2 text-gray-400 text-sm">Loading article...</span>
       </div>
     </div>
   </div>

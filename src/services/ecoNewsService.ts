@@ -6,6 +6,7 @@ export interface EcoNewsBlog {
   author: string
   description: string
   category: string
+  slug: string
   image: string | null
   date_created: string
   createdAt: string
@@ -55,6 +56,11 @@ export const ecoNewsService = {
 
   async getById(id: number): Promise<{ success: boolean; data: EcoNewsBlog }> {
     const response = await api.get<{ success: boolean; data: EcoNewsBlog }>(`/econews-blogs/${id}`)
+    return response.data
+  },
+
+  async getBySlug(slug: string): Promise<{ success: boolean; data: EcoNewsBlog }> {
+    const response = await api.get<{ success: boolean; data: EcoNewsBlog }>(`/econews-blogs/slug/${slug}`)
     return response.data
   },
 

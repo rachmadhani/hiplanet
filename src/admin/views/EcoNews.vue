@@ -250,6 +250,18 @@
               />
             </div>
 
+            <!-- Slug -->
+            <div>
+              <label class="block mb-1.5 text-sm font-medium text-gray-700 dark:text-gray-400">URL Slug <span class="text-red-500">*</span></label>
+              <input
+                v-model="form.slug"
+                type="text"
+                required
+                placeholder="planting-trees-for-the-future"
+                class="w-full px-3 py-2 text-sm text-gray-800 bg-white border border-gray-300 rounded-lg shadow-theme-xs focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90"
+              />
+            </div>
+
             <!-- Custom Created Date -->
             <div>
               <label class="block mb-1.5 text-sm font-medium text-gray-700 dark:text-gray-400">Date Created (Optional)</label>
@@ -356,7 +368,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useToast } from 'vue-toastification'
 import { ecoNewsService, getImageUrl, type EcoNewsBlog } from '@/services/ecoNewsService'
 import AdminLayout from '@admin/components/layout/AdminLayout.vue'
@@ -394,6 +406,7 @@ interface FormState {
   title: string
   author: string
   category: string
+  slug: string
   description: string
   date_created: string
 }
@@ -402,8 +415,20 @@ const form = ref<FormState>({
   title: '',
   author: '',
   category: '',
+  slug: '',
   description: '',
   date_created: ''
+})
+
+// Auto-generate slug from title
+watch(() => form.value.title, (newTitle) => {
+  if (!isEditMode.value) {
+    form.value.slug = newTitle
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '') // remove invalid chars
+      .replace(/\s+/g, '-') // collapse whitespace and replace by -
+      .replace(/-+/g, '-'); // collapse dashes
+  }
 })
 
 const selectedFile = ref<File | null>(null)
@@ -495,6 +520,7 @@ const openCreateModal = () => {
     title: '',
     author: '',
     category: '',
+    slug: '',
     description: '',
     date_created: formatToDateTimeLocal(new Date().toISOString())
   }
@@ -512,6 +538,7 @@ const openEditModal = (blog: EcoNewsBlog) => {
     title: blog.title,
     author: blog.author,
     category: blog.category,
+    slug: blog.slug || '',
     description: blog.description,
     date_created: formatToDateTimeLocal(blog.date_created || blog.createdAt)
   }
@@ -565,6 +592,7 @@ const savePost = async () => {
     formData.append('title', form.value.title)
     formData.append('author', form.value.author)
     formData.append('category', form.value.category)
+    formData.append('slug', form.value.slug)
     formData.append('description', form.value.description)
     
     if (form.value.date_created) {
