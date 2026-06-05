@@ -246,6 +246,11 @@ const menuGroups = [
         name: "Tester Applications",
         path: "/admin/tester-applications",
       },
+      {
+        icon: DocsIcon,
+        name: "EcoNews Blogs",
+        path: "/admin/econews",
+      },
     ],
   },
 ];

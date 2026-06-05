@@ -166,6 +166,11 @@ const router = createRouter({
           path: 'tester-applications',
           name: 'admin-tester-applications',
           component: () => import('@admin/views/TesterApplications.vue')
+        },
+        {
+          path: 'econews',
+          name: 'admin-econews',
+          component: () => import('@admin/views/EcoNews.vue')
         }
       ]
     }

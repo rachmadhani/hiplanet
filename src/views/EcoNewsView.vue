@@ -1,75 +1,27 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import { ecoNewsService, getImageUrl, type EcoNewsBlog } from '@/services/ecoNewsService'
 
-interface Post {
-  id: number
-  title: string
-  author: string
-  date: string
-  image: string
-  tags: string[]
-  content: string[]
-}
-
-const posts = ref<Post[]>([
-  {
-    id: 1,
-    title: 'Ocean Conservation Debt-for-Nature Bonds Unlocks $1.4B for Marine Protection',
-    author: 'Sean Beck',
-    date: 'Feb 24, 2026',
-    image: '/econews/ocean_conservation.png',
-    tags: ['World', 'News', 'Updates'],
-    content: [
-      'The global community took a monumental step forward in ocean preservation today with the signing of a debt-for-nature swap. Under this historic agreement, a significant portion of international debt will be restructured in exchange for binding commitments to protect over 200,000 square kilometers of marine habitats.',
-      'Conservationists have hailed the deal as a game-changer, providing stable, long-term funding for patrol vessels, scientific research, and community-led conservation projects in some of the world\'s most biodiverse waters.',
-      'By linking economic relief directly to environmental stewardship, this initiative sets a powerful precedent for future conservation finance efforts globally.'
-    ]
-  },
-  {
-    id: 2,
-    title: 'US-Latin America Climate Pact Expands as California Builds New Partnerships at COP30',
-    author: 'Sean Beck',
-    date: 'Feb 24, 2026',
-    image: '/econews/climate_pact.png',
-    tags: ['Updates', 'World'],
-    content: [
-      'The US-Latin America climate pact took a major step forward at COP30 as California signed new agreements with Brazil, Colombia, and Chile, strengthening cross-border cooperation.',
-      'The US-Latin America climate agreement expansion during California\'s participation at COP30, where Governor Gavin Newsom led a state delegation focused on framing climate commitments into action. The agreement is a result of California\'s long-standing approach of reaching directly to other regions to address environmental risks, regardless of national politics.',
-      'As subnational funding, the effort will focus highly on how subnational governments are assuming leadership roles to enhance resilience, biodiversity loss, and climate risk areas in vulnerable regions, demanding cooperation that moves faster than traditional diplomacy. California\'s agreements aim to do just that, by sharing technology, policy experience, and data-driven solutions.',
-      'Collectively, the group of partners will focus on forest conservation and methane reduction. Each partner has already taken steps to address these issues. California Natural Resources Secretary Wade Crowfoot signed the agreements with Colombia\'s Environment Minister, and the agreement is designed to target emissions from agriculture, waste, and energy sectors while supporting sustainable economic development linked to biodiversity protection.',
-      'Chile joined the climate pact through a separate agreement focused on wildfire management. Both and Chile face forest fires that have grown more severe in recent years, making wildfire reduction one of the most reflection ways to slow near-term warming. California Air Resources Board Chair Liane Randolph signed the memorandum, which establishes information-sharing systems to compare policy, technologies, and enforcement strategies on forest borders.',
-      'The extension of the US-Latin America pact also includes a focus on methane emissions. An agreement with Brazil\'s federal government focuses on innovation and the responsible use of artificial intelligence in public management, recognizing the growing role of digital tools in climate governance. A second agreement with the state of Pará addresses wildfire prevention and response, crucial as California\'s experience managing fire technology will frame the cooperation.',
-      'Both partnerships strengthen forest monitoring systems designed to identify high-risk fire zones. This includes satellite data research, early warning fire detection systems, and sharing practices on detector and wildfire response, while forest information sharing insights into tropical forest dynamics.',
-      'Advocates welcomed the signing as a step in the right direction. The US-Latin America climate pact, introduced at COP26, aims to reach a global goal to triple duplicate energy capacity by 2030, representing high-profile commitments to address the impacts of climate change. California\'s partnerships reflect that the focus, connecting policy and action with strategies that help regions absorb heat, drought, and wildfires.',
-      'Subnational leadership also played a prominent role in California Tribal Affairs Secretary Christina Snider-Ashton\'s meetings with leaders of Indigenous Peoples, Santa Catilina\'s Ministry of Indigenous Affairs, focused on ways to respect stewardship and biodiversity protection. These exchanges addressed the how tribal communities are arranged when plans include communities with deep connections to the land.',
-      '__IMAGE_PLACEHOLDER__',
-      'The US-Latin America climate pact highlights Indigenous leadership, sharing non-tribal knowledge between communities in our hemisphere to foster environmental protection. Photo courtesy of the Office of Governor Gavin Newsom.',
-      'The new agreements build on California\'s expanding international climate network. The state maintains partnerships with China, Japan, Canada, and North America, addressing issues from clean energy transition to zero-emission vehicles. California co-chairs the Under2 Coalition, representing over 270 subnational governments committed to keeping global temperature rise well below 2°C, representing more than 1.7 billion people.',
-      'For the US-Latin America coalition to succeed, implementation will be key. Each agreement establishes working groups responsible for developing concrete action plans, tracking progress, and reporting on success. Metrics will include tons of greenhouse gas emissions reduced, acres of forest protected, and clean energy deployments.',
-      'Clean energy deployment is already accelerating across Latin America, driver by the region\'s abundant solar, wind, and hydropower resources. California\'s experience integrating renewable energy into the grid can serve as a valuable reference point for partner nations working to build reliable, low-carbon energy systems.',
-      'Transportation decarbonization is another growing focus. Zero-emission vehicles reduce air pollution, a major health concern in many Latin American cities. Sharing standards for charging infrastructure and fleet electrification can help accelerate the transition to cleaner mobility.',
-      'The US-Latin America climate pact positions California as a stable partner for long-term climate cooperation. These agreements operate independently of federal election cycles, providing consistency for steering and investment in climate resilience.',
-      'Looking ahead, officials suggest the network will expand to include additional Latin American countries. Reciprocal cooperation creates economies of scale, making new technologies more accessible and affordable for all coalition members.',
-      'Ultimately, the US-Latin America agreements signed at COP30 demonstrate that subnational progress does not need to wait for national governments to lead. By connecting regions across continents, these partnerships provide a path forward for preserving ecosystems, strengthening economies, and building a more resilient future for the planet.'
-    ]
-  },
-  {
-    id: 3,
-    title: 'How to Choose the Right Off-Road Wheels for Any Truck or SUV, for Looks, Efficiency and Safety',
-    author: 'Sean Beck',
-    date: 'Feb 24, 2026',
-    image: '/econews/offroad_wheels.png',
-    tags: ['World', 'News'],
-    content: [
-      'When preparing your vehicle for off-road adventures, selecting the right wheels and tires is one of the most critical decisions you will make. The right combination can dramatically improve traction, clearance, and durability on rugged trails, while the wrong choice can lead to mechanical failure or unsafe handling.',
-      'Key factors to consider include wheel size, offset, backspacing, and material. Cast aluminum wheels offer a good balance of strength and weight, while forged or steel wheels are preferred for extreme rock crawling where impact resistance is paramount.',
-      'Additionally, understanding how wheel changes affect your vehicle\'s suspension geometry and odometer calibration is essential. Consulting with professionals and selecting high-quality, load-rated wheels ensures that your truck or SUV remains both capable on the trails and safe on the highway.'
-    ]
-  }
-])
-
+const posts = ref<EcoNewsBlog[]>([])
+const isLoading = ref(true)
 const selectedAuthor = ref('All')
-const selectedPost = ref<Post | null>(null)
+const selectedPost = ref<EcoNewsBlog | null>(null)
+
+const fetchPosts = async () => {
+  isLoading.value = true
+  try {
+    const response = await ecoNewsService.getAll({
+      limit: 100,
+      sortBy: 'date_created',
+      sortOrder: 'desc'
+    })
+    posts.value = response.data
+  } catch (error) {
+    console.error('Failed to load EcoNews posts:', error)
+  } finally {
+    isLoading.value = false
+  }
+}
 
 const filteredPosts = computed(() => {
   if (selectedAuthor.value === 'All') {
@@ -78,7 +30,7 @@ const filteredPosts = computed(() => {
   return posts.value.filter(post => post.author === selectedAuthor.value)
 })
 
-const selectPost = (post: Post) => {
+const selectPost = (post: EcoNewsBlog) => {
   selectedPost.value = post
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
@@ -88,8 +40,19 @@ const deselectPost = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
+const formatDate = (dateStr: string) => {
+  if (!dateStr) return ''
+  const date = new Date(dateStr)
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  })
+}
+
 onMounted(() => {
   window.scrollTo(0, 0)
+  fetchPosts()
 })
 </script>
 
@@ -98,7 +61,7 @@ onMounted(() => {
     <!-- Main Banner (Only shown in list view) -->
     <div v-if="!selectedPost" class="blue-banner">
       <div class="banner-content">
-        <h1>Eco News continues to publish environmental campaign articles.</h1>
+        <h1>ECO NEWS CONTINUES TO PUBLISH ENVIRONMENTAL CAMPAIGN ARTICLES.</h1>
         <p>If you have your own writing or content you'd like to share, please feel free to send an inquiry to hello@ecosoftgame.com at any time.</p>
       </div>
     </div>
@@ -137,8 +100,17 @@ onMounted(() => {
           </div>
         </div>
 
+        <!-- Loading State -->
+        <div v-if="isLoading" class="flex flex-col items-center justify-center py-20">
+          <svg class="animate-spin h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span class="mt-2 text-gray-400 text-sm">Loading articles...</span>
+        </div>
+
         <!-- Article Grid -->
-        <div class="article-grid">
+        <div v-else-if="filteredPosts.length > 0" class="article-grid">
           <div 
             v-for="post in filteredPosts" 
             :key="post.id" 
@@ -146,7 +118,7 @@ onMounted(() => {
             @click="selectPost(post)"
           >
             <div class="card-image-container">
-              <img :src="post.image" :alt="post.title" class="card-image" />
+              <img :src="getImageUrl(post.image)" :alt="post.title" class="card-image" />
               <!-- Watermark Overlay -->
               <div class="card-watermark">
                 <div class="watermark-inner">
@@ -156,14 +128,18 @@ onMounted(() => {
               </div>
             </div>
             <div class="card-body">
-              <p class="card-date">{{ post.date }}</p>
+              <p class="card-date">{{ formatDate(post.date_created || post.createdAt) }}</p>
               <h3 class="card-title">{{ post.title }}</h3>
               <p class="card-author">Author : {{ post.author }}</p>
               <div class="card-tags">
-                <span v-for="tag in post.tags" :key="tag" class="tag-pill">{{ tag }}</span>
+                <span class="tag-pill">{{ post.category }}</span>
               </div>
             </div>
           </div>
+        </div>
+
+        <div v-else class="text-center py-20 text-gray-400">
+          No articles found.
         </div>
       </div>
 
@@ -176,18 +152,18 @@ onMounted(() => {
         <article class="article-detail">
           <div class="article-header">
             <div class="article-tags">
-              <span v-for="tag in selectedPost.tags" :key="tag" class="tag-pill">{{ tag }}</span>
+              <span class="tag-pill">{{ selectedPost.category }}</span>
             </div>
             <h1 class="detail-title">{{ selectedPost.title }}</h1>
             <p class="detail-meta">
               By <span class="author-name">{{ selectedPost.author }}</span>
             </p>
-            <p class="detail-date">{{ selectedPost.date.toUpperCase() }}</p>
+            <p class="detail-date">{{ formatDate(selectedPost.date_created || selectedPost.createdAt).toUpperCase() }}</p>
           </div>
 
           <!-- Main Article Image -->
           <div class="detail-image-container">
-            <img :src="selectedPost.image" :alt="selectedPost.title" class="detail-image" />
+            <img :src="getImageUrl(selectedPost.image)" :alt="selectedPost.title" class="detail-image" />
             <!-- Watermark Overlay -->
             <div class="detail-watermark">
               <div class="watermark-inner">
@@ -198,26 +174,7 @@ onMounted(() => {
           </div>
 
           <!-- Article Body -->
-          <div class="article-content">
-            <template v-for="(paragraph, index) in selectedPost.content" :key="index">
-              <!-- Lead Paragraph (First Paragraph is larger/bolder) -->
-              <p v-if="index === 0" class="lead-text">
-                {{ paragraph }}
-              </p>
-              
-              <!-- Check for image placeholder in second article -->
-              <div v-else-if="paragraph === '__IMAGE_PLACEHOLDER__'" class="inline-image-section">
-                <img src="/econews/climate_pact_delegates.png" alt="Delegates at COP30" class="inline-image" />
-                <p class="inline-image-caption">
-                  The US-Latin America climate pact highlights Indigenous leadership, sharing non-tribal knowledge between communities in our hemisphere to foster environmental protection. Photo courtesy of the Office of Governor Gavin Newsom.
-                </p>
-              </div>
-
-              <!-- General Paragraphs -->
-              <p v-else class="body-text">
-                {{ paragraph }}
-              </p>
-            </template>
+          <div class="article-content prose prose-invert max-w-none" v-html="selectedPost.description">
           </div>
         </article>
       </div>
@@ -250,6 +207,7 @@ onMounted(() => {
 }
 
 .banner-content h1 {
+  font-family: 'Anton', sans-serif;
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.2;
@@ -258,6 +216,7 @@ onMounted(() => {
 }
 
 .banner-content p {
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
   font-size: clamp(0.95rem, 1.8vw, 1.15rem);
   line-height: 1.6;
   opacity: 0.95;
@@ -275,6 +234,7 @@ onMounted(() => {
 
 /* 3. LIST VIEW & FILTERS */
 .section-title {
+  font-family: 'Anton', sans-serif;
   font-size: 2.25rem;
   font-weight: 800;
   color: #ffffff;
@@ -540,6 +500,114 @@ onMounted(() => {
   line-height: 1.8;
   color: #e8f0fe;
   font-size: 1.1rem;
+}
+
+/* Rich text content styles for TipTap-generated HTML */
+.article-content :deep(h1) {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.3;
+  color: #ffffff;
+  margin: 2rem 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.article-content :deep(h2) {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #ffffff;
+  margin: 1.75rem 0 0.75rem 0;
+  letter-spacing: -0.01em;
+}
+
+.article-content :deep(h3) {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.article-content :deep(p) {
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+}
+
+.article-content :deep(strong) {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.article-content :deep(em) {
+  font-style: italic;
+}
+
+.article-content :deep(a) {
+  color: #3b82f6;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.article-content :deep(a:hover) {
+  color: #60a5fa;
+}
+
+.article-content :deep(ul) {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.article-content :deep(ol) {
+  list-style-type: decimal;
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.article-content :deep(li) {
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+}
+
+.article-content :deep(blockquote) {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #8a9bbf;
+}
+
+.article-content :deep(img) {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.article-content :deep(hr) {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
+}
+
+.article-content :deep(code) {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: 'Space Mono', monospace;
+  color: #e8f0fe;
+}
+
+.article-content :deep(pre) {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .lead-text {

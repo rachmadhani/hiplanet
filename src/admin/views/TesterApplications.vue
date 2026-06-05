@@ -218,7 +218,7 @@
     </div>
 
     <!-- Update Status Modal -->
-    <div v-if="showEditModal" class="fixed inset-0 z-9999 flex items-center justify-center overflow-y-auto bg-black/50 backdrop-blur-xs p-4">
+    <div v-if="showEditModal" class="fixed inset-0 z-[999999] flex items-center justify-center overflow-y-auto bg-black/50 backdrop-blur-xs p-4">
       <div class="relative w-full max-w-md bg-white rounded-xl shadow-xl dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6">
         <h4 class="mb-4 text-lg font-semibold text-gray-800 dark:text-white/90">Update Application Status</h4>
         <p class="mb-5 text-sm text-gray-500 dark:text-gray-400">
@@ -261,7 +261,7 @@
     </div>
 
     <!-- Delete Confirmation Modal -->
-    <div v-if="showDeleteModal" class="fixed inset-0 z-9999 flex items-center justify-center overflow-y-auto bg-black/50 backdrop-blur-xs p-4">
+    <div v-if="showDeleteModal" class="fixed inset-0 z-[999999] flex items-center justify-center overflow-y-auto bg-black/50 backdrop-blur-xs p-4">
       <div class="relative w-full max-w-md bg-white rounded-xl shadow-xl dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6">
         <div class="flex items-center gap-3 mb-4 text-red-600">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
