@@ -15,7 +15,7 @@ const fetchPosts = async () => {
   isLoading.value = true
   try {
     const response = await ecoNewsService.getAll({
-      limit: 100,
+      limit: 10,
       sortBy: 'date_created',
       sortOrder: 'desc'
     })

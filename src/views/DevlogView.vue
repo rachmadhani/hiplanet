@@ -44,7 +44,7 @@ const fetchPosts = async () => {
   isLoading.value = true
   try {
     const res = await devlogBlogService.getAll({
-      limit: 50,
+      limit: 10,
       sortBy: 'date_created',
       sortOrder: 'desc'
     })

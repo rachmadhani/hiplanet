@@ -390,7 +390,7 @@ const pagination = ref({
   totalItems: 0,
   totalPages: 1,
   currentPage: 1,
-  limit: 10
+  limit: 5
 })
 
 const toast = useToast()
