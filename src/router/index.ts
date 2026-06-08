@@ -49,6 +49,16 @@ const router = createRouter({
       component: () => import('../views/DevlogView.vue')
     },
     {
+      path: '/devlog/all',
+      name: 'devlog-all',
+      component: () => import('../views/DevlogAllView.vue')
+    },
+    {
+      path: '/devlog/:slug',
+      name: 'devlog-detail',
+      component: () => import('../views/DevlogDetailView.vue')
+    },
+    {
       path: '/econews',
       name: 'econews',
       component: () => import('../views/EcoNewsView.vue')
@@ -176,6 +186,16 @@ const router = createRouter({
           path: 'econews',
           name: 'admin-econews',
           component: () => import('@admin/views/EcoNews.vue')
+        },
+        {
+          path: 'devlog-categories',
+          name: 'admin-devlog-categories',
+          component: () => import('@admin/views/DevlogCategories.vue')
+        },
+        {
+          path: 'devlog-blogs',
+          name: 'admin-devlog-blogs',
+          component: () => import('@admin/views/DevlogBlogs.vue')
         }
       ]
     }

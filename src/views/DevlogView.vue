@@ -1,17 +1,8 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-
-// Interface for post data
-interface Post {
-  id: number
-  category: string
-  catColor: string
-  date: string
-  title: string
-  excerpt: string
-  readTime: string
-  image: string
-}
+import { useRouter } from 'vue-router'
+import { devlogBlogService, getImageUrl, type DevlogBlog } from '@/services/devlogBlogService'
+import { devlogCategoryService } from '@/services/devlogCategoryService'
 
 // Stats strip data
 const stats = ref([
@@ -21,163 +12,84 @@ const stats = ref([
 ])
 
 // Categories for filtering
-const categories = ['All', 'Process', 'Build Notes', 'Roadmap', 'Lore Drops', 'Community', 'Studio']
+const categories = ref<string[]>(['All'])
 
 // Selected category
 const activeCategory = ref('All')
-
-// Number of posts initially visible
-const visibleCount = ref(6)
 
 // Email subscription state
 const email = ref('')
 const subscribed = ref(false)
 
 // Post data
-const posts = ref<Post[]>([
-  {
-    id: 1,
-    category: 'Build Notes',
-    catColor: '#FFB627',
-    date: 'May 28',
-    title: 'Busan Connect Recap: What 200 Testers Taught Us.',
-    excerpt: 'Three days. Two hundred testers. One major change to the MAC fight.',
-    readTime: '6 min',
-    image: '/stage/stage_1.jpg'
-  },
-  {
-    id: 2,
-    category: 'Lore Drops',
-    catColor: '#C8345A',
-    date: 'May 21',
-    title: "The Cosmic Wormhole's Real Plan: It's Not About Earth.",
-    excerpt: 'Five energies. One cube. A rift to somewhere worse. Here\'s the master plan.',
-    readTime: '10 min',
-    image: '/comic-collages/comic_11.png'
-  },
-  {
-    id: 3,
-    category: 'Roadmap',
-    catColor: '#4A90E2',
-    date: 'May 15',
-    title: 'Why We Moved Launch to November 10.',
-    excerpt: 'Three extra weeks. Steam Next Fest. A better launch ramp.',
-    readTime: '4 min',
-    image: '/stage/stage_3.jpg'
-  },
-  {
-    id: 4,
-    category: 'Process',
-    catColor: '#FF6B35',
-    date: 'May 08',
-    title: 'Designing MAC: From Comic Page to Boss Fight.',
-    excerpt: 'Comic-only character → playable boss with five attack patterns. Here\'s the journey.',
-    readTime: '9 min',
-    image: '/comic-image/hi_pencil.png'
-  },
-  {
-    id: 5,
-    category: 'Community',
-    catColor: '#4ADE80',
-    date: 'May 01',
-    title: 'Closed Beta is Open: Become a Tester.',
-    excerpt: "200 slots. Free Steam key at launch. Here's how to apply.",
-    readTime: '3 min',
-    image: '/stage/stage_2.jpg'
-  },
-  {
-    id: 6,
-    category: 'Studio',
-    catColor: '#9B8FB8',
-    date: 'Apr 24',
-    title: 'Two Founders, One IP: How Sean and Andy Work.',
-    excerpt: 'Sean designs every character first. Andy refines and illustrates. Inside our 3-year handoff.',
-    readTime: '7 min',
-    image: '/comic-image/ra-pose-steady.png'
-  },
-  {
-    id: 7,
-    category: 'Build Notes',
-    catColor: '#FFB627',
-    date: 'Apr 17',
-    title: 'Build 0.4.2: Korean Localization Lands.',
-    excerpt: 'Every menu. Every dialog. Every tooltip. 한국어 has arrived.',
-    readTime: '3 min',
-    image: '/stage/stage_5.jpg'
-  },
-  {
-    id: 8,
-    category: 'Lore Drops',
-    catColor: '#C8345A',
-    date: 'Apr 10',
-    title: 'Volume 2 Drops This Summer: Ch.3-4 Inside.',
-    excerpt: 'Wrath of the Burning Mountain. Awakening of the Arcstone. The comic continues.',
-    readTime: '5 min',
-    image: '/comic-collages/comic_1.png'
-  },
-  {
-    id: 9,
-    category: 'Process',
-    catColor: '#FF6B35',
-    date: 'Apr 03',
-    title: '10 Heroes, 10 Playstyles: How We Tuned Them.',
-    excerpt: 'Why JUPI chains lightning. Why MERC hits and runs. Why PLU is glass cannon.',
-    readTime: '12 min',
-    image: '/stage/stage_6.jpg'
+const posts = ref<DevlogBlog[]>([])
+const isLoading = ref(true)
+
+const router = useRouter()
+
+// Fetch categories
+const fetchCategories = async () => {
+  try {
+    const res = await devlogCategoryService.getAll()
+    if (res.success && res.data) {
+      categories.value = ['All', ...res.data.map(c => c.name)]
+    }
+  } catch (err) {
+    console.error('Failed to fetch categories:', err)
   }
-])
+}
 
-// Roadmap milestones
-const milestones = ref([
-  { time: '2023', label: 'VOL.1', sublabel: 'Comic published', status: 'past' },
-  { time: '2024-25', label: 'DEV', sublabel: 'Game build', status: 'past' },
-  { time: 'May 2026', label: 'BUSAN', sublabel: 'Connect Fest demo', status: 'past' },
-  { time: '◆ NOW', label: 'VOL.2 + ALPHA', sublabel: 'Summer 2026', status: 'present' },
-  { time: 'Oct 2026', label: 'NEXT FEST', sublabel: 'Steam · Oct 19-26', status: 'future' },
-  { time: '★ LAUNCH', label: 'Nov 10 2026', sublabel: 'Episode 1 ships', status: 'future', highlight: true },
-  { time: '2027+', label: 'DLC × 6', sublabel: 'Ch.7 → Ch.12', status: 'future' }
-])
+// Fetch posts
+const fetchPosts = async () => {
+  isLoading.value = true
+  try {
+    const res = await devlogBlogService.getAll({
+      limit: 50,
+      sortBy: 'date_created',
+      sortOrder: 'desc'
+    })
+    if (res.success && res.data) {
+      posts.value = res.data
+    }
+  } catch (err) {
+    console.error('Failed to fetch posts:', err)
+  } finally {
+    isLoading.value = false
+  }
+}
 
-// Archive list
-const archives = ref([
-  { date: 'Mar 27 · 2026', category: 'Roadmap', catColor: '#4A90E2', title: 'DLC Roadmap Revealed: Six More Chapters Across the Solar System' },
-  { date: 'Mar 20 · 2026', category: 'Build Notes', catColor: '#FFB627', title: 'Build 0.4.0: Wave System Overhauled' },
-  { date: 'Mar 13 · 2026', category: 'Process', catColor: '#FF6B35', title: 'Comic Interstitials: Why Every Wave Transition Tells a Story' },
-  { date: 'Mar 06 · 2026', category: 'Lore Drops', catColor: '#C8345A', title: "Ecopolis 101: Sixteen Locations You'll Walk Through" },
-  { date: 'Feb 27 · 2026', category: 'Studio', catColor: '#9B8FB8', title: "One Year In: What We've Learned Building Hi Planet" },
-  { date: 'Feb 20 · 2026', category: 'Community', catColor: '#4ADE80', title: 'Our First Discord: How to Join the Beta Testers Channel' },
-  { date: 'Feb 13 · 2026', category: 'Process', catColor: '#FF6B35', title: 'Picking 10 from 11: Why MA is Reserved for Chapter 7' }
-])
+// Latest post for Featured
+const featuredPost = computed(() => {
+  return posts.value[0] || null
+})
 
-// Filter posts
+// Filter posts by category
 const filteredPosts = computed(() => {
   if (activeCategory.value === 'All') {
-    return posts.value
+    // Exclude the featured post from recent posts to avoid duplication
+    return posts.value.slice(1)
   }
   return posts.value.filter(
-    (p) => p.category.toLowerCase() === activeCategory.value.toLowerCase()
+    (p) => p.category?.name.toLowerCase() === activeCategory.value.toLowerCase()
   )
 })
 
-// Slice for Load More
+// Slice for recent grid (limit to 9)
 const displayedPosts = computed(() => {
-  return filteredPosts.value.slice(0, visibleCount.value)
+  return filteredPosts.value.slice(0, 9)
 })
 
-// Check if more posts can be loaded
-const hasMore = computed(() => {
-  return visibleCount.value < filteredPosts.value.length
+// Older posts for the archive section
+const archivePosts = computed(() => {
+  if (activeCategory.value === 'All') {
+    return posts.value.slice(10, 17)
+  }
+  return filteredPosts.value.slice(9, 16)
 })
-
-// Action: Load more posts
-const loadMore = () => {
-  visibleCount.value += 3
-}
 
 // Action: Filter category selection
 const setCategory = (cat: string) => {
   activeCategory.value = cat
-  visibleCount.value = 6 // Reset visible count on filter
 }
 
 // Action: Newsletter subscription
@@ -191,15 +103,54 @@ const subscribeNewsletter = () => {
   }
 }
 
-// Scroll to top on mount
+// Style helpers
+const getCategoryColor = (categoryName?: string) => {
+  if (!categoryName) return '#FF6B35'
+  const colors: Record<string, string> = {
+    'process': '#FF6B35',
+    'build notes': '#FFB627',
+    'roadmap': '#4A90E2',
+    'lore drops': '#C8345A',
+    'community': '#4ADE80',
+    'studio': '#9B8FB8'
+  }
+  return colors[categoryName.toLowerCase()] || '#FF6B35'
+}
+
+const formatDate = (dateStr?: string) => {
+  if (!dateStr) return ''
+  const date = new Date(dateStr)
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  })
+}
+
+const getExcerpt = (html?: string | null, length = 150) => {
+  if (!html) return ''
+  const text = html.replace(/<[^>]*>/g, '')
+  return text.length > length ? text.substring(0, length) + '...' : text
+}
+
+const getReadTime = (html?: string | null) => {
+  if (!html) return '1 min'
+  const text = html.replace(/<[^>]*>/g, '')
+  const words = text.split(/\s+/).length
+  const time = Math.max(1, Math.ceil(words / 200))
+  return `${time} min`
+}
+
 onMounted(() => {
   window.scrollTo(0, 0)
+  fetchCategories()
+  fetchPosts()
 })
 </script>
 
 <template>
   <div class="devlog-page">
-    <section id="devlog" class="devlog-section grain">
+    <section id="devlog" class="devlog-section">
       <div class="stars-bg"></div>
 
       <!-- ============ 1. INTRO ============ -->
@@ -247,45 +198,60 @@ onMounted(() => {
 
             <div class="roadmap-grid">
               <!-- Milestones -->
-              <div 
-                v-for="milestone in milestones" 
-                :key="milestone.label" 
-                class="roadmap-node"
-              >
-                <div 
-                  class="milestone-time"
-                  :class="{
-                    'text-green': milestone.status === 'past',
-                    'accent-coral': milestone.status === 'present',
-                    'text-muted-time': milestone.status === 'future' && !milestone.highlight,
-                    'accent-amber': milestone.highlight
-                  }"
-                >
-                  {{ milestone.time }}
-                </div>
-                <div 
-                  class="roadmap-dot"
-                  :class="{
-                    'past': milestone.status === 'past',
-                    'present': milestone.status === 'present',
-                    'future': milestone.status === 'future',
-                    'large': milestone.status === 'present' || milestone.highlight
-                  }"
-                  :style="milestone.highlight ? 'border-color: var(--amber); --node-color: var(--amber);' : ''"
-                ></div>
+              <div class="roadmap-node">
+                <div class="milestone-time text-green">2023</div>
+                <div class="roadmap-dot past"></div>
                 <div class="mt-3">
-                  <div 
-                    class="milestone-label"
-                    :class="{
-                      'label-present': milestone.status === 'present',
-                      'label-highlight': milestone.highlight,
-                      'label-past': milestone.status === 'past',
-                      'label-future': milestone.status === 'future' && !milestone.highlight
-                    }"
-                  >
-                    {{ milestone.label }}
-                  </div>
-                  <div class="milestone-sublabel">{{ milestone.sublabel }}</div>
+                  <div class="milestone-label label-past">VOL.1</div>
+                  <div class="milestone-sublabel">Comic published</div>
+                </div>
+              </div>
+              <div class="roadmap-node">
+                <div class="milestone-time text-green">2024-25</div>
+                <div class="roadmap-dot past"></div>
+                <div class="mt-3">
+                  <div class="milestone-label label-past">DEV</div>
+                  <div class="milestone-sublabel">Game build</div>
+                </div>
+              </div>
+              <div class="roadmap-node">
+                <div class="milestone-time text-green">May 2026</div>
+                <div class="roadmap-dot past"></div>
+                <div class="mt-3">
+                  <div class="milestone-label label-past">BUSAN</div>
+                  <div class="milestone-sublabel">Connect Fest demo</div>
+                </div>
+              </div>
+              <div class="roadmap-node">
+                <div class="milestone-time accent-coral">◆ NOW</div>
+                <div class="roadmap-dot present large"></div>
+                <div class="mt-3">
+                  <div class="milestone-label label-present">VOL.2 + ALPHA</div>
+                  <div class="milestone-sublabel">Summer 2026</div>
+                </div>
+              </div>
+              <div class="roadmap-node">
+                <div class="milestone-time text-muted-time">Oct 2026</div>
+                <div class="roadmap-dot future"></div>
+                <div class="mt-3">
+                  <div class="milestone-label label-future">NEXT FEST</div>
+                  <div class="milestone-sublabel">Steam · Oct 19-26</div>
+                </div>
+              </div>
+              <div class="roadmap-node">
+                <div class="milestone-time accent-amber">★ LAUNCH</div>
+                <div class="roadmap-dot future large" style="border-color: var(--amber); --node-color: var(--amber);"></div>
+                <div class="mt-3">
+                  <div class="milestone-label label-highlight">Nov 10 2026</div>
+                  <div class="milestone-sublabel">Episode 1 ships</div>
+                </div>
+              </div>
+              <div class="roadmap-node">
+                <div class="milestone-time text-muted-time">2027+</div>
+                <div class="roadmap-dot future"></div>
+                <div class="mt-3">
+                  <div class="milestone-label label-future">DLC × 6</div>
+                  <div class="milestone-sublabel">Ch.7 → Ch.12</div>
                 </div>
               </div>
             </div>
@@ -305,14 +271,17 @@ onMounted(() => {
           ◆ Latest · This Week
         </div>
 
-        <article class="featured-bg">
+        <div v-if="isLoading" class="flex flex-col items-center justify-center py-12">
+          <span class="text-gray-400 font-pixel text-xs">Loading Devlogs...</span>
+        </div>
+        <article v-else-if="featuredPost" class="featured-bg">
           <div class="featured-grid">
             <!-- Featured image using actual stage screenshot -->
             <div class="featured-visual-col">
               <div class="featured-image-wrapper">
                 <img 
-                  src="/stage/stage_4.jpg" 
-                  alt="Why Every Hit Lands: The 4 Pillars of Hit-Feel" 
+                  :src="getImageUrl(featuredPost.image)" 
+                  :alt="featuredPost.title" 
                   class="featured-image" 
                 />
               </div>
@@ -321,32 +290,35 @@ onMounted(() => {
             <!-- Content info -->
             <div class="featured-content-col">
               <div class="post-meta-row">
-                <span class="cat-chip" style="--cat-color: #FF6B35;">PROCESS</span>
-                <span class="post-date-label">June 02 · 2026</span>
+                <span class="cat-chip" :style="'--cat-color: ' + getCategoryColor(featuredPost.category?.name)">{{ featuredPost.category?.name || 'DEVLOG' }}</span>
+                <span class="post-date-label">{{ formatDate(featuredPost.date_created || featuredPost.createdAt) }}</span>
               </div>
 
               <h3 class="featured-title">
-                Why Every Hit Lands: <span class="accent-coral">The 4 Pillars of Hit-Feel.</span>
+                <span v-if="featuredPost.title.includes(':')">
+                  {{ featuredPost.title.split(':')[0] }}: <span class="accent-coral">{{ featuredPost.title.split(':')[1] || '' }}</span>
+                </span>
+                <span v-else>
+                  {{ featuredPost.title }}
+                </span>
               </h3>
 
               <p class="featured-excerpt">
-                Hitstop. Knockback. Screen-shake. Color-flash. They sound simple, but tuning
-                them takes months. Here's what we changed after Busan, and why every swing
-                feels different now.
+                {{ getExcerpt(featuredPost.description, 200) }}
               </p>
 
               <div class="featured-meta-bottom">
                 <span class="read-time-box">
                   <span class="font-pixel read-time-icon">⏱</span>
-                  8 min read
+                  {{ getReadTime(featuredPost.description) }} read
                 </span>
                 <span class="meta-dot">·</span>
-                <span>by Sean Beck</span>
+                <span>by {{ featuredPost.author }}</span>
               </div>
 
-              <a href="#" class="featured-cta-button" style="box-shadow: 4px 4px 0 var(--cream);">
+              <RouterLink :to="'/devlog/' + featuredPost.slug" class="featured-cta-button" style="box-shadow: 4px 4px 0 var(--cream); text-decoration: none;">
                 Read Full Post →
-              </a>
+              </RouterLink>
             </div>
           </div>
         </article>
@@ -380,43 +352,55 @@ onMounted(() => {
            5. POSTS GRID
       ============================================================ -->
       <div class="grid-container">
-        <div class="posts-grid">
-          <article 
+        <div v-if="isLoading" class="flex flex-col items-center justify-center py-12">
+          <span class="text-gray-400 font-pixel text-xs">Loading Recent Posts...</span>
+        </div>
+        <div v-else-if="displayedPosts.length > 0" class="posts-grid">
+          <RouterLink 
             v-for="post in displayedPosts" 
             :key="post.id" 
+            :to="'/devlog/' + post.slug"
             class="post-card"
+            style="text-decoration: none;"
           >
             <div class="post-card-image-box">
               <img 
-                :src="post.image" 
+                :src="getImageUrl(post.image)" 
                 :alt="post.title" 
                 class="post-card-image" 
               />
             </div>
             <div class="post-card-body">
               <div class="post-card-meta-row">
-                <span class="cat-chip" :style="'--cat-color: ' + post.catColor">{{ post.category }}</span>
-                <span class="post-card-date">{{ post.date }}</span>
+                <span class="cat-chip" :style="'--cat-color: ' + getCategoryColor(post.category?.name)">{{ post.category?.name || 'DEVLOG' }}</span>
+                <span class="post-card-date">{{ formatDate(post.date_created || post.createdAt) }}</span>
               </div>
-              <h4 class="post-card-title">
-                {{ post.title.split(':')[0] }}: <span :style="'color: ' + post.catColor">{{ post.title.split(':')[1] || '' }}</span>
+              <h4 v-if="post.title.includes(':')" class="post-card-title">
+                {{ post.title.split(':')[0] }}: <span :style="'color: ' + getCategoryColor(post.category?.name)">{{ post.title.split(':')[1] || '' }}</span>
+              </h4>
+              <h4 v-else class="post-card-title">
+                {{ post.title }}
               </h4>
               <p class="post-card-excerpt">
-                {{ post.excerpt }}
+                {{ getExcerpt(post.description, 100) }}
               </p>
-              <div class="post-card-read-time">⏱ {{ post.readTime }}</div>
+              <div class="post-card-read-time">⏱ {{ getReadTime(post.description) }}</div>
             </div>
-          </article>
+          </RouterLink>
+        </div>
+        <div v-else class="text-center py-12 text-gray-400">
+          No recent posts found in this category.
         </div>
 
         <!-- Load more -->
-        <div v-if="hasMore" class="load-more-container">
-          <button 
-            @click="loadMore"
+        <div v-if="posts.length > 9" class="load-more-container">
+          <RouterLink 
+            to="/devlog/all"
             class="load-more-btn"
+            style="text-decoration: none; display: inline-block;"
           >
             ↓ Load More Posts
-          </button>
+          </RouterLink>
         </div>
       </div>
 
@@ -433,23 +417,26 @@ onMounted(() => {
             </h3>
           </div>
 
-          <ul class="archive-list">
-            <li v-for="arc in archives" :key="arc.title" class="archive-item">
-              <a href="#" class="archive-link">
-                <span class="archive-date-col">{{ arc.date }}</span>
+          <ul v-if="archivePosts.length > 0" class="archive-list">
+            <li v-for="arc in archivePosts" :key="arc.id" class="archive-item">
+              <RouterLink :to="'/devlog/' + arc.slug" class="archive-link">
+                <span class="archive-date-col">{{ formatDate(arc.date_created || arc.createdAt) }}</span>
                 <span class="archive-chip-col">
-                  <span class="cat-chip" :style="'--cat-color: ' + arc.catColor">{{ arc.category }}</span>
+                  <span class="cat-chip" :style="'--cat-color: ' + getCategoryColor(arc.category?.name)">{{ arc.category?.name || 'DEVLOG' }}</span>
                 </span>
                 <span class="archive-title-col">{{ arc.title }}</span>
                 <span class="archive-arrow-col">→</span>
-              </a>
+              </RouterLink>
             </li>
           </ul>
+          <div v-else class="text-center py-8 text-gray-400">
+            No older archived posts.
+          </div>
 
           <div class="archive-footer-box">
-            <a href="#" class="archive-more-link">
-              View Full Archive (47 posts) →
-            </a>
+            <RouterLink to="/devlog/all" class="archive-more-link" style="text-decoration: none;">
+              View Full Archive ({{ posts.length }} posts) →
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -457,7 +444,7 @@ onMounted(() => {
       <!-- ============================================================
            7. NEWSLETTER SIGNUP
       ============================================================ -->
-      <div class="newsletter-section grain">
+      <div class="newsletter-section ">
         <div class="newsletter-stars-bg"></div>
         <div class="newsletter-container">
           <div class="newsletter-card">

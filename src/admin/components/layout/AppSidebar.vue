@@ -251,6 +251,16 @@ const menuGroups = [
         name: "EcoNews Blogs",
         path: "/admin/econews",
       },
+      {
+        icon: DocsIcon,
+        name: "Devlog Categories",
+        path: "/admin/devlog-categories",
+      },
+      {
+        icon: DocsIcon,
+        name: "Devlog Blogs",
+        path: "/admin/devlog-blogs",
+      },
     ],
   },
 ];
