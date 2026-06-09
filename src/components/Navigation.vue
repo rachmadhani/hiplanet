@@ -1,11 +1,19 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
 const activeSection = ref('home')
 const isMobileMenuOpen = ref(false)
+
+const isUniverseActive = computed(() => {
+  return ['/comic', '/concept-art', '/world-lore', '/characters'].includes(route.path)
+})
+
+const isCommunityActive = computed(() => {
+  return route.path.startsWith('/become-a-tester')
+})
 
 const sections = ['home', 'universe', 'games', 'community', 'devlog']
 
@@ -40,9 +48,9 @@ onUnmounted(() => {
     <ul class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
       <li><RouterLink to="/">Home</RouterLink></li>
       <li class="dropdown">
-        <RouterLink to="/world-lore">
+        <a href="#" @click.prevent :class="{ 'router-link-active': isUniverseActive }">
           Universe <span class="dropdown-arrow"></span>
-        </RouterLink>
+        </a>
         <ul class="dropdown-menu">
           <li><RouterLink to="/comic">Comic Book</RouterLink></li>
           <li><RouterLink to="/concept-art">Concept Art</RouterLink></li>
@@ -52,9 +60,9 @@ onUnmounted(() => {
       </li>
       <li><RouterLink to="/game">Games</RouterLink></li>
       <li class="dropdown">
-        <RouterLink to="/community">
+        <a href="#" @click.prevent :class="{ 'router-link-active': isCommunityActive }">
           Community <span class="dropdown-arrow"></span>
-        </RouterLink>
+        </a>
          <ul class="dropdown-menu">
           <li><RouterLink to="/become-a-tester">Become a tester</RouterLink></li>
           <li><a href="https://www.luvblu.com/" target="_blank">#Luvblu</a></li>
@@ -262,7 +270,7 @@ nav {
 .nav-mobile-toggle {
   display: none;
   background: none;
-  border: 1px solid var(--border);
+  border: 1px solid var(--blue);
   color: var(--text);
   padding: 6px 12px;
   border-radius: 6px;

@@ -450,8 +450,8 @@ onUnmounted(() => {
         <div class="reels-main-grid">
           <!-- FEATURED REEL -->
           <div class="lg-col-5">
-            <div class="aspect-9-16 max-w-md mx-auto lg-max-w-none h-full">
-              <div class="art-slot h-full" style="border-color: rgba(200,52,90,0.4);">
+            <div class="featured-reel-container">
+              <div class="art-slot featured-reel-slot" style="border-color: rgba(200,52,90,0.4);">
                 <div class="art-label" style="color: #C8345A;">[ FEATURED REEL ]</div>
                 <div class="art-meta">9:16 vertical · Instagram embed</div>
                 <div class="art-meta">latest process video</div>
@@ -1473,5 +1473,26 @@ onUnmounted(() => {
 .art-slot:hover .slot-overlay {
   opacity: 0.8;
   background: rgba(0, 0, 0, 0.3);
+}
+
+/* Featured Reel Responsiveness */
+.featured-reel-container {
+  aspect-ratio: 9 / 16;
+  max-width: 28rem; /* equivalent to max-w-md */
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.featured-reel-slot {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .featured-reel-container {
+    max-width: none;
+    height: 100%;
+  }
 }
 </style>

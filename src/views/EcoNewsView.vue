@@ -8,6 +8,12 @@ const isLoading = ref(true)
 const selectedAuthor = ref('All')
 const selectedPost = ref<EcoNewsBlog | null>(null)
 
+// Pagination State
+const currentPage = ref(1)
+const totalPages = ref(1)
+const totalItems = ref(0)
+const limitPerPage = 10
+
 const route = useRoute()
 const router = useRouter()
 
@@ -15,16 +21,29 @@ const fetchPosts = async () => {
   isLoading.value = true
   try {
     const response = await ecoNewsService.getAll({
-      limit: 10,
+      page: currentPage.value,
+      limit: limitPerPage,
       sortBy: 'date_created',
       sortOrder: 'desc'
     })
     posts.value = response.data
+    if (response.pagination) {
+      totalPages.value = response.pagination.totalPages
+      totalItems.value = response.pagination.totalItems
+      currentPage.value = response.pagination.currentPage
+    }
   } catch (error) {
     console.error('Failed to load EcoNews posts:', error)
   } finally {
     isLoading.value = false
   }
+}
+
+const changePage = (page: number) => {
+  if (page < 1 || page > totalPages.value) return
+  currentPage.value = page
+  fetchPosts()
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 const filteredPosts = computed(() => {
@@ -171,6 +190,43 @@ onMounted(() => {
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div v-if="!isLoading && totalPages > 1" class="pagination-container">
+          <button 
+            @click="changePage(currentPage - 1)" 
+            :disabled="currentPage === 1"
+            class="pagination-arrow-btn"
+            aria-label="Previous Page"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <div class="pagination-pages">
+            <button 
+              v-for="p in totalPages" 
+              :key="p"
+              @click="changePage(p)"
+              :class="{ active: p === currentPage }"
+              class="pagination-page-btn"
+            >
+              {{ p }}
+            </button>
+          </div>
+
+          <button 
+            @click="changePage(currentPage + 1)" 
+            :disabled="currentPage === totalPages"
+            class="pagination-arrow-btn"
+            aria-label="Next Page"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
         </div>
 
         <div v-else class="text-center py-20 text-gray-400">
@@ -701,5 +757,77 @@ onMounted(() => {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Pagination Styling */
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pagination-pages {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination-page-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #8a9bbf;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0c1220;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.pagination-page-btn:hover,
+.pagination-page-btn.active {
+  color: #fff;
+  background: #0066f3;
+  border-color: #0066f3;
+  box-shadow: 0 0 15px rgba(0, 102, 243, 0.5);
+}
+
+.pagination-arrow-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0c1220;
+  color: #8a9bbf;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-arrow-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.pagination-arrow-btn:hover:not(:disabled) {
+  color: #fff;
+  background: #0066f3;
+  border-color: #0066f3;
+  box-shadow: 0 0 15px rgba(0, 102, 243, 0.5);
+}
+
+.pagination-arrow-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 </style>

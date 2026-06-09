@@ -74,25 +74,27 @@ body:not(.admin-body)::before {
 }
 
 /* Custom Scrollbar */
-body:not(.admin-body)::-webkit-scrollbar,
-body:not(.admin-body) ::-webkit-scrollbar {
-  width: 8px;
-}
+@media (hover: hover) {
+  body:not(.admin-body)::-webkit-scrollbar,
+  body:not(.admin-body) ::-webkit-scrollbar {
+    width: 8px;
+  }
 
-body:not(.admin-body)::-webkit-scrollbar-track,
-body:not(.admin-body) ::-webkit-scrollbar-track {
-  background: var(--bg);
-}
+  body:not(.admin-body)::-webkit-scrollbar-track,
+  body:not(.admin-body) ::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
 
-body:not(.admin-body)::-webkit-scrollbar-thumb,
-body:not(.admin-body) ::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 10px;
-}
+  body:not(.admin-body)::-webkit-scrollbar-thumb,
+  body:not(.admin-body) ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 10px;
+  }
 
-body:not(.admin-body)::-webkit-scrollbar-thumb:hover,
-body:not(.admin-body) ::-webkit-scrollbar-thumb:hover {
-  background: var(--green);
+  body:not(.admin-body)::-webkit-scrollbar-thumb:hover,
+  body:not(.admin-body) ::-webkit-scrollbar-thumb:hover {
+    background: var(--green);
+  }
 }
 
 #app {

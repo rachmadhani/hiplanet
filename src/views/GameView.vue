@@ -1043,10 +1043,17 @@ void openPopup
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 140%;
-  height: 140%;
-  object-fit: contain;
+  /* width: 140%;
+  height: 140%; */
+  object-fit: cover;
   transition: transform 0.3s ease;
+}
+
+/* Adjust size for HI character (default is 140%) */
+.hero-card-hi .hero-card-slot img {
+  width: 100%;
+  height: 100%;
+  top: 48%;
 }
 
 /* Adjust Ra image size because its source file has less transparent padding and appears much larger */
@@ -1057,49 +1064,49 @@ void openPopup
 }
 
 .hero-card-ma .hero-card-slot img {
-  width: 110%;
-  height: 140%;
+  width: 80%;
+  height: 80%;
   top: 38%;
 }
 
 .hero-card-satu .hero-card-slot img {
-  width: 160%;
-  height: 140%;
+  width: 100%;
+  height: 100%;
   top: 44%;
 }
 
 .hero-card-merc .hero-card-slot img {
-  width: 140%;
-  height: 140%;
+  width: 80%;
+  height: 80%;
   top: 44%;
 }
 
 .hero-card-plu .hero-card-slot img {
-  width: 160%;
-  height: 140%;
+  width: 80%;
+  height: 80%;
 }
 
 .hero-card-v .hero-card-slot img {
-  width: 120%;
-  height: 140%;
+ width: 100%;
+  height: 100%;
   top: 38%;
 }
 
 .hero-card-ura .hero-card-slot img {
-  width: 149%;
-  height: 140%;
+width: 100%;
+  height: 100%;
   top: 42%;
 }
 
 .hero-card-jupi .hero-card-slot img {
-  width: 120%;
-  height: 140%;
+  width: 60%;
+  height: 60%;
   top: 53%;
 }
 
 .hero-card-nep .hero-card-slot img {
-  width: 140%;
-  height: 140%;
+  width: 100%;
+  height: 100%;
   top: 44%;
 }
 

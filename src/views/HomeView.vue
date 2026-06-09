@@ -2088,7 +2088,11 @@ section.sneak-poster-section {
     }
 
     .why-different-section {
-      margin-top: -4rem;
+      margin-top: -2rem;
+    }
+
+    .poster-features-grid {
+      margin: 1rem 0 0 0 !important;
     }
 
     .different-title {

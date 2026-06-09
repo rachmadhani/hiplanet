@@ -3182,22 +3182,30 @@ section {
 
 @media (max-width: 768px) {
   .reviews-arrow-btn {
-    width: 48px;
-    height: 48px;
-  }
-  
-  .reviews-arrow-btn.arrow-left {
-    left: -10px;
-  }
-  
-  .reviews-arrow-btn.arrow-right {
-    right: -10px;
-  }
-}
-
-@media (max-width: 500px) {
-  .reviews-arrow-btn {
     display: none;
+  }
+  
+  .reviews-carousel-viewport {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    scroll-snap-type: x mandatory;
+  }
+  
+  .reviews-carousel-viewport::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  .reviews-track {
+    transform: none !important;
+    gap: 1.5rem;
+    padding: 1.25rem 1rem;
+  }
+  
+  .reviews-track .review-card {
+    scroll-snap-align: center;
+    flex: 0 0 min(420px, 80vw);
   }
 }
 </style>

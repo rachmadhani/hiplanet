@@ -837,6 +837,25 @@ font-size: clamp(3.5rem, 13vw, 12rem);
   line-height: 1.3;
 }
 
+@media (max-width: 768px) {
+  .stats-row {
+    gap: 0.5rem;
+  }
+  .stat-val {
+    font-size: 2.2rem;
+  }
+  .stat-lbl {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+  .step-num {
+    font-size: 3.2rem;
+  }
+  .step-text {
+    font-size: 0.58rem;
+  }
+}
+
 /* ============ 4. FAQ SECTION ============ */
 .faq-section {
   position: relative;
