@@ -164,71 +164,74 @@ onMounted(() => {
         </div>
 
         <!-- Article Grid -->
-        <div v-else-if="filteredPosts.length > 0" class="article-grid">
-          <div 
-            v-for="post in filteredPosts" 
-            :key="post.id" 
-            class="article-card"
-            @click="selectPost(post)"
-          >
-            <div class="card-image-container">
-              <img :src="getImageUrl(post.image)" :alt="post.title" class="card-image" />
-              <!-- Watermark Overlay -->
-              <div class="card-watermark">
-                <div class="watermark-inner">
-                  <div class="watermark-logo"></div>
-                  <span>ECOSOFT INTERACTIVE</span>
+        <div v-else-if="filteredPosts.length > 0">
+          <div class="article-grid">
+            <div 
+              v-for="post in filteredPosts" 
+              :key="post.id" 
+              class="article-card"
+              @click="selectPost(post)"
+            >
+              <div class="card-image-container">
+                <img :src="getImageUrl(post.image)" :alt="post.title" class="card-image" />
+                <!-- Watermark Overlay -->
+                <div class="card-watermark">
+                  <div class="watermark-inner">
+                    <div class="watermark-logo"></div>
+                    <span>ECOSOFT INTERACTIVE</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-date">{{ formatDate(post.date_created || post.createdAt) }}</p>
+                <h3 class="card-title">{{ post.title }}</h3>
+                <p class="card-author">Author : {{ post.author }}</p>
+                <div class="card-tags">
+                  <span class="tag-pill">{{ post.category }}</span>
                 </div>
               </div>
             </div>
-            <div class="card-body">
-              <p class="card-date">{{ formatDate(post.date_created || post.createdAt) }}</p>
-              <h3 class="card-title">{{ post.title }}</h3>
-              <p class="card-author">Author : {{ post.author }}</p>
-              <div class="card-tags">
-                <span class="tag-pill">{{ post.category }}</span>
-              </div>
-            </div>
           </div>
-        </div>
 
-        <!-- Pagination Controls -->
-        <div v-if="!isLoading && totalPages > 1" class="pagination-container">
-          <button 
-            @click="changePage(currentPage - 1)" 
-            :disabled="currentPage === 1"
-            class="pagination-arrow-btn"
-            aria-label="Previous Page"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-
-          <div class="pagination-pages">
+          <!-- Pagination Controls -->
+          <div v-if="totalPages > 1" class="pagination-container">
             <button 
-              v-for="p in totalPages" 
-              :key="p"
-              @click="changePage(p)"
-              :class="{ active: p === currentPage }"
-              class="pagination-page-btn"
+              @click="changePage(currentPage - 1)" 
+              :disabled="currentPage === 1"
+              class="pagination-arrow-btn"
+              aria-label="Previous Page"
             >
-              {{ p }}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <div class="pagination-pages">
+              <button 
+                v-for="p in totalPages" 
+                :key="p"
+                @click="changePage(p)"
+                :class="{ active: p === currentPage }"
+                class="pagination-page-btn"
+              >
+                {{ p }}
+              </button>
+            </div>
+
+            <button 
+              @click="changePage(currentPage + 1)" 
+              :disabled="currentPage === totalPages"
+              class="pagination-arrow-btn"
+              aria-label="Next Page"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </button>
           </div>
-
-          <button 
-            @click="changePage(currentPage + 1)" 
-            :disabled="currentPage === totalPages"
-            class="pagination-arrow-btn"
-            aria-label="Next Page"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
         </div>
 
+        <!-- No Articles Found -->
         <div v-else class="text-center py-20 text-gray-400">
           No articles found.
         </div>
