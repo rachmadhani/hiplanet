@@ -238,6 +238,17 @@
                 <option value="rejected">Rejected</option>
               </select>
             </div>
+
+            <div>
+              <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-400">Build Version</label>
+              <select
+                v-model="editBuild"
+                class="w-full px-3 py-2 text-sm text-gray-800 bg-white border border-gray-300 rounded-lg shadow-theme-xs focus:border-brand-300 focus:outline-hidden dark:border-gray-700 dark:bg-gray-900 dark:text-white/90"
+              >
+                <option value="MacOS">MacOS</option>
+                <option value="Windows">Windows</option>
+              </select>
+            </div>
             
             <div class="flex items-center justify-end gap-3 mt-6">
               <button
@@ -324,6 +335,7 @@ const showEditModal = ref(false)
 const showDeleteModal = ref(false)
 const activeApp = ref<TesterApplication | null>(null)
 const editStatus = ref<'pending' | 'approved' | 'rejected'>('pending')
+const editBuild = ref<'MacOS' | 'Windows'>('MacOS')
 
 // Fetch Applications
 const fetchApplications = async () => {
@@ -382,6 +394,7 @@ const pageNumbers = computed(() => {
 const openEditModal = (app: TesterApplication) => {
   activeApp.value = app
   editStatus.value = app.status
+  editBuild.value = app.build_platform
   showEditModal.value = true
 }
 
@@ -416,8 +429,8 @@ const updateStatus = async () => {
   if (!activeApp.value) return
   isUpdating.value = true
   try {
-    await testerService.update(activeApp.value.id, { status: editStatus.value })
-    toast.success(`Successfully updated status to "${editStatus.value}"`)
+    await testerService.update(activeApp.value.id, { status: editStatus.value, build_platform: editBuild.value })
+    toast.success(`Successfully updated status to "${editStatus.value}" and build platform to "${editBuild.value}"`)
     closeEditModal()
     fetchApplications() // Refresh current view
   } catch (error: any) {

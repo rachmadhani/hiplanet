@@ -9,6 +9,7 @@ export interface TesterApplication {
   country: string | null
   nda: boolean
   status: 'pending' | 'approved' | 'rejected'
+  build_platform: 'Windows' | 'MacOS'
   createdAt: string
   updatedAt: string
 }
