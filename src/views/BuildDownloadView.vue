@@ -51,7 +51,7 @@ onMounted(() => {
           class="wishlist-btn font-display"
         >
           <img src="/icon/steam-white.png" class="steam-icon" alt="Steam" />
-          Wishlist on Steam — Free
+          Wishlist on Steam
         </a>
       </div>
 

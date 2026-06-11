@@ -39,7 +39,7 @@ const charactersData: Character[] = [
     energyPill: 'Electrical',
     cardAccent: '#22D3EE',
     cardBg: 'rgba(34,211,238,0.18)',
-    image: '/character/hi.png'
+    image: '/character/characters-website/Hi_Website.png'
   },
   {
     id: 'ra',
@@ -57,7 +57,7 @@ const charactersData: Character[] = [
     energyPill: 'Solar',
     cardAccent: '#FFB627',
     cardBg: 'rgba(255,182,39,0.18)',
-    image: '/character/ra.png'
+    image: '/character/characters-website/Ra_Website.png'
   },
   {
     id: 'satu',
@@ -75,7 +75,7 @@ const charactersData: Character[] = [
     energyPill: 'Geothermal',
     cardAccent: '#FF6B35',
     cardBg: 'rgba(255,107,53,0.15)',
-    image: '/character/satu.png'
+    image: '/character/characters-website/Satu_Website.png'
   },
   {
     id: 'merc',
@@ -93,7 +93,7 @@ const charactersData: Character[] = [
     energyPill: 'Wind',
     cardAccent: '#22D3EE',
     cardBg: 'rgba(34,211,238,0.12)',
-    image: '/character/merc.png'
+    image: '/character/characters-website/Merc_Website.png'
   },
   {
     id: 'plu',
@@ -111,7 +111,7 @@ const charactersData: Character[] = [
     energyPill: 'Energy Saving',
     cardAccent: '#BAE6FD',
     cardBg: 'rgba(186,230,253,0.12)',
-    image: '/character/plu.png'
+    image: '/character/characters-website/Plu_Website.png'
   },
   {
     id: 'v',
@@ -129,7 +129,7 @@ const charactersData: Character[] = [
     energyPill: 'Optical',
     cardAccent: '#FFB627',
     cardBg: 'rgba(255,182,39,0.12)',
-    image: '/character/v.png'
+    image: '/character/characters-website/V_Website.png'
   },
   {
     id: 'ura',
@@ -147,7 +147,7 @@ const charactersData: Character[] = [
     energyPill: 'Kinetic',
     cardAccent: '#C8345A',
     cardBg: 'rgba(200,52,90,0.15)',
-    image: '/character/ura.png'
+    image: '/character/characters-website/Ura_Website.png'
   },
   {
     id: 'jupi',
@@ -165,7 +165,7 @@ const charactersData: Character[] = [
     energyPill: 'Nuclear',
     cardAccent: '#FF6B35',
     cardBg: 'rgba(255,107,53,0.18)',
-    image: '/character/jupi.png'
+    image: '/character/characters-website/Jupi_Website.png'
   },
   {
     id: 'nep',
@@ -183,7 +183,7 @@ const charactersData: Character[] = [
     energyPill: 'Hydro',
     cardAccent: '#4A90E2',
     cardBg: 'rgba(74,144,226,0.18)',
-    image: '/character/nep.png'
+    image: '/character/characters-website/Nep_Website.png'
   },
   {
     id: 'ma',
@@ -201,7 +201,7 @@ const charactersData: Character[] = [
     energyPill: 'Biomass',
     cardAccent: '#9B8FB8',
     cardBg: 'rgba(155,143,184,0.1)',
-    image: '/character/ma.png'
+    image: '/character/characters-website/Ma_Website.png'
   },
   {
     id: 'cosmic-wormhole',
@@ -1153,7 +1153,7 @@ onMounted(() => {
 @media (min-width: 768px) {
   .spotlight-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
+  } 
   .spotlight-card-col {
     grid-column: span 2 / span 2;
   }
@@ -1367,6 +1367,18 @@ onMounted(() => {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
+}
+
+@media (max-width: 360px) {
+ .tc {
+    aspect-ratio: 2 / 4 !important;
+  }
+}
+
+@media (max-width: 480px) {
+ .tc {
+    aspect-ratio: 2 / 4 !important;
+  }
 }
 
 @media (min-width: 640px) {
