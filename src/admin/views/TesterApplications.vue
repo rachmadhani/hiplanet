@@ -163,6 +163,22 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
                       </svg>
                     </button>
+                    <!-- Send Build Update Button -->
+                    <button
+                      @click="app.status === 'approved' ? openBuildModal(app) : null"
+                      :disabled="app.status !== 'approved'"
+                      :class="[
+                        'p-1.5 rounded-lg transition-colors duration-200',
+                        app.status === 'approved'
+                          ? 'text-gray-500 hover:bg-gray-100 hover:text-brand-500 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-brand-400'
+                          : 'text-gray-300 dark:text-gray-700 cursor-not-allowed'
+                      ]"
+                      :title="app.status === 'approved' ? 'Send Build Update' : 'Tester must be approved to send build updates'"
+                    >
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                      </svg>
+                    </button>
                     <button
                       @click="confirmDelete(app)"
                       class="p-1.5 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-red-500 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-red-400"
@@ -240,7 +256,7 @@
             </div>
 
             <div>
-              <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-400">Build Version</label>
+              <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-400">Build Platform</label>
               <select
                 v-model="editBuild"
                 class="w-full px-3 py-2 text-sm text-gray-800 bg-white border border-gray-300 rounded-lg shadow-theme-xs focus:border-brand-300 focus:outline-hidden dark:border-gray-700 dark:bg-gray-900 dark:text-white/90"
@@ -264,6 +280,59 @@
                 class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-brand-500 hover:bg-brand-600 disabled:opacity-50 shadow-theme-xs"
               >
                 {{ isUpdating ? 'Saving...' : 'Save Changes' }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Send Build Update Modal -->
+    <div v-if="showBuildModal" class="fixed inset-0 z-[999999] flex items-center justify-center overflow-y-auto bg-black/50 backdrop-blur-xs p-4">
+      <div class="relative w-full max-w-md bg-white rounded-xl shadow-xl dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6">
+        <h4 class="mb-4 text-lg font-semibold text-gray-800 dark:text-white/90">Send Build Update</h4>
+        <p class="mb-5 text-sm text-gray-500 dark:text-gray-400">
+          Send a build update email to <span class="font-semibold text-gray-700 dark:text-white">{{ activeApp?.name }}</span> ({{ activeApp?.email }}).
+        </p>
+
+        <form @submit.prevent="sendBuildUpdate">
+          <div class="space-y-4">
+            <div>
+              <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-400">Build Version</label>
+              <input
+                v-model="buildVersion"
+                type="text"
+                required
+                placeholder="e.g. v1.2.0-beta"
+                class="w-full px-3 py-2 text-sm text-gray-800 bg-white border border-gray-300 rounded-lg shadow-theme-xs focus:border-brand-300 focus:outline-hidden dark:border-gray-700 dark:bg-gray-900 dark:text-white/90"
+              />
+            </div>
+
+            <div>
+              <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-400">Patch Notes</label>
+              <textarea
+                v-model="patchNotes"
+                required
+                rows="4"
+                placeholder="e.g. - Added new biome: Eolian Sands&#10;- Fixed audio stutter on low-end machines"
+                class="w-full px-3 py-2 text-sm text-gray-800 bg-white border border-gray-300 rounded-lg shadow-theme-xs focus:border-brand-300 focus:outline-hidden dark:border-gray-700 dark:bg-gray-900 dark:text-white/90"
+              ></textarea>
+            </div>
+            
+            <div class="flex items-center justify-end gap-3 mt-6">
+              <button
+                type="button"
+                @click="closeBuildModal"
+                class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-800"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                :disabled="isSendingBuild"
+                class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-brand-500 hover:bg-brand-600 disabled:opacity-50 shadow-theme-xs"
+              >
+                {{ isSendingBuild ? 'Sending...' : 'Send Update' }}
               </button>
             </div>
           </div>
@@ -333,9 +402,15 @@ const toast = useToast()
 // Modals State
 const showEditModal = ref(false)
 const showDeleteModal = ref(false)
+const showBuildModal = ref(false)
 const activeApp = ref<TesterApplication | null>(null)
 const editStatus = ref<'pending' | 'approved' | 'rejected'>('pending')
 const editBuild = ref<'MacOS' | 'Windows'>('MacOS')
+
+// Build Update State
+const buildVersion = ref('')
+const patchNotes = ref('')
+const isSendingBuild = ref(false)
 
 // Fetch Applications
 const fetchApplications = async () => {
@@ -413,6 +488,18 @@ const closeDeleteModal = () => {
   activeApp.value = null
 }
 
+const openBuildModal = (app: TesterApplication) => {
+  activeApp.value = app
+  buildVersion.value = ''
+  patchNotes.value = ''
+  showBuildModal.value = true
+}
+
+const closeBuildModal = () => {
+  showBuildModal.value = false
+  activeApp.value = null
+}
+
 // Format Date string
 const formatDate = (dateStr: string) => {
   if (!dateStr) return 'N/A'
@@ -460,6 +547,25 @@ const deleteApplication = async () => {
     toast.error(msg)
   } finally {
     isDeleting.value = false
+  }
+}
+
+// Send Build Update handler
+const sendBuildUpdate = async () => {
+  if (!activeApp.value) return
+  isSendingBuild.value = true
+  try {
+    const result = await testerService.sendBuildUpdate(activeApp.value.id, {
+      buildVersion: buildVersion.value,
+      patchNotes: patchNotes.value
+    })
+    toast.success(result.message || `Successfully sent build update email to ${activeApp.value.email}`)
+    closeBuildModal()
+  } catch (error: any) {
+    const msg = error.response?.data?.message || 'Failed to send build update email.'
+    toast.error(msg)
+  } finally {
+    isSendingBuild.value = false
   }
 }
 

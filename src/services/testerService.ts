@@ -53,5 +53,16 @@ export const testerService = {
   async delete(id: number): Promise<{ success: boolean; message: string }> {
     const response = await api.delete<{ success: boolean; message: string }>(`/tester-applications/${id}`)
     return response.data
+  },
+
+  async sendBuildUpdate(
+    id: number,
+    data: { buildVersion: string; patchNotes: string }
+  ): Promise<{ success: boolean; message: string; data?: any }> {
+    const response = await api.post<{ success: boolean; message: string; data?: any }>(
+      `/tester-applications/${id}/send-build-update`,
+      data
+    )
+    return response.data
   }
 }

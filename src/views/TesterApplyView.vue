@@ -66,7 +66,12 @@ const handleSubmit = async () => {
     })
     submitted.value = true
   } catch (err: any) {
-    error.value = err.response?.data?.message || 'Failed to submit application. Please try again.'
+    const msg = err.response?.data?.message
+    if (msg === 'user has been registered') {
+      error.value = 'This email is already registered. We will email you when your status changes.'
+    } else {
+      error.value = msg || 'Failed to submit application. Please try again.'
+    }
   } finally {
     isSubmitting.value = false
   }
@@ -150,14 +155,6 @@ const handleSubmit = async () => {
               />
               <label for="pm">MACOS</label>
               
-              <input 
-                v-model="platform"
-                class="platform-radio" 
-                type="radio" 
-                id="pb" 
-                value="Both" 
-              />
-              <label for="pb">BOTH</label>
             </div>
           </div>
 
