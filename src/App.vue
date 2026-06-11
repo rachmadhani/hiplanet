@@ -8,6 +8,7 @@ import Preloader from './components/Preloader.vue'
 const route = useRoute()
 const router = useRouter()
 const isAdmin = computed(() => route.path.startsWith('/admin'))
+const isBuildDownload = computed(() => route.name === 'build-download' || route.path.startsWith('/builds/'))
 
 const isSiteLoading = ref(true)
 const isPageTransitioning = ref(false)
@@ -20,11 +21,19 @@ watch(isAdmin, (val) => {
   }
 }, { immediate: true })
 
+watch(() => route.name, (newName) => {
+  if (newName === 'build-download') {
+    isSiteLoading.value = false
+  }
+}, { immediate: true })
+
 // Route change loading spinner transition
 router.beforeEach((to, from, next) => {
   const isTransitioningFrontend = !to.path.startsWith('/admin') && !from.path.startsWith('/admin')
+  const toBuildDownload = to.name === 'build-download' || to.path.startsWith('/builds/')
+  const fromBuildDownload = from.name === 'build-download' || from.path.startsWith('/builds/')
   
-  if (isTransitioningFrontend && !isSiteLoading.value) {
+  if (isTransitioningFrontend && !isSiteLoading.value && !toBuildDownload && !fromBuildDownload) {
     isPageTransitioning.value = true
   }
   next()
@@ -40,12 +49,12 @@ router.afterEach(() => {
 <template>
   <!-- Global preloader for initial site access -->
   <Transition name="fade-preloader">
-    <Preloader v-if="!isAdmin && isSiteLoading" @loaded="isSiteLoading = false" />
+    <Preloader v-if="!isAdmin && !isBuildDownload && isSiteLoading" @loaded="isSiteLoading = false" />
   </Transition>
 
   <!-- Route transition loading overlay -->
   <Transition name="fade-transition">
-    <div v-if="!isAdmin && isPageTransitioning" class="route-transition-overlay">
+    <div v-if="!isAdmin && !isBuildDownload && isPageTransitioning" class="route-transition-overlay">
       <div class="transition-stars"></div>
       <div class="spinner-box">
         <img src="/logo/ecosoft_logo_mobile.png" alt="Loading..." class="transition-logo" />
