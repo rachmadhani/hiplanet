@@ -98,7 +98,7 @@ onUnmounted(() => {
         <!-- Big HI face sheet (4 cols) -->
         <div class="col-span-6 col-md-4">
           <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-            <img src="/comic-image/hi_pencil.png" alt="HI Expression Sheet" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            <img src="/comic-image/comic-1.jpg" alt="HI Expression Sheet" style="width: 100%; height: auto; display: block; z-index: 1;" />
             <!-- <div class="art-label">[ HI · FACE SHEET ]</div>
             <div class="art-meta">4:3 · ~1600×1200</div>
             <div class="art-meta">multiple angles + expressions</div> -->
@@ -113,7 +113,7 @@ onUnmounted(() => {
         <div class="col-span-6 col-md-2 space-y-5">
           <div>
             <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/comic-image/hi-color-studies.png" alt="HI Color Studies" style="width: 100%; height: auto; display: block; z-index: 1;" />
+              <img src="/comic-image/comic-2.jpg" alt="HI Color Studies" style="width: 100%; height: auto; display: block; z-index: 1;" />
               <!-- <div class="slot-overlay">
                 <div class="art-label">[ HI · COLOR TEST ]</div>
                 <div class="art-meta">~800×800</div>
@@ -126,7 +126,7 @@ onUnmounted(() => {
           </div>
           <div>
             <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/comic-image/hi-lightning-fx.png" alt="HI Lightning FX" style="width: 100%; height: auto; display: block; z-index: 1;" />
+              <img src="/comic-image/comic-3.jpg" alt="HI Lightning FX" style="width: 100%; height: auto; display: block; z-index: 1;" />
               <!-- <div class="slot-overlay">
                 <div class="art-label">[ HI · ENERGY FX ]</div>
                 <div class="art-meta">~800×800</div>
@@ -142,7 +142,7 @@ onUnmounted(() => {
         <!-- Row 2 — 3 portraits -->
         <div class="col-span-3 col-md-2">
           <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-            <img src="/comic-image/ra-pose-steady.png" alt="Ra Pose Steady" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            <img src="/comic-image/comic-5.jpg" alt="Ra Pose Steady" style="width: 100%; height: auto; display: block; z-index: 1;" />
             <!-- <div class="art-label">[ RA · STUDY ]</div>
             <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
@@ -154,7 +154,7 @@ onUnmounted(() => {
 
         <div class="col-span-3 col-md-2">
           <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-            <img src="/comic-image/moolu_pencil.png" alt="MOOLU Lab Coat Iterations" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            <img src="/comic-image/comic-6.jpg" alt="MOOLU Lab Coat Iterations" style="width: 100%; height: auto; display: block; z-index: 1;" />
             <!-- <div class="art-label">[ MOOLU · STUDY ]</div>
             <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
@@ -166,7 +166,7 @@ onUnmounted(() => {
 
         <div class="col-span-6 col-md-2">
           <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-            <img src="/comic-image/cosmic-wormhole.png" alt="Cosmic Wormhole" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            <img src="/comic-image/comic-7.jpg" alt="Cosmic Wormhole" style="width: 100%; height: auto; display: block; z-index: 1;" />
             <!-- <div class="art-label">[ NEP · STUDY ]</div>
             <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
