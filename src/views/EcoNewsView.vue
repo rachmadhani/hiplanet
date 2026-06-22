@@ -12,7 +12,7 @@ const selectedPost = ref<EcoNewsBlog | null>(null)
 const currentPage = ref(1)
 const totalPages = ref(1)
 const totalItems = ref(0)
-const limitPerPage = 10
+const limitPerPage = 12
 
 const route = useRoute()
 const router = useRouter()

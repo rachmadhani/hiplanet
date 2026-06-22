@@ -244,7 +244,7 @@ const handleSubmit = async () => {
   color: var(--cream);
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* ============ Film Grain & Stars Background ============ */

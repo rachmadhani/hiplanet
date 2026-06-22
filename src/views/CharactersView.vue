@@ -949,7 +949,7 @@ onMounted(() => {
   color: var(--cream);
   min-height: 100vh;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   padding-top: calc(clamp(75px, 6vw, 90px) + 2rem);
 }
 

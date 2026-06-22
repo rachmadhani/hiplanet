@@ -488,7 +488,7 @@ void openPopup
   /* background-color: #0A1834; */
   color: #FFF5E5;
   font-family: 'Manrope', system-ui, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
   padding-top: clamp(60px, 5vw, 80px); /* Navigation offset */
 }
 

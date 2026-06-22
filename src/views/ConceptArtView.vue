@@ -99,7 +99,7 @@ onUnmounted(() => {
             <img src="/comic-image/comic-1.jpg" alt="HI Expression Sheet" style="width: 100%; height: auto; display: block; z-index: 1;" />
           </div>
           <div class="art-caption" style="--accent: var(--cyan);">
-            <div class="art-caption-title">HI · Expression Sheet</div>
+            <div class="art-caption-title">HI PLANET COMIC CHAPTER 4 DRAFT · 1</div>
             <div class="art-caption-meta">Pencil · 24 frames</div>
           </div>
         </div>
@@ -110,7 +110,7 @@ onUnmounted(() => {
             <img src="/comic-image/comic-2.jpg" alt="HI Color Studies" style="width: 100%; height: auto; display: block; z-index: 1;" />
           </div>
           <div class="art-caption" style="--accent: var(--cyan);">
-            <div class="art-caption-title">HI · Color Studies</div>
+            <div class="art-caption-title">HI PLANET COMIC CHAPTER 4 DRAFT · 2</div>
             <div class="art-caption-meta">3 palette explorations</div>
           </div>
         </div>
@@ -120,7 +120,7 @@ onUnmounted(() => {
             <img src="/comic-image/comic-3.jpg" alt="HI Lightning FX" style="width: 100%; height: auto; display: block; z-index: 1;" />
           </div>
           <div class="art-caption" style="--accent: var(--cyan);">
-            <div class="art-caption-title">HI · Lightning FX</div>
+            <div class="art-caption-title">HI PLANET COMIC CHAPTER 4 DRAFT · 3</div>
             <div class="art-caption-meta">Effect studies</div>
           </div>
         </div>
@@ -135,7 +135,7 @@ onUnmounted(() => {
             <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
           <div class="art-caption" style="--accent: var(--amber);">
-            <div class="art-caption-title">RA · Pose Study</div>
+            <div class="art-caption-title">HI PLANET COMIC CHAPTER 4 DRAFT · 4</div>
             <div class="art-caption-meta">Ink wash · 2024</div>
           </div>
         </div>
@@ -147,7 +147,7 @@ onUnmounted(() => {
             <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
           <div class="art-caption" style="--accent: var(--green);">
-            <div class="art-caption-title">MOOLU · Lab Coat Iterations</div>
+            <div class="art-caption-title">HI PLANET COMIC CHAPTER 4 DRAFT · 5</div>
             <div class="art-caption-meta">5 variants</div>
           </div>
         </div>
@@ -159,7 +159,7 @@ onUnmounted(() => {
             <div class="art-meta">3:4 · ~900×1200</div> -->
           </div>
           <div class="art-caption" style="--accent: var(--earth);">
-            <div class="art-caption-title">Cosmic Wormhole · Cosmic Cleaner</div>
+            <div class="art-caption-title">HI PLANET COMIC CHAPTER 4 DRAFT · 6</div>
             <div class="art-caption-meta">Weapon design</div>
           </div>
         </div>
@@ -183,7 +183,7 @@ onUnmounted(() => {
       <!-- Process row — 4 stages -->
       <div class="process-grid mb-6">
         <div class="relative">
-          <div class="step-label">01 · SKETCH</div>
+          <!-- <div class="step-label">01 · SKETCH</div> -->
           <div class="art-slot" style="aspect-ratio: auto; padding: 0;">
             <img src="/sketch/sketch_1.jpg" alt="Pencil Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
             <!-- <div class="art-label">[ PENCIL SKETCH ]</div>
@@ -192,7 +192,7 @@ onUnmounted(() => {
         </div>
 
         <div class="relative">
-          <div class="step-label">02 · INK</div>
+          <!-- <div class="step-label">02 · INK</div> -->
           <div class="art-slot" style="aspect-ratio: auto; padding: 0;">
             <img src="/sketch/sketch_2.jpg" alt="Ink Layer" style="width: 100%; height: auto; display: block; z-index: 1;" />
             <!-- <div class="art-label">[ INK LAYER ]</div>
@@ -201,7 +201,7 @@ onUnmounted(() => {
         </div>
 
         <div class="relative">
-          <div class="step-label">03 · FLAT</div>
+          <!-- <div class="step-label">03 · FLAT</div> -->
           <div class="art-slot" style="aspect-ratio: auto; padding: 0;">
             <img src="/sketch/sketch_3.jpg" alt="Flat Color" style="width: 100%; height: auto; display: block; z-index: 1;" />
             <!-- <div class="art-label">[ FLAT COLOR ]</div>
@@ -210,7 +210,7 @@ onUnmounted(() => {
         </div>
 
         <div class="relative">
-          <div class="step-label">04 · FINAL</div>
+          <!-- <div class="step-label">04 · FINAL</div> -->
           <div class="art-slot" style="aspect-ratio: auto; padding: 0; border-color: var(--coral);">
             <img src="/sketch/sketch_4.jpg" alt="Final Art" style="width: 100%; height: auto; display: block; z-index: 1;" />
             <!-- <div class="art-label accent-coral">[ FINAL ART ]</div>
@@ -220,7 +220,7 @@ onUnmounted(() => {
       </div>
 
       <div class="art-caption" style="--accent: var(--coral);">
-        <div class="art-caption-title">"HI charges the barrier" · 4-step process</div>
+        <div class="art-caption-title">"QUANTUM QUICKSILVER" · 4-step process</div>
         <div class="art-caption-meta">Volume 2 · Page 47</div>
       </div>
     </div>
@@ -474,8 +474,8 @@ onUnmounted(() => {
                 <div class="topic-chip bg-cyan">PROCESS</div>
               </div>
               <div class="mt-2 text-xs text-cream/70 leading-snug">
-                <div class="font-semibold">"HI charges the barrier"</div>
-                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Sketch → Final</div>
+                <!-- <div class="font-semibold">"HI charges the barrier"</div>
+                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Sketch → Final</div> -->
               </div>
             </a>
 
@@ -492,8 +492,8 @@ onUnmounted(() => {
                 <div class="topic-chip bg-amber">REVEAL</div>
               </div>
               <div class="mt-2 text-xs text-cream/70 leading-snug">
-                <div class="font-semibold">"Meet RA"</div>
-                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Character Reveal</div>
+                <!-- <div class="font-semibold">"Meet RA"</div>
+                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Character Reveal</div> -->
               </div>
             </a>
 
@@ -510,8 +510,8 @@ onUnmounted(() => {
                 <div class="topic-chip bg-coral">BTS</div>
               </div>
               <div class="mt-2 text-xs text-cream/70 leading-snug">
-                <div class="font-semibold">"Inside the studio"</div>
-                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Behind the Scenes</div>
+                <!-- <div class="font-semibold">"Inside the studio"</div>
+                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Behind the Scenes</div> -->
               </div>
             </a>
 
@@ -528,8 +528,8 @@ onUnmounted(() => {
                 <div class="topic-chip bg-green">WORLD</div>
               </div>
               <div class="mt-2 text-xs text-cream/70 leading-snug">
-                <div class="font-semibold">"Ecopolis painting"</div>
-                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Timelapse</div>
+                <!-- <div class="font-semibold">"Ecopolis painting"</div>
+                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Timelapse</div> -->
               </div>
             </a>
 
@@ -546,8 +546,8 @@ onUnmounted(() => {
                 <div class="topic-chip bg-magenta text-white">VILLAIN</div>
               </div>
               <div class="mt-2 text-xs text-cream/70 leading-snug">
-                <div class="font-semibold">"MAC awakens"</div>
-                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Boss Reveal</div>
+                <!-- <div class="font-semibold">"MAC awakens"</div>
+                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Boss Reveal</div> -->
               </div>
             </a>
 
@@ -564,8 +564,8 @@ onUnmounted(() => {
                 <div class="topic-chip bg-violet text-white">GAMEPLAY</div>
               </div>
               <div class="mt-2 text-xs text-cream/70 leading-snug">
-                <div class="font-semibold">"First playable build"</div>
-                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Dev Diary</div>
+                <!-- <div class="font-semibold">"First playable build"</div>
+                <div class="text-[10px] uppercase tracking-wider text-cream/40 mt-1">Dev Diary</div> -->
               </div>
             </a>
           </div>
@@ -651,7 +651,7 @@ onUnmounted(() => {
   color: var(--cream);
   min-height: 100vh;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   font-family: 'Manrope', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }

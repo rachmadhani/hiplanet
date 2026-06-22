@@ -932,7 +932,7 @@ onMounted(() => {
 .landing {
   padding-top: clamp(60px, 5vw, 80px); /* Match nav height */
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 section { position: relative; z-index: 1; 
   /* min-height: 100vh;  */
