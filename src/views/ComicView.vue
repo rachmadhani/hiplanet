@@ -1221,7 +1221,7 @@ section {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
+  grid-template-columns: 1fr 1.5fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
@@ -1351,11 +1351,11 @@ section {
 .comic-grid-collage {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(4, 140px);
-  gap: 0.45rem;
+  grid-template-rows: repeat(4, 160px);
+  gap: 0.5rem;
   width: 100%;
   background: #000;
-  padding: 0.45rem;
+  padding: 0.5rem;
   border: 5px solid #000;
   border-radius: 20px;
   box-shadow: 10px 10px 0 #000;
@@ -1405,29 +1405,29 @@ section {
 
 @media (max-width: 1200px) {
   .comic-grid-collage {
-    grid-template-rows: repeat(4, 100px);
+    grid-template-rows: repeat(4, 120px);
   }
 }
 
 @media (max-width: 991px) {
   .hero-right-col {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
   }
   .comic-grid-collage {
-    grid-template-rows: repeat(4, 115px);
+    grid-template-rows: repeat(4, 130px);
   }
 }
 
 @media (max-width: 768px) {
   .comic-grid-collage {
-    grid-template-rows: repeat(4, 85px);
+    grid-template-rows: repeat(4, 100px);
   }
 }
 
 @media (max-width: 480px) {
   .comic-grid-collage {
-    grid-template-rows: repeat(4, 60px);
+    grid-template-rows: repeat(4, 70px);
     gap: 0.3rem;
     padding: 0.3rem;
     border-radius: 12px;
