@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AdminWrapper from '../admin/AdminWrapper.vue'
 import { useAuthStore } from '../stores/auth'
 
 const router = createRouter({
@@ -90,7 +89,7 @@ const router = createRouter({
     },
     {
       path: '/admin',
-      component: AdminWrapper,
+      component: () => import('../admin/AdminWrapper.vue'),
       children: [
         {
           path: '',

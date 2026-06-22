@@ -9,8 +9,17 @@
 </template>
 
 <script setup lang="ts">
+import { getCurrentInstance } from 'vue'
 import ThemeProvider from '@admin/components/layout/ThemeProvider.vue'
 import SidebarProvider from '@admin/components/layout/SidebarProvider.vue'
+import Toast from 'vue-toastification'
+import 'vue-toastification/dist/index.css'
+
+// Register Toast dynamically for admin pages only
+const app = getCurrentInstance()?.appContext.app
+if (app && !app._context.provides['Toast']) {
+  app.use(Toast)
+}
 
 // Import Admin-specific styles
 import '@admin/assets/main.css'

@@ -1221,7 +1221,7 @@ section {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1.25fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
@@ -1351,14 +1351,14 @@ section {
 .comic-grid-collage {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(4, 110px);
-  gap: 0.4rem;
+  grid-template-rows: repeat(4, 140px);
+  gap: 0.45rem;
   width: 100%;
   background: #000;
-  padding: 0.4rem;
-  border: 4px solid #000;
-  border-radius: 16px;
-  box-shadow: 8px 8px 0 #000;
+  padding: 0.45rem;
+  border: 5px solid #000;
+  border-radius: 20px;
+  box-shadow: 10px 10px 0 #000;
 }
 
 .collage-item {
@@ -1405,29 +1405,29 @@ section {
 
 @media (max-width: 1200px) {
   .comic-grid-collage {
-    grid-template-rows: repeat(4, 75px);
+    grid-template-rows: repeat(4, 100px);
   }
 }
 
 @media (max-width: 991px) {
   .hero-right-col {
-    max-width: 550px;
+    max-width: 700px;
     margin: 0 auto;
   }
   .comic-grid-collage {
-    grid-template-rows: repeat(4, 90px);
+    grid-template-rows: repeat(4, 115px);
   }
 }
 
 @media (max-width: 768px) {
   .comic-grid-collage {
-    grid-template-rows: repeat(4, 65px);
+    grid-template-rows: repeat(4, 85px);
   }
 }
 
 @media (max-width: 480px) {
   .comic-grid-collage {
-    grid-template-rows: repeat(4, 50px);
+    grid-template-rows: repeat(4, 60px);
     gap: 0.3rem;
     padding: 0.3rem;
     border-radius: 12px;
