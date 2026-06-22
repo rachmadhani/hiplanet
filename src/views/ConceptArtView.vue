@@ -94,12 +94,9 @@ onUnmounted(() => {
       <!-- Asymmetric magazine grid -->
       <div class="char-grid">
         <!-- Big HI face sheet (4 cols) -->
-        <div class="col-span-6 col-md-4">
+        <div class="col-span-3 col-md-2">
           <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
             <img src="/comic-image/comic-1.jpg" alt="HI Expression Sheet" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            <!-- <div class="art-label">[ HI · FACE SHEET ]</div>
-            <div class="art-meta">4:3 · ~1600×1200</div>
-            <div class="art-meta">multiple angles + expressions</div> -->
           </div>
           <div class="art-caption" style="--accent: var(--cyan);">
             <div class="art-caption-title">HI · Expression Sheet</div>
@@ -108,34 +105,27 @@ onUnmounted(() => {
         </div>
 
         <!-- Stacked column right (2 cols) -->
-        <div class="col-span-6 col-md-2 space-y-5">
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/comic-image/comic-2.jpg" alt="HI Color Studies" style="width: 100%; height: auto; display: block; z-index: 1;" />
-              <!-- <div class="slot-overlay">
-                <div class="art-label">[ HI · COLOR TEST ]</div>
-                <div class="art-meta">~800×800</div>
-              </div> -->
-            </div>
-            <div class="art-caption" style="--accent: var(--cyan);">
-              <div class="art-caption-title">HI · Color Studies</div>
-              <div class="art-caption-meta">3 palette explorations</div>
-            </div>
+        <div class="col-span-3 col-md-2">
+          <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+            <img src="/comic-image/comic-2.jpg" alt="HI Color Studies" style="width: 100%; height: auto; display: block; z-index: 1;" />
           </div>
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/comic-image/comic-3.jpg" alt="HI Lightning FX" style="width: 100%; height: auto; display: block; z-index: 1;" />
-              <!-- <div class="slot-overlay">
-                <div class="art-label">[ HI · ENERGY FX ]</div>
-                <div class="art-meta">~800×800</div>
-              </div> -->
-            </div>
-            <div class="art-caption" style="--accent: var(--cyan);">
-              <div class="art-caption-title">HI · Lightning FX</div>
-              <div class="art-caption-meta">Effect studies</div>
-            </div>
+          <div class="art-caption" style="--accent: var(--cyan);">
+            <div class="art-caption-title">HI · Color Studies</div>
+            <div class="art-caption-meta">3 palette explorations</div>
           </div>
         </div>
+        
+        <div class="col-span-3 col-md-2">
+          <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+            <img src="/comic-image/comic-3.jpg" alt="HI Lightning FX" style="width: 100%; height: auto; display: block; z-index: 1;" />
+          </div>
+          <div class="art-caption" style="--accent: var(--cyan);">
+            <div class="art-caption-title">HI · Lightning FX</div>
+            <div class="art-caption-meta">Effect studies</div>
+          </div>
+        </div>
+        <!-- <div class="col-span-6 col-md-2 space-y-5">
+        </div> -->
 
         <!-- Row 2 — 3 portraits -->
         <div class="col-span-3 col-md-2">
