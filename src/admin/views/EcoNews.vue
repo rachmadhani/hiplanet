@@ -168,19 +168,26 @@
             >
               Previous
             </button>
-            <button
-              v-for="p in pageNumbers"
-              :key="p"
-              @click="changePage(p)"
-              :class="[
-                'inline-flex items-center justify-center w-8 h-8 text-sm font-medium rounded-lg cursor-pointer',
-                p === pagination.currentPage
-                  ? 'bg-brand-500 text-white'
-                  : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-800'
-              ]"
-            >
-              {{ p }}
-            </button>
+            <template v-for="(p, idx) in pageNumbers" :key="idx">
+              <span
+                v-if="p === '...'"
+                class="inline-flex items-center justify-center w-8 h-8 text-sm text-gray-400 dark:text-gray-500 select-none"
+              >
+                …
+              </span>
+              <button
+                v-else
+                @click="changePage(p as number)"
+                :class="[
+                  'inline-flex items-center justify-center w-8 h-8 text-sm font-medium rounded-lg cursor-pointer',
+                  p === pagination.currentPage
+                    ? 'bg-brand-500 text-white'
+                    : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-800'
+                ]"
+              >
+                {{ p }}
+              </button>
+            </template>
             <button
               @click="changePage(pagination.currentPage + 1)"
               :disabled="pagination.currentPage === pagination.totalPages"
@@ -492,12 +499,37 @@ const changePage = (page: number) => {
   fetchBlogs()
 }
 
-// Compute page number buttons
+// Compute page number buttons with ellipsis truncation
 const pageNumbers = computed(() => {
-  const pages: number[] = []
-  for (let i = 1; i <= pagination.value.totalPages; i++) {
-    pages.push(i)
+  const total = pagination.value.totalPages
+  const current = pagination.value.currentPage
+  const pages: (number | string)[] = []
+
+  if (total <= 7) {
+    // Show all pages if 7 or fewer
+    for (let i = 1; i <= total; i++) pages.push(i)
+  } else {
+    // Always show first page
+    pages.push(1)
+
+    if (current <= 4) {
+      // Near the start: 1 2 3 4 5 ... last
+      for (let i = 2; i <= 5; i++) pages.push(i)
+      pages.push('...')
+      pages.push(total)
+    } else if (current >= total - 3) {
+      // Near the end: 1 ... last-4 last-3 last-2 last-1 last
+      pages.push('...')
+      for (let i = total - 4; i <= total; i++) pages.push(i)
+    } else {
+      // In the middle: 1 ... current-1 current current+1 ... last
+      pages.push('...')
+      for (let i = current - 1; i <= current + 1; i++) pages.push(i)
+      pages.push('...')
+      pages.push(total)
+    }
   }
+
   return pages
 })
 
