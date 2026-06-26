@@ -254,7 +254,7 @@ onUnmounted(() => {
             <div class="section-line accent-cyan">Chapter 04</div>
             <h3 class="font-display section-headline">
               <span class="text-white">PROPS, TECH</span><br />
-              <!-- <span class="accent-neon-blue">& EVERYTHING ELSE.</span> -->
+              <span class="accent-neon-blue">& EVERYTHING ELSE.</span>
             </h3>
           </div>
           <span class="num-badge">// 10 bosses</span>
