@@ -3,6 +3,24 @@ import { onMounted, onUnmounted } from 'vue'
 
 let observer: IntersectionObserver | null = null
 
+interface props_sketchs {
+  image?: string
+  
+}
+
+const props_sketchs: props_sketchs[] = [
+  { image: '/concept-art/art-1.jpg' },
+  { image: '/concept-art/art-2.jpg' },
+  { image: '/concept-art/art-3.jpg' },
+  { image: '/concept-art/art-4.jpg' },
+  { image: '/concept-art/art-5.jpg' },
+  { image: '/concept-art/art-6.jpg' },
+  { image: '/concept-art/art-7.jpg' },
+  { image: '/concept-art/art-8.jpg' },
+  { image: '/concept-art/art-9.jpg' },
+  { image: '/concept-art/art-10.jpg' },
+]
+
 onMounted(() => {
   observer = new IntersectionObserver(
     (entries) => {
@@ -236,107 +254,131 @@ onUnmounted(() => {
             <div class="section-line accent-cyan">Chapter 04</div>
             <h3 class="font-display section-headline">
               <span class="text-white">PROPS, TECH</span><br />
-              <span class="accent-neon-blue">& EVERYTHING ELSE.</span>
+              <!-- <span class="accent-neon-blue">& EVERYTHING ELSE.</span> -->
             </h3>
           </div>
-          <span class="num-badge">// 8 items</span>
+          <span class="num-badge">// 10 bosses</span>
         </div>
 
         <!-- 4-col grid of items -->
         <div class="props-grid">
           <div>
-            <div class="art-slot aspect-square mb-3 prop-slot-green">
-              <div class="art-label">[ ECO CUBES ]</div>
-              <div class="art-meta">800×800</div>
-              <div class="art-meta">4 tier variations</div>
-            </div>
-            <div class="art-caption" style="--accent: var(--green);">
-              <div class="art-caption-title">Eco Cube Currency</div>
-              <div class="art-caption-meta">Green · Blue · Neon variants</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot aspect-square mb-3 prop-slot-coral">
-              <div class="art-label">[ COSMIC CUBE ]</div>
-              <div class="art-meta">800×800</div>
-              <div class="art-meta">5 energy slots</div>
-            </div>
-            <div class="art-caption" style="--accent: var(--coral);">
-              <div class="art-caption-title">Infinite Power Cube</div>
-              <div class="art-caption-meta">CW's goal · 5 energies</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot aspect-square mb-3 prop-slot-amber">
-              <div class="art-label">[ SOLAR LANCE ]</div>
-              <div class="art-meta">800×800</div>
-              <div class="art-meta">Athen's weapon</div>
-            </div>
-            <div class="art-caption" style="--accent: var(--amber);">
-              <div class="art-caption-title">Solar Lance</div>
-              <div class="art-caption-meta">Athen · ranged + melee</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot aspect-square mb-3 prop-slot-frost">
-              <div class="art-label">[ LUNAR GUARD ]</div>
-              <div class="art-meta">800×800</div>
-              <div class="art-meta">Athen's shield</div>
-            </div>
-            <div class="art-caption" style="--accent: var(--blue);">
-              <div class="art-caption-title">Lunar Guard Shield</div>
-              <div class="art-caption-meta">Energy pulse defense</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot aspect-square mb-3 prop-slot-violet">
-              <div class="art-label">[ QUANTUM QUICKSILVER ]</div>
-              <div class="art-meta">800×800</div>
-              <div class="art-meta">portal device</div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/CosmicWormhole.jpg" alt="Cosmic Wormhole Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
             </div>
             <div class="art-caption" style="--accent: var(--violet);">
-              <div class="art-caption-title">QQ · Quantum Quicksilver</div>
-              <div class="art-caption-meta">Gateway tech · Gig's invention</div>
+              <div class="art-caption-title">Cosmic Wormhole</div>
+              <div class="art-caption-meta">Boss · Dimensional entity</div>
             </div>
           </div>
 
           <div>
-            <div class="art-slot aspect-square mb-3 prop-slot-cyan">
-              <div class="art-label">[ MOOLU BARRIER ]</div>
-              <div class="art-meta">800×800</div>
-              <div class="art-meta">gate mechanic</div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/CyberDG.jpg" alt="Cyber DG Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
             </div>
             <div class="art-caption" style="--accent: var(--cyan);">
-              <div class="art-caption-title">Moolu Barrier</div>
-              <div class="art-caption-meta">Gate · Seal mechanic</div>
+              <div class="art-caption-title">Cyber DG</div>
+              <div class="art-caption-meta">Boss · Cyber dragon</div>
             </div>
           </div>
 
           <div>
-            <div class="art-slot aspect-square mb-3 prop-slot-magenta">
-              <div class="art-label">[ ROBOT GRUNT ]</div>
-              <div class="art-meta">800×800</div>
-              <div class="art-meta">enemy base unit</div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/CyberMamoth.jpg" alt="Cyber Mamoth Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
             </div>
-            <div class="art-caption" style="--accent: var(--magenta);">
-              <div class="art-caption-title">Robot Swarm Unit</div>
-              <div class="art-caption-meta">Pollutopia factory output</div>
+            <div class="art-caption" style="--accent: var(--coral);">
+              <div class="art-caption-title">Cyber Mamoth</div>
+              <div class="art-caption-meta">Boss · Mecha beast</div>
             </div>
           </div>
 
           <div>
-            <div class="art-slot aspect-square mb-3 prop-slot-earth">
-              <div class="art-label">[ GNCC TOWER ]</div>
-              <div class="art-meta">800×800</div>
-              <div class="art-meta">Big Bang Theory's HQ</div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/FrostYeti.jpg" alt="Frost Yeti Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--blue);">
+              <div class="art-caption-title">Frost Yeti</div>
+              <div class="art-caption-meta">Boss · Ice titan</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/HFM.png" alt="HFM Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--green);">
+              <div class="art-caption-title">HFM</div>
+              <div class="art-caption-meta">Boss · Heavy force mech</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/Kra.jpg" alt="Kra Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--amber);">
+              <div class="art-caption-title">Kra</div>
+              <div class="art-caption-meta">Boss · Ancient predator</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/Roc.png" alt="Roc Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
             </div>
             <div class="art-caption" style="--accent: var(--earth);">
-              <div class="art-caption-title">GNCC Spire</div>
-              <div class="art-caption-meta">Ecopolis · Top floor sanctum</div>
+              <div class="art-caption-title">Roc</div>
+              <div class="art-caption-meta">Boss · Sky colossus</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/SentinelBot.jpg" alt="Sentinel Bot Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--magenta);">
+              <div class="art-caption-title">Sentinel Bot</div>
+              <div class="art-caption-meta">Boss · Guardian automaton</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/TankWalker.jpg" alt="Tank Walker Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--coral);">
+              <div class="art-caption-title">Tank Walker</div>
+              <div class="art-caption-meta">Boss · Armored siege unit</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/mechaCerve.jpg" alt="Mecha Cerve Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Mecha Cerve</div>
+              <div class="art-caption-meta">Boss · Cybernetic cervid</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/TLC.png" alt="TLC Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">TLC</div>
+              <div class="art-caption-meta">Boss · The last comedian</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/War.jpg" alt="Warmonger Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">War</div>
+              <div class="art-caption-meta">Boss · War-obsessed mutant</div>
             </div>
           </div>
         </div>
