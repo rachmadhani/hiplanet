@@ -846,58 +846,6 @@ onMounted(() => {
       </div>
     </div>
 
-    <!-- ============================================================
-         COSMIC FORCES SECTION (Active only when Cosmic tab selected)
-    ============================================================ -->
-    <div v-if="filteredCosmic.length > 0" class="section-container">
-      <div class="section-header">
-        <div>
-          <div class="section-subline accent-cyan">Cosmic Forces</div>
-          <h3 class="section-title font-display">
-            THE <span class="accent-neon-blue">COSMIC ORDER.</span>
-          </h3>
-          <p class="section-caption font-space">
-            Primordial forces, space watchers, and dimensional gateways.
-          </p>
-        </div>
-      </div>
-
-      <div class="cosmic-card-grid">
-        <div 
-          v-for="char in filteredCosmic" 
-          :key="char.id"
-          class="tc"
-          :class="{
-            'status-attuned': char.status === 'ATTUNED',
-            'status-wanted': char.status === 'WANTED',
-            'status-unknown': char.status === 'UNKNOWN'
-          }"
-          :style="{ 
-            '--card-accent': char.cardAccent,
-            '--card-bg': char.cardBg 
-          }"
-          @click="selectCharacter(char)"
-        >
-          <div class="tc-banner">
-            <div class="tc-banner-text">
-              <div class="tc-name">{{ char.name }}</div>
-              <div class="tc-title">{{ char.title }}</div>
-            </div>
-          </div>
-          <div class="tc-art">
-            <img v-if="char.image" :src="char.image" :alt="char.name" class="tc-art-img" />
-            <div v-else class="tc-art-placeholder">
-              <div class="initials font-display">{{ char.name.slice(0, 2) }}</div>
-            </div>
-          </div>
-          <div class="tc-status">
-            <div class="tc-status-label">{{ char.status }}</div>
-            <div class="tc-status-mini">{{ char.statusTag }}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <p class="footer-hint">
       + More NPCs to be revealed across the comic & game
     </p>
