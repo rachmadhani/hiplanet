@@ -588,13 +588,6 @@ onMounted(() => {
         >
           NPCs
         </button>
-        <button 
-          class="tab-btn" 
-          :class="{ active: activeTab === 'cosmic' }" 
-          @click="activeTab = 'cosmic'"
-        >
-          Cosmic Forces
-        </button>
       </div>
     </div>
 

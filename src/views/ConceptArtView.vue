@@ -264,121 +264,221 @@ onUnmounted(() => {
         <div class="props-grid">
           <div>
             <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/CosmicWormhole.jpg" alt="Cosmic Wormhole Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+              <img src="/character/boss_sketch/chapter_1_boss_mac_spiky_charge.jpg" alt="Mac Spiky Charge Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Mac Spiky Charge</div>
+              <div class="art-caption-meta">Boss · Mac</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_2_boss_cactus_bot_design.jpg" alt="Cactus Bot Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--cyan);">
+              <div class="art-caption-title">Cactus Bot</div>
+              <div class="art-caption-meta">Boss · Cactus</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_2_boss_2_design.jpg" alt="Tech Mecha SandWorm Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--coral);">
+              <div class="art-caption-title">Tech Mecha SandWorm</div>
+              <div class="art-caption-meta">Boss · SandWorm</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_2_boss_3_phase_1.jpg" alt="CyberScorpion Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--blue);">
+              <div class="art-caption-title">CyberScorpion</div>
+              <div class="art-caption-meta">Boss · Scorpion</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_2_boss_4_phase_1.jpg" alt="Tech Sandstorm Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--green);">
+              <div class="art-caption-title">Tech Sandstorm</div>
+              <div class="art-caption-meta">Boss · Sandstorm</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_2_boss_5_phase_1.jpg" alt="SKU Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--amber);">
+              <div class="art-caption-title">SKU</div>
+              <div class="art-caption-meta">Boss · SKU</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_3_boss_1_phase_1.jpg" alt="Tech Lava Golem Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--earth);">
+              <div class="art-caption-title">Lava Golem</div>
+              <div class="art-caption-meta">Boss · Lava Golem</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_3_boss_2_phase_1.jpg" alt="Hell Flame Bot Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--magenta);">
+              <div class="art-caption-title">Hell Flame Bot</div>
+              <div class="art-caption-meta">Boss · Hell Flame Bot</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_3_boss_3_phase_1.jpg" alt="War Crawler Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--coral);">
+              <div class="art-caption-title">War Crawler</div>
+              <div class="art-caption-meta">Boss · War Crawler</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_3_boss_4_phase_1.jpg" alt="Cyber Dragon Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Cyber Dragon</div>
+              <div class="art-caption-meta">Boss · Cyber Dragon</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_3_boss_5_phase_1.jpg" alt="ROC Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">ROC</div>
+              <div class="art-caption-meta">Boss · ROC</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_4_boss_1_phase_1.jpg" alt="Frost Tech Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Frost Tech</div>
+              <div class="art-caption-meta">Boss · Frost Tech</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_4_boss_2_phase_1.jpg" alt="Mecha Cerberus Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Mecha Cerberus</div>
+              <div class="art-caption-meta">Boss · Mecha Cerberus</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_4_boss_3_phase_1.jpg" alt="Cyber Mammoth Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Frost Tech</div>
+              <div class="art-caption-meta">Boss · Frost Tech</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_4_boss_4_phase_1.jpg" alt="Frost Yeti King Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Frost Yeti King</div>
+              <div class="art-caption-meta">Boss · Frost Yeti King</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_4_boss_5_phase_1.jpg" alt="ZOM Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">ZOM</div>
+              <div class="art-caption-meta">Boss · ZOM</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_5_boss_1_phase_1.jpg" alt="Tank Walker Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Tank Walker</div>
+              <div class="art-caption-meta">Boss · Tank Walker</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_5_boss_2_phase_1.jpg" alt="Sentinel Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Sentinel</div>
+              <div class="art-caption-meta">Boss · Sentinel</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_5_boss_3_phase_1.jpg" alt="Camouflage Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Camouflage</div>
+              <div class="art-caption-meta">Boss · Camouflage</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_5_boss_4_phase_1.jpg" alt="Terra Walker Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Terra Walker</div>
+              <div class="art-caption-meta">Boss · Terra Walker</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_5_boss_5_phase_1.jpg" alt="Kraken Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
+            </div>
+            <div class="art-caption" style="--accent: var(--violet);">
+              <div class="art-caption-title">Kraken</div>
+              <div class="art-caption-meta">Boss · Kraken</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
+              <img src="/character/boss_sketch/chapter_6_boss_cw_phase_1&2.jpg" alt="Cosmic Wormhole Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
             </div>
             <div class="art-caption" style="--accent: var(--violet);">
               <div class="art-caption-title">Cosmic Wormhole</div>
-              <div class="art-caption-meta">Boss · Dimensional entity</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/CyberDG.jpg" alt="Cyber DG Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            </div>
-            <div class="art-caption" style="--accent: var(--cyan);">
-              <div class="art-caption-title">Cyber DG</div>
-              <div class="art-caption-meta">Boss · Cyber dragon</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/CyberMamoth.jpg" alt="Cyber Mamoth Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            </div>
-            <div class="art-caption" style="--accent: var(--coral);">
-              <div class="art-caption-title">Cyber Mamoth</div>
-              <div class="art-caption-meta">Boss · Mecha beast</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/FrostYeti.jpg" alt="Frost Yeti Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            </div>
-            <div class="art-caption" style="--accent: var(--blue);">
-              <div class="art-caption-title">Frost Yeti</div>
-              <div class="art-caption-meta">Boss · Ice titan</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/HFM.png" alt="HFM Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            </div>
-            <div class="art-caption" style="--accent: var(--green);">
-              <div class="art-caption-title">HFM</div>
-              <div class="art-caption-meta">Boss · Heavy force mech</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/Kra.jpg" alt="Kra Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            </div>
-            <div class="art-caption" style="--accent: var(--amber);">
-              <div class="art-caption-title">Kra</div>
-              <div class="art-caption-meta">Boss · Ancient predator</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/Roc.png" alt="Roc Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            </div>
-            <div class="art-caption" style="--accent: var(--earth);">
-              <div class="art-caption-title">Roc</div>
-              <div class="art-caption-meta">Boss · Sky colossus</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/SentinelBot.jpg" alt="Sentinel Bot Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            </div>
-            <div class="art-caption" style="--accent: var(--magenta);">
-              <div class="art-caption-title">Sentinel Bot</div>
-              <div class="art-caption-meta">Boss · Guardian automaton</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/TankWalker.jpg" alt="Tank Walker Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            </div>
-            <div class="art-caption" style="--accent: var(--coral);">
-              <div class="art-caption-title">Tank Walker</div>
-              <div class="art-caption-meta">Boss · Armored siege unit</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/mechaCerve.jpg" alt="Mecha Cerve Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            </div>
-            <div class="art-caption" style="--accent: var(--violet);">
-              <div class="art-caption-title">Mecha Cerve</div>
-              <div class="art-caption-meta">Boss · Cybernetic cervid</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/TLC.png" alt="TLC Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            </div>
-            <div class="art-caption" style="--accent: var(--violet);">
-              <div class="art-caption-title">TLC</div>
-              <div class="art-caption-meta">Boss · The last comedian</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="art-slot mb-3" style="aspect-ratio: auto; padding: 0;">
-              <img src="/character/boss_sketch/War.jpg" alt="Warmonger Boss Sketch" style="width: 100%; height: auto; display: block; z-index: 1;" />
-            </div>
-            <div class="art-caption" style="--accent: var(--violet);">
-              <div class="art-caption-title">War</div>
-              <div class="art-caption-meta">Boss · War-obsessed mutant</div>
+              <div class="art-caption-meta">Boss · Cosmic Wormhole</div>
             </div>
           </div>
         </div>
