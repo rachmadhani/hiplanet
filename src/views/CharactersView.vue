@@ -349,7 +349,7 @@ const charactersData: Character[] = [
     energyPill: 'Virtual VR',
     cardAccent: '#22D3EE',
     cardBg: 'rgba(34,211,238,0.12)',
-    image: '/character/NPC/Professor-Oracle.png'
+    image: '/character/NPC/Oracle_Website.png'
   },
   {
     id: 'athen',
@@ -367,7 +367,7 @@ const charactersData: Character[] = [
     energyPill: 'Martial',
     cardAccent: '#22D3EE',
     cardBg: 'rgba(34,211,238,0.15)',
-    image: '/character/NPC/Athen.png'
+    image: '/character/NPC/Athen_Website.png'
   },
   {
     id: 'gig',
@@ -385,7 +385,7 @@ const charactersData: Character[] = [
     energyPill: 'Goggles/Tools',
     cardAccent: '#FFB627',
     cardBg: 'rgba(255,182,39,0.18)',
-    image: '/character/NPC/Gig.png'
+    image: '/character/NPC/Gig_Website.png'
   },
   {
     id: 'savi',
@@ -403,7 +403,7 @@ const charactersData: Character[] = [
     energyPill: 'Eco Salvage',
     cardAccent: '#C7E83F',
     cardBg: 'rgba(199,232,63,0.15)',
-    image: '/character/NPC/Savi.png'
+    image: '/character/NPC/Savi_website.png'
   },
   {
     id: 'qq',
