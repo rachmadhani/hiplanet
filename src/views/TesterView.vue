@@ -247,7 +247,32 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <!-- ============ 4. FAQ ============ -->
+    <!-- ============ 4. GAME COMMUNITY GALLERY ============ -->
+    <section class="community-section fade-up">
+      <div class="stars-overlay opacity-25"></div>
+      <div class="container">
+        <div class="community-header">
+          <div class="section-line accent-coral justify-center">From the Community</div>
+          <h2 class="section-title" style="text-align:center;">
+            GAME<br />
+            <span class="accent-neon-blue">COMMUNITY.</span>
+          </h2>
+        </div>
+        <div class="community-grid">
+          <div class="community-img-wrap">
+            <img src="/testers/game_community.jpg" alt="Hi Planet game community screenshot 1" class="community-img" />
+          </div>
+          <div class="community-img-wrap">
+            <img src="/testers/game_community_2.jpg" alt="Hi Planet game community screenshot 2" class="community-img" />
+          </div>
+          <div class="community-img-wrap">
+            <img src="/testers/game_community_3.jpg" alt="Hi Planet game community screenshot 3" class="community-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. FAQ ============ -->
     <section class="faq-section fade-up">
       <div class="stars-overlay opacity-20"></div>
       <div class="narrow-container">
@@ -943,6 +968,59 @@ font-size: clamp(3.5rem, 13vw, 12rem);
 
 .faq-footer a:hover {
   color: var(--amber);
+}
+
+/* ============ 5. COMMUNITY GALLERY ============ */
+.community-section {
+  position: relative;
+  padding: clamp(3.5rem, 7vw, 6rem) 1.5rem;
+  z-index: 2;
+}
+
+.community-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.community-header .section-line {
+  justify-content: center;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.community-img-wrap {
+  overflow: hidden;
+  min-height: 320px;
+  border: 2px solid rgba(255, 245, 229, 0.15);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.community-img-wrap:hover {
+  border-color: var(--coral);
+  box-shadow: 0 0 24px rgba(255, 107, 53, 0.25);
+}
+
+.community-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.community-img-wrap:hover .community-img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .community-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 /* ============ Accent Colors ============ */
