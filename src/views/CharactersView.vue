@@ -474,7 +474,7 @@ const charactersData: Character[] = [
     desc: 'The Satellizens are a group of cosmic watchers and celestial guardians created by the Big Bang Theory to oversee the well-being and development of their respective planets. These sentient beings are deeply connected to the planets they are assigned to, acting as their protectors, advisors, and record keepers. Each Satellizen has unique abilities that are attuned to the environment and energy of their respective planets, making them indispensable allies in preserving harmony across the cosmos.',
     elementEmoji: '🛰️',
     energyPill: 'Guardians',
-    cardAccent: '#00fbd5',
+    cardAccent: '#e8f6f3',
     cardBg: 'rgba(186,230,253,0.1)',
     image: '/character/NPC/Pua_Website.png'
   }
