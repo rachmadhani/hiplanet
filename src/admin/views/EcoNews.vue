@@ -560,22 +560,33 @@ const openCreateModal = () => {
   showModal.value = true
 }
 
-const openEditModal = (blog: EcoNewsBlog) => {
+const openEditModal = async (blog: EcoNewsBlog) => {
   isEditMode.value = true
   activeBlog.value = blog
   selectedFile.value = null
   imagePreview.value = getImageUrl(blog.image)
   
+  // Pre-fill with list data first (description may be missing from list endpoint)
   form.value = {
     title: blog.title,
     author: blog.author,
     category: blog.category,
     slug: blog.slug || '',
-    description: blog.description,
+    description: blog.description || '',
     date_created: formatToDateTimeLocal(blog.date_created || blog.createdAt)
   }
   
   showModal.value = true
+
+  // Fetch full blog data to get description
+  try {
+    const response = await ecoNewsService.getById(blog.id)
+    if (response.data) {
+      form.value.description = response.data.description || ''
+    }
+  } catch (error) {
+    console.error('Failed to fetch blog details:', error)
+  }
 }
 
 const closeModal = () => {

@@ -533,22 +533,33 @@ const openAddModal = () => {
   showModal.value = true
 }
 
-const openEditModal = (blog: DevlogBlog) => {
+const openEditModal = async (blog: DevlogBlog) => {
   isEditMode.value = true
   activeBlog.value = blog
   selectedFile.value = null
   imagePreview.value = blog.image ? getImageUrl(blog.image) : ''
   
+  // Pre-fill with list data first (description may be missing from list endpoint)
   form.value = {
     title: blog.title,
     author: blog.author,
     category_id: blog.category_id,
     slug: blog.slug || '',
-    description: blog.description,
+    description: blog.description || '',
     date_created: formatToDateTimeLocal(blog.date_created || blog.createdAt)
   }
   
   showModal.value = true
+
+  // Fetch full blog data to get description
+  try {
+    const response = await devlogBlogService.getById(blog.id)
+    if (response.data) {
+      form.value.description = response.data.description || ''
+    }
+  } catch (error) {
+    console.error('Failed to fetch blog details:', error)
+  }
 }
 
 const closeModal = () => {
