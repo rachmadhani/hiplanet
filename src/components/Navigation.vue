@@ -72,7 +72,7 @@ onUnmounted(() => {
       <li><RouterLink to="/econews">Eco News</RouterLink></li>
       <li><a href="https://discord.gg/RwHXvENQRj" target="_blank" class="nav-cta discord-btn">Join Discord</a></li>
       <li>
-        <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="nav-cta steam-btn">
+        <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/" target="_blank" class="nav-cta steam-btn">
           <img src="/icon/steam-white.png" class="steam-icon" alt="Steam" />
           Wishlist On Steam
         </a>

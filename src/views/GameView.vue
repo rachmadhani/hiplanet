@@ -183,7 +183,7 @@ void openPopup
           </div>
 
           <div class="meta-center">
-            <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="btn-hero-cta">
+            <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/" target="_blank" class="btn-hero-cta">
               ▶ Wishlist on Steam
             </a>
           </div>
@@ -304,6 +304,114 @@ void openPopup
 
         <p class="bottom-note">
           → 10 playable in Ep1 · MA reserved for Ch.7 DLC (Mars chapter)
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ GAMEPLAY 1: FAST-PACED COMBAT ============ -->
+    <section id="fast-paced" class="game-section gameplay-feature-section combat-section">
+      <div class="stars-bg"></div>
+      <div class="max-width-wrapper">
+        <div class="fade-up-game">
+          <div class="section-line-header accent-cyan">Core Gameplay · Action Combat</div>
+          <h2 class="section-title">
+            FAST-PACED.<br />
+            <span class="accent-cyan">ACTION COMBAT.</span>
+          </h2>
+          <p class="section-subtitle font-serif">
+            High-octane horde survival. Dodge ruthless bullet patterns, chain rapid abilities, and wipe out swarms of robotic invaders.
+          </p>
+        </div>
+
+        <div class="fade-up-game d-1 gameplay-banner-card" @click="openPopup('/Games/FastPaced.png', 'FAST-PACED ACTION COMBAT')">
+          <div class="gameplay-banner-media">
+            <img src="/Games/FastPaced.png" alt="Fast-Paced Action Combat" />
+            <div class="banner-expand-hint">
+              <span>⤢ Click to Expand</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-up-game d-2 gameplay-feature-pills">
+          <span class="gameplay-pill accent-cyan">◆ High-Mobility Movement</span>
+          <span class="gameplay-pill accent-cyan">◆ Dynamic Skill Combos</span>
+          <span class="gameplay-pill accent-cyan">◆ Relentless Enemy Swarms</span>
+        </div>
+
+        <p class="bottom-note">
+          → Master your hero's elemental attacks to survive overwhelming odds
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ GAMEPLAY 2: DYNAMIC BATTLEFIELD ============ -->
+    <section id="dynamic-battlefield" class="game-section gameplay-feature-section battlefield-section">
+      <div class="stars-bg"></div>
+      <div class="max-width-wrapper">
+        <div class="fade-up-game">
+          <div class="section-line-header accent-coral">Tactical Environments · Interactive Hazards</div>
+          <h2 class="section-title">
+            DYNAMIC.<br />
+            <span class="accent-coral">BATTLEFIELDS.</span>
+          </h2>
+          <p class="section-subtitle font-serif">
+            Fight across reactive terrain. Explode hazardous canisters, breach enemy barrier gates, and navigate environmental choke points.
+          </p>
+        </div>
+
+        <div class="fade-up-game d-1 gameplay-banner-card" @click="openPopup('/Games/DynamicBattlefield.png', 'DYNAMIC BATTLEFIELD')">
+          <div class="gameplay-banner-media">
+            <img src="/Games/DynamicBattlefield.png" alt="Dynamic Battlefield" />
+            <div class="banner-expand-hint">
+              <span>⤢ Click to Expand</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-up-game d-2 gameplay-feature-pills">
+          <span class="gameplay-pill accent-coral">◆ Reactive Map Hazards</span>
+          <span class="gameplay-pill accent-coral">◆ Destructible Obstacles</span>
+          <span class="gameplay-pill accent-coral">◆ Strategic Chokepoints</span>
+        </div>
+
+        <p class="bottom-note">
+          → Use the arena's environment to crush robot waves strategically
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ GAMEPLAY 3: CHALLENGING BOSSES ============ -->
+    <section id="challenging-bosses" class="game-section gameplay-feature-section bosses-feature-section">
+      <div class="stars-bg"></div>
+      <div class="max-width-wrapper">
+        <div class="fade-up-game">
+          <div class="section-line-header accent-amber">Chapter Finales · Lieutenant Showdowns</div>
+          <h2 class="section-title">
+            CHALLENGING.<br />
+            <span class="accent-amber">BOSS BATTLES.</span>
+          </h2>
+          <p class="section-subtitle font-serif">
+            Face off against massive robotic bosses at the end of every chapter. Learn multi-phase attack patterns, avoid bullet-hell barrages, and reclaim Earth's stolen energies.
+          </p>
+        </div>
+
+        <div class="fade-up-game d-1 gameplay-banner-card" @click="openPopup('/Games/ChallengingBattle.png', 'CHALLENGING BOSSES')">
+          <div class="gameplay-banner-media">
+            <img src="/Games/ChallengingBattle.png" alt="Challenging Bosses" />
+            <div class="banner-expand-hint">
+              <span>⤢ Click to Expand</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-up-game d-2 gameplay-feature-pills">
+          <span class="gameplay-pill accent-amber">◆ Multi-Phase Boss Fights</span>
+          <span class="gameplay-pill accent-amber">◆ Bullet-Hell Attack Patterns</span>
+          <span class="gameplay-pill accent-amber">◆ Stolen Planetary Energies</span>
+        </div>
+
+        <p class="bottom-note">
+          → Recover each stolen elemental energy from the Cosmic Wormhole's generals
         </p>
       </div>
     </section>
@@ -1148,6 +1256,136 @@ width: 100%;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: rgb(255, 245, 229);
+}
+
+/* Gameplay Feature Sections */
+.gameplay-feature-section {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 245, 229, 0.08);
+}
+
+.combat-section {
+  background: 
+    radial-gradient(ellipse 65% 55% at 75% 40%, rgba(34, 211, 238, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 20% 70%, rgba(74, 144, 226, 0.1) 0%, transparent 60%);
+}
+
+.battlefield-section {
+  background: 
+    radial-gradient(ellipse 65% 55% at 25% 40%, rgba(255, 107, 53, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 80% 70%, rgba(255, 182, 39, 0.08) 0%, transparent 60%);
+}
+
+.bosses-feature-section {
+  background: 
+    radial-gradient(ellipse 65% 55% at 70% 35%, rgba(255, 182, 39, 0.13) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 25% 75%, rgba(200, 52, 90, 0.1) 0%, transparent 60%);
+}
+
+.gameplay-banner-card {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 245, 229, 0.16);
+  background: rgba(10, 24, 52, 0.7);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  margin-bottom: 1.5rem;
+}
+
+.gameplay-banner-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 245, 229, 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 245, 229, 0.15);
+}
+
+.combat-section .gameplay-banner-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(34, 211, 238, 0.3);
+}
+
+.battlefield-section .gameplay-banner-card:hover {
+  border-color: var(--coral);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 107, 53, 0.3);
+}
+
+.bosses-feature-section .gameplay-banner-card:hover {
+  border-color: var(--amber);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 182, 39, 0.3);
+}
+
+.gameplay-banner-media {
+  aspect-ratio: 3 / 1;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #060D24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameplay-banner-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: block;
+}
+
+.gameplay-banner-card:hover .gameplay-banner-media img {
+  transform: scale(1.025);
+}
+
+.banner-expand-hint {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(10, 24, 52, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 245, 229, 0.25);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  color: #FFF5E5;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.gameplay-banner-card:hover .banner-expand-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gameplay-feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.gameplay-pill {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  padding: 6px 14px;
+  background: rgba(255, 245, 229, 0.04);
+  border: 1px solid rgba(255, 245, 229, 0.15);
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.gameplay-pill:hover {
+  background: rgba(255, 245, 229, 0.09);
+  border-color: currentColor;
 }
 
 /* Earth Section */

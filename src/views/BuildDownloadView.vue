@@ -46,7 +46,7 @@ onMounted(() => {
       <!-- Wishlist Button -->
       <div class="action-section">
         <a 
-          href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" 
+          href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/" 
           target="_blank" 
           class="wishlist-btn font-display"
         >

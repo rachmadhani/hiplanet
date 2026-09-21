@@ -881,7 +881,7 @@ onMounted(() => {
           <RouterLink to="/comic" class="btn-comic-book font-display">
             📖 Read the Comic
           </RouterLink>
-          <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" target="_blank" class="btn-steam font-display">
+          <a href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/" target="_blank" class="btn-steam font-display">
             ▶ Wishlist on Steam
           </a>
         </div>

@@ -503,7 +503,7 @@ onMounted(() => {
 
           <div class="cta-buttons">
             <a 
-              href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/?beta=1" 
+              href="https://store.steampowered.com/app/4745340/Hi_Planet_Save_The_Earth/" 
               target="_blank"
               class="cta-btn-steam" 
               style="box-shadow: 5px 5px 0 var(--cream);"
