@@ -118,7 +118,7 @@ onMounted(() => {
         <!-- YouTube Embed -->
         <div class="reveal d-4 youtube-embed-container">
           <iframe 
-            src="https://www.youtube.com/embed/hU1MV3ZnRSE" 
+            src="https://www.youtube.com/embed/t8rabumw3tY?si=eRgJLjtZK9D6sN6P" 
             title="Hi Planet - Official Trailer" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -133,8 +133,8 @@ onMounted(() => {
             <span class="different-label">What makes Hi Planet different</span>
           </div>
           <h2 class="different-title font-display">
-            NOT JUST ANOTHER<br />
-            <span class="accent-coral-alt">HORDE GAME.</span>
+            STORY BASED<br />
+            <span class="accent-coral-alt">ACTION RPG.</span>
           </h2>
         </div>
 
