@@ -9,10 +9,10 @@
           A creative studio at the crossroads of technology, storytelling, and environmental impact. Building worlds worth saving.
         </p>
         <div class="footer-socials">
-          <a href="#" class="footer-social-icon">▶</a>
+          <!-- <a href="#" class="footer-social-icon">▶</a>
           <a href="#" class="footer-social-icon">♪</a>
           <a href="#" class="footer-social-icon">⬡</a>
-          <a href="#" class="footer-social-icon">◈</a>
+          <a href="#" class="footer-social-icon">◈</a> -->
         </div>
       </div>
       <div>
@@ -35,7 +35,7 @@
           <li><RouterLink to="/characters">Characters</RouterLink></li>
         </ul>
       </div>
-      <div>
+      <!-- <div>
         <div class="footer-col-title">Company</div>
         <ul class="footer-links">
           <li><a href="#">About Us</a></li>
@@ -43,7 +43,7 @@
           <li><a href="#">Press Kit</a></li>
           <li><a href="mailto:hello@ecosoftgame.com">Contact</a></li>
         </ul>
-      </div>
+      </div> -->
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">© 2026 Ecosoft Interactive, Inc. — All rights reserved.</div>
@@ -66,7 +66,7 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 4fr 2fr 2fr;
   gap: clamp(2rem, 4vw, 4rem);
   margin-bottom: clamp(3rem, 5vw, 5rem);
 }
@@ -126,9 +126,16 @@ footer {
 
 .footer-links {
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+}
+
+.footer-links li {
+  padding: 0;
+  margin: 0;
 }
 
 .footer-links a {
