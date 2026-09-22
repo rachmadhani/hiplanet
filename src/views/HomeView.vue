@@ -618,16 +618,16 @@ onMounted(() => {
           <a href="https://discord.gg/RwHXvENQRj" target="_blank" class="social-icon-link" title="Join Discord">
             <img src="/social-icon/discord.png" alt="Discord" />
           </a>
-          <a href="#" class="social-icon-link" title="YouTube">
+          <a href="https://www.youtube.com/@HiPlanetOfficial" class="social-icon-link" title="YouTube">
             <img src="/social-icon/youtube.png" alt="YouTube" />
           </a>
-          <a href="#" class="social-icon-link" title="Instagram">
+          <a href="https://www.instagram.com/hiplanetofficial/" class="social-icon-link" title="Instagram">
             <img src="/social-icon/instagram.png" alt="Instagram" />
           </a>
-          <a href="#" class="social-icon-link" title="TikTok">
-            <img src="/social-icon/tiktok.png" alt="TikTok" />
+          <a href="https://www.reddit.com/user/AppropriateHat4589/" class="social-icon-link" title="Reddit">
+            <img src="/social-icon/reddit.png" alt="Reddit" />
           </a>
-          <a href="#" class="social-icon-link" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/sean-beck-447069338/" class="social-icon-link" title="LinkedIn">
             <img src="/social-icon/linkedin.png" alt="LinkedIn" />
           </a>
         </div>
